@@ -13,6 +13,8 @@ file before rendering, so the sidebar there says "Preface".)
 **GEOG 370: Geographic Information Science**\
 University of North Carolina at Chapel Hill · Fall 2026 · Dr. David Parr
 
+![](images/cover-web.jpg){.welcome-cover fig-alt="Cover of the textbook Geographic Information Science, built for GEOG 370, by David Parr. A dragon in a surveyor's outfit stands beside a tripod-mounted instrument above a map."}
+
 Hello and welcome to **Geographic Information Science**! I'm thrilled to have you in this class. Whether you're new to GIS or already have some experience, this course is your gateway to understanding and working with **spatial data** and using GIS software including **QGIS** and **ArcGIS Pro**.
 
 We'll go beyond traditional maps and dive into the nature of spatial data, including how it's constructed, managed, and the issues that working with spatial data can create. Throughout the semester, we'll build your skills from the ground up. We'll work with QGIS and ArcGIS Pro to manage data, answer questions, and create visualizations, and we'll have three projects to demonstrate your growing skill sets based on real-world data.

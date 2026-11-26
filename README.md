@@ -122,8 +122,8 @@ quarto preview --profile textbook   # daveparr.com version: textbook only, no qu
 quarto render --to PrettyPDF-pdf --profile textbook   # the PDF textbook, no quizzes
 ```
 
-The PDF needs a LaTeX install (TinyTeX: `quarto install tinytex`). To give it a full-page cover, add
-`images/cover.jpg` and uncomment `assets/pdf-cover.tex` in `_quarto.yml`.
+The PDF needs a LaTeX install (TinyTeX: `quarto install tinytex`). Its cover is `images/cover.jpg`,
+placed full-page by `assets/pdf-cover.tex`; to change the cover, replace that image.
 
 Changes go through a pull request into `main`; Cloudflare builds a preview of each branch, and
 merging publishes both sites.
