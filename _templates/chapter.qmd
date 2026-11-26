@@ -16,6 +16,17 @@ By the end of this chapter, you will be able to:
 
 ...
 
+<!--
+  An interesting fact can go in a "Did you know..?" box (styled in
+  assets/unc-colors.scss):
+
+  ::: {.callout-note .did-you-know appearance="simple" icon=false}
+  ## Did you know..?
+
+  The fact.
+  :::
+-->
+
 ## Check your understanding
 
 ...

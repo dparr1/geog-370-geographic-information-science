@@ -27,6 +27,7 @@ book:
     - part: units/unit-1.qmd
       chapters:
         - chapters/what-is-gis.qmd
+        - chapters/what-is-geographic-data.qmd
     # Units and chapters go here, in the same order as _quarto-site.yml but
     # without the quiz pages. For example:
     #

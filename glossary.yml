@@ -26,7 +26,7 @@
 
 # Phrases that look like a term but aren't one. They are matched (so the
 # shorter term inside them is not) and left unmarked.
-exclude: ["GIS Day", "GIS Certification Institute", "GRASS GIS", "Quantum GIS", "Learn ArcGIS"]
+exclude: ["GIS Day", "GIS Certification Institute", "GRASS GIS", "Quantum GIS", "Learn ArcGIS", "Open Geospatial Consortium", "Switch from Shapefile"]
 
 # Add terms as the chapters are written. For example:
 #
@@ -288,3 +288,221 @@ terms:
     definition: >-
       Geographic Information Systems Professional: a certification from the
       GIS Certification Institute for experienced GIS practitioners.
+
+  # --- Chapter 2: What Is Geographic Data? -----------------------------------
+
+  - term: entity
+    aliases: [entities]
+    chapters: [what-is-geographic-data]
+    definition: >-
+      A real-world object we want to store as data, such as a tree, a
+      building, or a lake. On a map, an entity is shown as a feature.
+
+  - term: feature
+    aliases: [features]
+    chapters: [what-is-geographic-data]
+    definition: >-
+      How a map or a GIS represents an entity, usually as a point, a line,
+      or a polygon, with attributes that describe it.
+
+  - term: data abstraction
+    definition: >-
+      The chain of steps that turns the real world into something a computer
+      can store: real world, data model, data structure, and machine code.
+
+  - term: data structure
+    aliases: [data structures]
+    definition: >-
+      How a data model is laid out in a computer's memory or files, for
+      example as lists of coordinate pairs linked by pointers.
+
+  - term: discrete object
+    aliases: [discrete objects, discrete data, discrete]
+    chapters: [what-is-geographic-data]
+    definition: >-
+      Something with clear boundaries that is either present or absent at a
+      location, such as a road, a house, or a state.
+
+  - term: continuous data
+    aliases: [continuous, continuous surface, continuous field]
+    chapters: [what-is-geographic-data]
+    definition: >-
+      A quantity that has a value at every location and changes gradually
+      from place to place, such as elevation, temperature, or rainfall.
+
+  - term: point
+    aliases: [points]
+    chapters: [what-is-geographic-data]
+    definition: >-
+      A vector feature with a location but no length or area, stored as a
+      single x, y coordinate pair, such as a well or a school.
+
+  - term: line
+    aliases: [lines, polyline, polylines]
+    chapters: [what-is-geographic-data]
+    definition: >-
+      A vector feature with length but no area, stored as an ordered list of
+      coordinates, such as a road or a stream.
+
+  - term: polygon
+    aliases: [polygons, area feature, area features]
+    definition: >-
+      A vector feature that encloses an area: a closed line whose first and
+      last points are the same, such as a lake, a park, or a county.
+
+  - term: annotation
+    chapters: [what-is-geographic-data]
+    definition: >-
+      Text placed on a map, such as place names, street names, and labels.
+
+  - term: extent
+    chapters: [what-is-geographic-data]
+    definition: >-
+      How far something reaches: its size, boundary, and dimensions. A
+      layer's extent is the rectangle that just encloses all its features.
+
+  - term: geometry
+    chapters: [what-is-geographic-data]
+    definition: >-
+      The shape of a feature: a point, a line, or a polygon, stored as
+      coordinates.
+
+  - term: non-spatial data
+    aliases: [non-spatial]
+    definition: >-
+      Data with no location of their own, such as a list of grades. When
+      non-spatial data describe a spatial feature, they are its attributes.
+
+  - term: geocoding
+    definition: >-
+      Turning an address or place name into coordinates, so it can be put
+      on a map.
+
+  - term: vector
+    aliases: [vector data, vector model, vector data model]
+    definition: >-
+      A data model that stores the world as points, lines, and polygons,
+      each defined by x, y coordinates and linked to its attributes. Best
+      for discrete objects.
+
+  - term: raster
+    aliases: [rasters, raster data, raster model, raster data model]
+    definition: >-
+      A data model that stores the world as a regular grid of equal-sized
+      cells, each holding one value. Best for continuous data and imagery.
+
+  - term: TIN
+    aliases: [triangulated irregular network, triangulated irregular networks]
+    case_sensitive: true
+    definition: >-
+      Triangulated irregular network: a surface model that joins sampled
+      elevation points into triangles, using more triangles where the
+      ground is rough.
+
+  - term: tabular data
+    definition: >-
+      Data stored in tables of rows and columns, such as the attributes of
+      features.
+
+  - term: cell
+    aliases: [cells, raster cell, raster cells, pixel, pixels]
+    chapters: [what-is-geographic-data]
+    definition: >-
+      One square in a raster grid. Each cell holds one value. In an image, a
+      cell is called a pixel (picture element).
+
+  - term: cell size
+    aliases: [cell sizes]
+    definition: >-
+      The real-world length of one side of a raster cell, such as 30 meters.
+      Smaller cells give finer resolution and larger files.
+
+  - term: resolution
+    chapters: [what-is-geographic-data]
+    definition: >-
+      The level of detail in data. For a raster, it is set by the cell size:
+      the smaller the cells, the finer the resolution.
+
+  - term: node
+    aliases: [nodes]
+    chapters: [what-is-geographic-data]
+    definition: >-
+      The start or end point of a line. In a network, lines meet at nodes.
+
+  - term: vertex
+    aliases: [vertices]
+    definition: >-
+      An intermediate point where a line or polygon boundary changes
+      direction.
+
+  - term: line segment
+    aliases: [line segments]
+    definition: >-
+      The straight piece of a line between two vertices or nodes.
+
+  - term: arc
+    aliases: [arcs]
+    chapters: [what-is-geographic-data]
+    definition: >-
+      A line stored as an ordered list of coordinates. Polygons can be built
+      from arcs that share their end points.
+
+  - term: pointer
+    aliases: [pointers]
+    chapters: [what-is-geographic-data]
+    definition: >-
+      In a data structure, a stored address that tells the computer where
+      the next piece of data, such as the next arc, is found.
+
+  - term: topology
+    definition: >-
+      The recorded connections between features, such as which polygons
+      share an edge and which lines meet at a node. It keeps neighbors from
+      having gaps or overlaps.
+
+  - term: northing
+    aliases: [northings]
+    definition: >-
+      A distance north from a starting line: the y coordinate in a projected
+      coordinate system.
+
+  - term: easting
+    aliases: [eastings]
+    definition: >-
+      A distance east from a starting line: the x coordinate in a projected
+      coordinate system.
+
+  - term: shapefile
+    aliases: [shapefiles]
+    definition: >-
+      A common vector format from Esri that stores one layer in several files
+      with the same name: .shp (geometry), .shx (index), and .dbf
+      (attributes) are required, and .prj holds the coordinate system.
+
+  - term: GeoPackage
+    aliases: [GeoPackages]
+    definition: >-
+      An open file format (.gpkg) from the Open Geospatial Consortium that
+      stores many vector and raster layers in a single file. It is QGIS's
+      default format.
+
+  - term: map algebra
+    definition: >-
+      Math on rasters, cell by cell, such as adding two grids or finding
+      every cell where slope is under 10 percent.
+
+  - term: rasterize
+    aliases: [rasterizing, rasterization]
+    definition: >-
+      To convert vector data into a raster.
+
+  - term: vectorize
+    aliases: [vectorizing, vectorization]
+    definition: >-
+      To convert a raster into vector features.
+
+  - term: Landsat
+    definition: >-
+      A series of U.S. Earth-observing satellites, run by NASA and the USGS,
+      that have imaged the whole planet since 1972, mostly with 30-meter
+      cells.
