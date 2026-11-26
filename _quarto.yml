@@ -72,9 +72,8 @@ format:
       - preamble.tex
       # Lets PrettyPDF's section styles work with unit (part) pages.
       - assets/pdf-fixes.tex
-      # Full-page cover before the title page. Add a GEOG 370 cover as
-      # images/cover.jpg, then uncomment this line.
-      # - assets/pdf-cover.tex
+      # Full-page cover (images/cover.jpg) before the title page.
+      - assets/pdf-cover.tex
     include-before-body: 
       - front-pages.tex
     number-sections: true
