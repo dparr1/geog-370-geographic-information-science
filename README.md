@@ -64,22 +64,20 @@ To add more:
 5. **Key terms:** add them to `glossary.yml` (there's an example at the bottom). They get hover
    definitions in the chapters and appear on the Glossary page.
 
-Readers get the same features as the GEOG 215 book:
+Readers get the same features as the GEOG 215 book, except that this book has no R: no code
+cells, no webR, and no "write R code" quiz questions.
 
 - **Hover definitions for key terms** from `glossary.yml` (`filters/glossary/`).
 - **Duolingo-style chapter quizzes** (`assets/quiz/`): multiple choice, true/false, fill in the
   blank, and put-the-tiles-in-order questions, with the instructor cartoon, sounds, and scores.
-- **Self-check questions** inside chapters, from the
-  [webexercises](https://psyteachr.github.io/webexercises/) package (`include/`), and **runnable R in
-  the browser** with webR (`_extensions/coatless/webr`), if a chapter wants them. Both need R on the
-  computer that renders the chapter; pages without R code don't.
+- **Self-check questions** inside chapters, written as plain HTML that uses the
+  [webexercises](https://psyteachr.github.io/webexercises/) CSS and JS in `include/` (no R needed).
 - **Ask a question** on highlighted text, **polls and surveys**, and a reading settings menu ("Aa").
 
 ## How the site works
 
-- **Rendering.** `_quarto.yml` defines the book. `freeze: auto` stores code results in `_freeze/`
-  (commit it if chapters ever run code), so the GitHub Action and Cloudflare can render the book
-  without R.
+- **Rendering.** `_quarto.yml` defines the book. There is no executable code, so Quarto alone renders
+  it, locally, in the GitHub Action, and on Cloudflare.
 - **geog370.org profile.** `quarto render --profile geog370` (`_quarto-geog370.yml`) adds the sign-in
   gate (`assets/auth-gate.html`), questions and polls. Google Analytics is ready there but turned
   off until GEOG 370 has its own GA4 property.
@@ -101,7 +99,7 @@ how to write a quiz bank.
 | `index.qmd`, `syllabus.qmd`, `materials.qmd`, `about.qmd`, `privacy.qmd`, `student-services.qmd` | Course pages |
 | `preface.qmd` | Textbook preface |
 | `units/`, `chapters/` | Unit pages, and one `.qmd` per chapter plus its `-quiz.qmd` page (empty for now) |
-| `_templates/` | Templates for a unit, chapter, chapter quiz, unit quiz and quiz bank, plus the PrettyPDF template (never rendered) |
+| `_templates/` | Templates for a unit, chapter, chapter quiz, unit quiz and quiz bank (never rendered) |
 | `quizzes/` | Chapter quiz question banks (JSON) and how to write them |
 | `assets/quiz/` | The quiz engine (`quiz.js`, `quiz.css`), including the instructor cartoon |
 | `assets/auth-gate.html` | The geog370.org sign-in screen and progress tracking |
@@ -111,7 +109,7 @@ how to write a quiz bank.
 | `glossary.yml`, `glossary.qmd` | Key terms and definitions, and the Glossary page built from them |
 | `filters/glossary/` | Lua filter, script, and styles for the hover definitions |
 | `include/` | webexercises CSS and JS |
-| `_extensions/` | Quarto extensions (webR, PrettyPDF) |
+| `_extensions/` | Quarto extension for the PDF (PrettyPDF) |
 | `scripts/cloudflare-build.sh` | Cloudflare build: installs Quarto and renders the gated book |
 
 ## Working on the book

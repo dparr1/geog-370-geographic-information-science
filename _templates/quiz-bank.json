@@ -2,7 +2,6 @@
   "id": "chapter-file",
   "title": "Chapter Title",
   "perSession": 10,
-  "minR": 0,
   "questions": [
     { "id": "raster-vs-vector", "type": "choice",
       "prompt": "Which data model stores the world as a grid of cells?",

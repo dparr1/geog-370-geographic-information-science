@@ -4,7 +4,7 @@
 #
 # Cloudflare's build image has no Quarto, so install a pinned version, then
 # render the gated book (geog370 profile adds the Supabase sign-in gate) into
-# _book/, which wrangler uploads. No R needed: code results come from _freeze/.
+# _book/, which wrangler uploads. The book has no R or other executable code.
 set -euo pipefail
 
 QUARTO_VERSION="1.11.9"   # keep in step with the GitHub Action's Quarto

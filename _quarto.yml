@@ -40,8 +40,9 @@ format:
     toc-depth: 3
     fig-cap-location: bottom
     tbl-cap-location: top
-    # webexercises (interactive self-check questions); from
-    # webexercises::add_to_quarto(), copied to include/ by hand
+    # webexercises (interactive self-check questions): its CSS and JS only,
+    # copied to include/ by hand. Chapters write the questions as plain HTML,
+    # so no R is needed.
     css:
       - include/webex.css
       # Indents chapter quiz pages in the left sidebar.
@@ -79,21 +80,8 @@ format:
     number-sections: true
     keep-tex: true
 
-execute:
-  # Re-run code only when a chapter's source changes; rendered results are
-  # stored in _freeze/ and should be committed with the book.
-  freeze: auto
-  warning: false
-  message: false
-
 filters:
-  - webr
   # Hover/tap definitions for the key terms in glossary.yml. Runs before
   # Quarto's own processing so callout titles are still headings (and skipped).
   - at: pre-ast
     path: filters/glossary/glossary.lua
-
-webr:
-  show-startup-message: false
-  show-header-message: false
-  autoload-packages: true

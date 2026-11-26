@@ -122,9 +122,9 @@
   }
 
   // ---- Highlight -> "Ask a question" ----------------------------------------
-  // Places that aren't book text: form fields, webR's code editors, the
+  // Places that aren't book text: form fields, code editors, the
   // sign-in card and these dialogs, quiz drop-downs.
-  const SKIP = "input, textarea, select, button, .monaco-editor, .qwebr-editor, [contenteditable], " +
+  const SKIP = "input, textarea, select, button, [contenteditable], " +
                "#sds-gate, #sds-corner, .sds-dialog, #sds-ask-btn, .webex-radiogroup";
 
   function currentPick() {
@@ -463,7 +463,7 @@
     window.addEventListener("resize", () => { if (picked) positionButton(picked.range); });
     loadMine();
     maybeTip();
-    // Let the page finish laying out (webR cells, callouts) before looking.
+    // Let the page finish laying out (images, callouts) before looking.
     setTimeout(showLinkedPassage, 400);
   }
 
