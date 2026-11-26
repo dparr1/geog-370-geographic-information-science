@@ -103,7 +103,9 @@ GIS can also show *how much* of something is in each place. A map of U.S. popula
 
 ### How things have changed: the 2004 Indian Ocean tsunami
 
-On December 26, 2004, a magnitude 9.1 earthquake off the coast of Sumatra, Indonesia, set off a tsunami that crossed the Indian Ocean and killed about 230,000 people in more than a dozen countries. Satellite images of the same coastline before and after the tsunami show where beaches, buildings, roads, and trees were swept away.
+On December 26, 2004, a magnitude 9.1 earthquake off the coast of Sumatra, Indonesia, set off a tsunami that crossed the Indian Ocean and killed about 230,000 people in more than a dozen countries. Satellite images of the same coastline before and after the tsunami show where beaches, buildings, roads, and trees were swept away (@fig-tsunami).
+
+![The coast north of Phuket, Thailand, seen by satellite in 2000 (left), in 2002 (middle), and after the December 2004 tsunami (right), where red marks the land the tsunami flooded and damaged. Comparing images like these is change detection. Images: NASA, public domain, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:TsunamiAftermathNorthofPhuket_NASA.jpg).](../images/what-is-gis/tsunami-phuket.jpg){#fig-tsunami fig-alt="Three tall, narrow satellite images of the same stretch of coast side by side, with blue sea on the left of each and green forest and farmland on the right. The first has patches of white cloud. In the third, a band of red covers the low land along the shore, widest across a coastal plain in the middle and a broad area at the bottom, while the hills inland stay green." width="80%"}
 
 Comparing images or maps of one place at two times is called **change detection**. It measures what was lost, and it guides rebuilding and planning for the next disaster. The same method tracks slower changes too: forests cut or regrown, cities spreading into farmland, glaciers retreating, and coastlines eroding.
 
