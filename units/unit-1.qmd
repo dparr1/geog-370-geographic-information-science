@@ -1,0 +1,13 @@
+---
+title: "Unit 1: Data Models and Projections"
+---
+
+This unit lays the foundation for everything else in the book. It starts with the big picture: what a geographic information system is, the science behind it, and the questions it can answer. It then turns to how a GIS stores the world as data, and how coordinate systems and map projections put that data in the right place on a round Earth. By the end of the unit you can open, explore, edit, and query spatial data in QGIS and ArcGIS Pro.
+
+## Chapter 1: [What Is GIS?](../chapters/what-is-gis.qmd)
+
+GIS helps people decide *where*: where a fire is spreading, where rescuers should search, and how to get help there. This chapter looks at GIS in recent events, the four questions that define a geographic problem, and the kinds of questions a GIS can answer. It defines a geographic information system and its five components, separates GISystems from GIScience, and traces the history of GIS, who uses it, and the ethical questions it raises. It ends with the tools used in this book, QGIS and ArcGIS Pro, and how to write a GIS question of your own.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 1 quiz](../chapters/what-is-gis-quiz.qmd)
+:::

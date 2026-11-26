@@ -26,7 +26,7 @@
 
 # Phrases that look like a term but aren't one. They are matched (so the
 # shorter term inside them is not) and left unmarked.
-exclude: []
+exclude: ["GIS Day", "GIS Certification Institute", "GRASS GIS", "Quantum GIS", "Learn ArcGIS"]
 
 # Add terms as the chapters are written. For example:
 #
@@ -37,4 +37,254 @@ exclude: []
 #   - term: Raster
 #     aliases: [rasters, raster data]
 #     definition: A grid of cells, each holding a value, used to represent continuous surfaces such as elevation.
-terms: []
+terms:
+
+  # --- Chapter 1: What Is GIS? -----------------------------------------------
+
+  - term: geographic information system (GIS)
+    aliases: [GIS, GISystem, GISystems, geographic information system, geographic information systems]
+    definition: >-
+      "A computer-based system to aid in the collection, maintenance,
+      storage, analysis, output, and distribution of spatial data and
+      information" (Bolstad). Its five components are data, hardware,
+      software, people, and procedures.
+
+  - term: geographic information science (GIScience)
+    aliases: [GIScience, GISci, geographic information science, geographical information science]
+    definition: >-
+      The theory and methods behind GIS: research on analysis, data
+      representation, visualization, and GIS and society. Michael Goodchild
+      named the field in 1992.
+
+  - term: spatial data
+    aliases: [geographic data, geospatial data, geographic information, spatial information]
+    definition: >-
+      Data tied to a location on or near Earth, such as the address of a
+      house, the outline of a county, or the elevation at a point.
+
+  - term: geospatial
+    definition: >-
+      A common synonym for *geographic*, used especially in industry,
+      the military, and government.
+
+  - term: geographic problem
+    aliases: [geographic problems]
+    definition: >-
+      A problem that happens in specific places at specific times. It can
+      be described by its scale, time, space, and purpose.
+
+  - term: GIS question
+    aliases: [GIS questions]
+    definition: >-
+      A question whose answer depends on location, such as where something
+      clusters, how places differ, what factors explain a pattern, how a
+      place has changed, or how accessible a service is.
+
+  - term: spatial analysis
+    definition: >-
+      Methods that use the locations of things, and the relationships among
+      them, to find patterns, explain them, or make predictions.
+
+  - term: overlay analysis
+    aliases: [overlay, map overlay]
+    definition: >-
+      Stacking layers of data for the same area to find places that meet
+      several conditions at once, such as flat land near a road and outside
+      a floodplain.
+
+  - term: layer
+    aliases: [layers, thematic layer, thematic layers]
+    definition: >-
+      A set of spatial data about one theme, such as roads, soils, or
+      elevation. Layers for the same area stack on top of each other to
+      make a map.
+
+  - term: attribute
+    aliases: [attributes, attribute table, attribute tables, attribute data]
+    definition: >-
+      A non-spatial fact about a feature, such as a building's name or the
+      year it was built. Attributes are stored in a table with one row per
+      feature.
+
+  - term: metadata
+    definition: >-
+      Data about data: who made a dataset, when, how, in what coordinate
+      system, and how accurate it is.
+
+  - term: data model
+    aliases: [data models]
+    definition: >-
+      The way a GIS represents the real world as data, for example as
+      points, lines, and polygons (vector) or as a grid of cells (raster).
+
+  - term: coordinate system
+    aliases: [coordinate systems, coordinates]
+    definition: >-
+      A system of numbers, such as latitude and longitude, that gives
+      every location a unique position so layers line up with each other.
+
+  - term: map projection
+    aliases: [map projections, projection, projections]
+    definition: >-
+      A mathematical method for flattening the round Earth onto a flat map.
+      Every projection distorts area, shape, distance, or direction in some
+      way.
+
+  - term: remote sensing
+    definition: >-
+      Collecting information about Earth without touching it, from sensors
+      on satellites, aircraft, or drones.
+
+  - term: radar
+    chapters: [what-is-gis]
+    definition: >-
+      A remote sensing method in which a satellite or aircraft sends out its
+      own microwave signal and records what bounces back. It sees through
+      clouds and smoke, and works at night.
+
+  - term: change detection
+    definition: >-
+      Comparing images or maps of the same place from different dates to
+      find what changed.
+
+  - term: network
+    aliases: [networks]
+    chapters: [what-is-gis]
+    definition: >-
+      Connected lines and intersections, such as roads, rails, rivers, or
+      pipes, with a cost such as length or travel time on each segment.
+
+  - term: network analysis
+    definition: >-
+      Analysis of movement along a network, such as roads, to find routes
+      and measure travel distance or time.
+
+  - term: route optimization
+    definition: >-
+      Finding the best path through a network, such as the fastest or
+      shortest route, or a delivery route that visits many stops.
+
+  - term: site selection
+    definition: >-
+      Using GIS to choose the best location for something, such as a new
+      store, clinic, or fire station.
+
+  - term: cluster
+    aliases: [clusters]
+    chapters: [what-is-gis]
+    definition: >-
+      A group of events or features that are closer together than you
+      would expect by chance, such as cases of a disease around one place.
+
+  - term: accessibility
+    chapters: [what-is-gis]
+    definition: >-
+      How easily people can reach a place or service, often measured as
+      distance or travel time.
+
+  - term: population density
+    definition: >-
+      The number of people per unit of area, such as people per square
+      mile.
+
+  - term: epidemiology
+    definition: >-
+      The study of how diseases are distributed and spread in populations.
+      John Snow's 1854 cholera map is a founding example.
+
+  - term: cartography
+    definition: >-
+      The art and science of making maps.
+
+  - term: CAD
+    case_sensitive: true
+    aliases: [computer-aided design]
+    definition: >-
+      Computer-aided design: software for drawing buildings, parts, and
+      other objects. It is spatial but not geographic, because its drawings
+      aren't tied to places on Earth.
+
+  - term: GPS
+    case_sensitive: true
+    aliases: [Global Positioning System, GNSS]
+    definition: >-
+      The Global Positioning System: U.S. satellites that let a receiver,
+      such as your phone, work out its location. GNSS is the general name
+      for GPS and similar systems from other countries.
+
+  - term: Canada Geographic Information System (CGIS)
+    aliases: [Canada Geographic Information System, CGIS]
+    definition: >-
+      The first large GIS, built in the 1960s under Roger Tomlinson to
+      inventory land across Canada.
+
+  - term: Esri
+    case_sensitive: true
+    definition: >-
+      The company that makes ArcGIS, founded in 1969 by Jack and Laura
+      Dangermond in Redlands, California.
+
+  - term: QGIS
+    case_sensitive: true
+    definition: >-
+      A free and open-source desktop GIS that runs on Windows, Mac, and
+      Linux.
+
+  - term: ArcGIS Pro
+    case_sensitive: true
+    definition: >-
+      Esri's commercial desktop GIS, for Windows.
+
+  - term: ArcGIS Online
+    case_sensitive: true
+    definition: >-
+      Esri's system for making and sharing maps and layers on the web.
+
+  - term: open source
+    aliases: [open-source]
+    definition: >-
+      Software whose source code anyone may read, change, and share, often
+      free of charge. QGIS and GRASS GIS are open source.
+
+  - term: geoprocessing
+    aliases: [geoprocessing tools, geoprocessing tool]
+    definition: >-
+      Running a GIS tool on spatial data to make new data, such as
+      buffering, clipping, or overlaying layers.
+
+  - term: OpenStreetMap
+    case_sensitive: true
+    aliases: [OSM]
+    definition: >-
+      A free, editable map of the world built by volunteers, founded in
+      2004.
+
+  - term: GeoAI
+    case_sensitive: true
+    definition: >-
+      Artificial intelligence applied to geographic data, for example to
+      find buildings or roads in satellite images automatically.
+
+  - term: redlining
+    definition: >-
+      Grading neighborhoods as risky for lending, as the federal Home
+      Owners' Loan Corporation did on maps in the 1930s, which outlined many
+      Black and immigrant neighborhoods in red and denied them credit.
+
+  - term: spatial thinking
+    definition: >-
+      Using ideas of space, such as location, distance, pattern, and scale,
+      to understand and solve problems.
+
+  - term: GIS&T Body of Knowledge
+    aliases: [Body of Knowledge]
+    definition: >-
+      A free collection of short, peer-reviewed articles on geographic
+      information science and technology topics, from the University
+      Consortium for Geographic Information Science (UCGIS).
+
+  - term: GISP
+    case_sensitive: true
+    definition: >-
+      Geographic Information Systems Professional: a certification from the
+      GIS Certification Institute for experienced GIS practitioners.

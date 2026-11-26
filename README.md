@@ -42,7 +42,13 @@ two is always active, and `site` is the default. A new chapter goes in both file
 
 ## What's in the book
 
-No units or chapters yet: they will be written from the lecture slides. To add them:
+The chapters are being written from the lecture slides. So far:
+
+| Unit | Chapter | Quiz bank |
+|:--|:--|:--|
+| 1. Data Models and Projections (`units/unit-1.qmd`) | 1. What Is GIS? (`chapters/what-is-gis.qmd`, from lecture 02) | `quizzes/what-is-gis.json` |
+
+To add more:
 
 1. **A unit:** copy `_templates/unit.qmd` to `units/unit-<n>.qmd` and add it as a `part` in both
    `_quarto-site.yml` and `_quarto-textbook.yml` (each file has a commented example).
@@ -130,3 +136,6 @@ merging publishes both sites.
 progress tracking, quizzes, questions, polls and admin page are copied from the GEOG 215 textbook,
 with no units or chapters yet. The Welcome, Syllabus and Course resources pages are filled in from
 the Fall 2026 GEOG 370 Syllabus and Course Resources docs.
+
+**November 26, 2026: Chapter 1, *What Is GIS?*, is added** as the first chapter of Unit 1, written
+from lecture 02, with its chapter quiz and the first glossary terms.

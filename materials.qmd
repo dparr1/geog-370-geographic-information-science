@@ -37,7 +37,7 @@ Free peer tutoring is also available from the [UNC Learning Center](https://lear
 
 | Unit | Module or project | In the textbook |
 |:--|:--|:--|
-| 1. Data models and projections | Module 1: Getting started with GIS | |
+| 1. Data models and projections | Module 1: Getting started with GIS | [Chapter 1: What Is GIS?](chapters/what-is-gis.qmd) |
 | | Module 2: Working with geographic information | |
 | | Project 1: Editing and querying spatial data | |
 | 2. Spatial data quality | Module 3: Census data | |

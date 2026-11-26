@@ -28,6 +28,10 @@ book:
         - privacy.qmd
         - student-services.qmd
     - preface.qmd
+    - part: units/unit-1.qmd
+      chapters:
+        - chapters/what-is-gis.qmd
+        - chapters/what-is-gis-quiz.qmd
     # Units and chapters go here, each chapter followed by its (unnumbered)
     # chapter quiz page, and each unit ending with its unit quiz. Add the
     # same unit and chapter (without the quiz pages) to _quarto-textbook.yml.
