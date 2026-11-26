@@ -4,29 +4,37 @@
 // Layered after sandstone (see the theme list in _quarto.yml), so these
 // replace Sandstone's own blues and grays.
 //
+// GEOG 370 uses a Piedmont Pine palette, so it looks different from the
+// GEOG 215 book (Bolin Creek and Carolina Blue): Piedmont Pine for the top
+// menu, headings and buttons, a Ginkgo line under the top menu, and Franklin
+// Fog for the sidebar.
+//
 // Contrast notes (WCAG 2.2 AA, which UNC follows for digital materials):
-// - Carolina Blue on white is only 2.9:1, so UNC says to use it for text
-//   only at 24px+ (or 19px bold). Here it is used for accents (rules,
-//   borders, the line under the top menu, callout bars), never body text.
-// - Links use UNC's Hyperlink Blue (#007FAE, 4.6:1 on white).
-// - Bolin Creek (top menu, buttons) takes white text at 8.2:1.
+// - White on Piedmont Pine is 6.2:1 (top menu, buttons).
+// - Coastal Sand on Piedmont Pine is 5.4:1 (current page and hover in the
+//   top menu).
+// - Piedmont Pine text on white is 6.2:1, and 5.3:1 on Franklin Fog.
+// - Links use UNC's Hyperlink Blue (#007FAE, 4.5:1 on white), which UNC says
+//   to use on white only, so sidebar links use the body text color instead.
+// - Ginkgo and Dogwood are only used for lines and highlights, never text.
 
 $unc-carolina-blue: #4B9CD3;
 $unc-navy: #13294B;
-$unc-bolin-creek: #2C5080;
-$unc-fordham-fountain: #B7D7ED;
-$unc-cloud: #EDF5FB;
 $unc-old-well-basin: #5B6670;
 $unc-cornerstone: #CFD3D5;
 $unc-franklin-fog: #ECEDED;
 $unc-hyperlink-blue: #007FAE;
 $unc-clay: #E95550;
 $unc-tulip-poplar: #FF9E1B;
+$unc-ginkgo: #FFD340;
+$unc-coastal-sand: #FFEEC2;
 $unc-piedmont-pine: #006D6A;
+$unc-dogwood: #B6DDC0;
 $unc-beautyberry: #9F237E;
+$unc-mountain-dusk: #4E3C98;
 
 // Bootstrap theme colors.
-$primary: $unc-bolin-creek;
+$primary: $unc-piedmont-pine;
 $secondary: $unc-old-well-basin;
 $info: $unc-carolina-blue;
 $success: $unc-piedmont-pine;
@@ -35,59 +43,64 @@ $danger: $unc-clay;
 $light: $unc-franklin-fog;
 $dark: $unc-navy;
 
-// Text. Body text stays near-black for readability; headings are Navy.
+// Text. Body text stays near-black for readability; headings are Piedmont Pine.
 $body-color: #212529;
-$headings-color: $unc-navy;
+$headings-color: $unc-piedmont-pine;
 $link-color: $unc-hyperlink-blue;
-$link-hover-color: $unc-bolin-creek;
+$link-hover-color: $unc-piedmont-pine;
 // Inline code (Bootstrap's default is pink); 7.4:1 on white.
 $code-color: $unc-beautyberry;
 
-// Top menu: Bolin Creek with white text; the current page and hover use
-// Fordham Fountain (5.6:1 on Bolin Creek).
-$navbar-bg: $unc-bolin-creek;
+// Top menu: Piedmont Pine with white text; the current page and hover use
+// Coastal Sand.
+$navbar-bg: $unc-piedmont-pine;
 $navbar-fg: #ffffff;
-$navbar-hl: $unc-fordham-fountain;
+$navbar-hl: $unc-coastal-sand;
 
-// Left sidebar: a light Cloud background; the current page is Bolin Creek.
-$sidebar-bg: $unc-cloud;
+// Left sidebar: Franklin Fog; the current page is Piedmont Pine.
+$sidebar-bg: $unc-franklin-fog;
 $sidebar-fg: #212529;
-$sidebar-hl: $unc-bolin-creek;
+$sidebar-hl: $unc-piedmont-pine;
 
 // Callout bars and icons.
-$callout-color-note: $unc-carolina-blue;
-$callout-color-tip: $unc-piedmont-pine;
+$callout-color-note: $unc-piedmont-pine;
+$callout-color-tip: $unc-mountain-dusk;
 $callout-color-important: $unc-beautyberry;
 $callout-color-caution: $unc-tulip-poplar;
 $callout-color-warning: $unc-clay;
 
 /*-- scss:rules --*/
 
-// A Carolina Blue line under the Bolin Creek top menu.
+// A Ginkgo line under the Piedmont Pine top menu.
 .navbar {
-  border-bottom: 4px solid $unc-carolina-blue;
+  border-bottom: 4px solid $unc-ginkgo;
 }
 
-// Carolina Blue rule under section headings.
+// Dogwood rule under section headings.
 #quarto-content h2,
 #quarto-content .h2 {
-  border-bottom-color: $unc-carolina-blue;
+  border-bottom-color: $unc-dogwood;
 }
 
-// Left Carolina Blue bar on block quotes.
+// Left Piedmont Pine bar on block quotes.
 .blockquote,
 blockquote {
-  border-left-color: $unc-carolina-blue;
+  border-left-color: $unc-piedmont-pine;
 }
 
-// Current sidebar page: bold, with a Carolina Blue marker.
+// Current sidebar page: bold, with a Piedmont Pine marker.
 .sidebar-item .sidebar-link.active {
   font-weight: 700;
-  box-shadow: inset 3px 0 0 $unc-carolina-blue;
+  box-shadow: inset 3px 0 0 $unc-piedmont-pine;
   padding-left: 0.4rem;
 }
 
+// Title-block breadcrumbs sit on a light panel: keep them readable.
+.quarto-title-breadcrumbs .breadcrumb-item a {
+  color: $unc-piedmont-pine;
+}
+
 ::selection {
-  background: $unc-fordham-fountain;
+  background: $unc-dogwood;
   color: $unc-navy;
 }
