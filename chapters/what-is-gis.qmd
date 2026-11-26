@@ -25,7 +25,9 @@ The easiest way to see what GIS does is to watch it at work. In each of the even
 
 ### Wildfires in Los Angeles, January 2025
 
-On January 7, 2025, two wildfires broke out in Los Angeles County and spread quickly in strong Santa Ana winds. The Palisades Fire burned through Pacific Palisades on the west side of the city, and the Eaton Fire burned through Altadena and the hills above Pasadena. Together they destroyed more than 16,000 homes and other buildings, among the most destructive fires in California's history.
+On January 7, 2025, two wildfires broke out in Los Angeles County and spread quickly in strong Santa Ana winds. The Palisades Fire burned through Pacific Palisades on the west side of the city, and the Eaton Fire burned through Altadena and the hills above Pasadena. Together they destroyed more than 16,000 homes and other buildings (@fig-palisades), among the most destructive fires in California's history.
+
+![The Palisades Fire seen from Palisades Drive in Pacific Palisades, January 7, 2025, the day it started. Photo: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:2025_Palisades_Fire_Seen_From_Palisades_Drive_(cropped).jpg), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), cropped.](../images/what-is-gis/palisades-fire.jpg){#fig-palisades fig-alt="A street lined with tall palm trees and a streetlight with a 45 mile per hour speed limit sign. Behind them, a brush-covered hillside is on fire, with a tall orange flame in the middle and thick gray and pink smoke filling the sky." width="80%"}
 
 Think about how maps and spatial data would be used during an event like this:
 
