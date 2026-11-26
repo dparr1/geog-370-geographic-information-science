@@ -104,3 +104,28 @@ blockquote {
   background: $unc-dogwood;
   color: $unc-navy;
 }
+
+// "Did you know..?" boxes for interesting facts. In a chapter:
+//
+//   ::: {.callout-note .did-you-know appearance="simple" icon=false}
+//   ## Did you know..?
+//
+//   The fact.
+//   :::
+//
+// A Ginkgo bar and a Coastal Sand panel, with a light bulb before the title.
+// (In the PDF it prints as an ordinary note box.)
+.callout.did-you-know {
+  border-left-color: $unc-ginkgo !important;
+  background-color: rgba($unc-coastal-sand, 0.6);
+}
+.callout.did-you-know .callout-title-container,
+.callout.did-you-know .callout-header,
+.callout.did-you-know > .callout-body > strong:first-child {
+  color: $unc-navy;
+  font-weight: 700;
+}
+.callout.did-you-know .callout-title-container::before {
+  content: "\1F4A1"; // light bulb
+  margin-right: 0.4em;
+}

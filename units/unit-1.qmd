@@ -11,3 +11,11 @@ GIS helps people decide *where*: where a fire is spreading, where rescuers shoul
 ::: {.content-hidden when-profile="textbook"}
 [Chapter 1 quiz](../chapters/what-is-gis-quiz.qmd)
 :::
+
+## Chapter 2: [What Is Geographic Data?](../chapters/what-is-geographic-data.qmd)
+
+How do you store a tree, a road, or a mountain in a computer? This chapter follows the steps that turn the real world into data: entities become features, and features are stored in a data model, a data structure, and finally machine code. It separates discrete objects from continuous data, and spatial data from attributes, then introduces the two main data models, vector and raster, with the vocabulary of each, from nodes and vertices to cell size and resolution. It ends with how data are stored in files such as the shapefile, why metadata matters, and how to choose between vector and raster.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 2 quiz](../chapters/what-is-geographic-data-quiz.qmd)
+:::
