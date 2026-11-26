@@ -50,7 +50,9 @@ No single map answers that. You need to combine several layers of information: w
 
 ### Spacing pilgrims in Mecca, 2021
 
-Not every geographic problem is a disaster. During the COVID-19 pandemic, Saudi Arabia limited the Hajj pilgrimage in 2021 to about 60,000 vaccinated residents, compared with more than two million pilgrims in a typical year. Pilgrims at the Grand Mosque in Mecca walked around the Kaaba on marked paths, spaced apart.
+Not every geographic problem is a disaster. During the COVID-19 pandemic, Saudi Arabia limited the Hajj pilgrimage in 2021 to about 60,000 vaccinated residents, compared with more than two million pilgrims in a typical year. Pilgrims at the Grand Mosque in Mecca walked around the Kaaba on marked paths, spaced apart (@fig-mecca).
+
+![Pilgrims spaced apart around the Kaaba at the Grand Mosque in Mecca, July 2021, with barriers keeping the crowd small. Photo: AhmanElq, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mecca,_July_2021_25.jpg), Creative Commons license.](../images/what-is-gis/mecca-2021.jpg){#fig-mecca fig-alt="The open courtyard of the Grand Mosque in Mecca, paved in white marble, with the black, cube-shaped Kaaba in the middle. A few dozen pilgrims in white and black walk across the courtyard, well apart from each other, inside a ring of low white barriers. Arched colonnades surround the courtyard, and tall hotels and two minarets under construction with cranes rise behind it." width="80%"}
 
 Planning that spacing is a spatial problem. How many people fit safely in a space? Where should the markers and paths go? How do crowds move through the entrances and exits? The same questions come up when planning a football game, a graduation, or a concert on your own campus.
 
