@@ -97,7 +97,9 @@ The simplest GIS question is *where is it?* Agencies mapped the oil every day, f
 
 ### How much: where Americans live
 
-GIS can also show *how much* of something is in each place. A map of U.S. population density, the number of people per square mile, shows at a glance that most Americans live in a few metropolitan areas: along the East Coast from Boston to Washington, around the Great Lakes, in Florida, Texas, and California. Large parts of the interior West are nearly empty. Maps like this are made from U.S. Census data, which you will map yourself in Unit 2.
+GIS can also show *how much* of something is in each place. A map of U.S. population density, the number of people per square mile, shows at a glance that most Americans live in a few metropolitan areas: along the East Coast from Boston to Washington, around the Great Lakes, in Florida, Texas, and California. Large parts of the interior West are nearly empty (@fig-pop-density). Maps like this are made from U.S. Census data, which you will map yourself in Unit 2.
+
+![Population density of U.S. counties. Each county is shaded by its number of people per square kilometer (the legend's "km2"), from under 1 (white) to over 1,000 (darkest blue). Map: Austiger, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Population_density_of_U.S._counties.png), Creative Commons license.](../images/what-is-gis/us-county-population-density.jpg){#fig-pop-density fig-alt="A map of the United States, including Alaska and Hawaii, divided into counties and colored from white through yellow and green to dark blue. Dark blue counties, the most crowded, cluster along the East Coast from Boston to Washington, around the Great Lakes, in Florida, in Texas around Houston and Dallas, and along the California coast. Much of the interior West, the Great Plains, and Alaska is white or pale yellow, with fewer than 2 people per square kilometer."}
 
 ### How things have changed: the 2004 Indian Ocean tsunami
 
