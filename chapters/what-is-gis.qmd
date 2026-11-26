@@ -42,6 +42,10 @@ Damage assessment is a good example of GIS at work. Smoke and cloud block ordina
 
 On the same day, January 7, 2025, a magnitude 7.1 earthquake struck Dingri County in Shigatse, Tibet, close to the Nepal border. The shaking was felt in Nepal, Bhutan, and India, and the earthquake killed more than 120 people. In the first hours after an earthquake, rescue teams have one urgent question: *where should we search first?*
 
+The region has been hit before. On April 25, 2015, the magnitude 7.8 Gorkha earthquake struck central Nepal, killing nearly 9,000 people and destroying or damaging hundreds of thousands of homes, temples, and historic buildings in and around Kathmandu (@fig-nepal-2015).
+
+![Collapsed shrines in the Pashupatinath Temple area of Kathmandu after the April 2015 Nepal earthquake. Photo: Nabin K. Sapkota, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:2015_Earthquake_in_Nepal-Pashupatinath_Temple_Area_%289%29.JPG), Creative Commons license.](../images/what-is-gis/nepal-earthquake-2015.jpg){#fig-nepal-2015 fig-alt="Stone temple shrines under large trees. The shrine on the left still stands, with a carved stone roof. The roof of the shrine on the right has collapsed into a pile of orange bricks and gray stone slabs that spills down the steps in front of it." width="80%"}
+
 No single map answers that. You need to combine several layers of information: where the epicenter was and how strongly the ground shook in each place, where the buildings are and how they were built, how many people live in each village, and which roads through the mountains are still open. Putting layers like these together, to find the places that meet several conditions at once, is one of the oldest and most important things a GIS does. The U.S. Geological Survey publishes a ShakeMap and an estimate of likely losses (PAGER) for large earthquakes worldwide within an hour or so, for exactly this purpose.
 
 ### Spacing pilgrims in Mecca, 2021
