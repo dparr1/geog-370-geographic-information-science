@@ -1,0 +1,15 @@
+# Unit N quiz: Unit Title {.unnumbered}
+
+<!--
+  Template for a unit quiz page. Copy to units/unit-N-quiz.qmd, list it last
+  in its unit in _quarto-site.yml only, and write quizzes/unit-N.json, which
+  lists the unit's chapter banks (see "Unit quizzes" in quizzes/README.md).
+-->
+
+Review all of [Unit N: Unit Title](unit-N.qmd) at once. This quiz draws from the unit's chapter quizzes, so every question here is one you can also find on a chapter quiz page. Each quiz is 20 questions picked at random and spread across the chapters, and any you miss come back at the end until you've got them all right. Take it as many times as you like.
+
+```{=html}
+<link rel="stylesheet" href="../assets/quiz/quiz.css">
+<div class="sds-quiz" data-bank="../quizzes/unit-N.json"><p>Loading the quiz…</p></div>
+<script src="../assets/quiz/quiz.js" defer></script>
+```

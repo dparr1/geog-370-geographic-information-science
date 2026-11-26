@@ -1,0 +1,99 @@
+profile:
+  # Exactly one of these is active. `site` is used unless `--profile
+  # textbook` is given, so `quarto preview` and `--profile geog370` build the
+  # full site.
+  group:
+    - [site, textbook]
+
+project:
+  type: book
+  output-dir: _book
+  # Chapter quiz pages load these at run time (assets/quiz/quiz.js reads the
+  # question banks in quizzes/), so copy them into the site.
+  resources:
+    - quizzes/*.json
+    - assets/quiz/
+    # OpenDyslexic for the reading settings menu (assets/reader-settings.css).
+    - assets/fonts/
+
+book:
+  title: "Geographic Information Science"
+  subtitle: "The textbook for GEOG 370"
+  author: "David Parr"
+  date: last-modified
+  # The top menu and chapter list are in _quarto-site.yml (the full
+  # geog370.org site, the default) and _quarto-textbook.yml (textbook only,
+  # for daveparr.com/geographic-information-science/).
+
+bibliography: references.bib
+
+format:
+  html:
+    # Sandstone plus Atkinson Hyperlegible fonts (assets/fonts.scss) and UNC colors.
+    theme:
+      - sandstone
+      - assets/fonts.scss
+      # UNC brand colors (assets/unc-colors.scss).
+      - assets/unc-colors.scss
+    code-copy: true
+    code-overflow: wrap
+    toc-depth: 3
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    # webexercises (interactive self-check questions); from
+    # webexercises::add_to_quarto(), copied to include/ by hand
+    css:
+      - include/webex.css
+      # Indents chapter quiz pages in the left sidebar.
+      - assets/sidebar.css
+      # Grade table row colors on the syllabus page.
+      - assets/grade-table.css
+      # Reader-chosen font and text size ("Aa" menu by search).
+      - assets/reader-settings.css
+    # Applies the saved font and text size before the page draws.
+    include-in-header:
+      - assets/reader-settings-head.html
+    include-after-body:
+      - include/webex.js
+      # Highlights the current page in the top menu.
+      - assets/navbar-active.html
+      # The "Aa" reading settings menu (font and text size).
+      - assets/reader-settings.html
+    # The Supabase sign-in gate is added only for geog370.org, by the
+    # `geog370` profile (_quarto-geog370.yml). daveparr.com stays public.
+
+
+  # The PDF textbook. Render it with the quiz-free textbook profile:
+  #   quarto render --to PrettyPDF-pdf --profile textbook
+  PrettyPDF-pdf:
+    toc: false
+    include-in-header:
+      - preamble.tex
+      # Lets PrettyPDF's section styles work with unit (part) pages.
+      - assets/pdf-fixes.tex
+      # Full-page cover before the title page. Add a GEOG 370 cover as
+      # images/cover.jpg, then uncomment this line.
+      # - assets/pdf-cover.tex
+    include-before-body: 
+      - front-pages.tex
+    number-sections: true
+    keep-tex: true
+
+execute:
+  # Re-run code only when a chapter's source changes; rendered results are
+  # stored in _freeze/ and should be committed with the book.
+  freeze: auto
+  warning: false
+  message: false
+
+filters:
+  - webr
+  # Hover/tap definitions for the key terms in glossary.yml. Runs before
+  # Quarto's own processing so callout titles are still headings (and skipped).
+  - at: pre-ast
+    path: filters/glossary/glossary.lua
+
+webr:
+  show-startup-message: false
+  show-header-message: false
+  autoload-packages: true

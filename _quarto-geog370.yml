@@ -1,0 +1,23 @@
+# geog370.org profile: `quarto render --profile geog370` adds the Supabase
+# sign-in gate (emailed one-time codes; setup in supabase/README.md).
+# The default render, used for daveparr.com/geographic-information-science/, has no gate.
+format:
+  html:
+    include-in-header: assets/auth-gate.html
+    # "Ask a question" on highlighted text, and "My questions" (needs the gate).
+    # Then polls and surveys (banner + "Polls"; uses the dialog styles above).
+    include-after-body:
+      - assets/questions.html
+      - assets/polls.html
+
+book:
+  # GA4 for geog370.org only (daveparr.com/geographic-information-science/
+  # gets daveparr.com's own tag from that site's build, so this stays out of
+  # the default _quarto.yml). Turned off until GEOG 370 has its own GA4
+  # property: create one at analytics.google.com, then uncomment this line
+  # with its measurement ID. (G-E3QTGKCHDQ is GEOG 215's; don't reuse it.)
+  # google-analytics: "G-XXXXXXXXXX"
+
+  # Privacy policy link on every page (the sign-in screen links to it too).
+  page-footer:
+    center: "[Privacy policy](/privacy.html)"

@@ -1,0 +1,16 @@
+# Chapter quiz: Chapter Title {.unnumbered}
+
+<!--
+  Template for a chapter quiz page. Copy to chapters/<chapter-file>-quiz.qmd,
+  list it right after its chapter in _quarto-site.yml only, and write its bank
+  as quizzes/<chapter-file>.json (see quizzes/README.md and
+  _templates/quiz-bank.json).
+-->
+
+Practice what you learned in [Chapter Title](chapter-file.qmd). Questions come one at a time. Any you miss come back at the end until you've got them all right. Every quiz is a new random set from a bank of questions, so take it as many times as you like.
+
+```{=html}
+<link rel="stylesheet" href="../assets/quiz/quiz.css">
+<div class="sds-quiz" data-bank="../quizzes/chapter-file.json"><p>Loading the quiz…</p></div>
+<script src="../assets/quiz/quiz.js" defer></script>
+```

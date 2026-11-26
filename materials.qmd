@@ -1,0 +1,85 @@
+# Course resources {.unnumbered}
+
+Assignments, slides, readings, and quizzes are on **Canvas**, and announcements and discussion are on **Microsoft Teams** ([GEOG 370 Fall GIS (Parr)](https://teams.microsoft.com/l/team/19%3Au9zP0UQ6lk-iWqMzi2dE7ymggciXKTGAcz3dlsQG9J41%40thread.tacv2/conversations?groupId=6092ac8f-30ae-4968-89da-9061ae5e524c&tenantId=58b3d54f-16c9-42d3-af08-1fcabd095666)). This page collects the course staff, the class schedule, and assignment deadlines in one place. Dates are subject to change; changes are announced in class, on Canvas, and on Teams.
+
+## Course staff and office hours
+
+<!-- Staff emails and office hours appear only on geog370.org, behind the
+     sign-in. The public copy on daveparr.com leaves them out. -->
+::: {.content-visible when-profile="geog370"}
+| Who | Email | Office hours | Where |
+|:--|:--|:--|:--|
+| **Dr. David Parr**, instructor | <daveparr@unc.edu> | Mondays 10–11 am<br>Tuesdays 4–5 pm<br>Wednesdays 1:30–2:30 pm | 317B Carolina Hall<br>[Zoom](https://unc.zoom.us/my/daveparr)<br>317B Carolina Hall |
+| **Hannah Floyd**, teaching assistant | <hmfloyd@unc.edu> | Wednesdays 11 am–noon | Coates 103 |
+
+You can also message Dr. Parr on [Teams](https://teams.microsoft.com/l/chat/0/0?users=daveparr@ad.unc.edu).
+:::
+
+::: {.content-hidden when-profile="geog370"}
+Course staff, their emails, and office hours are listed on Canvas.
+:::
+
+Free peer tutoring is also available from the [UNC Learning Center](https://learningcenter.unc.edu/appointment-peer-tutoring/).
+
+## Class meetings
+
+| | When | Where |
+|:--|:--|:--|
+| **Lecture** (Section 006) | Mondays, Wednesdays, and Fridays, 2:30–3:20 pm | Carolina Hall 220 |
+| **Recitation 601** | Tuesdays, 2–2:50 pm | Carolina Hall 322 |
+| **Recitation 602** | Thursdays, 12:30–1:20 pm | Carolina Hall 322 |
+| **Final exam** | Friday, December 4, 8–11 am | Carolina Hall 220 |
+
+## Modules and the textbook
+
+<!-- Add links to textbook chapters in the last column as chapters are
+     written, e.g. [What is GIS?](chapters/what-is-gis.qmd). -->
+
+| Unit | Module or project | In the textbook |
+|:--|:--|:--|
+| 1. Data models and projections | Module 1: Getting started with GIS | |
+| | Module 2: Working with geographic information | |
+| | Project 1: Editing and querying spatial data | |
+| 2. Spatial data quality | Module 3: Census data | |
+| | Module 4: Georeferencing | |
+| | Project 2: Mapping Census data | |
+| 3. Spatial analysis | Module 5: Density analysis | |
+| | Module 6: Measurements | |
+| | Module 7: Weather data | |
+| | Project 3: GIS project | |
+
+## Class schedule
+
+| Date | Event |
+|:--|:--|
+| Monday, August 17 | First day of class (no recitations this week) |
+| Monday, September 7 | Labor Day, no class |
+| **Friday, September 18** | **Project 1 presentations in class** |
+| Monday, September 21 | Wellness Day, no class |
+| **Friday, September 25** | **Midterm exam in class** |
+| Friday, October 2 | Dr. Parr at the North Carolina Arc Users Group conference, no class |
+| Friday, October 16 | Fall Break, no class |
+| **Friday, October 23** | **Project 2 presentations in class** |
+| **Wednesday, November 18** | **GIS Day** |
+| Wednesday, November 25 | Thanksgiving, no class |
+| Friday, November 27 | Thanksgiving, no class |
+| **November 30 and December 2** | **Project 3 presentations in class** |
+| Wednesday, December 2 | Last day of class; all quizzes due |
+| **Friday, December 4** | **Final exam, 8–11 am, in our classroom** |
+
+## Assignment and project deadlines
+
+All assignments and projects are submitted on Canvas. Every deadline is **11:59 pm Eastern**. See the [syllabus](syllabus.qmd#tokens) for how tokens work.
+
+| | Available on Canvas | Turn in early to earn a token | Due date | Late, 2 tokens | Late, 4 tokens | Late, 8 tokens (last day for late work) | Last day to resubmit (2 tokens each) |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| **A1** | 8/21 | 8/28 | **9/1** | 9/4 | 9/8 | 9/11 | 9/29 |
+| **A2** | 8/28 | 9/4 | **9/8** | 9/11 | 9/15 | 9/18 | 10/6 |
+| **P1** | 9/4 | 9/11 | **9/15** | 9/18 | 9/22 | 9/25 | 10/13 |
+| **A3** | 9/25 | 10/2 | **10/6** | 10/9 | 10/13 | 10/16 | 11/3 |
+| **A4** | 10/2 | 10/9 | **10/13** | 10/16 | 10/20 | 10/23 | 11/10 |
+| **P2** | 10/9 | 10/16 | **10/20** | 10/23 | 10/27 | 10/30 | 11/17 |
+| **A5** | 10/16 | 10/23 | **10/27** | 10/30 | 11/3 | 11/6 | 11/24 |
+| **A6** | 10/23 | 10/30 | **11/3** | 11/6 | 11/10 | 11/13 | 12/1 |
+| **A7** | 10/30 | 11/6 | **11/10** | 11/13 | 11/17 | 11/20 | 12/8 |
+| **P3** | 11/6 | 11/20 | **11/24** | 12/1 | 12/4 | 12/8 | 12/8 |

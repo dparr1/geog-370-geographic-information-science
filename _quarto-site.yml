@@ -1,0 +1,42 @@
+# Full site (default profile): course pages, top menu, and the textbook.
+# Used for geog370.org (`--profile geog370` turns this on too).
+book:
+  # Top menu on every page. Welcome, Syllabus, About, Student services
+  # (sidebar only), and Privacy policy (sidebar and
+  # footer only) are public on geog370.org; every other page asks students to
+  # sign in (see PUBLIC_PAGES in assets/auth-gate.html).
+  navbar:
+    left:
+      - href: index.qmd
+        text: Welcome
+      - href: syllabus.qmd
+        text: Syllabus
+      - href: materials.qmd
+        text: Course resources
+      - href: about.qmd
+        text: About
+      - href: preface.qmd
+        text: Textbook
+
+  chapters:
+    - part: "Course"
+      chapters:
+        - index.qmd
+        - syllabus.qmd
+        - materials.qmd
+        - about.qmd
+        - privacy.qmd
+        - student-services.qmd
+    - preface.qmd
+    # Units and chapters go here, each chapter followed by its (unnumbered)
+    # chapter quiz page, and each unit ending with its unit quiz. Add the
+    # same unit and chapter (without the quiz pages) to _quarto-textbook.yml.
+    # Templates for each page are in _templates/. For example:
+    #
+    # - part: units/unit-1.qmd
+    #   chapters:
+    #     - chapters/what-is-gis.qmd
+    #     - chapters/what-is-gis-quiz.qmd
+    #     - units/unit-1-quiz.qmd
+  appendices:
+    - glossary.qmd

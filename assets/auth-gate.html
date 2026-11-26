@@ -1,0 +1,578 @@
+<!--
+  GEOG 370 sign-in gate (email sign-in: a one-time code or link, no passwords).
+  Included in every HTML page's <head> only for geog370.org, by the `geog370`
+  profile (_quarto-geog370.yml); daveparr.com/geographic-information-science/ has no gate. Database
+  setup is in supabase/setup.sql (in the GEOG 215 repo) and the instructor steps (Resend, email
+  templates) are in supabase/README.md.
+
+  The student enters their email. Supabase emails them (through Resend) a
+  6-digit code and a link. They either type the code here, or open the link,
+  which brings them back to this page with #token_hash=... and a "Continue"
+  button. The button matters: UNC's mail scanner opens every link in an email,
+  so the link must not sign anyone in until a person clicks.
+
+  Only emails on the active roster (or the instructor list) can get an
+  account; the database refuses anyone else.
+
+  One Supabase database serves several classes. SDS_COURSE below is this
+  site's course code (a row in the courses table): the gate only lets in
+  students on that course's roster, and everything it records is filed under
+  that course. Another class's site uses a copy of this file with its own
+  code (see "Adding another class" in supabase/README.md).
+
+  This hides the page in the browser until an active student signs in. It is a
+  front door, not encryption: the page text is still in the HTML that is
+  downloaded.
+-->
+<style>
+  html.sds-locked body > :not(#sds-gate) { visibility: hidden !important; }
+  html.sds-locked body { overflow: hidden; }
+
+  #sds-gate {
+    position: fixed; inset: 0; z-index: 10000;
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px; background: #f4f6f8;
+    font-family: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  #sds-gate[hidden] { display: none; }
+  #sds-gate .sds-card {
+    width: 100%; max-width: 380px; padding: 28px 24px;
+    background: #fff; border: 1px solid #d9dee3; border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06); color: #1f2933;
+  }
+  #sds-gate h1 { font-size: 1.35rem; margin: 0 0 4px; }
+  #sds-gate p { margin: 0 0 16px; font-size: 0.95rem; color: #52606d; }
+  #sds-gate label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+  #sds-gate input {
+    width: 100%; box-sizing: border-box; padding: 10px 12px; margin-bottom: 12px;
+    font-size: 1rem; border: 1px solid #bcc5ce; border-radius: 6px;
+  }
+  #sds-gate #sds-code { font-size: 1.3rem; letter-spacing: 0.25em; text-align: center; }
+  #sds-gate button {
+    width: 100%; padding: 10px 12px; font-size: 1rem; font-weight: 600;
+    color: #fff; background: #2C5080; border: 0; border-radius: 6px; cursor: pointer;
+  }
+  #sds-gate button:disabled { opacity: 0.6; cursor: wait; }
+  #sds-gate .sds-link {
+    display: block; width: auto; padding: 0; margin-top: 12px; background: none;
+    color: #2C5080; font-weight: 400; font-size: 0.9rem; text-decoration: underline;
+  }
+  #sds-gate .sds-msg { min-height: 1.2em; margin: 12px 0 0; font-size: 0.9rem; }
+  #sds-gate .sds-msg.sds-error { color: #b42318; }
+
+  #sds-gate .sds-privacy {
+    margin: 16px 0 0; padding-top: 12px; border-top: 1px solid #e4e7eb;
+    font-size: 0.8rem; color: #52606d;
+  }
+  #sds-gate .sds-privacy a { color: #2C5080; }
+
+  /* Bottom-right corner: "My questions" (assets/questions.html) and Sign out. */
+  #sds-corner {
+    position: fixed; right: 12px; bottom: 12px; z-index: 9999;
+    display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; align-items: center;
+    max-width: calc(100vw - 24px);
+  }
+  #sds-corner > button {
+    padding: 6px 10px; font-size: 0.8rem; color: #52606d;
+    background: rgba(255, 255, 255, 0.92); border: 1px solid #d9dee3;
+    border-radius: 6px; cursor: pointer; max-width: 100%;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+</style>
+
+<!--
+  Public pages: anyone can read these without signing in. Paths are as served
+  on geog370.org, without ".html" or a trailing "index". Keep in step with the
+  navbar in _quarto-site.yml.
+-->
+<script>
+  window.SDS_PUBLIC_PAGE = (function () {
+    const PUBLIC_PAGES = ["/", "/syllabus", "/about", "/privacy", "/student-services"];
+    const path = location.pathname
+      .replace(/\.html$/, "")
+      .replace(/\/index$/, "/")
+      .replace(/(.)\/$/, "$1");
+    return PUBLIC_PAGES.includes(path);
+  })();
+</script>
+
+<!-- Lock first, so the page never flashes before the check runs. -->
+<script>
+  if (!window.SDS_PUBLIC_PAGE) document.documentElement.classList.add("sds-locked");
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.min.js"></script>
+
+<script>
+(function () {
+  "use strict";
+
+  const SUPABASE_URL = "https://liihdtyoqneslfbfgqml.supabase.co";
+  // Publishable key: safe to expose in frontend code (access is set by RLS).
+  const SUPABASE_KEY = "sb_publishable_HIAkOd2ci4DGcgGMRMj-vQ_Ttu6WFqb";
+  // This site's course code (public.courses in supabase/setup.sql in the GEOG 215 repo).
+  const SDS_COURSE = "geog370";
+
+  let sb = null;
+  let pendingEmail = "";
+  const $ = (id) => document.getElementById(id);
+  const normalizeEmail = (raw) => (raw || "").trim().toLowerCase();
+
+  // ---- Progress: quiz answers and code runs ---------------------------------
+  // Page visits are recorded in unlock(). Quiz answers (webexercises) and code
+  // runs (webR cells) are recorded here, but only once unlock() has let an
+  // active student in. The database ignores instructors' answers and runs, as
+  // it does their page visits.
+  let tracking = false;
+  let accessToken = "";
+
+  // Calls a record_* function in Supabase. A plain fetch with keepalive, so
+  // an answer given just before the student leaves the page is still saved.
+  // Every call says which course it's for; the database works out the term.
+  function record(fn, args) {
+    if (!tracking || !accessToken) return;
+    fetch(SUPABASE_URL + "/rest/v1/rpc/" + fn, {
+      method: "POST",
+      keepalive: true,
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: "Bearer " + accessToken,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(Object.assign({}, args, { p_course: SDS_COURSE })),
+    }).then(
+      (res) => { if (!res.ok) console.warn("Progress not saved (" + fn + "):", res.status); },
+      () => {}
+    );
+  }
+
+  // The chapter quiz pages (assets/quiz/quiz.js) save results through this.
+  // It does nothing until an active student is let in, and it doesn't exist
+  // at all on the public daveparr.com copy, which has no gate.
+  window.sdsProgress = { record };
+
+  const clean = (s, n) => String(s || "").replace(/\s+/g, " ").trim().slice(0, n);
+
+  // Short, stable id from text, so a question keeps its id when other
+  // questions are added or moved.
+  function shortHash(text) {
+    let h = 5381;
+    for (let i = 0; i < text.length; i++) h = ((h * 33) ^ text.charCodeAt(i)) >>> 0;
+    return h.toString(36);
+  }
+
+  // Quiz questions from webexercises: mcq()/torf() are <select>s, fitb() is an
+  // <input>, longmcq() is a group of radio buttons.
+  const QUIZ = ".webex-select, .webex-solveme, .webex-radiogroup";
+  let quizIds = null;
+
+  function questionText(q) {
+    let text = "";
+    if (q.classList.contains("webex-radiogroup")) {
+      text = q.previousElementSibling ? q.previousElementSibling.textContent : "";
+    } else {
+      const box = q.closest("li, p, td, dd");
+      if (box) {
+        const copy = box.cloneNode(true);
+        copy.querySelectorAll("select, input, .webex-icon, .webex-radiogroup").forEach((n) => n.remove());
+        text = copy.textContent;
+      }
+    }
+    return clean(text, 500) || "Question";
+  }
+
+  function quizInfo(q) {
+    if (!quizIds) {
+      quizIds = new Map();
+      const seen = {};
+      document.querySelectorAll(QUIZ).forEach((el) => {
+        const label = questionText(el);
+        const base = shortHash(label);
+        seen[base] = (seen[base] || 0) + 1;
+        quizIds.set(el, { id: "q-" + base + (seen[base] > 1 ? "-" + seen[base] : ""), label });
+      });
+    }
+    return quizIds.get(q);
+  }
+
+  const lastAnswer = new Map();
+  const typingTimers = new Map();
+
+  function onQuizAnswer(q) {
+    const info = quizInfo(q);
+    if (!info) return;
+    let answer, correct;
+    if (q.classList.contains("webex-select")) {
+      // Options are value="blank" (nothing chosen), "answer" (right) or ""
+      // (wrong), so the answer itself is the option's text.
+      const opt = q.options[q.selectedIndex];
+      if (!opt || q.value === "blank") return;
+      answer = opt.text;
+      correct = q.value === "answer";
+    } else if (q.classList.contains("webex-radiogroup")) {
+      const picked = q.querySelector("input[type=radio]:checked");
+      if (!picked) return;
+      answer = picked.parentElement.textContent;
+      correct = picked.value === "answer";
+    } else {
+      answer = q.value;
+      // webex.js has already marked the box right or wrong by now.
+      correct = q.classList.contains("webex-correct");
+    }
+    answer = clean(answer, 500);
+    if (!answer || lastAnswer.get(q) === answer) return;   // same answer again
+    lastAnswer.set(q, answer);
+    record("record_quiz_answer", {
+      p_page: location.pathname, p_question: info.id, p_label: info.label,
+      p_answer: answer, p_correct: correct,
+    });
+  }
+
+  // Listening on document means webex.js's own handlers on the question have
+  // already run (and marked fill-in-the-blank answers) when these run.
+  document.addEventListener("change", (event) => {
+    const q = event.target.closest && event.target.closest(QUIZ);
+    if (!q) return;
+    clearTimeout(typingTimers.get(q));
+    onQuizAnswer(q);
+  });
+  // Fill-in-the-blank: also save once the student stops typing, in case they
+  // never leave the box.
+  document.addEventListener("input", (event) => {
+    const q = event.target;
+    if (!q.classList || !q.classList.contains("webex-solveme")) return;
+    clearTimeout(typingTimers.get(q));
+    typingTimers.set(q, setTimeout(() => onQuizAnswer(q), 2000));
+  });
+
+  // webR code cells. Only runs a student starts count: a click on Run Code or
+  // Shift/Ctrl/Cmd+Enter in the editor. (Cells that run by themselves when the
+  // page loads don't, and webR's own "context" flag can't tell these apart,
+  // because it rewrites that flag on autorun cells.)
+  const startedByStudent = {};
+
+  function cellNumber(el, prefix) {
+    for (; el && el !== document; el = el.parentElement) {
+      const m = el.id && el.id.match(new RegExp("^" + prefix + "(\\d+)$"));
+      if (m) return m[1];
+    }
+    return null;
+  }
+
+  document.addEventListener("click", (event) => {
+    const n = cellNumber(event.target, "qwebr-button-run-");
+    if (n) startedByStudent[n] = Date.now();
+  }, true);
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" || !(event.shiftKey || event.ctrlKey || event.metaKey)) return;
+    const n = cellNumber(event.target, "qwebr-editor-");
+    if (n) startedByStudent[n] = Date.now();
+  }, true);
+
+  function headingBefore(el) {
+    let found = null;
+    document.querySelectorAll("main h1, main h2, main h3, main h4").forEach((h) => {
+      if (h.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING) found = h;
+    });
+    return found ? clean(found.textContent, 120) : "";
+  }
+
+  // Id and label for a cell, from the code it starts with (so editing the
+  // code doesn't make it a different cell).
+  function cellInfo(n) {
+    const cells = Array.isArray(globalThis.qwebrCellDetails) ? globalThis.qwebrCellDetails : [];
+    const entry = cells.find((c) => String(c.id) === String(n));
+    const start = entry && typeof entry.code === "string" ? entry.code : "";
+    let id = "cell-" + n;
+    if (start) {
+      const same = cells.filter((c) => c.code === start);
+      id = "cell-" + shortHash(start) + (same.length > 1 ? "-" + (same.indexOf(entry) + 1) : "");
+    }
+    const firstLine = (start.split("\n").find((l) => l.trim() && !/^\s*#/.test(l)) || "").trim();
+    const where = document.getElementById("qwebr-interactive-area-" + n) ||
+                  document.getElementById("qwebr-button-run-" + n);
+    const heading = where ? headingBefore(where) : "";
+    const label = [heading, firstLine ? clean(firstLine, 80) : "Code cell " + n].filter(Boolean).join(" · ");
+    return { id, label };
+  }
+
+  function onCodeRun(n, code, failed) {
+    const out = document.getElementById("qwebr-output-code-area-" + n);
+    const errored = failed || !!(out && Array.from(out.querySelectorAll(".qwebr-output-code-stderr"))
+      .some((c) => /^\s*Error\b/m.test(c.textContent)));
+    const cell = cellInfo(n);
+    record("record_code_run", {
+      p_page: location.pathname, p_cell: cell.id, p_label: cell.label,
+      p_code: String(code || "").slice(0, 4000), p_error: errored,
+    });
+  }
+
+  // webR's scripts set globalThis.qwebrExecuteCode later on this page, and
+  // every Run Code button and keyboard shortcut calls it. This catches that
+  // assignment and wraps the function so each run a student starts is counted.
+  function trackRuns(fn) {
+    if (typeof fn !== "function" || fn.sdsTracked) return fn;
+    const wrapped = async function (code, n) {
+      const started = startedByStudent[n];
+      const byStudent = !!started && Date.now() - started < 3000;
+      if (byStudent) delete startedByStudent[n];
+      let failed = false;
+      try {
+        return await fn.apply(this, arguments);
+      } catch (e) {
+        failed = true;
+        throw e;
+      } finally {
+        if (byStudent) { try { onCodeRun(n, code, failed); } catch (_) { /* never break a run */ } }
+      }
+    };
+    wrapped.sdsTracked = true;
+    return wrapped;
+  }
+
+  let executeCode = trackRuns(globalThis.qwebrExecuteCode);
+  try {
+    Object.defineProperty(globalThis, "qwebrExecuteCode", {
+      configurable: true,
+      enumerable: true,
+      get: () => executeCode,
+      set: (fn) => { executeCode = trackRuns(fn); },
+    });
+  } catch (_) { /* code runs just won't be counted */ }
+
+  // The sign-in link in the email ends in #token_hash=...&type=email (see the
+  // email templates in supabase/README.md). Read it, then remove it from the
+  // address bar so it isn't bookmarked or shared.
+  function takeLinkToken() {
+    const params = new URLSearchParams(location.hash.replace(/^#/, ""));
+    const tokenHash = params.get("token_hash");
+    if (!tokenHash) return null;
+    history.replaceState(null, "", location.pathname + location.search);
+    return { token_hash: tokenHash, type: params.get("type") || "email" };
+  }
+
+  function buildGate() {
+    const gate = document.createElement("div");
+    gate.id = "sds-gate";
+    gate.innerHTML = `
+      <div class="sds-card" role="dialog" aria-labelledby="sds-title">
+        <h1 id="sds-title">Geographic Information Science</h1>
+
+        <form id="sds-email-step">
+          <p>GEOG 370 textbook. Enter your email and we'll send you a sign-in code.</p>
+          <label for="sds-email">Email</label>
+          <input id="sds-email" type="email" autocomplete="email" spellcheck="false" required>
+          <button type="submit">Email me a sign-in code</button>
+        </form>
+
+        <form id="sds-code-step" hidden>
+          <p id="sds-code-intro"></p>
+          <label for="sds-code">Sign-in code</label>
+          <input id="sds-code" inputmode="numeric" autocomplete="one-time-code"
+                 pattern="[0-9 ]{6,12}" spellcheck="false" required>
+          <button type="submit">Sign in</button>
+          <button type="button" class="sds-link" id="sds-resend">Send a new code</button>
+          <button type="button" class="sds-link" id="sds-change-email">Use a different email</button>
+        </form>
+
+        <form id="sds-link-step" hidden>
+          <p>Click Continue to finish signing in.</p>
+          <button type="submit">Continue</button>
+        </form>
+
+        <p class="sds-msg" id="sds-msg" role="status"></p>
+
+        <p class="sds-privacy">Signing in stores your name, email, and textbook
+          activity (never your grades). See the
+          <a href="/privacy.html">privacy policy</a>.</p>
+      </div>`;
+    document.body.appendChild(gate);
+
+    $("sds-email-step").addEventListener("submit", onSendCode);
+    $("sds-code-step").addEventListener("submit", onEnterCode);
+    $("sds-resend").addEventListener("click", () => sendCode(pendingEmail));
+    $("sds-change-email").addEventListener("click", () => { say(""); showStep("email"); });
+  }
+
+  function showStep(step) {
+    $("sds-gate").hidden = false;
+    ["email", "code", "link"].forEach((s) => ($("sds-" + s + "-step").hidden = s !== step));
+    const focus = { email: "sds-email", code: "sds-code" }[step];
+    if (focus) $(focus).focus();
+  }
+
+  function say(text, isError) {
+    const el = $("sds-msg");
+    el.textContent = text || "";
+    el.classList.toggle("sds-error", !!isError);
+  }
+
+  function busy(on) {
+    $("sds-gate").querySelectorAll("button, input").forEach((el) => (el.disabled = on));
+  }
+
+  function displayName(user) {
+    const name = user.user_metadata && user.user_metadata.student_name;
+    return name || user.email || "";
+  }
+
+  function unlock(user) {
+    $("sds-gate").hidden = true;
+    document.documentElement.classList.remove("sds-locked");
+    if (!$("sds-signout")) {
+      const corner = document.createElement("div");
+      corner.id = "sds-corner";
+      document.body.appendChild(corner);
+      const btn = document.createElement("button");
+      btn.id = "sds-signout";
+      btn.type = "button";
+      btn.textContent = "Sign out (" + displayName(user) + ")";
+      btn.addEventListener("click", async () => {
+        await sb.auth.signOut();
+        location.reload();
+      });
+      corner.appendChild(btn);
+    }
+    // Questions on highlighted text (assets/questions.html) start from here.
+    window.sdsAuth = { client: sb, course: SDS_COURSE, user };
+    document.dispatchEvent(new CustomEvent("sds:unlocked", { detail: window.sdsAuth }));
+    // Progress: note that this student opened this page, and start recording
+    // quiz answers and code runs. Never blocks reading.
+    tracking = true;
+    sb.rpc("record_page_visit", { p_page: location.pathname, p_course: SDS_COURSE }).then(
+      ({ error }) => { if (error) console.warn("Progress not saved:", error.message); },
+      () => {}
+    );
+  }
+
+  // Ask Supabase whether the signed-in user is still an active student in
+  // this course (or one of its instructors).
+  async function isApproved() {
+    const { data, error } = await sb.rpc("is_current_user_approved", { p_course: SDS_COURSE });
+    if (error) throw error;
+    return data === true;
+  }
+
+  async function admitOrReject(user) {
+    if (await isApproved()) {
+      unlock(user);
+    } else {
+      await sb.auth.signOut();
+      showStep("email");
+      say("Your access to this textbook is no longer active. Contact your instructor.", true);
+    }
+  }
+
+  // Email a code + link. The database refuses to create an account for an
+  // email that isn't on the roster; that refusal gets the same reply as a
+  // success, so this form can't be used to find out who is in the class.
+  async function sendCode(email) {
+    busy(true);
+    say("Sending…");
+    const { error } = await sb.auth.signInWithOtp({
+      email,
+      options: { shouldCreateUser: true, emailRedirectTo: location.origin + location.pathname },
+    });
+    busy(false);
+    if (error && !/database error/i.test(error.message || "")) {
+      say(error.status === 429
+        ? "Too many emails requested. Wait a minute, then try again."
+        : "Couldn't send the email: " + error.message, true);
+      return;
+    }
+    pendingEmail = email;
+    $("sds-code-intro").textContent =
+      "If " + email + " is on the class list, we've emailed it a sign-in code. " +
+      "Enter the code below, or open the link in the email.";
+    $("sds-code").value = "";
+    showStep("code");
+    say("No email after a few minutes? Check your junk folder, and that this is the email your instructor has on file.");
+  }
+
+  async function onSendCode(event) {
+    event.preventDefault();
+    const email = normalizeEmail($("sds-email").value);
+    if (email) await sendCode(email);
+  }
+
+  async function onEnterCode(event) {
+    event.preventDefault();
+    const token = $("sds-code").value.replace(/\D/g, "");
+    if (!token || !pendingEmail) return;
+    busy(true);
+    say("Signing in…");
+    try {
+      const { data, error } = await sb.auth.verifyOtp({ email: pendingEmail, token, type: "email" });
+      if (error) {
+        say("That code didn't work. It may have expired, or a newer one was sent. " +
+            "Check it, or send a new code.", true);
+      } else {
+        say("");
+        await admitOrReject(data.user);
+      }
+    } catch (e) {
+      say("Signed in, but couldn't confirm your access: " + e.message, true);
+    }
+    busy(false);
+  }
+
+  function offerLinkSignIn(link) {
+    showStep("link");
+    $("sds-link-step").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      busy(true);
+      say("Signing in…");
+      try {
+        const { data, error } = await sb.auth.verifyOtp(link);
+        if (error) {
+          showStep("email");
+          say("That sign-in link has expired or was already used. Enter your email to get a new one.", true);
+        } else {
+          say("");
+          await admitOrReject(data.user);
+        }
+      } catch (e) {
+        say("Signed in, but couldn't confirm your access: " + e.message, true);
+      }
+      busy(false);
+    }, { once: true });
+  }
+
+  async function init() {
+    // Public pages (Welcome, Syllabus, About) need no sign-in.
+    if (window.SDS_PUBLIC_PAGE) return;
+    const link = takeLinkToken();
+    buildGate();
+    if (!window.supabase || !window.supabase.createClient) {
+      showStep("email");
+      busy(true);
+      say("Sign-in is unavailable right now (couldn't load Supabase). Try reloading.", true);
+      return;
+    }
+    sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    // Keep the current access token for record() (Supabase refreshes it).
+    sb.auth.onAuthStateChange((_event, session) => {
+      accessToken = session ? session.access_token : "";
+    });
+    try {
+      const { data: { session } } = await sb.auth.getSession();
+      if (session) {
+        await admitOrReject(session.user);
+      } else if (link) {
+        offerLinkSignIn(link);
+      } else {
+        showStep("email");
+      }
+    } catch (e) {
+      showStep("email");
+      say("Couldn't check your sign-in: " + e.message, true);
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>
