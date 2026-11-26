@@ -34,6 +34,18 @@ I'm here to support you every step of the way. Please feel free to reach out wit
 | [**Course resources**](materials.qmd) | Course staff and office hours, units and modules, the class schedule, and assignment deadlines. Students sign in with the email on the class list. |
 | [**About**](about.qmd) | About the instructor and author. |
 
+<!-- Home-screen app instructions: geog370.org only (assets/pwa-head.html). -->
+::: {.content-visible when-profile="geog370"}
+## Put this site on your phone
+
+You can add this site to your phone's home screen. It then opens full screen with its own GEOG 370 icon, like an app, and pages you've already read work without internet.
+
+- **iPhone or iPad (Safari):** tap **Share**, then **Add to Home Screen**.
+- **Android (Chrome):** tap the **⋮** menu, then **Add to Home screen** or **Install app**.
+
+Sign in inside the app by typing the 6-digit code from the sign-in email (the link in the email opens your web browser instead). Quizzes, polls, and questions still need an internet connection.
+:::
+
 ## Course at a glance
 
 - **Meets:** Mondays, Wednesdays, and Fridays, 2:30–3:20 pm, Carolina Hall 220 (Section 006)

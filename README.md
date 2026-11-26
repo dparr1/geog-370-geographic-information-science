@@ -88,6 +88,13 @@ cells, no webR, and no "write R code" quiz questions.
 - **Admin page.** https://geog370.org/admin/ (`admin/index.html`) is the same admin page as
   geog215.org/admin/; pick GEOG 370 in its Course picker. It is copied only into the geog370.org
   build, never the public copy.
+- **Home-screen app.** geog370.org can be added to a phone's home screen, where it opens full
+  screen with its own icon (the cover's dragon with a Piedmont Pine "370" band). `pwa/` holds the
+  manifest, icons, iPhone/iPad loading screens (made from `images/cover.jpg`), an offline page,
+  and a service worker that saves pages a student has opened so they load offline. Supabase
+  requests and `/admin/` are never cached. `assets/pwa-head.html` links them in (geog370 profile
+  only), and the Cloudflare build copies them to the site root. After changing the cover, rerun
+  `python3 scripts/make-splash.py` (and `scripts/make-icons.py` for the icon).
 
 See `supabase/README.md` for the one-time GEOG 370 setup in Supabase, and `quizzes/README.md` for
 how to write a quiz bank.
@@ -111,6 +118,7 @@ how to write a quiz bank.
 | `include/` | webexercises CSS and JS |
 | `_extensions/` | Quarto extension for the PDF (PrettyPDF) |
 | `scripts/cloudflare-build.sh` | Cloudflare build: installs Quarto and renders the gated book |
+| `pwa/`, `assets/pwa-head.html`, `scripts/make-icons.py`, `scripts/make-splash.py` | The home-screen app: manifest, icons, loading screens, offline page and service worker |
 
 ## Working on the book
 
