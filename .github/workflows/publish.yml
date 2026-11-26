@@ -11,8 +11,8 @@ name: Render and Publish Quarto Book
 # Builds, connected to this repo, renders and deploys it on the same push
 # (see wrangler.jsonc and scripts/cloudflare-build.sh).
 #
-# Only HTML is rendered: the PDF format needs R even when results are frozen,
-# and R is not installed on the runner. Code results come from _freeze/.
+# Only HTML is rendered here: the PDF needs LaTeX, which isn't installed on
+# the runner. The book has no R or other executable code.
 #
 # Until this repo has the DAVEPARR_DEPLOY_KEY secret (a deploy key with write
 # access to dparr1/daveparr.com), the job renders the book and then stops

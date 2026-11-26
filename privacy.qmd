@@ -22,7 +22,6 @@ This textbook site, geog370.org, asks students in GEOG 370 to sign in so it can 
 | Sign-in account | An account with your email address, when it was created, and when you last signed in. The sign-in service also keeps short-term security logs (such as IP address and browser type) to prevent abuse. |
 | Pages you open | Which textbook pages you visit, how many times, and when you first and last opened each one. |
 | Practice questions | Your answers to the "check your understanding" questions: your latest answer, the number of attempts, and whether you got it right. |
-| Practice code | If a chapter has runnable code boxes: the code you run (the latest version only, up to 4,000 characters), how many times you ran it, and whether it produced an error. |
 | Chapter practice quizzes | How many questions you answered right and wrong, practice points and streaks, and whether you finished the quiz. |
 | Questions you ask | If you highlight text in the textbook and click **Ask a question**: the highlighted text, your question, the page and section it is on, and when you asked. Your instructor's answer, if any, is stored with it. Each question is also emailed to your instructor (see "Who can see it"). |
 | Polls and surveys | If you answer a poll or survey on the site (for example, a start-of-semester survey): your answers, which poll they belong to, and when you submitted and last changed them. Answers are saved with your name, so they are not anonymous. Poll answers are not used in grading. |
@@ -61,7 +60,7 @@ Your information is never sold, never used for advertising, and never used to ca
 | [Google Analytics](https://policies.google.com/privacy) | Measures overall site traffic (pages viewed, device type, approximate location) using cookies. | Usage data that is not linked to your name or email. |
 -->
 
-Any code you run in the textbook runs inside your own web browser, not on a server. Only the information listed under "What the site stores" is sent to the database.
+Only the information listed under "What the site stores" is sent to the database.
 
 ## How the information is protected
 
