@@ -1,0 +1,38 @@
+# Preface {.unnumbered}
+
+```{=latex}
+\pagenumbering{arabic}
+```
+
+This book is an open educational resource textbook designed for my course, GEOG 370, Geographic Information Science, built from the course lectures.
+
+## About this book
+
+This is an interactive textbook written for GEOG 370. It's designed for students who are new to GIS and to spatial data. Chapters explain the concepts behind geographic information and show how to put them into practice in QGIS and ArcGIS Pro.
+
+## How this book is organized
+
+<!--
+  Describe the units here once they are written, one paragraph per unit,
+  following the GEOG 215 Preface. For example:
+
+  **[Unit 1: Data Models and Projections](units/unit-1.qmd)** (Chapters 1–4) ...
+-->
+
+The chapters are grouped into units. Each unit opens with a page that summarizes its chapters.
+
+::: {.content-hidden when-profile="textbook"}
+Each chapter is followed by a chapter quiz you can take as many times as you like. Each unit ends with a unit quiz that mixes questions from all of the unit's chapter quizzes, for reviewing a whole unit at once.
+:::
+
+*The chapters are being written now and will appear here as they are added.*
+
+## Acknowledgments
+
+<!-- Add acknowledgments here (colleagues, teaching assistants, learning assistants, students). -->
+
+I'd like to acknowledge the hard work of my students, without whom this would not be possible.
+
+```{=latex}
+\clearpage
+```

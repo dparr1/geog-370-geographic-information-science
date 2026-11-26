@@ -1,0 +1,82 @@
+name: Render and Publish Quarto Book
+
+# Every push to main renders the textbook (unit pages, chapters, glossary; not
+# the course pages, and no quizzes, which are only on geog370.org) with the
+# `textbook` profile (_quarto-textbook.yml) and commits it to
+# dparr1/daveparr.com under geographic-information-science/, which triggers
+# Cloudflare's build of daveparr.com
+# (https://daveparr.com/geographic-information-science/).
+#
+# The gated copy for https://geog370.org is NOT built here: Cloudflare Workers
+# Builds, connected to this repo, renders and deploys it on the same push
+# (see wrangler.jsonc and scripts/cloudflare-build.sh).
+#
+# Only HTML is rendered: the PDF format needs R even when results are frozen,
+# and R is not installed on the runner. Code results come from _freeze/.
+#
+# Until this repo has the DAVEPARR_DEPLOY_KEY secret (a deploy key with write
+# access to dparr1/daveparr.com), the job renders the book and then stops
+# before publishing, so nothing on daveparr.com changes.
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-book
+  cancel-in-progress: false
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    env:
+      HAS_DEPLOY_KEY: ${{ secrets.DAVEPARR_DEPLOY_KEY != '' }}
+    steps:
+      - name: Check out book
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      # daveparr.com/geographic-information-science/ gets the textbook only
+      # (no Welcome, Syllabus, Course resources, or About pages; those are on
+      # geog370.org). A book must start at index.qmd, so the Preface becomes
+      # the home page here.
+      - name: Render textbook only
+        run: |
+          cp preface.qmd index.qmd
+          quarto render --to html --profile textbook
+
+      - name: No deploy key yet
+        if: env.HAS_DEPLOY_KEY != 'true'
+        run: echo "::notice::DAVEPARR_DEPLOY_KEY is not set, so the book was rendered but not published to daveparr.com."
+
+      - name: Check out daveparr.com
+        if: env.HAS_DEPLOY_KEY == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: dparr1/daveparr.com
+          ref: main
+          path: daveparr.com
+          # Deploy key with write access to daveparr.com (repo Settings >
+          # Deploy keys); its private half is this repo's secret.
+          ssh-key: ${{ secrets.DAVEPARR_DEPLOY_KEY }}
+
+      - name: Copy book into daveparr.com/geographic-information-science
+        if: env.HAS_DEPLOY_KEY == 'true'
+        run: |
+          rsync -a --delete _book/ daveparr.com/geographic-information-science/
+          cd daveparr.com
+          git add -A geographic-information-science
+          if git diff --cached --quiet; then
+            echo "Book unchanged on daveparr.com; nothing to push."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update GEOG 370 book from ${GITHUB_REPOSITORY}@${GITHUB_SHA::7}"
+          git push origin HEAD:main

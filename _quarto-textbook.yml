@@ -1,0 +1,35 @@
+# Textbook-only profile: `quarto render --profile textbook`. Used for
+#   - the public copy on daveparr.com/geographic-information-science/
+#     (.github/workflows/publish.yml, HTML), and
+#   - the PDF textbook (`quarto render --to PrettyPDF-pdf --profile textbook`).
+# It leaves out the course pages (Welcome, Syllabus, Course resources, About)
+# and the top menu, which live only on geog370.org, and it leaves out every
+# quiz: the chapter quizzes and the unit quizzes. Quizzes are only on
+# geog370.org (_quarto-site.yml). Links to quiz pages on the unit pages and in
+# the Preface are wrapped in `content-hidden when-profile="textbook"` so they
+# disappear here too.
+#
+# A book must start at index.qmd. With this profile index.qmd shows the
+# Preface instead of the Welcome page (see the top of index.qmd).
+project:
+  render:
+    - index.qmd
+    - units/*.qmd
+    - chapters/*.qmd
+    # No quiz pages, not even as unlisted pages.
+    - "!units/*-quiz.qmd"
+    - "!chapters/*-quiz.qmd"
+    - glossary.qmd
+
+book:
+  chapters:
+    - index.qmd
+    # Units and chapters go here, in the same order as _quarto-site.yml but
+    # without the quiz pages. For example:
+    #
+    # - part: units/unit-1.qmd
+    #   chapters:
+    #     - chapters/what-is-gis.qmd
+  appendices:
+    - glossary.qmd
+    - about.qmd

@@ -1,0 +1,25 @@
+{
+  "id": "chapter-file",
+  "title": "Chapter Title",
+  "perSession": 10,
+  "minR": 0,
+  "questions": [
+    { "id": "raster-vs-vector", "type": "choice",
+      "prompt": "Which data model stores the world as a grid of cells?",
+      "choices": ["Raster", "Vector", "Topology", "Attribute table"],
+      "answer": 0,
+      "explain": "A raster is a grid of cells, each with a value. Vector data stores points, lines, and polygons." },
+    { "id": "wgs84-is-datum", "type": "truefalse",
+      "prompt": "WGS84 is a datum.",
+      "answer": true,
+      "explain": "WGS84 is a datum (and also the name of a geographic coordinate system built on it)." },
+    { "id": "fill-epsg", "type": "fill",
+      "prompt": "The EPSG code for WGS84 latitude and longitude is ___.",
+      "answers": ["4326"], "numeric": true,
+      "explain": "EPSG:4326 is WGS84 geographic coordinates." },
+    { "id": "order-georeference", "type": "order", "r": false,
+      "prompt": "Put the georeferencing steps in order.",
+      "answer": ["Add control points", "Choose a transformation", "Check the residuals", "Save the georeferenced raster"],
+      "explain": "Control points come first, then the transformation fits them, and the residuals show how well it fits." }
+  ]
+}

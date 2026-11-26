@@ -1,0 +1,25 @@
+# Chapter Title
+
+<!--
+  Template for a chapter. Copy to chapters/<chapter-file>.qmd and add it to
+  its unit in _quarto-site.yml and _quarto-textbook.yml.
+  Key terms defined in glossary.yml get hover definitions automatically.
+-->
+
+## Learning objectives
+
+By the end of this chapter, you will be able to:
+
+- ...
+
+## First section
+
+...
+
+## Check your understanding
+
+...
+
+## Summary
+
+...

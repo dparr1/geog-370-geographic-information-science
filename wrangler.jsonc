@@ -1,0 +1,25 @@
+// Cloudflare Worker that serves the gated book at https://geog370.org.
+//
+// Cloudflare Workers Builds is connected to this repo: on every push to main
+// it runs `npx wrangler deploy`, which first runs build.command (installs
+// Quarto and renders the book with the `geog370` profile, adding the Supabase
+// sign-in gate), then uploads _book/.
+//
+// geog370.org is attached to this Worker in the dashboard
+// (Workers & Pages > geog-370-geographic-information-science > Settings > Domains & Routes).
+//
+// Not used for daveparr.com/geographic-information-science/: that public copy is rendered by the
+// GitHub Action and committed to the daveparr.com repo.
+{
+  "name": "geog-370-geographic-information-science",
+  "compatibility_date": "2026-10-01",
+  "build": {
+    "command": "bash scripts/cloudflare-build.sh"
+  },
+  "assets": {
+    "directory": "./_book"
+  },
+  // Required by `npx wrangler preview`, which Workers Builds runs for
+  // non-production branches. Empty means previews use the settings above.
+  "previews": {}
+}

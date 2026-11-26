@@ -1,0 +1,27 @@
+---
+title: "Unit N: Unit Title"
+---
+
+<!--
+  Template for a unit page. Copy to units/unit-N.qmd, then list it as a part
+  in _quarto-site.yml and _quarto-textbook.yml (see the comments there).
+  Files in _templates/ are never rendered.
+-->
+
+One paragraph on what the unit covers and what students can do by the end of it.
+
+## Chapter 1: [Chapter Title](../chapters/chapter-file.qmd)
+
+A short summary of the chapter.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 1 quiz](../chapters/chapter-file-quiz.qmd)
+:::
+
+::: {.content-hidden when-profile="textbook"}
+
+## Unit N quiz
+
+When you have finished the unit, the [Unit N quiz](unit-N-quiz.qmd) mixes questions from all of the unit's chapter quizzes, so you can review the whole unit at once.
+
+:::
