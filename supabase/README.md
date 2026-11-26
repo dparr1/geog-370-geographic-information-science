@@ -23,7 +23,16 @@ the course code and names changed:
 | `assets/questions.html` | "Ask a question" on highlighted text, and **My questions**. |
 | `assets/polls.html` | Poll and survey banner, and the students' **Polls** list. |
 | `assets/quiz/` | The chapter quiz engine (results go to `record_chapter_quiz_answer`). |
+| `assets/notifications.html` | The students' **Notifications** button (announcements as push notifications). |
 | `admin/index.html` | The admin page at https://geog370.org/admin/. It's the same page as geog215.org/admin/ (both show every course you teach); this copy shows GEOG 370's page titles and lists its quizzes in book order (`BOOK_ORDER`). |
+
+Announcements (push notifications) are sent from the admin page's
+**Announcements** tab by the `push` Edge Function, which lives in the GEOG 215
+repo (`supabase/functions/push/`) and serves both courses. Setup and
+troubleshooting are in that repo's `supabase/README.md`, "Push notifications
+(announcements)". Nothing extra is needed for GEOG 370 once it's set up
+there: students tap **Notifications** (bottom right) on geog370.org, and
+`pwa/sw.js` shows what you send.
 
 If the database changes in the GEOG 215 repo (a new `record_*` or `admin_*`
 function, say), copy the matching change to these files.
