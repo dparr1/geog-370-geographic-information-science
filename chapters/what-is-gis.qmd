@@ -435,7 +435,7 @@ Now look back at the answer you wrote down at the start of the chapter: *what do
 - National Geographic Education, "GIS (Geographic Information System)": <https://education.nationalgeographic.org/resource/geographic-information-system-gis/>.
 - U.S. Geological Survey, "What is a geographic information system (GIS)?": <https://www.usgs.gov/faqs/what-geographic-information-system-gis>.
 - QGIS, *A Gentle Introduction to GIS*: <https://docs.qgis.org/latest/en/docs/gentle_gis_introduction/>.
-- The **GIS&T Body of Knowledge**, from the University Consortium for Geographic Information Science (UCGIS): short, peer-reviewed articles on hundreds of GIS topics, written for students. <https://gistbok.ucgis.org>.
+- The **GIS&T Body of Knowledge**, from the University Consortium for Geographic Information Science (UCGIS): short, peer-reviewed articles on hundreds of GIS topics, written for students. <https://www.ucgis.org/site/gis-t-body-of-knowledge>.
 - Michael Goodchild's paper that named the field, "Geographical information science" [@goodchild1992].
 
 ### Videos

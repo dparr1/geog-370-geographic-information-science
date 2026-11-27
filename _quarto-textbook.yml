@@ -32,6 +32,13 @@ book:
         - chapters/location-and-coordinates.qmd
         - chapters/map-projections.qmd
         - chapters/attribute-queries.qmd
+        - chapters/database-joins.qmd
+        - chapters/spatial-joins.qmd
+    - part: units/unit-2.qmd
+      chapters:
+        - chapters/census-data.qmd
+        - chapters/geocoding-georeferencing.qmd
+        - chapters/osm-data-quality.qmd
     # Units and chapters go here, in the same order as _quarto-site.yml but
     # without the quiz pages. For example:
     #

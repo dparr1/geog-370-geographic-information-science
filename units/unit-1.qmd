@@ -2,7 +2,7 @@
 title: "Unit 1: Data Models and Projections"
 ---
 
-This unit lays the foundation for everything else in the book. It starts with the big picture: what a geographic information system is, the science behind it, and the questions it can answer. It then turns to how a GIS stores the world as data, and how coordinate systems and map projections put that data in the right place on a round Earth. By the end of the unit you can open, explore, edit, and query spatial data in QGIS and ArcGIS Pro.
+This unit lays the foundation for everything else in the book. It starts with the big picture: what a geographic information system is, the science behind it, and the questions it can answer. It then turns to how a GIS stores the world as data, and how coordinate systems and map projections put that data in the right place on a round Earth. By the end of the unit you can open, explore, edit, query, and join spatial data in QGIS and ArcGIS Pro.
 
 ## Chapter 1: [What Is GIS?](../chapters/what-is-gis.qmd)
 
@@ -42,4 +42,20 @@ Geometry says where; attributes say what. This chapter looks at the attribute ta
 
 ::: {.content-hidden when-profile="textbook"}
 [Chapter 5 quiz](../chapters/attribute-queries-quiz.qmd)
+:::
+
+## Chapter 6: [Databases and Table Joins](../chapters/database-joins.qmd)
+
+Most GIS data live in databases. This chapter explains what a database management system does, how relational databases link tables with primary and foreign keys, and how codes such as FIPS codes and GEOIDs serve as keys. It then teaches table joins: the destination and source tables, inner, left, right, and full joins, and how cardinality decides what a join can do, with ways to handle one-to-many relationships. It ends with a census join in QGIS, and the problems that most often break a join.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 6 quiz](../chapters/database-joins-quiz.qmd)
+:::
+
+## Chapter 7: [Spatial Joins](../chapters/spatial-joins.qmd)
+
+When two layers share no key, location can link them. This chapter explains spatial predicates such as intersects, within, and contains, and the four kinds of spatial join, from simple inside joins to summarized distance joins. Worked examples match North Carolina towns to their nearest airports and septic systems to the geology beneath them. It covers cardinality, why distances need a projected coordinate system, six questions to plan any spatial join, and the tools that do the work in QGIS and ArcGIS Pro.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 7 quiz](../chapters/spatial-joins-quiz.qmd)
 :::

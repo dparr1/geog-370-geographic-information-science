@@ -334,7 +334,7 @@ The interactive self-check questions for this chapter are in the online version 
 ### Understanding map projections
 
 - USGS, *Map Projections*, a poster comparing the properties and uses of common projections: <https://pubs.usgs.gov/publication/70047422>.
-- The GIS&T Body of Knowledge, "Map Projections," "Map Projection Properties," "Map Projection Classes," and "Plane Coordinate Systems": <https://gistbok.ucgis.org>.
+- The GIS&T Body of Knowledge, "Map Projections," "Map Projection Properties," "Map Projection Classes," and "Plane Coordinate Systems": <https://www.ucgis.org/site/gis-t-body-of-knowledge>.
 - Axis Maps, "Cartography Guide: Map Projections": <https://www.axismaps.com/guide/map-projections>.
 - PROJ, the open-source library behind QGIS's projections, with an illustrated list of every projection it supports: <https://proj.org/en/stable/operations/projections/index.html>.
 - Wolfram MathWorld, "Map Projection," with the equations for common projections: <https://mathworld.wolfram.com/MapProjection.html>.

@@ -425,9 +425,11 @@ terms:
 
   - term: node
     aliases: [nodes]
-    chapters: [what-is-geographic-data]
+    chapters: [what-is-geographic-data, osm-data-quality]
     definition: >-
-      The start or end point of a line. In a network, lines meet at nodes.
+      The start or end point of a line. In a network, lines meet at nodes. In
+      OpenStreetMap, a node is any single point with a latitude and
+      longitude, standing alone or as a vertex of a way.
 
   - term: vertex
     aliases: [vertices]
@@ -1031,3 +1033,733 @@ terms:
     definition: >-
       In ArcGIS Pro, a WHERE clause that hides the features that fail it,
       until you remove it. QGIS calls this a filter.
+
+  # Chapter 6: Databases and Table Joins
+
+  - term: database management system (DBMS)
+    aliases: [database management system, database management systems, DBMS]
+    definition: >-
+      Software that stores data once and lets many programs and people query
+      and edit it, while it controls who may change what.
+
+  - term: database
+    aliases: [databases]
+    definition: >-
+      An organized collection of tables, usually stored and managed by a
+      database management system.
+
+  - term: relational database
+    aliases: [relational databases]
+    definition: >-
+      A database that stores data in tables and links them through key fields
+      that hold the same values.
+
+  - term: client/server
+    definition: >-
+      A design in which client programs send requests to a server, which does
+      the work and sends back the answer.
+
+  - term: concurrency
+    definition: >-
+      Many users reading and editing a database at the same time, without
+      overwriting each other's changes.
+
+  - term: PostGIS
+    definition: >-
+      A free extension that adds geometry types and spatial functions to the
+      PostgreSQL database.
+
+  - term: SQLite
+    definition: >-
+      A small database that lives in a single file. GeoPackages are SQLite
+      databases.
+
+  - term: key
+    aliases: [keys, key field, key fields]
+    chapters: [database-joins, spatial-joins, census-data]
+    definition: >-
+      A field whose values link the records of one table to the records of
+      another.
+
+  - term: primary key
+    aliases: [primary keys]
+    definition: >-
+      A field whose values identify each row of a table uniquely. No value may
+      repeat or be missing.
+
+  - term: foreign key
+    aliases: [foreign keys]
+    definition: >-
+      A field that holds values of another table's primary key. Its values can
+      repeat.
+
+  - term: FIPS code
+    aliases: [FIPS codes, FIPS]
+    definition: >-
+      A numeric code the U.S. government assigns to each state, county, and
+      other area, such as 37 for North Carolina and 37135 for Orange County.
+
+  - term: GEOID
+    aliases: [GEOIDs]
+    case_sensitive: true
+    definition: >-
+      The Census Bureau's identifier for a geographic area, made by stringing
+      FIPS codes together. A tract GEOID has 11 characters.
+
+  - term: table join
+    aliases: [table joins, attribute join, attribute joins, join, joins, joined, joining]
+    chapters: [database-joins, census-data]
+    definition: >-
+      Appending the fields of a source table to a destination table by
+      matching the values of a key field.
+
+  - term: destination table
+    aliases: [destination tables, destination layer, target table]
+    definition: >-
+      In a join, the table that receives the new fields. All of its records
+      are kept.
+
+  - term: source table
+    aliases: [source tables, source layer, join table]
+    definition: >-
+      In a join, the table whose fields are appended to the destination.
+
+  - term: bag
+    aliases: [bags, multiset]
+    chapters: [database-joins]
+    definition: >-
+      A collection that can contain duplicates. A table is a bag unless a
+      primary key forbids repeated rows.
+
+  - term: inner join
+    aliases: [inner joins]
+    definition: >-
+      A join that keeps only the records that match in both tables.
+
+  - term: left join
+    aliases: [left joins, left outer join]
+    definition: >-
+      A join that keeps every record of the left (destination) table, with
+      NULL where nothing matched. The default in QGIS and ArcGIS Pro.
+
+  - term: right join
+    aliases: [right joins, right outer join]
+    definition: >-
+      A join that keeps every record of the right (source) table.
+
+  - term: full outer join
+    aliases: [full outer joins]
+    definition: >-
+      A join that keeps every record of both tables.
+
+  - term: cardinality
+    definition: >-
+      How many records in one table match each record in another: one-to-one,
+      many-to-one, one-to-many, or many-to-many.
+
+  - term: one-to-one
+    aliases: ["1:1"]
+    definition: >-
+      Each destination record matches exactly one source record, and the other
+      way around.
+
+  - term: many-to-one
+    aliases: ["M:1"]
+    definition: >-
+      Many destination records match the same source record, but each matches
+      only one. A simple join works.
+
+  - term: one-to-many
+    aliases: ["1:M"]
+    definition: >-
+      One destination record matches many source records. Summarize the source
+      first, or use a relate.
+
+  - term: many-to-many
+    aliases: ["M:M"]
+    definition: >-
+      Records on each side match many records on the other. Needs a linking
+      table.
+
+  - term: relate
+    aliases: [relates, relation, relations]
+    chapters: [database-joins]
+    definition: >-
+      A link between two tables that lets you see the matching records without
+      copying fields into the layer. QGIS calls it a relation.
+
+  - term: linking table
+    aliases: [linking tables, junction table]
+    definition: >-
+      A table with one row for each pair of related records, used to handle a
+      many-to-many relationship.
+
+  - term: CSV
+    aliases: [CSV file, CSV files, CSVs, comma-separated values]
+    definition: >-
+      A plain-text table in which values are separated by commas, one record
+      per line.
+
+  - term: .csvt file
+    aliases: [.csvt, csvt]
+    definition: >-
+      A one-line file next to a CSV that sets the data type of each column for
+      QGIS and GDAL, such as "String","Integer".
+
+  - term: TIGER/Line
+    aliases: [TIGER/Line shapefiles]
+    definition: >-
+      The Census Bureau's boundary files for states, counties, tracts, roads,
+      and other features.
+
+  # Chapter 7: Spatial Joins
+
+  - term: spatial join
+    aliases: [spatial joins]
+    definition: >-
+      A join that matches the features of two layers by location instead of
+      by a shared key, then appends attributes from one to the other.
+
+  - term: inside join
+    aliases: [inside joins]
+    definition: >-
+      A spatial join that matches features that contain, lie within, or
+      intersect each other, such as points inside polygons.
+
+  - term: distance join
+    aliases: [distance joins]
+    definition: >-
+      A spatial join that matches each feature to the closest feature, or to
+      every feature within a set distance, and can record the distance.
+
+  - term: simple join
+    aliases: [simple joins, simple spatial join]
+    definition: >-
+      A join that copies the attributes of one source feature to each
+      destination feature. Works for one-to-one and many-to-one relationships.
+
+  - term: summarized join
+    aliases: [summarized joins, summarized spatial join]
+    definition: >-
+      A join that counts and summarizes all the source features matching each
+      destination feature (count, sum, mean, minimum, maximum).
+
+  - term: spatial predicate
+    aliases: [spatial predicates, geometric predicate, geometric predicates, predicate, predicates, match option, match options]
+    definition: >-
+      A rule that tests a spatial relationship between two geometries, such
+      as intersects, contains, within, or touches.
+
+  - term: nearest neighbor
+    aliases: [nearest neighbors]
+    definition: >-
+      The feature closest to a given feature.
+
+  - term: Join_Count
+    case_sensitive: true
+    definition: >-
+      The field ArcGIS Pro's Spatial Join adds to hold the number of join
+      features that matched each target feature.
+
+  - term: merge rule
+    aliases: [merge rules]
+    definition: >-
+      In ArcGIS Pro, how the values of several matching features are combined
+      into one, such as first, sum, or mean.
+
+  - term: ray casting
+    aliases: [ray-casting]
+    definition: >-
+      A point-in-polygon test that counts how often a line from the point
+      crosses the polygon's edge. An odd count means inside.
+
+  - term: Thiessen polygons
+    aliases: [Thiessen polygon, Voronoi polygons]
+    definition: >-
+      Polygons that surround each point with all the area closer to it than to
+      any other point.
+
+  - term: geodesic distance
+    aliases: [geodesic distances, geodesic]
+    definition: >-
+      Distance measured along the curved surface of the ellipsoid, rather than
+      on a flat projected map.
+
+  # Chapter 8: Census Data
+
+  - term: authoritative data
+    definition: >-
+      Data from official agencies, collected under documented standards and
+      published with metadata.
+
+  - term: asserted data
+    definition: >-
+      Data contributed by the public, such as OpenStreetMap. Their accuracy is
+      undocumented and uneven.
+
+  - term: demographic data
+    definition: >-
+      Data on who lives in a place: counts of people and households, and their
+      age, sex, race and ethnicity, and household type.
+
+  - term: socioeconomic data
+    definition: >-
+      Data on economic and social conditions, such as income, education,
+      employment, poverty, and housing costs.
+
+  - term: deprivation index
+    aliases: [deprivation indices]
+    definition: >-
+      A single score that combines several socioeconomic variables to measure
+      how disadvantaged an area is.
+
+  - term: decennial census
+    definition: >-
+      The full count of every U.S. resident, taken every ten years as the
+      Constitution requires.
+
+  - term: American Community Survey (ACS)
+    aliases: [American Community Survey, ACS]
+    definition: >-
+      The Census Bureau's yearly sample survey of about 3.5 million addresses,
+      the main source of social, economic, and housing data.
+
+  - term: Economic Census
+    definition: >-
+      The Census Bureau's survey of businesses, taken every five years in
+      years ending in 2 and 7.
+
+  - term: apportionment
+    definition: >-
+      Dividing the 435 seats in the U.S. House of Representatives among the
+      states, by population.
+
+  - term: redistricting
+    definition: >-
+      Redrawing the boundaries of congressional and legislative districts
+      after each census.
+
+  - term: Post-Enumeration Survey
+    definition: >-
+      A survey taken after the census to measure how many people it missed or
+      counted twice.
+
+  - term: differential privacy
+    definition: >-
+      A method that adds calibrated statistical noise to published tables, so
+      that individuals cannot be identified.
+
+  - term: census geography
+    definition: >-
+      The hierarchy of areas for which census data are published, from the
+      nation down to the block.
+
+  - term: spine
+    aliases: [geographic spine]
+    chapters: [census-data]
+    definition: >-
+      The main line of census geography (nation, regions, divisions, states,
+      counties, tracts, block groups, blocks), in which each level nests in
+      the one above.
+
+  - term: census tract
+    aliases: [census tracts, tract, tracts]
+    definition: >-
+      A relatively permanent subdivision of a county with 1,200 to 8,000
+      people, about 4,000 on average.
+
+  - term: block group
+    aliases: [block groups]
+    definition: >-
+      A cluster of census blocks within a tract, usually with 600 to 3,000
+      people. The smallest area with ACS estimates.
+
+  - term: census block
+    aliases: [census blocks, block, blocks]
+    chapters: [census-data]
+    definition: >-
+      The smallest census area, bounded by streets, streams, and other visible
+      features. Decennial counts only.
+
+  - term: ZIP Code Tabulation Area (ZCTA)
+    aliases: [ZIP Code Tabulation Area, ZIP Code Tabulation Areas, ZCTA, ZCTAs]
+    definition: >-
+      An approximation of a ZIP Code's area built from census blocks.
+
+  - term: census-designated place
+    aliases: [census-designated places]
+    definition: >-
+      An unincorporated community that the Census Bureau defines so that it
+      can publish statistics for it.
+
+  - term: margin of error (MOE)
+    aliases: [margin of error, margins of error, MOE, MOEs]
+    definition: >-
+      The likely range of sampling error around an estimate. Census Bureau
+      margins of error use a 90 percent confidence level.
+
+  - term: confidence level
+    definition: >-
+      How often a range built the same way would contain the true value, if
+      the survey were repeated many times.
+
+  - term: coefficient of variation (CV)
+    aliases: [coefficient of variation, CV]
+    definition: >-
+      The standard error as a percentage of the estimate. Over about 40
+      percent, an ACS estimate is usually treated as unreliable.
+
+  - term: ACS 1-year estimates
+    aliases: [1-year estimates, 1-year estimate]
+    definition: >-
+      ACS estimates from 12 months of data, published only for areas with
+      65,000 or more people.
+
+  - term: ACS 5-year estimates
+    aliases: [5-year estimates, 5-year estimate]
+    definition: >-
+      ACS estimates from 60 months of data, published for every area down to
+      block groups.
+
+  - term: cartographic boundary files
+    definition: >-
+      Simplified census boundaries clipped to the shoreline, for small-scale
+      maps.
+
+  # Chapter 9: Geocoding and Georeferencing
+
+  - term: address matching
+    definition: >-
+      Geocoding an address by comparing it with a reference file whose
+      features already carry address information.
+
+  - term: reference file
+    aliases: [reference files, reference data]
+    chapters: [geocoding-georeferencing]
+    definition: >-
+      In geocoding, the layer that addresses are matched against, such as
+      parcels, street centerlines, or ZIP Code areas.
+
+  - term: ZIP+4
+    definition: >-
+      A nine-digit ZIP Code whose last four digits identify a short segment of
+      a mail route, such as one side of a block.
+
+  - term: street centerline
+    aliases: [street centerlines, centerline, centerlines]
+    definition: >-
+      A line along the middle of a street. Centerline files used for
+      geocoding store the address range on each side of each segment.
+
+  - term: address range
+    aliases: [address ranges]
+    definition: >-
+      The lowest and highest house numbers on one side of a street segment.
+
+  - term: linear interpolation
+    definition: >-
+      Estimating a position between two known points in proportion to a value
+      between their values, such as a house number within a range.
+
+  - term: centroid
+    aliases: [centroids]
+    definition: >-
+      The center point of a polygon.
+
+  - term: parcel
+    aliases: [parcels]
+    definition: >-
+      A polygon for one piece of property, usually with its owner and address.
+
+  - term: address point
+    aliases: [address points]
+    definition: >-
+      A point for one address, often placed on the rooftop or the building
+      entrance.
+
+  - term: match score
+    aliases: [match scores]
+    definition: >-
+      How closely an address agrees with a candidate in the reference file,
+      often on a scale from 0 to 100.
+
+  - term: match rate
+    aliases: [match rates]
+    definition: >-
+      The share of addresses in a table that were successfully geocoded.
+
+  - term: batch geocoding
+    aliases: [batch mode]
+    definition: >-
+      Geocoding a whole table of addresses in one run.
+
+  - term: geomasking
+    definition: >-
+      Moving geocoded points by a small random amount to protect the privacy of
+      the people they represent.
+
+  - term: georeferencing
+    aliases: [georeference, georeferenced]
+    definition: >-
+      Transforming a raster, such as a scanned map or image, from file
+      coordinates to map coordinates.
+
+  - term: file coordinates
+    definition: >-
+      Positions in a raster given as pixel columns and rows.
+
+  - term: image rectification
+    aliases: [rectification, rectify, rectified]
+    definition: >-
+      Correcting an image's geometry so that it fits a map coordinate system.
+
+  - term: ground control point (GCP)
+    aliases: [ground control point, ground control points, GCP, GCPs]
+    definition: >-
+      A feature that can be found on both an image and a reference layer, used
+      to work out the transformation between them.
+
+  - term: transformation
+    aliases: [transformations]
+    chapters: [geocoding-georeferencing]
+    definition: >-
+      Equations that convert image coordinates into map coordinates, with
+      coefficients solved from ground control points.
+
+  - term: affine transformation
+    aliases: [affine, first-order transformation]
+    definition: >-
+      A six-coefficient transformation that corrects translation, scale, skew,
+      and rotation. Needs at least 3 GCPs.
+
+  - term: polynomial transformation
+    aliases: [higher-order polynomial, higher-order polynomials]
+    definition: >-
+      A transformation that can bend an image. Second order needs at least 6
+      GCPs; third order needs 10.
+
+  - term: least squares
+    definition: >-
+      Fitting a model by choosing the coefficients that make the sum of the
+      squared errors as small as possible.
+
+  - term: resampling
+    definition: >-
+      Giving each cell of a transformed raster a value from the input cells:
+      nearest neighbor, bilinear, or cubic convolution.
+
+  - term: bilinear interpolation
+    aliases: [bilinear]
+    definition: >-
+      Resampling that averages the four nearest input cells, weighted by
+      distance.
+
+  - term: cubic convolution
+    definition: >-
+      Resampling that uses the 16 nearest input cells.
+
+  - term: residual
+    aliases: [residuals]
+    definition: >-
+      The difference between an observed value and the value a model
+      predicts; in georeferencing, the distance between a GCP's true and
+      transformed positions.
+
+  - term: root mean square error (RMSE)
+    aliases: [root mean square error, RMSE, RMS error]
+    definition: >-
+      The square root of the average squared residual: one number that sums
+      up how well a model fits.
+
+  - term: check point
+    aliases: [check points]
+    definition: >-
+      A point with known coordinates that is not used to fit a transformation,
+      kept back to test its accuracy.
+
+  # Chapter 10: OpenStreetMap and data quality
+
+  - term: volunteered geographic information
+    aliases: [VGI]
+    definition: >-
+      Geographic data created by individuals, most of them not trained in
+      mapping, and shared on the internet (Goodchild 2007). OpenStreetMap is
+      the best-known example.
+
+  - term: spatial data quality
+    aliases: [data quality]
+    definition: >-
+      How well a geographic dataset fits its intended use, described by
+      elements such as lineage, accuracy, consistency, and completeness.
+
+  - term: lineage
+    chapters: [osm-data-quality]
+    definition: >-
+      The history of a dataset: where the data came from, and how they have
+      been collected, processed, and edited since.
+
+  - term: positional accuracy
+    definition: >-
+      How close the coordinates in a dataset are to the true positions of
+      the features.
+
+  - term: attribute accuracy
+    definition: >-
+      How correct the non-spatial values in a dataset are, such as a
+      feature's type or name.
+
+  - term: logical consistency
+    definition: >-
+      Whether data agree with their own rules, for example polygons that
+      close and roads that meet at intersections.
+
+  - term: completeness
+    chapters: [osm-data-quality]
+    definition: >-
+      An element of data quality: what is missing from a dataset, and what
+      is there that shouldn't be.
+
+  - term: temporal quality
+    definition: >-
+      How current a dataset is, and how accurate its dates are.
+
+  - term: ISO 19157
+    case_sensitive: true
+    definition: >-
+      The international standard for describing and measuring the quality
+      of geographic data.
+
+  - term: Big Data
+    definition: >-
+      Datasets too large, too fast, or too varied for traditional tools,
+      often described by three Vs: volume, velocity, and variety.
+
+  - term: veracity
+    definition: >-
+      Whether data can be trusted; sometimes called the fourth V of Big
+      Data.
+
+  - term: FAIR principles
+    aliases: [FAIR]
+    case_sensitive: true
+    definition: >-
+      Guidelines saying that good data should be Findable, Accessible,
+      Interoperable, and Reusable (Wilkinson et al. 2016).
+
+  - term: Open Database License
+    aliases: [ODbL]
+    definition: >-
+      The license for OpenStreetMap data. Anyone may use and share the data
+      if they credit OpenStreetMap contributors and share derived databases
+      under the same license.
+
+  - term: changeset
+    aliases: [changesets]
+    definition: >-
+      A group of edits to OpenStreetMap saved together, with the editor's
+      username and a comment.
+
+  - term: closed way
+    aliases: [closed ways]
+    definition: >-
+      In OpenStreetMap, a way (an ordered list of nodes) whose first and last
+      nodes are the same, forming an area such as a building.
+
+  - term: tag
+    aliases: [tags]
+    chapters: [osm-data-quality]
+    definition: >-
+      In OpenStreetMap, a key=value pair that describes an element, such as
+      highway=residential.
+
+  - term: Overture Maps Foundation
+    definition: >-
+      A group founded in 2022 by Amazon, Meta, Microsoft, and TomTom to build
+      open map data, partly from OpenStreetMap.
+
+  - term: extrinsic quality assessment
+    aliases: [extrinsic, extrinsic measures]
+    chapters: [osm-data-quality]
+    definition: >-
+      Measuring the quality of a dataset by comparing it with an
+      authoritative reference dataset.
+
+  - term: intrinsic quality assessment
+    aliases: [intrinsic, intrinsic measures]
+    chapters: [osm-data-quality]
+    definition: >-
+      Measuring the quality of OpenStreetMap from its own editing history,
+      such as the number of editors and versions in an area.
+
+  - term: Linus's Law
+    aliases: ["Linus' Law"]
+    definition: >-
+      "Given enough eyeballs, all bugs are shallow." Applied to maps, areas
+      edited by more contributors tend to be more accurate.
+
+  - term: Osmose
+    case_sensitive: true
+    definition: >-
+      A tool that runs automated quality checks on OpenStreetMap data.
+
+  - term: OSMCha
+    case_sensitive: true
+    definition: >-
+      OSM Changeset Analyzer, a tool for reviewing recent OpenStreetMap edits
+      to catch mistakes and vandalism.
+
+  - term: MapRoulette
+    case_sensitive: true
+    definition: >-
+      A tool that turns detected OpenStreetMap errors into small tasks that
+      volunteers can fix.
+
+  - term: crisis mapping
+    definition: >-
+      Mapping by volunteers to support the response to a disaster or other
+      crisis.
+
+  - term: Humanitarian OpenStreetMap Team
+    aliases: [HOT]
+    case_sensitive: true
+    definition: >-
+      An organization that coordinates volunteer OpenStreetMap mapping for
+      disaster response and development.
+
+  - term: Tasking Manager
+    aliases: [HOT Tasking Manager]
+    case_sensitive: true
+    definition: >-
+      HOT's tool that divides a mapping project into small squares, so that
+      volunteers don't overlap and each square can be validated.
+
+  - term: validation
+    aliases: [validator, validators, validates, validated]
+    chapters: [osm-data-quality]
+    definition: >-
+      In the HOT Tasking Manager, a check of a finished square by a second,
+      experienced mapper.
+
+  - term: mapathon
+    aliases: [mapathons]
+    definition: >-
+      An event where volunteers map together for a few hours, often for a
+      humanitarian project.
+
+  - term: Missing Maps
+    case_sensitive: true
+    definition: >-
+      A project founded in 2014 that maps vulnerable places before disasters
+      happen.
+
+  - term: iD
+    case_sensitive: true
+    chapters: [osm-data-quality]
+    definition: >-
+      OpenStreetMap's web-based editor, which runs in a browser with no
+      installation.
+
+  - term: JOSM
+    case_sensitive: true
+    definition: >-
+      The Java OpenStreetMap editor, a desktop editor for advanced work.
