@@ -2561,3 +2561,100 @@ terms:
     definition: >-
       The currency an ArcGIS organization uses to pay for some services, such
       as batch geocoding and storing data in ArcGIS Online.
+
+  # Chapter 19: What's Next in GIS
+  - term: lidar
+    aliases: [LiDAR]
+    definition: >-
+      A remote sensing method that times laser pulses to measure distance,
+      used to map elevation, buildings, and tree height in fine detail.
+
+  - term: passive sensor
+    aliases: [passive sensors]
+    definition: >-
+      A sensor that records energy it does not send out itself, such as
+      reflected sunlight or emitted heat. Most satellite cameras are passive.
+
+  - term: active sensor
+    aliases: [active sensors]
+    definition: >-
+      A sensor that sends out its own signal and measures what comes back, as
+      radar and lidar do.
+
+  - term: spectral signature
+    definition: >-
+      The pattern of how much light a surface reflects at each wavelength,
+      which lets remote sensing tell surfaces such as vegetation, soil, and
+      water apart.
+
+  - term: normalized difference vegetation index (NDVI)
+    aliases: [NDVI, normalized difference vegetation index]
+    definition: >-
+      A measure of green vegetation from remote sensing, computed as
+      (NIR − Red) / (NIR + Red). It ranges from −1 to 1, and dense healthy
+      vegetation is high.
+
+  - term: geographically weighted regression (GWR)
+    aliases: [geographically weighted regression, GWR]
+    definition: >-
+      A regression that is fit separately at each location, weighting nearby
+      observations more, so that relationships between variables can change
+      across space.
+
+  - term: space-time cube
+    definition: >-
+      A way to organize data that change over time: a map for each time step,
+      stacked so that x, y, and time are the three axes.
+
+  - term: uncertain geographic context problem
+    definition: >-
+      The problem that the area that actually affects a person, such as where
+      they spend their day, may not match the unit used to study them, such
+      as their home census tract.
+
+  - term: CyberGIS
+    definition: >-
+      GIS built on high-performance and cloud computing, so large analyses can
+      be split across many processors.
+
+  - term: foundation model
+    aliases: [foundation models]
+    definition: >-
+      A large AI model pretrained on a huge dataset, such as an archive of
+      satellite images, that can be adapted to many tasks with little new
+      labeled data.
+
+  - term: spatial cross-validation
+    definition: >-
+      Testing a model on whole regions held out from training, rather than on
+      random points, so that spatial autocorrelation doesn't make the model
+      look more accurate than it is.
+
+  - term: web GIS
+    definition: >-
+      GIS delivered through a web browser: interactive maps, dashboards, and
+      analysis that run online rather than in desktop software.
+
+  - term: digital twin
+    aliases: [digital twins]
+    definition: >-
+      A detailed, regularly updated digital model of a real city, building, or
+      system, often 3D and linked to live sensor data.
+
+  - term: critical GIS
+    definition: >-
+      The study of the social effects of GIS and mapping, including who
+      benefits, who is represented, and how to use GIS more fairly.
+
+  - term: Property Identification Number (PIN)
+    aliases: [Property Identification Numbers]
+    chapters: [whats-next]
+    definition: >-
+      The unique number a North Carolina county gives each parcel, linking it
+      to its deed, survey plats, and tax record.
+
+  - term: Next Generation 911
+    aliases: [NG911]
+    definition: >-
+      The digital, GIS-based 911 system that uses address points, street
+      centerlines, and boundaries to route emergency calls and locate callers.

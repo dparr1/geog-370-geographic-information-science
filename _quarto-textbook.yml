@@ -51,6 +51,9 @@ book:
       chapters:
         - chapters/qgis.qmd
         - chapters/arcgis-pro.qmd
+    - part: "Looking Ahead"
+      chapters:
+        - chapters/whats-next.qmd
     # Units and chapters go here, in the same order as _quarto-site.yml but
     # without the quiz pages. For example:
     #

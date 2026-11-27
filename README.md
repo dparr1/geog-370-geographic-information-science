@@ -166,3 +166,7 @@ page at the end of the book (`references.qmd`; `chapters/_metadata.yml` turns of
 **November 27, 2026: the PDF textbook is published.** As in GEOG 215, the GitHub Action renders the
 PrettyPDF version and publishes it beside the book on daveparr.com, and the site links to it. The
 PDF's heading styles, front pages, and table of contents follow GEOG 215's fixes.
+
+**November 27, 2026: Chapter 19, *What's Next in GIS*, is added** in a final "Looking Ahead" part,
+modeled on GEOG 215's last chapter, with no quiz. Its figures are made by
+`scripts/figures/whats_next.py`.
