@@ -40,6 +40,18 @@ book:
         - chapters/map-projections-quiz.qmd
         - chapters/attribute-queries.qmd
         - chapters/attribute-queries-quiz.qmd
+        - chapters/database-joins.qmd
+        - chapters/database-joins-quiz.qmd
+        - chapters/spatial-joins.qmd
+        - chapters/spatial-joins-quiz.qmd
+    - part: units/unit-2.qmd
+      chapters:
+        - chapters/census-data.qmd
+        - chapters/census-data-quiz.qmd
+        - chapters/geocoding-georeferencing.qmd
+        - chapters/geocoding-georeferencing-quiz.qmd
+        - chapters/osm-data-quality.qmd
+        - chapters/osm-data-quality-quiz.qmd
     # Units and chapters go here, each chapter followed by its (unnumbered)
     # chapter quiz page, and each unit ending with its unit quiz. Add the
     # same unit and chapter (without the quiz pages) to _quarto-textbook.yml.

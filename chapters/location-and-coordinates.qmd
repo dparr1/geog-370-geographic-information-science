@@ -397,7 +397,7 @@ The interactive self-check questions for this chapter are in the online version 
 - NGS, "What is the geoid?": <https://geodesy.noaa.gov/GEOID/geoid_def.html>.
 - National Geospatial-Intelligence Agency (NGA), Earth Gravitational Model 2008 (EGM2008): <https://earth-info.nga.mil/>.
 - Esri, "Earth's shape and the geoid," in the ArcGIS Pro help on vertical coordinate systems: <https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/vertical-coordinate-systems.htm>.
-- The GIS&T Body of Knowledge has articles on "Geodesy," "Earth Geometry," "Datums," "Plane Coordinate Systems," and "Georeferencing Systems": <https://gistbok.ucgis.org>.
+- The GIS&T Body of Knowledge has articles on "Geodesy," "Earth Geometry," "Datums," "Plane Coordinate Systems," and "Georeferencing Systems": <https://www.ucgis.org/site/gis-t-body-of-knowledge>.
 
 ### Datums
 

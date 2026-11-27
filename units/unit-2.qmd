@@ -1,0 +1,29 @@
+---
+title: "Unit 2: Spatial Data Quality"
+---
+
+Every dataset has a source, a method, and limits. This unit is about where spatial data come from and how good they are. It starts with the largest source of free data about people and places in the United States, the census, and how to read its estimates honestly. It then turns to two ways of making new GIS layers from things that aren't yet spatial data, addresses and scanned maps, and how to measure the error each one adds. It ends with data made by volunteers, in OpenStreetMap, and the ways the crowd checks its own work. By the end of the unit you can find, join, create, and judge spatial data in QGIS and ArcGIS Pro.
+
+## Chapter 8: [Census Data](../chapters/census-data.qmd)
+
+The U.S. Census Bureau decides how many members of Congress each state gets and where trillions of federal dollars go. This chapter separates authoritative from asserted data and describes the decennial census, the American Community Survey, and the Economic Census. It explains the hierarchy of census geography, from states to blocks, and the GEOIDs that identify each area. It shows how to choose between decennial, ACS 1-year, and ACS 5-year data, how to read a margin of error, and how to join a census table to its boundaries in ArcGIS Pro.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 8 quiz](../chapters/census-data-quiz.qmd)
+:::
+
+## Chapter 9: [Geocoding and Georeferencing](../chapters/geocoding-georeferencing.qmd)
+
+Many records describe a location without coordinates: a street address, or a place on an old paper map. This chapter covers both ways of giving them coordinates. Geocoding matches addresses against reference files, from ZIP Code centroids to parcels, and interpolates positions along streets; match scores and match rates tell you how well it worked. Georeferencing ties a scanned map to the ground with control points and a transformation, and residuals and RMSE measure its error. Both are shown step by step in ArcGIS Pro and QGIS.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 9 quiz](../chapters/geocoding-georeferencing-quiz.qmd)
+:::
+
+## Chapter 10: [OpenStreetMap and Data Quality](../chapters/osm-data-quality.qmd)
+
+What makes geographic data good enough to use? This chapter defines spatial data quality by its seven elements, from lineage to completeness, then looks at volunteered geographic information, Big Data, and the FAIR principles. It explains how OpenStreetMap works, from its license to its nodes, ways, and tags, and how its quality is measured against authoritative data and from its own history. It ends with crisis mapping, from Haiti in 2010 to the 2015 Nepal earthquake, where thousands of new volunteers mapped a country in weeks.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 10 quiz](../chapters/osm-data-quality-quiz.qmd)
+:::

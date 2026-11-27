@@ -398,7 +398,7 @@ Now return to your campus map list from the start of the chapter. Which entities
 
 ### Data models: vector, raster, and TIN
 
-- The GIS&T Body of Knowledge, from UCGIS, has short articles on this chapter's ideas. Search it for "Vector Data Models," "Raster Data Models," "The Triangulated Irregular Network (TIN)," "Conceptual Models of Space," and "Topology": <https://gistbok.ucgis.org>.
+- The GIS&T Body of Knowledge, from UCGIS, has short articles on this chapter's ideas. Search it for "Vector Data Models," "Raster Data Models," "The Triangulated Irregular Network (TIN)," "Conceptual Models of Space," and "Topology": <https://www.ucgis.org/site/gis-t-body-of-knowledge>.
 - QGIS, *A Gentle Introduction to GIS*, the chapters "Vector Data," "Vector Attribute Data," and "Raster Data": <https://docs.qgis.org/latest/en/docs/gentle_gis_introduction/>.
 - Esri, "Introduction to image and raster data," in the ArcGIS Pro help: <https://pro.arcgis.com/en/pro-app/latest/help/data/imagery/introduction-to-raster-data.htm>.
 - Esri, "TIN in ArcGIS Pro": <https://pro.arcgis.com/en/pro-app/latest/help/data/tin/tin-in-arcgis-pro.htm>.
