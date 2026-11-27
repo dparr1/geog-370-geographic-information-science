@@ -27,3 +27,9 @@ What makes geographic data good enough to use? This chapter defines spatial data
 ::: {.content-hidden when-profile="textbook"}
 [Chapter 10 quiz](../chapters/osm-data-quality-quiz.qmd)
 :::
+
+::: {.content-hidden when-profile="textbook"}
+## Unit 2 quiz
+
+Review the whole unit with the [Unit 2 quiz](unit-2-quiz.qmd): 20 questions drawn from all of its chapter quizzes.
+:::

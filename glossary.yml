@@ -2362,3 +2362,202 @@ terms:
     definition: >-
       Kriging's estimate of how far off each prediction might be. It is
       largest where observations are sparse.
+
+  # Chapter 17: Getting to Know QGIS, and Chapter 18: Getting to Know ArcGIS Pro
+  - term: OSGeo
+    aliases: [Open Source Geospatial Foundation]
+    definition: >-
+      The Open Source Geospatial Foundation, a nonprofit that supports
+      open-source geospatial software such as QGIS, GDAL, PROJ, and PostGIS.
+
+  - term: GDAL
+    case_sensitive: true
+    definition: >-
+      The Geospatial Data Abstraction Library, open-source software that reads
+      and writes hundreds of raster and vector formats. QGIS, ArcGIS Pro, and
+      many other programs use it.
+
+  - term: long-term release
+    aliases: [LTR, long-term releases]
+    chapters: [qgis]
+    definition: >-
+      A QGIS version, released once a year, that gets bug fixes but no new
+      features for about a year. It is the most stable choice.
+
+  - term: plugin
+    aliases: [plugins]
+    chapters: [qgis]
+    definition: >-
+      An add-on that extends QGIS with new tools, installed from inside QGIS
+      with Plugins ▸ Manage and Install Plugins.
+
+  - term: Browser panel
+    chapters: [qgis]
+    definition: >-
+      The QGIS panel that shows folders, databases, and web services, from
+      which data can be dragged onto the map.
+
+  - term: Layers panel
+    chapters: [qgis]
+    definition: >-
+      The QGIS panel that lists the project's layers in drawing order.
+
+  - term: Data Source Manager
+    chapters: [qgis]
+    definition: >-
+      The QGIS dialog for adding layers of every kind: files, delimited text,
+      databases, and web services.
+
+  - term: Processing Toolbox
+    chapters: [qgis, arcgis-pro]
+    definition: >-
+      The QGIS panel that holds its analysis tools (algorithms), from QGIS
+      itself, GDAL, and GRASS GIS.
+
+  - term: basemap
+    aliases: [basemaps]
+    definition: >-
+      A background map, such as streets, topography, or aerial imagery, that
+      gives context to the layers drawn on top of it.
+
+  - term: digitize
+    aliases: [digitizing, digitized]
+    definition: >-
+      To create vector features by drawing them, clicking each point or
+      vertex on a map or image.
+
+  - term: expression
+    aliases: [expressions]
+    chapters: [qgis, arcgis-pro]
+    definition: >-
+      A formula of fields, values, operators, and functions that computes a
+      value for each feature, used to calculate fields, select features, and
+      control labels and symbology.
+
+  - term: snapping
+    definition: >-
+      An editing setting that makes a new vertex jump to a nearby vertex or
+      edge, so that shared boundaries line up exactly.
+
+  - term: symbology
+    definition: >-
+      The rules that control how a layer is drawn: its symbols, colors, sizes,
+      and classes.
+
+  - term: print layout
+    aliases: [print layouts]
+    definition: >-
+      In QGIS, a page on which a map is arranged with its title, legend, scale
+      bar, and other elements, for printing or export. ArcGIS Pro calls it a
+      layout.
+
+  - term: legend
+    aliases: [legends]
+    chapters: [qgis, arcgis-pro]
+    definition: >-
+      The part of a map that explains its symbols.
+
+  - term: scale bar
+    aliases: [scale bars]
+    definition: >-
+      A line marked with distances that shows the map's scale graphically. It
+      stays correct when the map is enlarged or shrunk.
+
+  - term: north arrow
+    aliases: [north arrows]
+    definition: >-
+      A symbol showing the direction of north on a map.
+
+  - term: temporary layer
+    aliases: [temporary layers]
+    chapters: [qgis]
+    definition: >-
+      A layer kept only in memory, such as a tool output not saved to a file.
+      It is lost when QGIS closes.
+
+  - term: ArcMap
+    case_sensitive: true
+    definition: >-
+      Esri's main desktop GIS application from 1999 until ArcGIS Pro replaced
+      it. Esri ended support for it on March 1, 2026.
+
+  - term: ARC/INFO
+    aliases: [ArcInfo]
+    case_sensitive: true
+    definition: >-
+      Esri's command-line GIS, first released in 1982.
+
+  - term: ArcPy
+    case_sensitive: true
+    definition: >-
+      Esri's Python library for running ArcGIS tools and automating work in
+      ArcGIS Pro.
+
+  - term: Arcade
+    case_sensitive: true
+    chapters: [arcgis-pro]
+    definition: >-
+      Esri's expression language, used for calculating fields, labels, and
+      pop-ups in ArcGIS Pro and ArcGIS Online.
+
+  - term: ribbon
+    chapters: [arcgis-pro]
+    definition: >-
+      The band of tabs and grouped commands across the top of the ArcGIS Pro
+      window.
+
+  - term: contextual tab
+    aliases: [contextual tabs]
+    chapters: [arcgis-pro]
+    definition: >-
+      A ribbon tab in ArcGIS Pro that appears only when a certain kind of item,
+      such as a feature layer, is selected.
+
+  - term: Contents pane
+    chapters: [arcgis-pro]
+    definition: >-
+      The ArcGIS Pro pane that lists the layers in the active map or the
+      elements of the active layout.
+
+  - term: Catalog pane
+    chapters: [arcgis-pro]
+    definition: >-
+      The ArcGIS Pro pane that shows a project's maps, layouts, toolboxes,
+      databases, and folder connections.
+
+  - term: Geoprocessing pane
+    chapters: [arcgis-pro]
+    definition: >-
+      The ArcGIS Pro pane for finding, filling in, and running geoprocessing
+      tools.
+
+  - term: geodatabase
+    aliases: [geodatabases, file geodatabase, file geodatabases]
+    definition: >-
+      Esri's format for storing feature classes, tables, and rasters together.
+      A file geodatabase is a folder ending in .gdb.
+
+  - term: feature class
+    aliases: [feature classes]
+    definition: >-
+      Esri's term for a vector layer stored in a geodatabase: a set of
+      features with the same geometry type and fields.
+
+  - term: license level
+    aliases: [license levels]
+    chapters: [arcgis-pro]
+    definition: >-
+      One of the three tiers of an ArcGIS Pro license, Basic, Standard, and
+      Advanced, each adding tools to the one below.
+
+  - term: named user license
+    chapters: [arcgis-pro]
+    definition: >-
+      An ArcGIS Pro license assigned to a person's ArcGIS account, and checked
+      when they sign in.
+
+  - term: credits
+    chapters: [arcgis-pro]
+    definition: >-
+      The currency an ArcGIS organization uses to pay for some services, such
+      as batch geocoding and storing data in ArcGIS Online.

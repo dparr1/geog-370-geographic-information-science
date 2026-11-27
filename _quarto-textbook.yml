@@ -47,6 +47,10 @@ book:
         - chapters/raster.qmd
         - chapters/interpolation.qmd
         - chapters/kriging.qmd
+    - part: "GIS Software"
+      chapters:
+        - chapters/qgis.qmd
+        - chapters/arcgis-pro.qmd
     # Units and chapters go here, in the same order as _quarto-site.yml but
     # without the quiz pages. For example:
     #

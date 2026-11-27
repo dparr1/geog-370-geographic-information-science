@@ -44,6 +44,7 @@ book:
         - chapters/database-joins-quiz.qmd
         - chapters/spatial-joins.qmd
         - chapters/spatial-joins-quiz.qmd
+        - units/unit-1-quiz.qmd
     - part: units/unit-2.qmd
       chapters:
         - chapters/census-data.qmd
@@ -52,6 +53,7 @@ book:
         - chapters/geocoding-georeferencing-quiz.qmd
         - chapters/osm-data-quality.qmd
         - chapters/osm-data-quality-quiz.qmd
+        - units/unit-2-quiz.qmd
     - part: units/unit-3.qmd
       chapters:
         - chapters/data-classing.qmd
@@ -66,6 +68,11 @@ book:
         - chapters/interpolation-quiz.qmd
         - chapters/kriging.qmd
         - chapters/kriging-quiz.qmd
+        - units/unit-3-quiz.qmd
+    - part: "GIS Software"
+      chapters:
+        - chapters/qgis.qmd
+        - chapters/arcgis-pro.qmd
     # Units and chapters go here, each chapter followed by its (unnumbered)
     # chapter quiz page, and each unit ending with its unit quiz. Add the
     # same unit and chapter (without the quiz pages) to _quarto-textbook.yml.

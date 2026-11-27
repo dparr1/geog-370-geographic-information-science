@@ -51,3 +51,9 @@ Kriging measures how values in the data are related at different distances befor
 ::: {.content-hidden when-profile="textbook"}
 [Chapter 16 quiz](../chapters/kriging-quiz.qmd)
 :::
+
+::: {.content-hidden when-profile="textbook"}
+## Unit 3 quiz
+
+Review the whole unit with the [Unit 3 quiz](unit-3-quiz.qmd): 20 questions drawn from all of its chapter quizzes.
+:::
