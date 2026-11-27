@@ -435,7 +435,6 @@ The interactive self-check questions for this chapter are in the online version 
 - ArcGIS Pro, "Add Field" tool, including precision and scale: <https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/add-field.htm>.
 - Stevens, S. S., "On the Theory of Scales of Measurement," *Science* [@stevens1946], the original paper on levels of measurement: <https://doi.org/10.1126/science.103.2684.677>.
 - The GIS&T Body of Knowledge, "Scales of Measurement," "Database Management Systems," and "Structured Query Language (SQL) and Attribute Queries": <https://gistbok.ucgis.org>.
-- Khan Academy, "Binary numbers," a short lesson on how binary works: <https://www.khanacademy.org/computing/computers-and-internet/xcae6f4a7ff015e7d:digital-information/xcae6f4a7ff015e7d:binary-numbers/a/bits-and-binary>.
 
 ### Queries and SQL
 
@@ -460,7 +459,6 @@ The interactive self-check questions for this chapter are in the online version 
 
 ### Tutorials and data for practice
 
-- QGIS Training Manual, "Vector Data: The Attribute Data" and "Classifying Vector Data": <https://docs.qgis.org/latest/en/docs/training_manual/basic_map/vector_data.html>.
 - Learn ArcGIS, lessons on querying and selecting data, such as "Get started with ArcGIS Pro": <https://learn.arcgis.com>.
 - Natural Earth, free world data with rich attribute tables to practice on: <https://www.naturalearthdata.com>.
 - NC OneMap, North Carolina's data portal: <https://www.nconemap.gov>.

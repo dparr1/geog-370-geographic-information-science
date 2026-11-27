@@ -29,3 +29,5 @@ node_modules/
 !assets/pdf-*.tex
 !preamble.tex
 !front-pages.tex
+
+__pycache__/

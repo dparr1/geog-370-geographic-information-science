@@ -406,7 +406,6 @@ The interactive self-check questions for this chapter are in the online version 
 - NGS, the Continuously Operating Reference Station (CORS) network: <https://geodesy.noaa.gov/CORS/>.
 - NGS Data Explorer, a map of survey markers and their datasheets: <https://geodesy.noaa.gov/NGSDataExplorer/>.
 - NGS Coordinate Conversion and Transformation Tool (NCAT), for converting coordinates between datums and formats: <https://geodesy.noaa.gov/NCAT/>.
-- Esri, "Geographic coordinate systems" and "Geographic transformations" in the ArcGIS Pro help: <https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/geographic-coordinate-systems.htm>.
 - QGIS User Guide, "Working with Projections," including datum transformations: <https://docs.qgis.org/latest/en/docs/user_manual/working_with_projections/working_with_projections.html>.
 - U.S. Geological Survey, "What is the difference between NAD27 and NAD83?" and related FAQs: <https://www.usgs.gov/faqs>.
 - Esri ArcGIS Blog, articles on preparing data for the modernized National Spatial Reference System: <https://www.esri.com/arcgis-blog/>.
@@ -414,10 +413,8 @@ The interactive self-check questions for this chapter are in the online version 
 ### Latitude, longitude, and great circles
 
 - National Geographic Education, "Latitude" and "Longitude" encyclopedia entries: <https://education.nationalgeographic.org/resource/latitude/> and <https://education.nationalgeographic.org/resource/longitude/>.
-- Royal Museums Greenwich, "The prime meridian at Greenwich": <https://www.rmg.co.uk/royal-observatory/attractions/prime-meridian-line>.
 - Malys, Seago, Pavlis, Seidelmann, and Kaplan, "Why the Greenwich meridian moved," *Journal of Geodesy* [@malys2015], the explanation of the 102-meter offset at Greenwich: <https://doi.org/10.1007/s00190-015-0844-y>.
 - Great Circle Mapper, for drawing great-circle routes between airports: <http://www.gcmap.com>.
-- *Coordinates converter*, from the Federal Communications Commission, for decimal degrees and DMS: <https://www.fcc.gov/media/radio/dms-decimal>.
 - *Longitude*, by Dava Sobel (Walker, 1995), the story of how sailors learned to find their longitude at sea.
 
 ### Software and tutorials

@@ -336,7 +336,6 @@ The interactive self-check questions for this chapter are in the online version 
 - USGS, *Map Projections*, a poster comparing the properties and uses of common projections: <https://pubs.usgs.gov/publication/70047422>.
 - The GIS&T Body of Knowledge, "Map Projections," "Map Projection Properties," "Map Projection Classes," and "Plane Coordinate Systems": <https://gistbok.ucgis.org>.
 - Axis Maps, "Cartography Guide: Map Projections": <https://www.axismaps.com/guide/map-projections>.
-- Esri, "What are map projections?" and "List of supported map projections" in the ArcGIS Pro help: <https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/what-are-map-projections.htm> and <https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/list-of-supported-map-projections.htm>.
 - PROJ, the open-source library behind QGIS's projections, with an illustrated list of every projection it supports: <https://proj.org/en/stable/operations/projections/index.html>.
 - Wolfram MathWorld, "Map Projection," with the equations for common projections: <https://mathworld.wolfram.com/MapProjection.html>.
 - Jason Davies, interactive map projection transitions and demos: <https://www.jasondavies.com/maps/>.
@@ -357,8 +356,6 @@ The interactive self-check questions for this chapter are in the online version 
 
 - NGS, State Plane Coordinate System of 2022 (SPCS2022) and the State Plane zones of 1983: <https://geodesy.noaa.gov/SPCS/>.
 - NGS, *State Plane Coordinate System of 1983*, NOAA Manual NOS NGS 5, by James Stem: <https://geodesy.noaa.gov/library/pdfs/NOAA_Manual_NOS_NGS_0005.pdf>.
-- USGS, "The Universal Transverse Mercator (UTM) Grid," Fact Sheet 077-01: <https://pubs.usgs.gov/fs/2001/0077/report.pdf>.
-- NC Geodetic Survey, North Carolina's state agency for survey control and the State Plane Coordinate System: <https://www.ncdps.gov/our-organization/emergency-management/ncgs>.
 - epsg.io, a searchable list of coordinate reference systems; for example, North Carolina State Plane in meters: <https://epsg.io/32119>.
 - The EPSG Geodetic Parameter Dataset, the official registry: <https://epsg.org>.
 - Spatial Reference, another searchable list of coordinate systems with their definitions in many formats: <https://spatialreference.org>.
