@@ -39,6 +39,14 @@ book:
         - chapters/census-data.qmd
         - chapters/geocoding-georeferencing.qmd
         - chapters/osm-data-quality.qmd
+    - part: units/unit-3.qmd
+      chapters:
+        - chapters/data-classing.qmd
+        - chapters/density.qmd
+        - chapters/spatial-analysis.qmd
+        - chapters/raster.qmd
+        - chapters/interpolation.qmd
+        - chapters/kriging.qmd
     # Units and chapters go here, in the same order as _quarto-site.yml but
     # without the quiz pages. For example:
     #

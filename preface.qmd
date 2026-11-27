@@ -78,6 +78,8 @@ The chapters are grouped into units. Each unit opens with a page that summarizes
 
 **[Unit 2: Spatial Data Quality](units/unit-2.qmd)** (Chapters 8–10) is about where data come from and how good they are. It covers census data and their margins of error, turning addresses and scanned maps into GIS layers with geocoding and georeferencing, and the quality of volunteered data in OpenStreetMap.
 
+**[Unit 3: Spatial Analysis](units/unit-3.qmd)** (Chapters 11–16) turns data into answers. It covers classing data for choropleth maps and measuring density with neighborhoods and kernels, the core vector operations of selection, buffers, and overlay, map algebra and the other raster functions, and estimating values between observations with deterministic interpolation and kriging.
+
 ::: {.content-hidden when-profile="textbook"}
 Each chapter is followed by a chapter quiz you can take as many times as you like. Each unit ends with a unit quiz that mixes questions from all of the unit's chapter quizzes, for reviewing a whole unit at once.
 :::
