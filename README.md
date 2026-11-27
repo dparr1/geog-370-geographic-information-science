@@ -116,7 +116,8 @@ how to write a quiz bank.
 | `glossary.yml`, `glossary.qmd` | Key terms and definitions, and the Glossary page built from them |
 | `filters/glossary/` | Lua filter, script, and styles for the hover definitions |
 | `include/` | webexercises CSS and JS |
-| `_extensions/` | Quarto extension for the PDF (PrettyPDF) |
+| `_extensions/` | Quarto extension for the PDF (PrettyPDF), with this book's heading styles |
+| `assets/pdf-*.tex`, `filters/pdf-characters.lua` | PDF cover, front pages, and font fallbacks |
 | `scripts/cloudflare-build.sh` | Cloudflare build: installs Quarto and renders the gated book |
 | `pwa/`, `assets/pwa-head.html`, `scripts/make-icons.py`, `scripts/make-splash.py` | The home-screen app: manifest, icons, loading screens, offline page and service worker |
 
@@ -131,7 +132,19 @@ quarto render --to PrettyPDF-pdf --profile textbook   # the PDF textbook, no qui
 ```
 
 The PDF needs a LaTeX install (TinyTeX: `quarto install tinytex`). Its cover is `images/cover.jpg`,
-placed full-page by `assets/pdf-cover.tex`; to change the cover, replace that image.
+placed full-page by `assets/pdf-cover.tex`; to change the cover, replace that image. The copyright,
+dedication, and table of contents pages are in `assets/pdf-front-pages.tex`. Heading styles use
+KOMA-Script's own commands (in `_extensions/nrennie/PrettyPDF/PrettyPDF.tex`); don't load titlesec
+or sectsty, which print a "0" before unnumbered chapters. Characters the PDF's Ubuntu font lacks
+(such as ▸ in menu paths) are swapped for Latin Modern Math by `filters/pdf-characters.lua`.
+
+The GitHub Action (`.github/workflows/publish.yml`) renders the PDF on every push to `main` and
+publishes it beside the book as
+daveparr.com/geographic-information-science/Geographic-Information-Science.pdf. The site's PDF
+links (the sidebar download button, the Welcome page, and the Preface) point to
+`Geographic-Information-Science.pdf`; on geog370.org, `scripts/cloudflare-build.sh` redirects that
+path to the daveparr.com copy. Pull requests render the PDF too and attach it to the run (Summary ▸
+Artifacts) without publishing it; a pull request whose PDF fails to build fails its check.
 
 Changes go through a pull request into `main`; Cloudflare builds a preview of each branch, and
 merging publishes both sites.
@@ -149,3 +162,7 @@ from lecture 02, with its chapter quiz and the first glossary terms.
 **November 27, 2026: the Preface gets "How to use this book" and "Fonts and reading settings"
 sections**, modeled on GEOG 215's, and the chapters' reference lists move to a single References
 page at the end of the book (`references.qmd`; `chapters/_metadata.yml` turns off the per-chapter lists).
+
+**November 27, 2026: the PDF textbook is published.** As in GEOG 215, the GitHub Action renders the
+PrettyPDF version and publishes it beside the book on daveparr.com, and the site links to it. The
+PDF's heading styles, front pages, and table of contents follow GEOG 215's fixes.
