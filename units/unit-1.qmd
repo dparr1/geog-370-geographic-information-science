@@ -59,3 +59,9 @@ When two layers share no key, location can link them. This chapter explains spat
 ::: {.content-hidden when-profile="textbook"}
 [Chapter 7 quiz](../chapters/spatial-joins-quiz.qmd)
 :::
+
+::: {.content-hidden when-profile="textbook"}
+## Unit 1 quiz
+
+Review the whole unit with the [Unit 1 quiz](unit-1-quiz.qmd): 20 questions drawn from all of its chapter quizzes.
+:::
