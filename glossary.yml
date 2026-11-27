@@ -26,7 +26,7 @@
 
 # Phrases that look like a term but aren't one. They are matched (so the
 # shorter term inside them is not) and left unmarked.
-exclude: ["GIS Day", "GIS Certification Institute", "GRASS GIS", "Quantum GIS", "Learn ArcGIS", "Open Geospatial Consortium", "Switch from Shapefile"]
+exclude: ["GIS Day", "GIS Certification Institute", "GRASS GIS", "Quantum GIS", "Learn ArcGIS", "Open Geospatial Consortium", "Switch from Shapefile", "Geodesic Viewshed"]
 
 # Add terms as the chapters are written. For example:
 #
@@ -2364,7 +2364,7 @@ terms:
       Kriging's estimate of how far off each prediction might be. It is
       largest where observations are sparse.
 
-  # Chapter 20: Getting to Know QGIS, and Chapter 21: Getting to Know ArcGIS Pro
+  # Chapter 21: Getting to Know QGIS, and Chapter 22: Getting to Know ArcGIS Pro
   - term: OSGeo
     aliases: [Open Source Geospatial Foundation]
     definition: >-
@@ -2563,7 +2563,7 @@ terms:
       The currency an ArcGIS organization uses to pay for some services, such
       as batch geocoding and storing data in ArcGIS Online.
 
-  # Chapter 22: What's Next in GIS
+  # Chapter 23: What's Next in GIS
   - term: lidar
     aliases: [LiDAR]
     definition: >-
@@ -2660,7 +2660,7 @@ terms:
       The digital, GIS-based 911 system that uses address points, street
       centerlines, and boundaries to route emergency calls and locate callers.
 
-  # Chapter 17: Suitability Modeling
+  # Chapter 18: Suitability Modeling
   - term: suitability modeling
     aliases: [suitability analysis, suitability model, suitability models]
     definition: >-
@@ -2708,13 +2708,13 @@ terms:
       their order (arrows), used to plan and document the model.
 
   - term: slope
-    chapters: [suitability-modeling]
+    chapters: [suitability-modeling, digital-elevation-models]
     definition: >-
       The steepness of the ground, in degrees or percent, calculated from an
       elevation raster.
 
   - term: aspect
-    chapters: [suitability-modeling]
+    chapters: [suitability-modeling, digital-elevation-models]
     definition: >-
       The compass direction a slope faces, in degrees clockwise from north (0°
       north, 90° east, 180° south, 270° west).
@@ -2789,7 +2789,7 @@ terms:
       Methods that weigh many criteria to support a decision, including GIS
       suitability modeling.
 
-  # Chapter 18: Risk Analysis
+  # Chapter 19: Risk Analysis
   - term: risk analysis
     definition: >-
       Mapping and measuring the likely impact of hazards on people and places,
@@ -2871,7 +2871,7 @@ terms:
       An index that ranks places by social vulnerability from census
       variables; the CDC/ATSDR SVI ranks every U.S. census tract.
 
-  # Chapter 19: Uncertainty in Geospatial Data
+  # Chapter 20: Uncertainty in Geospatial Data
   - term: uncertainty
     definition: >-
       The degree to which we aren't sure of something: the cloud of possible
@@ -2979,3 +2979,183 @@ terms:
     definition: >-
       Whether a dataset or map is good enough for a particular purpose, which
       depends on the use as much as on the data.
+
+  # Chapter 15: Digital Elevation Models
+  - term: pictorial relief
+    definition: >-
+      Showing hills and mountains on a map as small drawings, which tell where
+      the high ground is but not how high it is.
+
+  - term: contour line
+    aliases: [contour lines, contour, contours]
+    definition: >-
+      A line on a map joining points of equal elevation. Lines close together
+      mean a steep slope.
+
+  - term: contour interval
+    aliases: [contour intervals]
+    definition: >-
+      The difference in elevation between neighboring contour lines on a map,
+      such as 20 feet.
+
+  - term: index contour
+    aliases: [index contours]
+    definition: >-
+      Every fourth or fifth contour line, drawn thicker and labeled with its
+      elevation.
+
+  - term: topographic map
+    aliases: [topographic maps, topo map, topo maps]
+    definition: >-
+      A map that shows the shape of the land with contour lines, along with
+      streams, roads, and place names, such as a USGS 1:24,000 quadrangle.
+
+  - term: vertical datum
+    aliases: [vertical datums]
+    definition: >-
+      The reference surface that elevations are measured from, such as the
+      North American Vertical Datum of 1988 (NAVD 88).
+
+  - term: photogrammetry
+    definition: >-
+      Measuring positions and heights from overlapping (stereo) photographs,
+      the way two eyes judge depth.
+
+  - term: 3D Elevation Program (3DEP)
+    aliases: [3DEP, 3D Elevation Program]
+    definition: >-
+      The USGS program that collects lidar and publishes free elevation data
+      and DEMs for the whole United States.
+
+  - term: Shuttle Radar Topography Mission (SRTM)
+    aliases: [SRTM, Shuttle Radar Topography Mission]
+    definition: >-
+      A Space Shuttle mission in February 2000 that mapped the elevation of
+      most of Earth's land with radar, at 30 m and 90 m.
+
+  - term: Copernicus GLO-30
+    definition: >-
+      A free global elevation model with 30 m cells, made from the TanDEM-X
+      radar mission. It is a surface model, including trees and buildings.
+
+  - term: point cloud
+    aliases: [point clouds]
+    definition: >-
+      The millions of x, y, z points recorded by a lidar scanner, before they
+      are turned into a raster.
+
+  - term: first return
+    aliases: [first returns]
+    chapters: [digital-elevation-models]
+    definition: >-
+      The first echo of a lidar pulse, from the first thing it hits, such as a
+      treetop or a roof. First returns build a DSM.
+
+  - term: last return
+    aliases: [last returns]
+    chapters: [digital-elevation-models]
+    definition: >-
+      The last echo of a lidar pulse, which often comes from the ground under
+      trees. Ground returns build a bare-earth DEM.
+
+  - term: digital terrain model
+    aliases: [DTM, DTMs, digital terrain models]
+    definition: >-
+      A bare-earth elevation model with breaklines added along ridges, streams,
+      and other features.
+
+  - term: digital surface model
+    aliases: [DSM, DSMs, digital surface models]
+    definition: >-
+      An elevation model of the first surface a sensor hits, including tree
+      canopies, roofs, and power lines.
+
+  - term: breakline
+    aliases: [breaklines]
+    definition: >-
+      A line along a ridge, stream, or road edge where the slope changes
+      sharply, used to keep those features crisp in a terrain model.
+
+  - term: arc-second
+    aliases: [arc-seconds, arc second, arc seconds]
+    definition: >-
+      1/3,600 of a degree. As a DEM cell size, 1 arc-second is about 30 m on
+      the ground.
+
+  - term: void
+    aliases: [voids]
+    chapters: [digital-elevation-models]
+    definition: >-
+      A hole of NoData cells in a DEM, common in radar DEMs over steep
+      mountains and water.
+
+  - term: sink
+    aliases: [sinks]
+    chapters: [digital-elevation-models]
+    definition: >-
+      A DEM cell lower than all its neighbors. Most are errors, and they trap
+      water in flow models, so they are removed with the Fill tool.
+
+  - term: z-factor
+    definition: >-
+      A multiplier that converts a surface's z units to the units of x and y,
+      such as when elevations are in meters but coordinates are in degrees.
+
+  - term: rise over run
+    definition: >-
+      Slope as the change in elevation (rise) divided by the horizontal
+      distance (run).
+
+  - term: Horn's method
+    definition: >-
+      A way of estimating slope and aspect from all eight neighbors of a cell,
+      counting the direct neighbors twice. ArcGIS Pro and QGIS use it.
+
+  - term: Fleming and Hoffer's method
+    definition: >-
+      A way of estimating slope from only the four direct neighbors of a cell.
+
+  - term: hillshade
+    aliases: [hillshades, hillshading, shaded relief]
+    definition: >-
+      A raster that shows terrain as if lit by the sun from a chosen azimuth
+      and altitude, from 0 (shadow) to 255 (full sun).
+
+  - term: azimuth
+    chapters: [digital-elevation-models]
+    definition: >-
+      A compass direction, in degrees clockwise from north. For a hillshade,
+      the direction the sunlight comes from; the default is 315°.
+
+  - term: altitude
+    chapters: [digital-elevation-models]
+    definition: >-
+      For a hillshade, the sun's angle above the horizon; the default is 45°.
+
+  - term: relative radiance
+    definition: >-
+      How bright a cell would look in sunlight, calculated from the sun's
+      azimuth and altitude and the cell's slope and aspect.
+
+  - term: relief inversion
+    definition: >-
+      An illusion in which valleys look like ridges, and ridges like valleys,
+      usually when a hillshade is lit from the south.
+
+  - term: line of sight
+    aliases: [line-of-sight]
+    definition: >-
+      A test of whether a target is visible from an observer, by comparing
+      elevation angles along the line between them.
+
+  - term: elevation angle
+    aliases: [elevation angles]
+    definition: >-
+      The angle up (positive) or down (negative) from an observer to a point,
+      arctan of the change in elevation over the horizontal distance.
+
+  - term: viewshed
+    aliases: [viewsheds]
+    definition: >-
+      The area visible from one or more observer points, found by running a
+      line-of-sight test to every cell of a DEM.

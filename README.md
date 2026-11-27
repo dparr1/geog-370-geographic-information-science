@@ -182,3 +182,11 @@ Geospatial Data*, are added** at the end of Unit 3, written from lectures 20–2
 and *What's Next in GIS* becomes Chapter 22. Their figures are made by
 `scripts/figures/suitability.py`, `risk_analysis.py`, and `uncertainty.py`; the lecture slides'
 images (textbook and journal figures, news photos) are replaced by new diagrams.
+
+**November 27, 2026: Chapter 15, *Digital Elevation Models*, is added** to Unit 3 after *Raster
+Analysis*, written from lecture 16, with a chapter quiz (also added to the Unit 3 quiz) and glossary
+terms. Interpolation through Uncertainty become Chapters 16–20, the software chapters 21 and 22, and
+*What's Next in GIS* Chapter 23. Its maps use a real USGS 3DEP DEM of Linville Gorge
+(`scripts/figures/data/linville_dem_10m_utm17n.tif`, public domain), with slope, aspect, hillshade,
+and viewshed computed in `scripts/figures/dem.py`; the historical maps (Collet 1770, Hutton 1778, a
+USGS topographic map) are public domain.

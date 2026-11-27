@@ -180,9 +180,9 @@ Raster overlay produces **no slivers**, since every layer shares one grid. The p
 Overlay and proximity are only part of the toolkit. Other families of methods include:
 
 - **Network analysis**: shortest routes, closest facilities, and service areas along roads or utility lines.
-- **Interpolation**: estimating values between sample points, such as temperatures from weather stations (Chapters 15 and 16).
+- **Interpolation**: estimating values between sample points, such as temperatures from weather stations (Chapters 16 and 17).
 - **Spatial statistics**: testing whether patterns, such as clusters of disease, are more concentrated than chance would produce, with measures such as Moran's I and Getis-Ord Gi\*.
-- **Terrain analysis**: deriving slope, aspect, and viewsheds from elevation data (Chapter 14).
+- **Terrain analysis**: deriving slope, aspect, and viewsheds from elevation data (Chapter 15).
 
 ## Check your understanding
 

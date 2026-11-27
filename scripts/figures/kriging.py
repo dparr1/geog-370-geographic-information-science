@@ -1,4 +1,4 @@
-"""Figures for Chapter 16, Kriging.
+"""Figures for Chapter 17, Kriging.
 
 Usage: python kriging.py
 
@@ -383,9 +383,9 @@ def sine_kriging():
     print("cv idw", r_idw, "iso", cv_iso, "aniso", cv_an)
 
 
-# ---------- 9. prediction and standard error on the chapter 15 surface ----------
+# ---------- 9. prediction and standard error on the chapter 16 surface ----------
 def prediction_and_error():
-    """Krige the chapter 15 samples after removing a first-order trend."""
+    """Krige the chapter 16 samples after removing a first-order trend."""
     p, z = ip.samples()
     A = ip.poly_terms(p[:, 0], p[:, 1], 1)
     beta, *_ = np.linalg.lstsq(A, z, rcond=None)

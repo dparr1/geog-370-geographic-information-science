@@ -77,7 +77,7 @@ Four questions come before any analysis:
 - **Can I get the data?** Elevation, soils, and roads, at a usable resolution and date. In the United States, elevation comes from the USGS 3D Elevation Program, soils from the NRCS's SSURGO database, and roads from TIGER/Line files or a state's road layer.
 - **What exactly does each criterion mean?** "Too steep" means nothing to software until it is a number of degrees.
 - **How much does each criterion matter?** That will set the weights.
-- **How accurate are the data?** Errors in any input carry straight through to the result (Chapter 19).
+- **How accurate are the data?** Errors in any input carry straight through to the result (Chapter 20).
 
 If a criterion can't be measured with the data you have, change it or drop it.
 
@@ -203,7 +203,7 @@ Weights are often written as fractions that sum to 1, such as 0.4, 0.3, 0.2, and
 
 A model's output looks precise, with a score for every cell. That can hide how many choices went into it. Before trusting a result:
 
-- **Set weights openly.** Use expert judgment, input from the people affected (**stakeholders**), or a structured method of **pairwise comparison** such as the **Analytic Hierarchy Process (AHP)**, which asks which of two criteria matters more, and by how much [@saaty1980]. Chapter 18 works through AHP step by step.
+- **Set weights openly.** Use expert judgment, input from the people affected (**stakeholders**), or a structured method of **pairwise comparison** such as the **Analytic Hierarchy Process (AHP)**, which asks which of two criteria matters more, and by how much [@saaty1980]. Chapter 19 works through AHP step by step.
 - **Test sensitivity.** A **sensitivity analysis** changes one weight or threshold at a time, and watches whether the best sites move. If a small change moves them, the answer is fragile.
 - **Check against reality.** Compare the results with sites you already know are good or bad.
 - **Respect the data's limits.** Cell size, data age, and errors set how precise the answer can be. A 30 m cell can't answer a question about one house's footprint.

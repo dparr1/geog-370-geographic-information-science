@@ -19,9 +19,9 @@ This chapter looks forward instead of teaching a new method. Look at what you ca
 - **Model the world as data:** vector and raster models, coordinate systems, datums, and map projections (Chapters 1–4).
 - **Query and combine it:** attribute queries, table joins, and spatial joins (Chapters 5–7).
 - **Judge its quality:** census data and its margins of error, geocoding and georeferencing, and volunteered data from OpenStreetMap (Chapters 8–10).
-- **Analyze and map it:** data classing, density, buffers and overlay, map algebra, interpolation, and kriging (Chapters 11–16).
-- **Answer real questions with it, honestly:** suitability modeling, risk analysis, and uncertainty (Chapters 17–19).
-- **Do all of it in real software:** QGIS and ArcGIS Pro (Chapters 20 and 21).
+- **Analyze and map it:** data classing, density, buffers and overlay, map algebra, terrain analysis with elevation models, interpolation, and kriging (Chapters 11–17).
+- **Answer real questions with it, honestly:** suitability modeling, risk analysis, and uncertainty (Chapters 18–20).
+- **Do all of it in real software:** QGIS and ArcGIS Pro (Chapters 21 and 22).
 
 That is the core of geographic information science. This chapter shows where it is used, previews advanced topics that build on it, points you to the research behind them, and maps out what to take and join next at UNC. As you read, notice which topic excites you most. That is a good clue to which course to take next.
 
@@ -35,7 +35,7 @@ Almost any question that involves "where" is a GIS question. The questions chang
 
 ### Environment and hazards
 
-GIS is central to every stage of a disaster: flood maps, evacuation routes, and shelter locations before a storm, and damage mapping from aerial and satellite imagery after it. When Hurricane Helene flooded western North Carolina in 2024, imagery and GIS were used to map flooding, landslides, and closed roads. The key question, *who is exposed?*, is an overlay of hazard zones with census data (Chapters 7, 8, and 13), and risk indices combine hazard with social vulnerability (Chapter 18). Elevation rasters and map algebra (Chapter 14) model where water flows, and interpolation and kriging (Chapters 15 and 16) turn rain gauges and air quality monitors into continuous surfaces.
+GIS is central to every stage of a disaster: flood maps, evacuation routes, and shelter locations before a storm, and damage mapping from aerial and satellite imagery after it. When Hurricane Helene flooded western North Carolina in 2024, imagery and GIS were used to map flooding, landslides, and closed roads. The key question, *who is exposed?*, is an overlay of hazard zones with census data (Chapters 7, 8, and 13), and risk indices combine hazard with social vulnerability (Chapter 19). Elevation rasters and map algebra (Chapter 14) model where water flows, and interpolation and kriging (Chapters 16 and 17) turn rain gauges and air quality monitors into continuous surfaces.
 
 ### Local government {#sec-local-government}
 
@@ -93,7 +93,7 @@ North Carolina was one of the first states to map its entire land area with lida
 
 ### Spatial statistics beyond the basics
 
-Chapters 12 and 16 introduced spatial autocorrelation and the semivariogram. Spatial statistics goes much further:
+Chapters 12 and 17 introduced spatial autocorrelation and the semivariogram. Spatial statistics goes much further:
 
 - **Geographically weighted regression** (**GWR**) fits a separate regression at each location, weighting nearby observations more, so you can map how a relationship changes across space [@brunsdon1996]. For example, the link between income and asthma might be strong in one county and weak in the next.
 - **Hot spot analysis** (Getis-Ord Gi\*) and local Moran's I test whether a cluster of high or low values is bigger than chance would produce.
@@ -115,10 +115,10 @@ Datasets are growing faster than laptops. Planet-wide imagery, billions of phone
 **GeoAI** is artificial intelligence applied to spatial data, and it is one of the fastest-growing parts of the field [@janowicz2020].
 
 - **Deep learning reads imagery at scale.** Models trained to recognize objects have extracted building footprints for whole countries, and now map roads, solar panels, crops, and flood extent automatically. Microsoft's global building footprints were made this way, and OpenStreetMap mappers can add them with the Rapid editor.
-- **Machine learning predicts.** Methods such as random forests estimate air quality, poverty, or crop yield in places with no measurements, a cousin of the interpolation in Chapter 15.
+- **Machine learning predicts.** Methods such as random forests estimate air quality, poverty, or crop yield in places with no measurements, a cousin of the interpolation in Chapter 16.
 - **Foundation models** are large models pretrained on huge image archives that can be adapted to new tasks with little labeled data. NASA and IBM's open Prithvi model, trained on Landsat and Sentinel-2 imagery, is an example.
 
-Spatial thinking keeps AI honest. Most machine learning assumes observations are independent, and spatial data are not. If you test a model on points chosen at random, its test points sit right next to its training points, and it looks far more accurate than it is. **Spatial cross-validation** holds out whole regions instead, like the cross-validation in Chapters 15 and 16 but with blocks of space. Ploton and colleagues found that large forest-mapping models that looked accurate under random testing had little predictive power when tested this way [@ploton2020].
+Spatial thinking keeps AI honest. Most machine learning assumes observations are independent, and spatial data are not. If you test a model on points chosen at random, its test points sit right next to its training points, and it looks far more accurate than it is. **Spatial cross-validation** holds out whole regions instead, like the cross-validation in Chapters 16 and 17 but with blocks of space. Ploton and colleagues found that large forest-mapping models that looked accurate under random testing had little predictive power when tested this way [@ploton2020].
 
 ### Web GIS, interactive maps, and 3D
 
@@ -128,7 +128,7 @@ GIS is also going 3D. Lidar point clouds, 3D building models, and scene layers i
 
 ### GIS programming and automation
 
-Every tool you ran by clicking in Chapters 20 and 21 can also be run from code. Automating a workflow makes it faster, repeatable, and shareable:
+Every tool you ran by clicking in Chapters 21 and 22 can also be run from code. Automating a workflow makes it faster, repeatable, and shareable:
 
 - **Python** is the main scripting language of desktop GIS: ArcPy in ArcGIS Pro, PyQGIS in QGIS, and the open-source GeoPandas, Rasterio, and Shapely libraries.
 - **R**, with the sf and terra packages, is popular for spatial statistics and is taught in GEOG 215 and GEOG 515.
@@ -189,10 +189,10 @@ GEOG 370, this course, is the gateway to most upper-level GIS courses at UNC (@f
 
 | If you liked… | Take |
 |:--------------|:-----|
-| Analysis in ArcGIS Pro and QGIS (Chapters 13–18) | GEOG 491 Principles of Geographic Information Systems; GEOG 591 Applied Issues in GIS |
+| Analysis in ArcGIS Pro and QGIS (Chapters 13–19) | GEOG 491 Principles of Geographic Information Systems; GEOG 591 Applied Issues in GIS |
 | Map design and data classing (Chapter 11) | GEOG 455 Cartography and Geovisualization; GEOG 456 Geovisualizing Change; GEOG 555 Cartography of the Global South |
 | Rasters and imagery (Chapters 2 and 14) | GEOG 477 Introduction to Remote Sensing of the Environment; GEOG 577 Advanced Remote Sensing; GEOG 567 Geospatial Data Analysis with Google Earth Engine |
-| Interpolation, kriging, and statistics (Chapters 15–16) | GEOG 391 Quantitative Methods in Geography; GEOG 570 Geographic Information Analysis; GEOG 515 Applied Spatial Data Science |
+| Interpolation, kriging, and statistics (Chapters 16–17) | GEOG 391 Quantitative Methods in Geography; GEOG 570 Geographic Information Analysis; GEOG 515 Applied Spatial Data Science |
 | Coordinates and data collection (Chapters 3 and 9) | GEOG 594 Global Positioning Systems and Applications |
 | Automating your work | GEOG 592 Geographic Information Science Programming; GEOG 586 Scaling Up Geospatial Analysis |
 | Health and census data (Chapter 8) | GEOG 541 GIS in Public Health; GEOG 544 GIS for Impact Evaluation and Health Studies |
@@ -220,7 +220,7 @@ Some of the best GIS learning happens outside class.
 
 - **Carolina Geography and Environment Club.** The Department of Geography and Environment's student club, open to anyone interested in geography. Ask the department or your instructor how to find the next meeting.
 - **UNC GIS Day.** GIS Day is celebrated around the world each November, and UNC's celebration, organized by the Department of Geography and Environment with UNC Libraries, has included a campus-wide **map competition** with prizes for students from any department, and humanitarian **mapathons**. Entering a map you made in this course is a great first portfolio piece.
-- **Mapathons.** At a mapathon, volunteers trace buildings and roads in OpenStreetMap for a humanitarian project, using the editing skills from Chapters 10 and 17. You can also join a project on your own any time through the Humanitarian OpenStreetMap Team's Tasking Manager.
+- **Mapathons.** At a mapathon, volunteers trace buildings and roads in OpenStreetMap for a humanitarian project, using the editing skills from Chapters 10 and 21. You can also join a project on your own any time through the Humanitarian OpenStreetMap Team's Tasking Manager.
 - **UNC Libraries.** The GIS librarian and Digital Research Services in Davis Library help with finding data, choosing software, and project questions, and you can book a consultation. UNC Libraries also offers free workshops, such as "Working with Spatial Data in R," and has course guides for GIS classes.
 - **Odum Institute.** The Odum Institute for Research in Social Science offers short courses on research methods, including GIS workshops.
 - **Office for Undergraduate Research.** See @sec-research for SURF and the Celebration of Undergraduate Research.

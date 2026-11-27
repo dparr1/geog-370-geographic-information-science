@@ -1,4 +1,4 @@
-"""Figures for Chapter 22 (What's Next in GIS).
+"""Figures for Chapter 23 (What's Next in GIS).
 
 A diagram of how UNC's GIS courses connect, from the prerequisites in the
 2026-27 UNC catalog, and a chart of red and near-infrared reflectance for NDVI

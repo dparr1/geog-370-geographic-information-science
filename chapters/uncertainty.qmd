@@ -15,7 +15,7 @@ By the end of this chapter you should be able to:
 6.  Explain Type 1 and Type 2 errors in map reading, and why uncertainty matters to the people who use maps.
 :::
 
-Every chapter in this book has produced numbers that look exact: a coordinate to six decimal places, a population density for every county, a suitability score for every cell, a flood risk class for every community. None of them is exact. Coordinates come from instruments with limits. Census figures are estimates with margins of error (Chapter 8). Interpolated surfaces are predictions (Chapters 15 and 16). Suitability and risk scores rest on thresholds and weights that someone chose (Chapters 17 and 18). This chapter is about the gap between what a map shows and what is true, and about how to be honest about it.
+Every chapter in this book has produced numbers that look exact: a coordinate to six decimal places, a population density for every county, a suitability score for every cell, a flood risk class for every community. None of them is exact. Coordinates come from instruments with limits. Census figures are estimates with margins of error (Chapter 8). Interpolated surfaces are predictions (Chapters 16 and 17). Suitability and risk scores rest on thresholds and weights that someone chose (Chapters 18 and 19). This chapter is about the gap between what a map shows and what is true, and about how to be honest about it.
 
 ## What is uncertainty? {#sec-what-is-uncertainty}
 
@@ -62,7 +62,7 @@ where $n$ is the number of test points. Square each offset, average the squares,
 
 ![Testing positional accuracy at eight test points. Each arrow runs from the true position to the mapped position.](../images/uncertainty/rmse.png){#fig-rmse fig-alt="Left: a gray map with eight numbered pairs of symbols, a green triangle for the true position and a red dot for the position on the map, joined by a short red arrow in a different direction for each pair. Right: a table of offsets for points 1 to 8: 3, 4, 5, 2, 4, 3, 5, and 2 meters, with squares 9, 16, 25, 4, 16, 9, 25, and 4. Below: sum of d squared equals 108, n equals 8; RMSE equals the square root of 108 over 8, which is the square root of 13.5, or 3.7 meters."}
 
-Squaring makes large offsets count more than small ones, so a few badly placed points raise the RMSE sharply. RMSE is the same statistic you met for georeferencing (Chapter 9) and for cross validation in interpolation (Chapter 15).
+Squaring makes large offsets count more than small ones, so a few badly placed points raise the RMSE sharply. RMSE is the same statistic you met for georeferencing (Chapter 9) and for cross validation in interpolation (Chapter 16).
 
 **Accuracy standards** turn RMSE into a pass or fail. The **U.S. National Map Accuracy Standards** of 1947 [@usbb1947] said that for maps at a scale of 1:20,000 or smaller, no more than 10% of tested points may be off by more than 1/50 inch *on the map*. At 1:24,000, the scale of USGS topographic quadrangles, 1/50 inch is 40 feet on the ground. So 90% of tested points must fall within 40 feet of their true positions. Today the **National Standard for Spatial Data Accuracy** [@fgdc1998] reports accuracy in ground units at 95% confidence (about 1.73 times the RMSE for horizontal positions), whatever the map scale.
 
@@ -127,7 +127,7 @@ Open a map app and look at your street or campus. Find one example of a problem 
 Uncertainty is not one problem at one step. It can enter at every stage of the life of a dataset (@fig-lifecycle):
 
 - **Collection.** Instruments have limits, and can malfunction, which is a big issue in remote sensing. GPS positions drift. Surveys have non-response, so social data have gaps.
-- **Processing.** Almost every computation adds uncertainty. Projection distorts (Chapter 4), generalization simplifies, and estimation and prediction fill in values that were never measured (Chapters 15 and 16).
+- **Processing.** Almost every computation adds uncertainty. Projection distorts (Chapter 4), generalization simplifies, and estimation and prediction fill in values that were never measured (Chapters 16 and 17).
 - **Storage.** Attributes get misclassified, fields get truncated, and links between tables break (Chapter 6).
 - **Display.** Abstraction and symbolization trade detail for clarity, and classing (Chapter 11) can create or hide patterns.
 - **Use.** Readers misread maps: they see patterns that aren't there, or miss ones that are (@sec-type-errors).
@@ -136,9 +136,9 @@ Uncertainty is not one problem at one step. It can enter at every stage of the l
 
 ### From errors to uncertainty
 
-Each source of error nudges the recorded value away from the truth by an unknown amount. Since we can't know the exact error, we have to accept that a range of true values is possible. Uncertainty is our description of that range: how wide the cloud in @fig-cloud is, and how the possibilities are spread out. A census margin of error (Chapter 8), a kriging prediction standard error (Chapter 16), and an RMSE are all descriptions of the cloud.
+Each source of error nudges the recorded value away from the truth by an unknown amount. Since we can't know the exact error, we have to accept that a range of true values is possible. Uncertainty is our description of that range: how wide the cloud in @fig-cloud is, and how the possibilities are spread out. A census margin of error (Chapter 8), a kriging prediction standard error (Chapter 17), and an RMSE are all descriptions of the cloud.
 
-Uncertainty also **propagates**. When layers are combined in a suitability or risk model (Chapters 17 and 18), the errors in each input carry into the output, and can compound. A slope layer computed from an elevation model inherits the elevation model's errors, and so does every suitability score built on that slope.
+Uncertainty also **propagates**. When layers are combined in a suitability or risk model (Chapters 18 and 19), the errors in each input carry into the output, and can compound. A slope layer computed from an elevation model inherits the elevation model's errors, and so does every suitability score built on that slope.
 
 ### Uncertainty in abstraction
 
@@ -223,7 +223,7 @@ Our job as GIS analysts and cartographers is not to eliminate uncertainty, which
 - **Positional accuracy.** Compute RMSE from test points in a table with the Field Calculator, or use the residuals reported by the georeferencing tools (Chapter 9).
 - **Logical consistency.** ArcGIS Pro: geodatabase topology rules and the Validate Topology tool, and attribute rules. QGIS: the Topology Checker and Geometry Checker plugins, and the Check Validity and Fix Geometries tools.
 - **Metadata.** ArcGIS Pro and QGIS both have metadata editors, under a layer's Properties, for recording lineage, accuracy, and constraints.
-- **Showing uncertainty.** Use transparency or saturation driven by a field (in ArcGIS Pro, "Vary symbology by attribute"; in QGIS, data-defined overrides), or a bivariate color scheme of estimate and margin of error. Map kriging's prediction standard error beside the prediction (Chapter 16).
+- **Showing uncertainty.** Use transparency or saturation driven by a field (in ArcGIS Pro, "Vary symbology by attribute"; in QGIS, data-defined overrides), or a bivariate color scheme of estimate and margin of error. Map kriging's prediction standard error beside the prediction (Chapter 17).
 
 ## Check your understanding
 
@@ -268,7 +268,7 @@ The interactive self-check questions for this chapter are in the online version 
 3.  **Logical consistency.** Download the points of interest for Chapel Hill from OpenStreetMap (Chapter 10), and find every record for one chain store or restaurant. How many ways is its name written? What would a query for the exact name miss?
 4.  **Metadata.** Find a layer on NC OneMap, and read its metadata. Which of the seven quality elements does it report? Which are missing?
 5.  **Map the margin of error.** Map an ACS estimate, such as median household income, for North Carolina census tracts (Chapter 8). Make a second map that fades tracts whose coefficient of variation is over 30%. Which tracts' values should a reader trust least?
-6.  **Uncertainty in your project.** For a suitability or risk model you have built (Chapters 17 and 18), list one source of uncertainty at each stage of the lifecycle. Which one do you think affects the result most?
+6.  **Uncertainty in your project.** For a suitability or risk model you have built (Chapters 18 and 19), list one source of uncertainty at each stage of the lifecycle. Which one do you think affects the result most?
 
 ## Further reading and online resources
 
