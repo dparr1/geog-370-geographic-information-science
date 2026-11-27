@@ -34,6 +34,12 @@ book:
         - chapters/what-is-gis-quiz.qmd
         - chapters/what-is-geographic-data.qmd
         - chapters/what-is-geographic-data-quiz.qmd
+        - chapters/location-and-coordinates.qmd
+        - chapters/location-and-coordinates-quiz.qmd
+        - chapters/map-projections.qmd
+        - chapters/map-projections-quiz.qmd
+        - chapters/attribute-queries.qmd
+        - chapters/attribute-queries-quiz.qmd
     # Units and chapters go here, each chapter followed by its (unnumbered)
     # chapter quiz page, and each unit ending with its unit quiz. Add the
     # same unit and chapter (without the quiz pages) to _quarto-textbook.yml.

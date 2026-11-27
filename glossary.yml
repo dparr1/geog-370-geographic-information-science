@@ -506,3 +506,528 @@ terms:
       A series of U.S. Earth-observing satellites, run by NASA and the USGS,
       that have imaged the whole planet since 1972, mostly with 30-meter
       cells.
+
+  # --- Chapter 3: Location and Coordinate Systems -------------------------------
+
+  - term: relative location
+    aliases: [relative locations]
+    definition: >-
+      A description of where something is in relation to a landmark, such as
+      "ten paces north of the oak." It only works if you know the landmark.
+
+  - term: absolute location
+    aliases: [absolute locations]
+    definition: >-
+      A location given in a coordinate system that means the same thing to
+      everyone, such as 38° 53′ 52″ N, 77° 02′ 11″ W.
+
+  - term: geodesy
+    aliases: [geodesists, geodetic]
+    definition: >-
+      The science of measuring the Earth's size, shape, orientation in space,
+      and gravity field.
+
+  - term: ellipsoid
+    aliases: [ellipsoids, spheroid, oblate spheroid, ellipsoid of revolution]
+    definition: >-
+      A smooth mathematical model of the Earth's shape: an ellipse rotated
+      about its polar axis, wider at the equator than from pole to pole.
+      Examples are Clarke 1866, GRS 80, and WGS 84.
+
+  - term: semi-major axis
+    definition: >-
+      The equatorial radius of an ellipsoid, written *a*. For the Earth,
+      about 6,378 km.
+
+  - term: semi-minor axis
+    definition: >-
+      The polar radius of an ellipsoid, written *b*. For the Earth, about
+      6,357 km.
+
+  - term: flattening
+    chapters: [location-and-coordinates]
+    definition: >-
+      How squashed an ellipsoid is: *f* = (*a* − *b*) / *a*. For the Earth,
+      about 1/298.
+
+  - term: geoid
+    aliases: [geoids]
+    definition: >-
+      The surface of equal gravity that best matches global mean sea level.
+      It is lumpy, up to about 100 m above or below the ellipsoid, and
+      elevations are measured from it.
+
+  - term: mean sea level
+    definition: >-
+      The average height of the sea surface over many years, which the geoid
+      approximates.
+
+  - term: ellipsoid height
+    aliases: [ellipsoid heights]
+    definition: >-
+      Height above the ellipsoid, written *h*. This is the height a GPS
+      receiver measures.
+
+  - term: orthometric height
+    aliases: [orthometric heights]
+    definition: >-
+      Height above the geoid, written *H*: the elevation, or "height above
+      sea level," printed on maps. *h* = *H* + *N*.
+
+  - term: geoid height
+    aliases: [geoid heights, geoid undulation]
+    definition: >-
+      The distance from the ellipsoid to the geoid at a place, written *N*.
+      In the lower 48 United States it is negative, about −30 m.
+
+  - term: geodetic datum
+    aliases: [datum, datums, geodetic datums]
+    definition: >-
+      A model that fixes an ellipsoid's size, shape, and position relative to
+      the Earth, realized by a network of control points, so latitude and
+      longitude point to real places. Examples are NAD27, NAD83, and WGS84.
+
+  - term: control point
+    aliases: [control points, benchmark, benchmarks, survey marker, survey markers]
+    definition: >-
+      A point on the ground, often marked with a bronze disk, whose
+      coordinates have been measured precisely. Control points tie a datum to
+      the Earth.
+
+  - term: triangulation
+    definition: >-
+      An old surveying method that measures the angles of a chain of
+      triangles between stations to work out their positions across a large
+      area.
+
+  - term: NAD27
+    aliases: [North American Datum of 1927]
+    definition: >-
+      The North American Datum of 1927. It used the Clarke 1866 ellipsoid and
+      an origin at Meades Ranch, Kansas.
+
+  - term: NAD83
+    aliases: [North American Datum of 1983, "NAD83(2011)"]
+    definition: >-
+      The North American Datum of 1983, an earth-centered datum on the GRS 80
+      ellipsoid, fixed to the North American plate. The datum of most U.S.
+      government GIS data.
+
+  - term: WGS84
+    aliases: [WGS 84, World Geodetic System 1984]
+    definition: >-
+      The World Geodetic System of 1984, the global, earth-centered datum
+      used by GPS. It differs from NAD83 by about 1 to 2 meters in North
+      America.
+
+  - term: Continuously Operating Reference Stations (CORS)
+    aliases: [CORS, Continuously Operating Reference Stations]
+    definition: >-
+      A network of permanent GPS receivers, run by the National Geodetic
+      Survey and its partners, that keeps NAD83 up to date.
+
+  - term: NATRF2022
+    definition: >-
+      The North American Terrestrial Reference Frame of 2022, the new datum
+      that will replace NAD83 in the United States.
+
+  - term: datum shift
+    aliases: [datum shifts]
+    definition: >-
+      The difference in where the same latitude and longitude land on the
+      ground in two different datums. Between NAD27 and NAD83 it can exceed
+      100 m.
+
+  - term: datum transformation
+    aliases: [datum transformations, geographic transformation, geographic transformations]
+    definition: >-
+      Equations or a grid of measured shifts that convert coordinates from
+      one datum to another.
+
+  - term: latitude
+    aliases: [latitudes]
+    definition: >-
+      The angle north or south of the equator, from 0° at the equator to 90°
+      at the poles.
+
+  - term: longitude
+    aliases: [longitudes]
+    definition: >-
+      The angle east or west of the prime meridian, from 0° at Greenwich to
+      180° east or west.
+
+  - term: equator
+    case_sensitive: false
+    definition: >-
+      The parallel halfway between the poles, at 0° latitude. It is the only
+      parallel that is a great circle.
+
+  - term: prime meridian
+    definition: >-
+      The meridian at 0° longitude, through Greenwich, England, chosen in
+      1884. Longitude is measured east and west from it.
+
+  - term: parallel
+    aliases: [parallels]
+    chapters: [location-and-coordinates, map-projections]
+    definition: >-
+      A line of equal latitude. Parallels run east and west and get shorter
+      toward the poles.
+
+  - term: meridian
+    aliases: [meridians]
+    definition: >-
+      A line of equal longitude. Meridians run from pole to pole and meet at
+      the poles.
+
+  - term: decimal degrees (DD)
+    aliases: [decimal degrees, decimal degree]
+    definition: >-
+      Latitude or longitude written as one signed number, such as −79.0558.
+      Negative numbers are south latitudes and west longitudes.
+
+  - term: degrees, minutes, and seconds (DMS)
+    aliases: ["degrees, minutes, and seconds", degrees-minutes-seconds, "degrees, minutes, seconds", DMS]
+    definition: >-
+      Latitude or longitude written in degrees, minutes (1/60 of a degree),
+      and seconds (1/3,600 of a degree), with a hemisphere letter, such as
+      79° 03′ 21″ W.
+
+  - term: great circle
+    aliases: [great circles, great-circle]
+    definition: >-
+      A circle on a sphere whose plane passes through the center. The
+      shortest route between two points follows a great circle.
+
+  - term: graticule
+    aliases: [graticules]
+    definition: >-
+      The network of parallels and meridians drawn on a map.
+
+  - term: Plate Carrée
+    aliases: [Plate Carree, equirectangular projection, equirectangular]
+    definition: >-
+      The projection that plots longitude as *x* and latitude as *y* on an
+      even grid. It stretches the map east to west toward the poles.
+
+  - term: geographic coordinate system (GCS)
+    aliases: [geographic coordinate system, geographic coordinate systems, GCS]
+    definition: >-
+      A coordinate system that gives positions as latitude and longitude, in
+      degrees, on a datum. EPSG:4326 (WGS84) and 4269 (NAD83) are examples.
+
+  # --- Chapter 4: Map Projections ----------------------------------------------
+
+  - term: conformal
+    aliases: [conformal projection, conformal projections]
+    definition: >-
+      A projection that keeps local angles true, so small shapes look right.
+      Mercator and Lambert Conformal Conic are conformal.
+
+  - term: equal-area
+    aliases: [equal-area projection, equal-area projections, equal area, equivalent projection]
+    definition: >-
+      A projection that keeps relative area true. Use one to measure or
+      compare areas, or to map density.
+
+  - term: equidistant
+    aliases: [equidistant projection, equidistant projections]
+    definition: >-
+      A projection that keeps true distance from one or two points, or along
+      certain lines.
+
+  - term: azimuthal
+    aliases: [azimuthal projection, azimuthal projections, planar projection]
+    definition: >-
+      A projection onto a plane that keeps true directions from its center
+      point.
+
+  - term: compromise projection
+    aliases: [compromise projections, compromise]
+    chapters: [map-projections]
+    definition: >-
+      A projection that preserves no property exactly but keeps every
+      distortion moderate, such as Robinson or Winkel Tripel.
+
+  - term: Tissot's indicatrix
+    aliases: [Tissot indicatrix, Tissot's circles]
+    definition: >-
+      Identical small circles drawn on the globe and then projected. Their
+      size and shape on the map show the projection's distortion.
+
+  - term: Mercator
+    aliases: [Mercator projection]
+    definition: >-
+      A conformal cylindrical projection from 1569, made for navigation:
+      lines of constant compass bearing are straight. It greatly enlarges
+      areas toward the poles.
+
+  - term: Web Mercator
+    aliases: [Pseudo-Mercator, EPSG:3857]
+    definition: >-
+      The Mercator variant used by nearly every web map (EPSG:3857). Good for
+      display, never for measuring distance or area.
+
+  - term: rhumb line
+    aliases: [rhumb lines]
+    definition: >-
+      A line of constant compass bearing. It is straight on a Mercator map.
+
+  - term: developable surface
+    aliases: [developable surfaces]
+    definition: >-
+      A shape that can be unrolled flat without stretching: a plane, a
+      cylinder, or a cone.
+
+  - term: tangent
+    chapters: [map-projections]
+    definition: >-
+      A projection surface that touches the Earth along one line or at one
+      point.
+
+  - term: secant
+    definition: >-
+      A projection surface that cuts through the Earth along two lines (or a
+      circle), spreading the error more evenly.
+
+  - term: standard line
+    aliases: [standard lines, standard parallel, standard parallels, standard point]
+    definition: >-
+      A line where the projection surface meets the Earth, so the scale is
+      exact. Standard lines that follow latitude are standard parallels.
+
+  - term: scale factor
+    definition: >-
+      The ratio of scale at a place on a map to the map's stated scale:
+      exactly 1 on a standard line, below 1 where the map shrinks the Earth,
+      above 1 where it stretches it.
+
+  - term: Lambert Conformal Conic
+    definition: >-
+      A conformal conic projection with two standard parallels. It suits
+      mid-latitude regions that run east to west, and is used for North
+      Carolina State Plane.
+
+  - term: Albers Equal-Area Conic
+    aliases: [Albers, Conus Albers]
+    definition: >-
+      An equal-area conic projection, the standard for measuring areas across
+      the contiguous United States (EPSG:5070).
+
+  - term: Transverse Mercator
+    definition: >-
+      A Mercator projection turned on its side, so the cylinder touches the
+      Earth along a central meridian. It suits regions that run north to
+      south.
+
+  - term: central meridian
+    definition: >-
+      The meridian at the center of a projection or zone, such as the line
+      along which a Transverse Mercator cylinder touches the Earth.
+
+  - term: Universal Transverse Mercator (UTM)
+    aliases: [UTM, Universal Transverse Mercator]
+    definition: >-
+      A system of 60 zones, each 6° of longitude wide, each a secant
+      Transverse Mercator projection in meters. North Carolina spans zones
+      17N and 18N.
+
+  - term: false easting
+    definition: >-
+      A value added to every *x* coordinate so that none are negative, such
+      as 500,000 m in UTM.
+
+  - term: State Plane Coordinate System (SPCS)
+    aliases: [State Plane, State Plane Coordinate System, SPCS, NC State Plane, North Carolina State Plane]
+    definition: >-
+      A U.S. system of about 120 zones following state and county lines,
+      built for surveyors, with error held to 1 part in 10,000. North
+      Carolina has one zone (EPSG:32119 in meters, 2264 in feet).
+
+  - term: coordinate reference system (CRS)
+    aliases: [coordinate reference system, coordinate reference systems, CRS]
+    definition: >-
+      The full description of how coordinates relate to the Earth: a datum,
+      plus a projection with its parameters, plus units.
+
+  - term: projected coordinate system
+    aliases: [projected coordinate systems, projected CRS]
+    definition: >-
+      A coordinate system that gives positions as *x, y* in meters or feet,
+      on a map projection built on a datum, such as UTM or State Plane.
+
+  - term: EPSG code
+    aliases: [EPSG codes, EPSG]
+    definition: >-
+      A number that identifies a coordinate reference system in the EPSG
+      registry, such as 4326 for WGS84 or 32119 for North Carolina State
+      Plane.
+
+  - term: gnomonic projection
+    aliases: [gnomonic]
+    definition: >-
+      An azimuthal projection on which every great circle is a straight line.
+
+  - term: on-the-fly reprojection
+    aliases: [reprojects layers on the fly]
+    definition: >-
+      Reprojecting layers as they are drawn, so layers in different CRSs line
+      up on the map without changing their stored coordinates.
+
+  - term: reproject
+    aliases: [reprojecting, reprojected, reprojection, Reproject Layer]
+    definition: >-
+      To convert a layer's coordinates from one CRS to another and save the
+      result. Defining a projection, by contrast, only labels what the
+      coordinates already are.
+
+  # --- Chapter 5: Attribute Data and Queries --------------------------------------
+
+  - term: record
+    aliases: [records]
+    chapters: [attribute-queries]
+    definition: >-
+      A row in an attribute table: everything known about one feature.
+
+  - term: field
+    aliases: [fields]
+    chapters: [attribute-queries]
+    definition: >-
+      A column in an attribute table: one attribute, measured the same way
+      for every feature. Also called an attribute or item.
+
+  - term: data type
+    aliases: [data types, field type, field types]
+    definition: >-
+      How a field is stored, such as text, integer, double, or date. It
+      limits what the field can hold.
+
+  - term: precision
+    chapters: [attribute-queries]
+    definition: >-
+      For a numeric field, the total number of digits it can hold. Scale is
+      how many of them fall after the decimal point.
+
+  - term: bit
+    aliases: [bits]
+    definition: >-
+      A binary digit, 0 or 1. With *n* bits you can write 2ⁿ different
+      values.
+
+  - term: binary
+    chapters: [attribute-queries]
+    definition: >-
+      Base-2 numbers, written with only 0 and 1, in which each column is worth
+      twice the one to its right. Computers store all data in binary.
+
+  - term: integer
+    aliases: [integers, Short Integer, Long Integer, Big Integer]
+    definition: >-
+      A data type for whole numbers. Its range depends on its bits: up to
+      32,767 for 16 bits, about 2.1 billion for 32 bits.
+
+  - term: Double
+    aliases: [double-precision]
+    case_sensitive: true
+    definition: >-
+      A 64-bit data type for decimal numbers, with about 15 significant
+      digits. Float is the 32-bit version, with about 7.
+
+  - term: level of measurement
+    aliases: [levels of measurement, scale of measurement, scales of measurement, measurement scale]
+    definition: >-
+      What kind of values an attribute holds, which decides what questions
+      make sense: nominal, ordinal, interval, or ratio.
+
+  - term: nominal
+    definition: >-
+      Categories with no order, such as land use or a name. You can test
+      equality and count, but not average.
+
+  - term: ordinal
+    definition: >-
+      Ranked categories whose steps are of unknown size, such as A, B, C, D
+      or a hurricane's category.
+
+  - term: interval
+    chapters: [attribute-queries]
+    definition: >-
+      Values with equal steps but an arbitrary zero, such as temperature in
+      °C or a calendar year. Differences make sense; ratios don't.
+
+  - term: ratio
+    chapters: [attribute-queries]
+    definition: >-
+      Values with equal steps and a true zero, such as population or area.
+      Every arithmetic operation makes sense.
+
+  - term: query
+    aliases: [queries, attribute query, attribute queries]
+    chapters: [attribute-queries]
+    definition: >-
+      A written condition that the software tests against every record,
+      selecting those that pass.
+
+  - term: SQL
+    aliases: [Structured Query Language]
+    definition: >-
+      Structured Query Language, the standard language for asking databases
+      questions. In a GIS you usually write only its WHERE clause.
+
+  - term: WHERE clause
+    aliases: [WHERE clauses]
+    definition: >-
+      The condition part of an SQL query, such as `"Area" > 20`. It is the
+      part you write in Select by Expression or Select By Attributes.
+
+  - term: selection
+    aliases: [selected set, selections]
+    chapters: [attribute-queries]
+    definition: >-
+      The records, and their features, that pass a query. A selection is
+      temporary until you export it or calculate it into a field.
+
+  - term: intersection
+    chapters: [attribute-queries]
+    definition: >-
+      The records in both of two sets. AND selects the intersection.
+
+  - term: union
+    chapters: [attribute-queries]
+    definition: >-
+      The records in either of two sets. OR selects the union.
+
+  - term: complement
+    chapters: [attribute-queries]
+    definition: >-
+      Every record outside a set. NOT selects the complement.
+
+  - term: Venn diagram
+    aliases: [Venn diagrams]
+    definition: >-
+      A drawing of sets as overlapping circles, useful for checking what an
+      AND or OR query will select.
+
+  - term: De Morgan's law
+    aliases: [De Morgan's laws]
+    definition: >-
+      NOT (A AND B) equals (NOT A) OR (NOT B), and NOT (A OR B) equals (NOT A)
+      AND (NOT B).
+
+  - term: NULL
+    case_sensitive: true
+    definition: >-
+      A missing value: nothing was recorded. NULL fails every comparison, so
+      test for it with IS NULL.
+
+  - term: field calculator
+    aliases: [Field Calculator, Calculate Field]
+    definition: >-
+      A tool that computes values and writes them into a field, for every
+      record or for the selected records only.
+
+  - term: definition query
+    aliases: [definition queries]
+    definition: >-
+      In ArcGIS Pro, a WHERE clause that hides the features that fail it,
+      until you remove it. QGIS calls this a filter.
