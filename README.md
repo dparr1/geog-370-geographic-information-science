@@ -27,7 +27,7 @@ Every page has a top menu: **Welcome**, **Syllabus**, **Course resources**, **Ab
 | About the author | `about.qmd` | Public |
 | Privacy policy (linked from the sign-in screen and page footer) | `privacy.qmd` | Public |
 | Student services (linked from the syllabus) | `student-services.qmd` | Public |
-| Textbook: preface, units, chapters, chapter quizzes, glossary | `preface.qmd`, `units/`, `chapters/`, `glossary.qmd` | Students only |
+| Textbook: preface, units, chapters, chapter quizzes, glossary, references | `preface.qmd`, `units/`, `chapters/`, `glossary.qmd`, `references.qmd` | Students only |
 
 The public pages are listed in `PUBLIC_PAGES` in `assets/auth-gate.html`; keep that list in step with
 the menu in `_quarto-site.yml`. The course pages are copied from the Fall 2026 GEOG 370 Syllabus
@@ -145,3 +145,7 @@ the Fall 2026 GEOG 370 Syllabus and Course Resources docs.
 
 **November 26, 2026: Chapter 1, *What Is GIS?*, is added** as the first chapter of Unit 1, written
 from lecture 02, with its chapter quiz and the first glossary terms.
+
+**November 27, 2026: the Preface gets "How to use this book" and "Fonts and reading settings"
+sections**, modeled on GEOG 215's, and the chapters' reference lists move to a single References
+page at the end of the book (`references.qmd`; `chapters/_metadata.yml` turns off the per-chapter lists).
