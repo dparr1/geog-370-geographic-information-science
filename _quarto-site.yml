@@ -52,6 +52,20 @@ book:
         - chapters/geocoding-georeferencing-quiz.qmd
         - chapters/osm-data-quality.qmd
         - chapters/osm-data-quality-quiz.qmd
+    - part: units/unit-3.qmd
+      chapters:
+        - chapters/data-classing.qmd
+        - chapters/data-classing-quiz.qmd
+        - chapters/density.qmd
+        - chapters/density-quiz.qmd
+        - chapters/spatial-analysis.qmd
+        - chapters/spatial-analysis-quiz.qmd
+        - chapters/raster.qmd
+        - chapters/raster-quiz.qmd
+        - chapters/interpolation.qmd
+        - chapters/interpolation-quiz.qmd
+        - chapters/kriging.qmd
+        - chapters/kriging-quiz.qmd
     # Units and chapters go here, each chapter followed by its (unnumbered)
     # chapter quiz page, and each unit ending with its unit quiz. Add the
     # same unit and chapter (without the quiz pages) to _quarto-textbook.yml.

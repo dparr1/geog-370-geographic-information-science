@@ -1763,3 +1763,602 @@ terms:
     case_sensitive: true
     definition: >-
       The Java OpenStreetMap editor, a desktop editor for advanced work.
+
+  # Chapter 11: Data classing and choropleth maps
+
+  - term: choropleth map
+    aliases: [choropleth maps, choropleth]
+    definition: >-
+      A map that shades each area, such as a county, by its value, usually
+      in a few classes from light to dark.
+
+  - term: enumeration unit
+    aliases: [enumeration units]
+    definition: >-
+      An area for which data are collected and reported, such as a county,
+      census tract, or state.
+
+  - term: normalize
+    aliases: [normalized, normalizing, normalization]
+    chapters: [data-classing]
+    definition: >-
+      To divide a count by an area, a population, or another total, so that
+      areas of different sizes can be compared fairly.
+
+  - term: raw count
+    aliases: [raw counts]
+    definition: >-
+      A total that hasn't been normalized, such as a number of people or
+      crimes. Raw counts grow with the size of an area.
+
+  - term: histogram
+    aliases: [histograms]
+    definition: >-
+      A bar chart of how many values fall in each range, used to see the
+      shape of a distribution.
+
+  - term: skewed
+    aliases: [skew, skewed distribution]
+    definition: >-
+      Describes a distribution with a long tail on one side, such as many
+      small values and a few very large ones.
+
+  - term: unclassed map
+    aliases: [unclassed maps, unclassed]
+    definition: >-
+      A choropleth map in which each area gets its own shade, in proportion
+      to its value, instead of being grouped into classes.
+
+  - term: classed map
+    aliases: [classed maps]
+    definition: >-
+      A choropleth map in which values are grouped into a few classes, each
+      shown with one shade.
+
+  - term: class break
+    aliases: [class breaks, breaks]
+    chapters: [data-classing]
+    definition: >-
+      A value that divides one class from the next on a classed map.
+
+  - term: Sturges' rule
+    aliases: ["Sturges’ rule"]
+    definition: >-
+      A starting point for the number of classes: about 1 + 3.3 log10(n),
+      where n is the number of values.
+
+  - term: ColorBrewer
+    case_sensitive: true
+    definition: >-
+      A free online tool with tested color schemes for maps, for 3 to 9
+      classes.
+
+  - term: map generalization
+    aliases: [generalization]
+    definition: >-
+      Deciding what detail to keep on a map, by simplifying, classifying, and
+      enhancing.
+
+  - term: ecological fallacy
+    definition: >-
+      Assuming that every person or place in an area shares the area's
+      average value.
+
+  - term: dasymetric map
+    aliases: [dasymetric maps]
+    definition: >-
+      A map that redistributes values within each area onto the land where
+      they occur, such as placing people only where there are homes.
+
+  - term: proportional symbol map
+    aliases: [proportional symbol maps]
+    definition: >-
+      A map that shows counts with symbols, such as circles, sized in
+      proportion to each value.
+
+  - term: equal interval
+    aliases: [equal-interval, equal intervals]
+    definition: >-
+      A classification method that divides the range of the data into
+      classes of equal width.
+
+  - term: quantile
+    aliases: [quantiles, quintiles, quartiles, Equal Count]
+    chapters: [data-classing]
+    definition: >-
+      A classification method that puts the same number of areas in each
+      class. Five quantile classes are quintiles.
+
+  - term: arithmetic progression
+    definition: >-
+      A classification method in which each class is wider than the one
+      before by a constant amount.
+
+  - term: geometric progression
+    aliases: [Geometrical Interval]
+    definition: >-
+      A classification method in which each class is wider than the one
+      before by a constant ratio, suited to strongly skewed data.
+
+  - term: natural breaks
+    aliases: [Jenks, Natural Breaks (Jenks), Jenks natural breaks]
+    definition: >-
+      A classification method (Jenks) that groups similar values by
+      minimizing the variance within classes. The default in ArcGIS Pro.
+
+  - term: standard deviation classification
+    aliases: [standard deviation classing]
+    definition: >-
+      A classification method that sets class breaks at fixed numbers of
+      standard deviations above and below the mean.
+
+  - term: manual intervals
+    aliases: [defined intervals, manual, Manual Interval, Defined Interval]
+    chapters: [data-classing]
+    definition: >-
+      Class breaks set by the analyst at meaningful values, such as a
+      poverty line, or the same breaks for a series of maps.
+
+  - term: goodness of variance fit
+    aliases: [GVF]
+    definition: >-
+      A measure from 0 to 1 of how well classes fit the data: 1 minus the
+      squared deviations from the class means divided by those from the
+      overall mean.
+
+  - term: sequential color scheme
+    aliases: [sequential, sequential schemes, sequential scheme]
+    chapters: [data-classing]
+    definition: >-
+      Light-to-dark steps of one or a few related hues, for data that run
+      from low to high.
+
+  - term: diverging color scheme
+    aliases: [diverging, diverging schemes, diverging scheme]
+    chapters: [data-classing]
+    definition: >-
+      Two hues that meet at a light neutral color, for data with a
+      meaningful midpoint such as a mean or zero.
+
+  - term: qualitative color scheme
+    aliases: [qualitative schemes, qualitative]
+    chapters: [data-classing]
+    definition: >-
+      Distinct hues of similar lightness, for categories rather than
+      quantities.
+
+  # Chapter 12: Density and neighborhoods
+
+  - term: density
+    chapters: [density]
+    definition: >-
+      A count divided by an area, such as people or crimes per square mile.
+
+  - term: neighborhood
+    aliases: [neighborhoods]
+    chapters: [density]
+    definition: >-
+      In spatial analysis, a zone drawn around a location, defined by
+      distance, by contiguity, or by a number of nearest neighbors.
+
+  - term: neighborhood effect
+    aliases: [neighborhood effects]
+    definition: >-
+      The tendency of a place's value to depend on the values around it.
+
+  - term: Tobler's first law of geography
+    aliases: ["Tobler's first law", "Tobler’s first law", first law of geography]
+    definition: >-
+      "Everything is related to everything else, but near things are more
+      related than distant things" (Tobler 1970).
+
+  - term: spatial autocorrelation
+    definition: >-
+      The degree to which values at nearby locations are more alike
+      (positive) or more different (negative) than chance would predict.
+
+  - term: spatial weights matrix
+    aliases: [spatial weights]
+    definition: >-
+      A table recording which locations are neighbors of which, and how much
+      each neighbor counts.
+
+  - term: edge effect
+    aliases: [edge effects]
+    definition: >-
+      Locations near the boundary of a study area find fewer neighbors than
+      they should, because their neighbors outside it were not observed.
+
+  - term: contiguity
+    definition: >-
+      Touching. Contiguous polygons share a border (rook's case) or a border
+      or corner (queen's case).
+
+  - term: rook's case
+    aliases: ["rook’s case", rook contiguity]
+    definition: >-
+      Contiguity in which polygons are neighbors only if they share an edge.
+
+  - term: queen's case
+    aliases: ["queen’s case", queen contiguity]
+    definition: >-
+      Contiguity in which polygons are neighbors if they share an edge or a
+      corner.
+
+  - term: first-order neighbor
+    aliases: [first-order neighbors, second-order neighbors, second-order neighbor]
+    definition: >-
+      A polygon that touches the polygon in question directly. Its own
+      neighbors are second-order neighbors.
+
+  - term: k nearest neighbors
+    aliases: [k-nearest-neighbor, k-nearest neighbors]
+    definition: >-
+      A neighborhood made of the k closest locations, whatever their
+      distance.
+
+  - term: kernel density estimation
+    aliases: [KDE, kernel density]
+    definition: >-
+      A method that turns points into a continuous density surface by
+      sliding a weighted window (a kernel) across a grid.
+
+  - term: kernel
+    aliases: [kernels]
+    chapters: [density]
+    definition: >-
+      In density estimation, a moving window that weights nearby points by
+      their distance from the cell at its center.
+
+  - term: bandwidth
+    aliases: [search radius]
+    definition: >-
+      The radius of a kernel. Small bandwidths show local hot spots; large
+      ones show regional patterns.
+
+  - term: quartic kernel
+    aliases: [quartic]
+    chapters: [density]
+    definition: >-
+      A hump-shaped kernel that weights points most at the center and falls
+      to zero at the bandwidth. The default in ArcGIS Pro and QGIS.
+
+  - term: uniform kernel
+    aliases: [uniform]
+    chapters: [density]
+    definition: >-
+      A kernel that gives every point inside the bandwidth the same weight.
+
+  - term: heat map
+    aliases: [heat maps, heatmap]
+    chapters: [density]
+    definition: >-
+      A map of a density surface, usually from kernel density estimation.
+
+  - term: spatial operation
+    aliases: [spatial operations, spatial function]
+    definition: >-
+      A GIS function that takes one or more input layers and produces an
+      output layer, such as a buffer, dissolve, or overlay.
+
+  - term: cartographic modeling
+    aliases: [cartographic model]
+    definition: >-
+      Planning and running a chain of spatial operations to solve a problem,
+      where each operation's output becomes the next one's input. The term is
+      Dana Tomlin's.
+
+  - term: spatial scope
+    definition: >-
+      The input locations used to compute the value at an output location:
+      local (the same location), neighborhood (nearby locations), or global
+      (every location).
+
+  - term: reclassification
+    aliases: [reclassify]
+    definition: >-
+      Grouping the values of a layer into fewer, more meaningful classes,
+      such as elevations into low, medium, and high.
+
+  - term: dissolve
+    chapters: [spatial-analysis]
+    definition: >-
+      An operation that merges features sharing a value in a field, removing
+      the boundaries between them.
+
+  - term: buffer
+    aliases: [buffers]
+    definition: >-
+      The region within a specified distance of a point, line, or polygon.
+
+  - term: clip
+    chapters: [spatial-analysis]
+    definition: >-
+      An overlay that keeps only the parts of a data layer inside a bounding
+      layer, keeping only the data layer's attributes.
+
+  - term: intersect
+    chapters: [spatial-analysis]
+    definition: >-
+      An overlay that keeps only the areas covered by both input layers, with
+      attributes from both. The overlay version of AND.
+
+  - term: sliver
+    aliases: [slivers, sliver polygons]
+    definition: >-
+      A thin, tiny polygon created by overlay where two versions of the same
+      boundary don't match exactly.
+
+  - term: cluster tolerance
+    aliases: [snapping tolerance]
+    definition: >-
+      A distance within which vertices are treated as the same point during
+      overlay, to prevent slivers.
+
+  - term: ModelBuilder
+    definition: >-
+      ArcGIS Pro's visual tool for drawing and running a cartographic model
+      as a flowchart. QGIS's equivalent is the Model Designer.
+
+  - term: focal function
+    aliases: [focal functions, focal]
+    chapters: [spatial-analysis, raster]
+    definition: >-
+      A map algebra function that computes each cell's output from a moving
+      window of nearby cells, such as a 3×3 mean.
+
+  - term: zonal function
+    aliases: [zonal functions, zonal]
+    chapters: [spatial-analysis, raster]
+    definition: >-
+      A map algebra function that summarizes the cells within each zone, such
+      as the mean elevation of each watershed.
+
+  - term: NoData
+    aliases: [Null value]
+    case_sensitive: true
+    definition: >-
+      A code meaning a raster cell has no value. Any map algebra operation
+      that touches NoData outputs NoData, and statistics skip it.
+
+  - term: snap raster
+    definition: >-
+      A raster whose grid sets where output cell edges fall, so that the
+      outputs of raster tools line up exactly with it.
+
+  - term: unary operation
+    aliases: [unary operations, unary]
+    chapters: [raster]
+    definition: >-
+      A raster operation with one input raster, such as A × 2. A binary
+      operation has two, such as A + B.
+
+  - term: conditional function
+    aliases: [conditional functions]
+    definition: >-
+      The raster version of if-then-else (CON in ArcGIS Pro): where a
+      condition is true, take one value or raster; where false, another.
+
+  - term: ISNULL
+    case_sensitive: true
+    definition: >-
+      A raster function that outputs 1 where a cell is NoData and 0
+      elsewhere. It never outputs NoData itself.
+
+  - term: neighborhood function
+    aliases: [neighborhood functions, focal statistics]
+    definition: >-
+      A raster function that computes a statistic from a window of cells
+      around each cell and writes it to the center cell.
+
+  - term: moving window
+    aliases: [moving windows]
+    definition: >-
+      A window of cells, usually 3 × 3, that slides across a raster one cell
+      at a time while a neighborhood function runs.
+
+  - term: majority filter
+    definition: >-
+      A neighborhood function that gives each cell the value shared by most
+      of its neighbors, used to clean up classified images.
+
+  - term: aggregation
+    aliases: [aggregate]
+    chapters: [raster]
+    definition: >-
+      Rescaling a raster to coarser cells by combining blocks of cells into
+      one, using a statistic such as the mean, sum, or majority.
+
+  - term: zonal statistics
+    definition: >-
+      A statistic, such as the mean or sum, computed for all the raster
+      cells within each zone of a zone layer.
+
+  - term: Euclidean distance
+    definition: >-
+      Straight-line distance. As a raster function, each cell's distance to
+      the nearest source cell.
+
+  - term: cost distance
+    definition: >-
+      Distance measured as an accumulated cost, such as travel time or
+      effort, across a cost raster, rather than in meters.
+
+  - term: multiband
+    aliases: [multiband raster, multiband rasters]
+    definition: >-
+      A raster with several values per cell, one per band, such as the red,
+      green, blue, and near-infrared bands of a satellite image.
+
+  - term: digital elevation model
+    aliases: [DEM, DEMs, digital elevation models]
+    definition: >-
+      A raster whose cell values are elevations of the ground surface.
+
+  - term: spatial interpolation
+    aliases: [interpolation, interpolate, interpolated]
+    definition: >-
+      Estimating the value of an attribute at unsampled locations from
+      observations at sampled ones.
+
+  - term: extrapolation
+    aliases: [extrapolate, extrapolates]
+    definition: >-
+      Estimating values beyond the observations: outside the area they cover,
+      or above or below the observed range.
+
+  - term: exact interpolator
+    aliases: [exact interpolators, exact]
+    chapters: [interpolation, kriging]
+    definition: >-
+      An interpolation method whose surface passes through every observed
+      value.
+
+  - term: inexact interpolator
+    aliases: [inexact interpolators, inexact]
+    chapters: [interpolation, kriging]
+    definition: >-
+      An interpolation method that smooths the data, so its surface may not
+      pass through the observed values.
+
+  - term: deterministic interpolation
+    aliases: [deterministic]
+    chapters: [interpolation, kriging]
+    definition: >-
+      Interpolation in which the surface is fully determined by a formula and
+      the chosen parameters, with no statistical model of error.
+
+  - term: geostatistics
+    aliases: [geostatistical]
+    definition: >-
+      Statistics for spatially continuous data, which model spatial
+      autocorrelation to predict values and their uncertainty. Kriging is its
+      best-known method.
+
+  - term: average neighbor
+    definition: >-
+      An interpolation method that estimates each location as the mean of the
+      observations within a search radius.
+
+  - term: inverse distance weighted
+    aliases: [IDW, inverse distance weighting]
+    definition: >-
+      An interpolation method that estimates each location as a weighted
+      average of nearby observations, with weights of 1 / distance raised to
+      a power.
+
+  - term: bull's-eye
+    aliases: [bull's-eyes, bullseye, bullseyes]
+    definition: >-
+      A ring of values around a single observation that differs from its
+      neighbors; a sign of IDW interpolation.
+
+  - term: trend surface
+    aliases: [trend surfaces, polynomial interpolation]
+    definition: >-
+      A smooth polynomial surface fit to all the observations, usually by
+      least squares. Its order sets how many bends it can have.
+
+  - term: radial basis function
+    aliases: [radial basis functions, RBF, spline, splines]
+    definition: >-
+      An exact interpolation method that fits a smooth, minimum-curvature
+      surface through every observation, like a flexible sheet pinned at
+      each point.
+
+  - term: search neighborhood
+    aliases: [search neighborhoods]
+    definition: >-
+      The area around an unknown location, set by a radius, sectors, and a
+      shape, from which observations are taken to estimate it.
+
+  - term: sampling design
+    aliases: [sampling designs]
+    definition: >-
+      The pattern of observation locations: systematic, random, clustered,
+      or adaptive.
+
+  - term: adaptive sampling
+    definition: >-
+      Sampling in passes: a sparse first pass, then more samples where values
+      change quickly.
+
+  - term: cross validation
+    aliases: [cross-validation]
+    definition: >-
+      Testing an interpolation by removing each observation in turn,
+      estimating it from the rest, and recording the error.
+
+  - term: mean error
+    definition: >-
+      The average of the cross-validation errors. Near 0 means the surface is
+      unbiased.
+
+  - term: kriging
+    definition: >-
+      A geostatistical interpolation method that weights observations using a
+      model of spatial autocorrelation (the semivariogram), and estimates the
+      uncertainty of each prediction.
+
+  - term: semivariance
+    definition: >-
+      Half the squared difference between two observed values. Averaged over
+      pairs in a distance bin, it measures dissimilarity at that distance.
+
+  - term: semivariogram
+    aliases: [semivariograms, variogram, variograms, semivariogram cloud]
+    definition: >-
+      A plot of semivariance against the distance between pairs of
+      observations, described by its nugget, sill, and range.
+
+  - term: sill
+    chapters: [kriging]
+    definition: >-
+      The semivariance at which a semivariogram levels off.
+
+  - term: range
+    chapters: [kriging]
+    definition: >-
+      In a semivariogram, the distance at which the sill is reached. Beyond
+      it, observations are not autocorrelated.
+
+  - term: nugget
+    chapters: [kriging]
+    definition: >-
+      The semivariance at (nearly) zero distance, from measurement error or
+      variation smaller than the sample spacing.
+
+  - term: partial sill
+    definition: >-
+      The sill minus the nugget: the part of the variation that is spatially
+      autocorrelated.
+
+  - term: anisotropy
+    aliases: [anisotropic]
+    definition: >-
+      Spatial dependence that changes with direction. Its opposite is
+      isotropy, the same dependence in every direction.
+
+  - term: ordinary kriging
+    definition: >-
+      Kriging that assumes an unknown but constant mean. The most common type.
+
+  - term: simple kriging
+    definition: >-
+      Kriging that assumes a known, constant mean.
+
+  - term: universal kriging
+    definition: >-
+      Kriging that models the trend as a function of location, such as a
+      polynomial, and krigs the residuals.
+
+  - term: cokriging
+    definition: >-
+      Kriging that also uses one or more correlated secondary variables, such
+      as elevation when predicting temperature.
+
+  - term: prediction standard error
+    aliases: [prediction standard errors, standard error map]
+    definition: >-
+      Kriging's estimate of how far off each prediction might be. It is
+      largest where observations are sparse.

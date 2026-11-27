@@ -1,0 +1,53 @@
+---
+title: "Unit 3: Spatial Analysis"
+---
+
+With data in hand and its quality understood, this unit turns to answering questions with it. It starts with two ways of summarizing data over space: classing values for choropleth maps, and measuring density with neighborhoods and kernels. It then covers the core toolkit of GIS analysis, from selection, buffers, and overlay on vectors to map algebra on rasters. It ends by estimating values where nothing was measured, first with deterministic interpolation and then with kriging. By the end of the unit you can plan a chain of spatial operations, carry it out in QGIS and ArcGIS Pro, and judge how much to trust the result.
+
+## Chapter 11: [Data Classing and Choropleth Maps](../chapters/data-classing.qmd)
+
+The same data can tell different stories depending on how they are grouped into classes. This chapter explains why choropleth maps should show rates and densities rather than counts, how to choose the number of classes, and how the main classification methods work: equal interval, quantile, natural breaks (Jenks), arithmetic and geometric intervals, and standard deviation. Using the population density of North Carolina's 100 counties, it compares the methods with histograms and the goodness of variance fit.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 11 quiz](../chapters/data-classing-quiz.qmd)
+:::
+
+## Chapter 12: [Density and Neighborhoods](../chapters/density.qmd)
+
+Density is a count divided by an area, but points have no area of their own. This chapter introduces Tobler's first law and spatial autocorrelation, and three ways of defining a neighborhood: by distance, by contiguity (rook's and queen's case), and by k nearest neighbors. It ends with kernel density estimation, the method behind hot-spot and heat maps, and the choices of kernel shape and bandwidth that change what the map shows.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 12 quiz](../chapters/density-quiz.qmd)
+:::
+
+## Chapter 13: [Spatial Analysis: Selection, Buffers, and Overlay](../chapters/spatial-analysis.qmd)
+
+Most GIS questions are answered by chaining a few operations together. Starting with a light problem, where Batman should build his cave in Austin, this chapter introduces cartographic modeling and spatial scope (local, neighborhood, and global), then covers selection, joins, reclassification, dissolve, buffers of every kind, and overlay: point-in-polygon, clip, intersect, and union. It explains why overlay produces slivers and how to prevent them, and closes with map algebra, raster overlay cell by cell.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 13 quiz](../chapters/spatial-analysis-quiz.qmd)
+:::
+
+## Chapter 14: [Raster Analysis](../chapters/raster.qmd)
+
+A raster stores the world as a grid, and almost every raster tool repeats one operation cell by cell. This chapter covers cells, cell size, extent, and NoData; map algebra; and how to line up rasters with resampling, extent, and snap settings. It sorts raster functions by scope (local, neighborhood, zonal, and global) and works through mathematical, logical, reclassification, and conditional functions, moving windows, aggregation, zonal statistics, and distance.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 14 quiz](../chapters/raster-quiz.qmd)
+:::
+
+## Chapter 15: [Spatial Interpolation](../chapters/interpolation.qmd)
+
+Weather stations, soil samples, and wells measure the world only at points. This chapter covers the five steps of interpolation and the main deterministic methods: nearest neighbor (Thiessen polygons), average neighbor, inverse distance weighting, polynomial trend surfaces, and radial basis functions. It shows how search neighborhoods and sampling designs shape the result, and how cross validation and RMSE compare methods objectively.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 15 quiz](../chapters/interpolation-quiz.qmd)
+:::
+
+## Chapter 16: [Kriging](../chapters/kriging.qmd)
+
+Kriging measures how values in the data are related at different distances before deciding how to weight them. This chapter builds the semivariogram from semivariance, explains its nugget, sill, and range, and shows how kriging sets its weights, handles anisotropy and trends, and differs in its ordinary, simple, universal, and cokriging forms. It ends with the cross-validation statistics and prediction standard errors used to judge a kriged surface.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 16 quiz](../chapters/kriging-quiz.qmd)
+:::
