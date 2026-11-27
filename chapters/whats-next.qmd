@@ -7,11 +7,11 @@ title: "What's Next in GIS"
 
 By the end of this chapter you should be able to:
 
-1.  Name applications of GIS in public health, the environment, planning, and humanitarian work, and the methods from this book that each one uses.
+1.  Name applications of GIS in public health, the environment, local government, and humanitarian work, and the methods from this book that each one uses.
 2.  Describe advanced GIS topics: remote sensing, spatial statistics, big data and the cloud, GeoAI, web and 3D GIS, programming, and critical GIS.
 3.  Find and read GIS research, and name ways to get involved in research at UNC.
 4.  Plan your next GIS courses at UNC, and the GIS minor or the Geospatial Data Science major.
-5.  Name UNC clubs, events, and campus resources for GIS, and ways to start building a portfolio.
+5.  Name UNC clubs, events, and campus resources for GIS, North Carolina GIS conferences such as the NC GIS Conference and NCAUG, and ways to start building a portfolio.
 :::
 
 This chapter looks forward instead of teaching a new method. Look at what you can already do:
@@ -36,9 +36,18 @@ Almost any question that involves "where" is a GIS question. The questions chang
 
 GIS is central to every stage of a disaster: flood maps, evacuation routes, and shelter locations before a storm, and damage mapping from aerial and satellite imagery after it. When Hurricane Helene flooded western North Carolina in 2024, imagery and GIS were used to map flooding, landslides, and closed roads. The key question, *who is exposed?*, is an overlay of hazard zones with census data (Chapters 7, 8, and 13). Elevation rasters and map algebra (Chapter 14) model where water flows, and interpolation and kriging (Chapters 15 and 16) turn rain gauges and air quality monitors into continuous surfaces.
 
-### Cities and planning
+### Local government {#sec-local-government}
 
-Planners use GIS daily for zoning, land use, and transportation. Choosing where to put a new school, park, or fire station is a classic **site selection** problem: reclassify and weight several layers, then overlay them to find the best places (Chapters 13 and 14).
+Cities and counties are among the biggest users of GIS, and nearly every county in North Carolina has GIS staff. Local governments keep the authoritative data that the rest of us rely on, and use it every day to run services:
+
+- **Land records and property tax.** The county GIS or land records office maintains the official parcel map. In Orange County, for example, every parcel has a Property Identification Number (PIN) that links it to its deed, survey plats, and tax record, and anyone can search parcels on the county's public web map. Tax assessors use those parcels, with attribute joins (Chapter 6), to value property.
+- **Addressing and 911.** When someone calls 911, the call is routed and the caller located using address and street data kept in GIS. Orange County keeps a single GIS database of more than 85,000 addresses and 4,600 streets, coordinated with Chapel Hill, Carrboro, Hillsborough, Mebane, and Durham, and, where the county is the addressing authority, assigns a new address when a building permit is requested. These data are kept up to the standard for Next Generation 911 and shared with the state's AddressNC program and NC OneMap. This is the reference data behind the geocoding in Chapter 9.
+- **Planning, zoning, and permits.** Planners map zoning districts, review development proposals against them, and track building permits by parcel. Choosing where to put a new school, park, or fire station is a classic **site selection** problem: reclassify and weight several layers, then overlay them to find the best places (Chapters 13 and 14).
+- **Public works and utilities.** Water and sewer lines, stormwater pipes, streetlights, and signs are mapped as features with attributes such as size, material, and install date, so crews can find them, plan repairs, and track work orders.
+- **Emergency management and public health.** Counties map shelters, evacuation zones, and flood risk. During Hurricane Helene, damaged 911 centers in western North Carolina had their calls rerouted to working centers elsewhere. Health departments map cases and services; Forsyth County, for example, has mapped overdoses to target its response.
+- **Open data and public apps.** Many cities and counties publish their layers on open data portals and in web apps, such as maps of trash pickup days, polling places, road closures, and park amenities. Look up the GIS page of your home county or city to see what it shares.
+
+Local government GIS work is a common first job for GIS graduates, and a good place for internships. Many local governments also celebrate GIS Day each November; the City of Raleigh, for example, holds a free GIS Day event to show residents how state and local governments use GIS.
 
 ### Humanitarian and social justice work
 
@@ -215,6 +224,15 @@ Some of the best GIS learning happens outside class.
 - **Odum Institute.** The Odum Institute for Research in Social Science offers short courses on research methods, including GIS workshops.
 - **Office for Undergraduate Research.** See @sec-research for SURF and the Celebration of Undergraduate Research.
 
+### GIS conferences in North Carolina
+
+Conferences are where GIS professionals share their work, learn new tools, and hire. Students are welcome, and going to one is a great way to see what GIS jobs look like and to meet people who do them.
+
+- **The North Carolina GIS Conference** has been held every two years since 1987, most recently in March 2025 in Winston-Salem, with about 600 attendees and more than 120 sessions. It calls itself the largest state GIS conference in the nation. It is organized by the NC Center for Geographic Information and Analysis with state and local government GIS professionals, and co-sponsored by Carolina URISA. Students can enter papers for the G. Herbert Stout student awards; local government GIS projects compete for the Stout awards too, and Chapel Hill was a 2025 winner. The next conference is in 2027.
+- **NCAUG, the North Carolina ArcGIS Users Group,** is a statewide community of people who use Esri software, many of them in local government. It holds an annual conference each fall, with talks, hands-on pre-conference workshops (at reduced student rates), vendors, and networking; it has met in Wilmington, with Esri's founder, Jack Dangermond, as keynote speaker. Workshop proceeds support NCAUG's scholarship fund for GIS students.
+- **Carolina URISA,** the regional chapter of the Urban and Regional Information Systems Association, focuses on GIS in government and holds meetings and workshops for GIS professionals in the Carolinas.
+- **National conferences** include the Esri User Conference in San Diego each July, the American Association of Geographers annual meeting, and the NACIS conference for cartographers, which offers student travel grants. Most have reduced student rates.
+
 ::: {.callout-tip appearance="simple"}
 ## Think about it
 
@@ -249,7 +267,7 @@ Two or three polished projects matter more than a list of courses.
 - Enter the UNC GIS Day map competition, and present at the Celebration of Undergraduate Research.
 - Contribute to OpenStreetMap or a humanitarian mapping project.
 - Look for internships with city, county, and state GIS offices, research centers, and consulting firms.
-- Join a professional community, such as the NC GIS Conference, URISA, NACIS for cartographers, or the American Association of Geographers. Most have student rates, and many offer student travel grants or map competitions.
+- Go to a conference, such as the NC GIS Conference or NCAUG's fall conference, and join a professional community, such as Carolina URISA, NACIS for cartographers, or the American Association of Geographers. Most have student rates, and many offer student awards, scholarships, or travel grants.
 - Later in your career, consider the **GISP** certification and Esri's technical certifications.
 
 ## Check your understanding
@@ -268,7 +286,9 @@ Two or three polished projects matter more than a list of courses.
 
 6.  Which two courses make up the core of UNC's GIS minor? <select class='webex-select'><option value='blank'></option><option value=''>GEOG 370 and GEOG 491</option><option value='answer'>GEOG 215 and GEOG 370</option><option value=''>GEOG 455 and GEOG 477</option><option value=''>GEOG 370 and GEOG 515</option></select>
 
-7.  Which course needs both GEOG 215 and GEOG 370? <select class='webex-select'><option value='blank'></option><option value=''>GEOG 477 Introduction to Remote Sensing</option><option value=''>GEOG 455 Cartography and Geovisualization</option><option value='answer'>GEOG 515 Applied Spatial Data Science</option><option value=''>GEOG 594 GPS and Applications</option></select>
+7.  In North Carolina, who usually maintains the official parcel map and the address points used for 911? <select class='webex-select'><option value='blank'></option><option value=''>The U.S. Census Bureau</option><option value='answer'>The county or city GIS office</option><option value=''>OpenStreetMap volunteers</option><option value=''>Esri</option></select>
+
+8.  Which course needs both GEOG 215 and GEOG 370? <select class='webex-select'><option value='blank'></option><option value=''>GEOG 477 Introduction to Remote Sensing</option><option value=''>GEOG 455 Cartography and Geovisualization</option><option value='answer'>GEOG 515 Applied Spatial Data Science</option><option value=''>GEOG 594 GPS and Applications</option></select>
 
 :::
 
@@ -278,13 +298,13 @@ The interactive self-check questions for this chapter are in the online version 
 
 ## Summary
 
-- GIS answers "where" questions in nearly every field: **spatial epidemiology** and **accessibility** in public health, hazards and the environment, **site selection** in planning, and humanitarian and social justice work. The methods are the ones in this book.
+- GIS answers "where" questions in nearly every field: **spatial epidemiology** and **accessibility** in public health, hazards and the environment, humanitarian and social justice work, and local government, where cities and counties use GIS for parcels and property tax, addressing and 911, planning and **site selection**, utilities, and emergency management. The methods are the ones in this book.
 - **Remote sensing** collects data from a distance with **passive** or **active** sensors such as **lidar**. **NDVI** uses the contrast between red and near-infrared light to measure vegetation, and **change detection** compares images over time.
 - Advanced spatial statistics includes **geographically weighted regression**, hot spot analysis, and space-time analysis, and takes the **uncertain geographic context problem** seriously.
 - Big data is moving GIS to the cloud and to **CyberGIS**. **GeoAI** reads imagery and makes predictions at scale, and honest testing needs **spatial cross-validation**.
 - **Web GIS**, 3D GIS, and **digital twins** change how maps are used, and programming in Python or R automates GIS work. **Critical GIS** asks who benefits from maps and who is left out.
 - Find GIS research in journals, the GIS&T Body of Knowledge, and Google Scholar through UNC Libraries. At UNC, try SURF, the Celebration of Undergraduate Research, or an honors thesis.
-- GEOG 370 opens most upper-level GIS courses. Consider the GIS minor or the Geospatial Data Science B.S., join the Carolina Geography and Environment Club, enter the GIS Day map competition, and start a portfolio now.
+- GEOG 370 opens most upper-level GIS courses. Consider the GIS minor or the Geospatial Data Science B.S., join the Carolina Geography and Environment Club, enter the GIS Day map competition, go to the NC GIS Conference or NCAUG's fall conference, and start a portfolio now.
 
 ## Exercises
 
@@ -293,7 +313,8 @@ The interactive self-check questions for this chapter are in the online version 
 3.  **Read a paper.** Choose one paper cited in @sec-advanced. Read its abstract, introduction, and figures. In one paragraph, say what question it asked, what data and methods it used, and what it found.
 4.  **Find a researcher.** On the UNC Department of Geography and Environment website, find a faculty member whose research uses GIS or remote sensing. Summarize one of their recent projects in three sentences.
 5.  **Plan your path.** Using @fig-course-path and @tbl-geog-courses, write a four-semester plan of GIS courses that fits your interests, and check each course's prerequisites in the UNC catalog.
-6.  **Portfolio piece.** Choose your best map from this course. Write a one-paragraph description of it for a non-technical reader, as you would on a personal website or a GIS Day map competition entry.
+6.  **Your local government.** Find the GIS web map or open data portal of your home county or city. List five layers it publishes, and say which department probably maintains each one and what it uses it for.
+7.  **Portfolio piece.** Choose your best map from this course. Write a one-paragraph description of it for a non-technical reader, as you would on a personal website or a GIS Day map competition entry.
 
 ## Further reading and online resources
 
@@ -313,6 +334,9 @@ The interactive self-check questions for this chapter are in the online version 
 - Mapping Inequality: Redlining in New Deal America: <https://dsl.richmond.edu/panorama/redlining>.
 - Humanitarian OpenStreetMap Team Tasking Manager: <https://tasks.hotosm.org>.
 - Google Earth Engine: <https://earthengine.google.com>.
+- North Carolina GIS Conference: <https://it.nc.gov/about/boards-commissions/gicc/cgia/north-carolina-gis-conference>.
+- NC OneMap, North Carolina's portal for state and local GIS data: <https://www.nconemap.gov>.
+- Orange County GIS, Addressing, and Land Records: <https://orangecountync.gov/845/Land-Records-GIS>.
 
 ### At UNC
 

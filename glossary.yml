@@ -2645,3 +2645,16 @@ terms:
     definition: >-
       The study of the social effects of GIS and mapping, including who
       benefits, who is represented, and how to use GIS more fairly.
+
+  - term: Property Identification Number (PIN)
+    aliases: [Property Identification Numbers]
+    chapters: [whats-next]
+    definition: >-
+      The unique number a North Carolina county gives each parcel, linking it
+      to its deed, survey plats, and tax record.
+
+  - term: Next Generation 911
+    aliases: [NG911]
+    definition: >-
+      The digital, GIS-based 911 system that uses address points, street
+      centerlines, and boundaries to route emergency calls and locate callers.
