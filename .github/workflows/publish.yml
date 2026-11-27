@@ -3,60 +3,89 @@ name: Render and Publish Quarto Book
 # Every push to main renders the textbook (unit pages, chapters, glossary; not
 # the course pages, and no quizzes, which are only on geog370.org) with the
 # `textbook` profile (_quarto-textbook.yml) and commits it to
-# dparr1/daveparr.com under geographic-information-science/, which triggers
-# Cloudflare's build of daveparr.com
-# (https://daveparr.com/geographic-information-science/).
+# dparr1/daveparr.com under geographic-information-science/, which triggers Cloudflare's build of
+# daveparr.com (https://daveparr.com/geographic-information-science/).
 #
 # The gated copy for https://geog370.org is NOT built here: Cloudflare Workers
 # Builds, connected to this repo, renders and deploys it on the same push
 # (see wrangler.jsonc and scripts/cloudflare-build.sh).
 #
-# Only HTML is rendered here: the PDF needs LaTeX, which isn't installed on
-# the runner. The book has no R or other executable code.
-#
-# Until this repo has the DAVEPARR_DEPLOY_KEY secret (a deploy key with write
-# access to dparr1/daveparr.com), the job renders the book and then stops
-# before publishing, so nothing on daveparr.com changes.
+# It also renders the PDF textbook (PrettyPDF, `textbook` profile) and
+# publishes it beside the book as
+# daveparr.com/geographic-information-science/Geographic-Information-Science.pdf.
+# geog370.org links to that same file (scripts/cloudflare-build.sh adds a
+# redirect). The PDF needs LaTeX (TinyTeX); the book has no R or other
+# executable code. If the PDF fails, the HTML is still published without it.
 
 on:
   push:
     branches: [ main ]
+  # Pull requests only test the build: the HTML and PDF are rendered and the
+  # PDF is attached to the run (Summary > Artifacts), but nothing is published.
+  pull_request:
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: publish-book
+  group: publish-book-${{ github.event_name == 'pull_request' && github.ref || 'main' }}
   cancel-in-progress: false
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-    env:
-      HAS_DEPLOY_KEY: ${{ secrets.DAVEPARR_DEPLOY_KEY != '' }}
     steps:
       - name: Check out book
         uses: actions/checkout@v4
 
-      - name: Set up Quarto
+      - name: Set up Quarto and TinyTeX
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
 
-      # daveparr.com/geographic-information-science/ gets the textbook only
-      # (no Welcome, Syllabus, Course resources, or About pages; those are on
-      # geog370.org). A book must start at index.qmd, so the Preface becomes
-      # the home page here.
+      # Rendered before the HTML because rendering the HTML book empties _book/.
+      # Quarto installs any missing LaTeX packages into TinyTeX as it goes.
+      - name: Render PDF textbook
+        id: pdf
+        continue-on-error: true
+        run: |
+          quarto render --to PrettyPDF-pdf --profile textbook
+          mkdir -p "${RUNNER_TEMP}/pdf"
+          mv _book/Geographic-Information-Science.pdf "${RUNNER_TEMP}/pdf/"
+
+      # daveparr.com/geographic-information-science/ gets the textbook only (no Welcome, Syllabus,
+      # Course materials, or About pages; those are on geog370.org). A book
+      # must start at index.qmd, so the Preface becomes the home page here.
       - name: Render textbook only
         run: |
           cp preface.qmd index.qmd
           quarto render --to html --profile textbook
 
-      - name: No deploy key yet
-        if: env.HAS_DEPLOY_KEY != 'true'
-        run: echo "::notice::DAVEPARR_DEPLOY_KEY is not set, so the book was rendered but not published to daveparr.com."
+      - name: Add the PDF to the book
+        run: |
+          if [ -f "${RUNNER_TEMP}/pdf/Geographic-Information-Science.pdf" ]; then
+            cp "${RUNNER_TEMP}/pdf/Geographic-Information-Science.pdf" _book/
+          else
+            # Keep the PDF already on daveparr.com rather than deleting it.
+            echo "::warning::PDF render failed; publishing the HTML with the previous PDF."
+          fi
+
+      - name: Attach the PDF to this run
+        if: github.event_name == 'pull_request' && steps.pdf.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: textbook-pdf
+          path: _book/Geographic-Information-Science.pdf
+
+      - name: Fail a pull request whose PDF didn't build
+        if: github.event_name == 'pull_request' && steps.pdf.outcome != 'success'
+        run: |
+          echo "::error::The PDF textbook failed to render. See the 'Render PDF textbook' step."
+          exit 1
 
       - name: Check out daveparr.com
-        if: env.HAS_DEPLOY_KEY == 'true'
+        if: github.event_name != 'pull_request'
         uses: actions/checkout@v4
         with:
           repository: dparr1/daveparr.com
@@ -67,9 +96,14 @@ jobs:
           ssh-key: ${{ secrets.DAVEPARR_DEPLOY_KEY }}
 
       - name: Copy book into daveparr.com/geographic-information-science
-        if: env.HAS_DEPLOY_KEY == 'true'
+        if: github.event_name != 'pull_request'
         run: |
-          rsync -a --delete _book/ daveparr.com/geographic-information-science/
+          # A failed PDF render keeps the previous PDF (excluded from --delete).
+          if [ -f _book/Geographic-Information-Science.pdf ]; then
+            rsync -a --delete _book/ daveparr.com/geographic-information-science/
+          else
+            rsync -a --delete --exclude Geographic-Information-Science.pdf _book/ daveparr.com/geographic-information-science/
+          fi
           cd daveparr.com
           git add -A geographic-information-science
           if git diff --cached --quiet; then
@@ -80,3 +114,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Update GEOG 370 book from ${GITHUB_REPOSITORY}@${GITHUB_SHA::7}"
           git push origin HEAD:main
+

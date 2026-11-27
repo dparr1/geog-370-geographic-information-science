@@ -6,6 +6,10 @@
 
 This book is an open educational resource textbook designed for my course, GEOG 370, Geographic Information Science, built from the course lectures.
 
+::: {.content-visible when-format="html"}
+You can also download the whole book as a PDF: [Geographic Information Science (PDF)](Geographic-Information-Science.pdf). The PDF leaves out the interactive parts, such as self-check questions and quizzes, and is updated whenever the online book is.
+:::
+
 ## About this book
 
 This is an interactive textbook written for GEOG 370. It's designed for students who are new to GIS and to spatial data. Chapters explain the concepts behind geographic information and show how to put them into practice in QGIS and ArcGIS Pro.

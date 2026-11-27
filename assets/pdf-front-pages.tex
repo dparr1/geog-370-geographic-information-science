@@ -1,0 +1,34 @@
+% Front pages of the PDF textbook, after the title page (include-before-body
+% under PrettyPDF-pdf in _quarto.yml). The cover comes first, from
+% assets/pdf-cover.tex. `toc: false` is set because the table of contents is
+% made here, after the copyright and dedication pages.
+
+% --- 1. Copyright Page ---
+\newpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{flushleft}
+\small
+\textbf{Geographic Information Science} \\
+Copyright \copyright\ 2026 David Parr. All rights reserved. \\[1em]
+Published by David Parr. Available at
+\url{https://daveparr.com/geographic-information-science/} \\[1em]
+First Edition \\[1em]
+This work is licensed under a Creative Commons Attribution-NonCommercial 4.0
+International License (\url{https://creativecommons.org/licenses/by-nc/4.0/}).
+\end{flushleft}
+\newpage
+
+% --- 2. Dedication Page ---
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+\textit{For my sweet Abigail, who loves cake, and also insisted that I remind
+everyone that I can't live without her.}
+\end{center}
+\vspace*{\fill}
+\newpage
+
+% --- 3. Table of Contents ---
+\tableofcontents
+\newpage

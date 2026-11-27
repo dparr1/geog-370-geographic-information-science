@@ -21,6 +21,9 @@ book:
   subtitle: "The textbook for GEOG 370"
   author: "David Parr"
   date: last-modified
+  # Download button (sidebar) for the PDF textbook, which the GitHub Action
+  # builds and publishes (.github/workflows/publish.yml).
+  downloads: [pdf]
   # The top menu and chapter list are in _quarto-site.yml (the full
   # geog370.org site, the default) and _quarto-textbook.yml (textbook only,
   # for daveparr.com/geographic-information-science/).
@@ -68,14 +71,17 @@ format:
   #   quarto render --to PrettyPDF-pdf --profile textbook
   PrettyPDF-pdf:
     toc: false
+    # Heading styles are in _extensions/nrennie/PrettyPDF/PrettyPDF.tex.
+    # Don't add titlesec or sectsty: they print a "0" before unnumbered
+    # chapters such as the Table of contents and the Preface.
     include-in-header:
-      - preamble.tex
-      # Lets PrettyPDF's section styles work with unit (part) pages.
-      - assets/pdf-fixes.tex
       # Full-page cover (images/cover.jpg) before the title page.
       - assets/pdf-cover.tex
-    include-before-body: 
-      - front-pages.tex
+      # Font for characters the Ubuntu font lacks (filters/pdf-characters.lua).
+      - assets/pdf-unicode.tex
+    # Copyright, dedication, and table of contents pages.
+    include-before-body:
+      - assets/pdf-front-pages.tex
     number-sections: true
     keep-tex: true
 
@@ -84,3 +90,5 @@ filters:
   # Quarto's own processing so callout titles are still headings (and skipped).
   - at: pre-ast
     path: filters/glossary/glossary.lua
+  # PDF only: characters the PDF font lacks, such as ▸ in menu paths.
+  - filters/pdf-characters.lua

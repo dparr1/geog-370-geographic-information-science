@@ -34,3 +34,11 @@ cp -R admin _book/admin
 cp pwa/site.webmanifest pwa/sw.js pwa/offline.html pwa/*.png _book/
 rm -rf _book/splash
 cp -R pwa/splash _book/splash
+
+# The PDF textbook is built by the GitHub Action and published on
+# daveparr.com. The "Download PDF" links on geog370.org point to
+# /Geographic-Information-Science.pdf, which redirects there, so students
+# always get the latest PDF. (_redirects is read by Cloudflare, not served.)
+cat > _book/_redirects <<'REDIRECTS'
+/Geographic-Information-Science.pdf https://daveparr.com/geographic-information-science/Geographic-Information-Science.pdf 302
+REDIRECTS
