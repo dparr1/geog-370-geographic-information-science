@@ -64,6 +64,8 @@ book:
         - chapters/spatial-analysis-quiz.qmd
         - chapters/raster.qmd
         - chapters/raster-quiz.qmd
+        - chapters/digital-elevation-models.qmd
+        - chapters/digital-elevation-models-quiz.qmd
         - chapters/interpolation.qmd
         - chapters/interpolation-quiz.qmd
         - chapters/kriging.qmd

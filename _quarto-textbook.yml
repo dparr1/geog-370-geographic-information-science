@@ -45,6 +45,7 @@ book:
         - chapters/density.qmd
         - chapters/spatial-analysis.qmd
         - chapters/raster.qmd
+        - chapters/digital-elevation-models.qmd
         - chapters/interpolation.qmd
         - chapters/kriging.qmd
         - chapters/suitability-modeling.qmd

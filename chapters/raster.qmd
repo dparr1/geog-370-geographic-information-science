@@ -170,7 +170,7 @@ A **neighborhood function** computes a statistic from a window of cells and writ
 
 ![Statistics of one 3 × 3 window. Each result is written to the window's center cell.](../images/raster/neighborhood-stats.png){#fig-neighborhood-stats fig-alt="A 3 by 3 window with values 1, 2, 3 / 3, 6, 6 / 3, 9, 2, and a list: mean 35 divided by 9 equals 3.9; median 3; minimum 1; maximum 9; range 8; sum 35; majority 3, appearing 3 times; variety, 5 different values."}
 
-Choose the statistic to fit the data. Mean and median smooth continuous surfaces; maximum and minimum find peaks and pits; **majority** suits categories, since a mean of land-cover codes is meaningless. Slope and aspect are neighborhood functions too: they fit a surface through the window and report how steep it is and which way it faces.
+Choose the statistic to fit the data. Mean and median smooth continuous surfaces; maximum and minimum find peaks and pits; **majority** suits categories, since a mean of land-cover codes is meaningless. Slope and aspect are neighborhood functions too: they fit a surface through the window and report how steep it is and which way it faces (Chapter 15).
 
 ### The moving window
 

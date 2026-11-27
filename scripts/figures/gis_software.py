@@ -1,4 +1,4 @@
-"""Figures for Chapters 20 and 21 (Getting to Know QGIS and ArcGIS Pro).
+"""Figures for Chapters 21 and 22 (Getting to Know QGIS and ArcGIS Pro).
 
 Timelines, a map-making workflow, and schematic diagrams of the ArcGIS Pro
 window, project, and Geoprocessing pane. The ArcGIS Pro diagrams are drawn
