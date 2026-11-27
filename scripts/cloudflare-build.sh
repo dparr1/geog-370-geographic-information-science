@@ -35,10 +35,14 @@ cp pwa/site.webmanifest pwa/sw.js pwa/offline.html pwa/*.png _book/
 rm -rf _book/splash
 cp -R pwa/splash _book/splash
 
-# The PDF textbook is built by the GitHub Action and published on
-# daveparr.com. The "Download PDF" links on geog370.org point to
-# /Geographic-Information-Science.pdf, which redirects there, so students
-# always get the latest PDF. (_redirects is read by Cloudflare, not served.)
-cat > _book/_redirects <<'REDIRECTS'
-/Geographic-Information-Science.pdf https://daveparr.com/geographic-information-science/Geographic-Information-Science.pdf 302
+# The PDF textbook is built by the GitHub Action and published as a GitHub
+# release asset (it's over Cloudflare's 25 MiB per-file limit). Point the
+# "Download PDF" links straight at it, and redirect the old
+# /Geographic-Information-Science.pdf path there too, so students always get
+# the latest PDF. (_redirects is read by Cloudflare, not served.)
+PDF_URL="https://github.com/dparr1/geog-370-geographic-information-science/releases/download/textbook-pdf/Geographic-Information-Science.pdf"
+find _book -name '*.html' -print0 | xargs -0 sed -E -i \
+  "s#href=\"(\.\.?/)*Geographic-Information-Science\.pdf\"#href=\"${PDF_URL}\"#g"
+cat > _book/_redirects <<REDIRECTS
+/Geographic-Information-Science.pdf ${PDF_URL} 302
 REDIRECTS

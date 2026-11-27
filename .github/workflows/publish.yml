@@ -11,11 +11,14 @@ name: Render and Publish Quarto Book
 # (see wrangler.jsonc and scripts/cloudflare-build.sh).
 #
 # It also renders the PDF textbook (PrettyPDF, `textbook` profile) and
-# publishes it beside the book as
-# daveparr.com/geographic-information-science/Geographic-Information-Science.pdf.
-# geog370.org links to that same file (scripts/cloudflare-build.sh adds a
-# redirect). The PDF needs LaTeX (TinyTeX); the book has no R or other
-# executable code. If the PDF fails, the HTML is still published without it.
+# publishes it as an asset of this repo's `textbook-pdf` GitHub release:
+#   https://github.com/dparr1/geog-370-geographic-information-science/releases/download/textbook-pdf/Geographic-Information-Science.pdf
+# The PDF is over Cloudflare's 25 MiB per-file limit, so it is NOT copied
+# into daveparr.com; the book's "Download PDF" links are rewritten to point
+# at the release instead (here, and for geog370.org in
+# scripts/cloudflare-build.sh). The PDF needs LaTeX (TinyTeX); the book has
+# no R or other executable code. If the PDF fails, the HTML is still
+# published and the release keeps the previous PDF.
 
 on:
   push:
@@ -26,7 +29,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  # write: to create/update the `textbook-pdf` release.
+  contents: write
 
 concurrency:
   group: publish-book-${{ github.event_name == 'pull_request' && github.ref || 'main' }}
@@ -35,6 +39,9 @@ concurrency:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    env:
+      PDF_NAME: Geographic-Information-Science.pdf
+      PDF_URL: https://github.com/${{ github.repository }}/releases/download/textbook-pdf/Geographic-Information-Science.pdf
     steps:
       - name: Check out book
         uses: actions/checkout@v4
@@ -62,21 +69,38 @@ jobs:
           cp preface.qmd index.qmd
           quarto render --to html --profile textbook
 
-      - name: Add the PDF to the book
+      # The PDF lives on GitHub (it's too big for Cloudflare), so point every
+      # "Download PDF" link (./, ../, ../../ or bare) at the release asset.
+      - name: Point PDF links at the GitHub release
         run: |
-          if [ -f "${RUNNER_TEMP}/pdf/Geographic-Information-Science.pdf" ]; then
-            cp "${RUNNER_TEMP}/pdf/Geographic-Information-Science.pdf" _book/
-          else
-            # Keep the PDF already on daveparr.com rather than deleting it.
-            echo "::warning::PDF render failed; publishing the HTML with the previous PDF."
+          find _book -name '*.html' -print0 | xargs -0 sed -E -i \
+            "s#href=\"(\.\.?/)*${PDF_NAME//./\\.}\"#href=\"${PDF_URL}\"#g"
+          if grep -rlE "href=\"(\.\.?/)*${PDF_NAME//./\\.}\"" _book --include='*.html'; then
+            echo "::error::Some PDF links were not rewritten."; exit 1
           fi
+
+      - name: Publish the PDF as a GitHub release asset
+        if: github.event_name != 'pull_request' && steps.pdf.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh release view textbook-pdf >/dev/null 2>&1; then
+            gh release create textbook-pdf --target "${GITHUB_SHA}" \
+              --title "Geographic Information Science (PDF textbook)" \
+              --notes "The PDF edition of the open textbook *Geographic Information Science* (GEOG 370), rebuilt on every push to main. Download: ${PDF_URL} . Read online: https://daveparr.com/geographic-information-science/"
+          fi
+          gh release upload textbook-pdf "${RUNNER_TEMP}/pdf/${PDF_NAME}" --clobber
+
+      - name: Warn when the PDF didn't build
+        if: github.event_name != 'pull_request' && steps.pdf.outcome != 'success'
+        run: echo "::warning::PDF render failed; the release keeps the previous PDF."
 
       - name: Attach the PDF to this run
         if: github.event_name == 'pull_request' && steps.pdf.outcome == 'success'
         uses: actions/upload-artifact@v4
         with:
           name: textbook-pdf
-          path: _book/Geographic-Information-Science.pdf
+          path: ${{ runner.temp }}/pdf/Geographic-Information-Science.pdf
 
       - name: Fail a pull request whose PDF didn't build
         if: github.event_name == 'pull_request' && steps.pdf.outcome != 'success'
@@ -98,12 +122,8 @@ jobs:
       - name: Copy book into daveparr.com/geographic-information-science
         if: github.event_name != 'pull_request'
         run: |
-          # A failed PDF render keeps the previous PDF (excluded from --delete).
-          if [ -f _book/Geographic-Information-Science.pdf ]; then
-            rsync -a --delete _book/ daveparr.com/geographic-information-science/
-          else
-            rsync -a --delete --exclude Geographic-Information-Science.pdf _book/ daveparr.com/geographic-information-science/
-          fi
+          # _book/ has no PDF, so --delete also removes any old copy there.
+          rsync -a --delete _book/ daveparr.com/geographic-information-science/
           cd daveparr.com
           git add -A geographic-information-science
           if git diff --cached --quiet; then

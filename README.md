@@ -40,6 +40,11 @@ are wrapped in `::: {.content-hidden when-profile="textbook"}`. The `textbook` p
 (`_quarto-textbook.yml`) lists those chapters, and `_quarto-site.yml` lists the full site; one of the
 two is always active, and `site` is the default. A new chapter goes in both files.
 
+The PDF textbook is too big for Cloudflare (over its 25 MiB per-file limit), so it is not part of
+either website. `.github/workflows/publish.yml` uploads it on every push to main to this repo's
+`textbook-pdf` release, and the books' "Download PDF" links point there:
+https://github.com/dparr1/geog-370-geographic-information-science/releases/download/textbook-pdf/Geographic-Information-Science.pdf
+
 ## What's in the book
 
 The chapters are being written from the lecture slides. So far:
