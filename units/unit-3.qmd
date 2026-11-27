@@ -2,7 +2,7 @@
 title: "Unit 3: Spatial Analysis"
 ---
 
-With data in hand and its quality understood, this unit turns to answering questions with it. It starts with two ways of summarizing data over space: classing values for choropleth maps, and measuring density with neighborhoods and kernels. It then covers the core toolkit of GIS analysis, from selection, buffers, and overlay on vectors to map algebra on rasters. It ends by estimating values where nothing was measured, first with deterministic interpolation and then with kriging. By the end of the unit you can plan a chain of spatial operations, carry it out in QGIS and ArcGIS Pro, and judge how much to trust the result.
+With data in hand and its quality understood, this unit turns to answering questions with it. It starts with two ways of summarizing data over space: classing values for choropleth maps, and measuring density with neighborhoods and kernels. It then covers the core toolkit of GIS analysis, from selection, buffers, and overlay on vectors to map algebra on rasters. It then estimates values where nothing was measured, first with deterministic interpolation and then with kriging. It ends by combining many layers to answer real questions: ranking sites with suitability models, mapping hazard, vulnerability, and risk, and judging and showing the uncertainty in every result. By the end of the unit you can plan a chain of spatial operations, carry it out in QGIS and ArcGIS Pro, and judge how much to trust the result.
 
 ## Chapter 11: [Data Classing and Choropleth Maps](../chapters/data-classing.qmd)
 
@@ -50,6 +50,30 @@ Kriging measures how values in the data are related at different distances befor
 
 ::: {.content-hidden when-profile="textbook"}
 [Chapter 16 quiz](../chapters/kriging-quiz.qmd)
+:::
+
+## Chapter 17: [Suitability Modeling](../chapters/suitability-modeling.qmd)
+
+Where should a house, a park, or a wind farm go? This chapter works through the five steps of a suitability model with a running example, choosing a home site: define criteria, find data, rank each criterion from 0 to 1, weight the layers, and combine them. It explains discrete and continuous rankings, flowcharts, and the pass/fail, ranking, and weighted linear combination methods, and how to justify weights and test a model's sensitivity.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 17 quiz](../chapters/suitability-modeling-quiz.qmd)
+:::
+
+## Chapter 18: [Risk Analysis](../chapters/risk-analysis.qmd)
+
+A disaster happens when a hazard meets exposed, vulnerable people. This chapter defines hazard, exposure, vulnerability, resilience, and coping capacity, starting with the Three Little Pigs, then follows a published study of flood risk in Dhaka, Bangladesh. It shows how flood hazard is mapped, how physical and social vulnerability indices are built, how the Analytic Hierarchy Process sets weights, and how risk is calculated as hazard times vulnerability.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 18 quiz](../chapters/risk-analysis-quiz.qmd)
+:::
+
+## Chapter 19: [Uncertainty in Geospatial Data](../chapters/uncertainty.qmd)
+
+Every map is uncertain. This chapter separates uncertainty from error, revisits the seven elements of data quality with examples, and shows how to measure positional accuracy with RMSE and accuracy standards. It traces how uncertainty enters at every stage from collection to use, explains Type 1 and Type 2 errors in map reading, and shows how crispness, transparency, saturation, and added symbols put uncertainty on the map.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 19 quiz](../chapters/uncertainty-quiz.qmd)
 :::
 
 ::: {.content-hidden when-profile="textbook"}

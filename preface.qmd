@@ -82,11 +82,11 @@ The chapters are grouped into units. Each unit opens with a page that summarizes
 
 **[Unit 2: Spatial Data Quality](units/unit-2.qmd)** (Chapters 8–10) is about where data come from and how good they are. It covers census data and their margins of error, turning addresses and scanned maps into GIS layers with geocoding and georeferencing, and the quality of volunteered data in OpenStreetMap.
 
-**[Unit 3: Spatial Analysis](units/unit-3.qmd)** (Chapters 11–16) turns data into answers. It covers classing data for choropleth maps and measuring density with neighborhoods and kernels, the core vector operations of selection, buffers, and overlay, map algebra and the other raster functions, and estimating values between observations with deterministic interpolation and kriging.
+**[Unit 3: Spatial Analysis](units/unit-3.qmd)** (Chapters 11–19) turns data into answers. It covers classing data for choropleth maps and measuring density with neighborhoods and kernels, the core vector operations of selection, buffers, and overlay, map algebra and the other raster functions, and estimating values between observations with deterministic interpolation and kriging. It ends by putting these tools together in suitability models and risk analysis, and by measuring and mapping the uncertainty in any result.
 
-**GIS Software** (Chapters 17 and 18) introduces the two programs used in this course, QGIS and ArcGIS Pro: their history, how each is organized, and how to do common tasks in each, from entering data to making a finished map. Read them early, alongside Unit 1, and come back to them as a reference.
+**GIS Software** (Chapters 20 and 21) introduces the two programs used in this course, QGIS and ArcGIS Pro: their history, how each is organized, and how to do common tasks in each, from entering data to making a finished map. Read them early, alongside Unit 1, and come back to them as a reference.
 
-**Looking Ahead** (Chapter 19) closes the book with what comes next: GIS in public health, the environment, and planning; advanced topics such as remote sensing, GeoAI, and web and 3D GIS; how to find and do GIS research; and the courses, clubs, and events at UNC where you can keep learning.
+**Looking Ahead** (Chapter 22) closes the book with what comes next: GIS in public health, the environment, and planning; advanced topics such as remote sensing, GeoAI, and web and 3D GIS; how to find and do GIS research; and the courses, clubs, and events at UNC where you can keep learning.
 
 ::: {.content-hidden when-profile="textbook"}
 Each chapter in Units 1–3 is followed by a chapter quiz you can take as many times as you like. Each unit ends with a unit quiz that mixes questions from all of the unit's chapter quizzes, for reviewing a whole unit at once.

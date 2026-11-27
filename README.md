@@ -175,3 +175,10 @@ PDF's heading styles, front pages, and table of contents follow GEOG 215's fixes
 **November 27, 2026: Chapter 19, *What's Next in GIS*, is added** in a final "Looking Ahead" part,
 modeled on GEOG 215's last chapter, with no quiz. Its figures are made by
 `scripts/figures/whats_next.py`.
+
+**November 27, 2026: Chapters 17–19, *Suitability Modeling*, *Risk Analysis*, and *Uncertainty in
+Geospatial Data*, are added** at the end of Unit 3, written from lectures 20–22, with chapter quizzes
+(also added to the Unit 3 quiz) and glossary terms. The software chapters become Chapters 20 and 21,
+and *What's Next in GIS* becomes Chapter 22. Their figures are made by
+`scripts/figures/suitability.py`, `risk_analysis.py`, and `uncertainty.py`; the lecture slides'
+images (textbook and journal figures, news photos) are replaced by new diagrams.

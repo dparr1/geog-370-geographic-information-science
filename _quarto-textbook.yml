@@ -47,6 +47,9 @@ book:
         - chapters/raster.qmd
         - chapters/interpolation.qmd
         - chapters/kriging.qmd
+        - chapters/suitability-modeling.qmd
+        - chapters/risk-analysis.qmd
+        - chapters/uncertainty.qmd
     - part: "GIS Software"
       chapters:
         - chapters/qgis.qmd

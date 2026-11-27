@@ -1620,6 +1620,7 @@ terms:
       is there that shouldn't be.
 
   - term: temporal quality
+    aliases: [temporal accuracy]
     definition: >-
       How current a dataset is, and how accurate its dates are.
 
@@ -2363,7 +2364,7 @@ terms:
       Kriging's estimate of how far off each prediction might be. It is
       largest where observations are sparse.
 
-  # Chapter 17: Getting to Know QGIS, and Chapter 18: Getting to Know ArcGIS Pro
+  # Chapter 20: Getting to Know QGIS, and Chapter 21: Getting to Know ArcGIS Pro
   - term: OSGeo
     aliases: [Open Source Geospatial Foundation]
     definition: >-
@@ -2562,7 +2563,7 @@ terms:
       The currency an ArcGIS organization uses to pay for some services, such
       as batch geocoding and storing data in ArcGIS Online.
 
-  # Chapter 19: What's Next in GIS
+  # Chapter 22: What's Next in GIS
   - term: lidar
     aliases: [LiDAR]
     definition: >-
@@ -2658,3 +2659,323 @@ terms:
     definition: >-
       The digital, GIS-based 911 system that uses address points, street
       centerlines, and boundaries to route emergency calls and locate callers.
+
+  # Chapter 17: Suitability Modeling
+  - term: suitability modeling
+    aliases: [suitability analysis, suitability model, suitability models]
+    definition: >-
+      Ranking every location in a study area by how well it meets a set of
+      criteria, such as choosing sites for a house, a school, or a wind farm.
+
+  - term: criterion
+    aliases: [criteria]
+    chapters: [suitability-modeling, risk-analysis]
+    definition: >-
+      A condition a site must meet in a suitability model, first written in
+      plain language and then as a measurable threshold, such as slope < 30°.
+
+  - term: threshold
+    aliases: [thresholds]
+    chapters: [suitability-modeling]
+    definition: >-
+      The number or rule that turns a criterion into something software can
+      test, such as 300 m < distance to road < 2,000 m.
+
+  - term: ranking
+    aliases: [rankings]
+    chapters: [suitability-modeling]
+    definition: >-
+      The scores given to the values within one criterion, putting them on a
+      common scale, usually 0 (unsuitable) to 1 (ideal).
+
+  - term: suitability layer
+    aliases: [suitability layers]
+    definition: >-
+      A layer that scores every cell for one criterion, from 0 (completely
+      unsuitable) to 1 (ideal).
+
+  - term: weighting
+    aliases: [weightings, weights]
+    chapters: [suitability-modeling, risk-analysis]
+    definition: >-
+      A multiplier that sets how much a criterion counts when suitability or
+      vulnerability layers are combined.
+
+  - term: flowchart
+    aliases: [flowcharts]
+    definition: >-
+      A diagram of a model's input data (rectangles), operations (ovals), and
+      their order (arrows), used to plan and document the model.
+
+  - term: slope
+    chapters: [suitability-modeling]
+    definition: >-
+      The steepness of the ground, in degrees or percent, calculated from an
+      elevation raster.
+
+  - term: aspect
+    chapters: [suitability-modeling]
+    definition: >-
+      The compass direction a slope faces, in degrees clockwise from north (0°
+      north, 90° east, 180° south, 270° west).
+
+  - term: discrete ranking
+    definition: >-
+      A ranking in which each value either passes (1) or fails (0) a
+      criterion.
+
+  - term: continuous ranking
+    definition: >-
+      A ranking in which values are scaled smoothly from worst to best, so a
+      near miss scores higher than a poor value.
+
+  - term: suitability index
+    definition: >-
+      A cell's total score in a suitability model: the sum of its weighted
+      scores on every criterion.
+
+  - term: linear combination
+    chapters: [suitability-modeling]
+    definition: >-
+      Adding suitability layers with equal weights; with 0/1 layers, the
+      result counts how many criteria each cell meets.
+
+  - term: weighted linear combination (WLC)
+    aliases: [weighted linear combination, WLC]
+    definition: >-
+      Multiplying each standardized layer by its weight and adding them, cell
+      by cell: S = Σ wᵢxᵢ. Also called the rating model.
+
+  - term: weighted overlay
+    definition: >-
+      Combining raster layers on a common scale by multiplying each by its
+      weight and adding them; also the name of an ArcGIS Pro tool.
+
+  - term: sensitivity analysis
+    definition: >-
+      Changing one input, such as a weight or threshold, at a time to see
+      whether a model's results change. If small changes move the answer, it
+      is fragile.
+
+  - term: stakeholder
+    aliases: [stakeholders]
+    chapters: [suitability-modeling]
+    definition: >-
+      A person or group affected by a decision, whose views may be used to set
+      a model's criteria and weights.
+
+  - term: Analytic Hierarchy Process (AHP)
+    aliases: [Analytic Hierarchy Process, AHP]
+    definition: >-
+      A method, developed by Thomas Saaty, that derives weights by comparing
+      criteria two at a time on a scale of 1 to 9.
+
+  - term: pairwise comparison
+    aliases: [pairwise comparisons, pairwise comparison matrix]
+    definition: >-
+      Judging two criteria at a time: which matters more, and by how much. In
+      AHP the answers fill a matrix whose diagonal is 1 and whose lower half
+      holds reciprocals.
+
+  - term: consistency ratio (CR)
+    aliases: [consistency ratio]
+    definition: >-
+      An AHP measure of how far pairwise judgments are from perfectly
+      consistent. Below 0.10 is usually acceptable.
+
+  - term: multi-criteria decision analysis (MCDA)
+    aliases: [multi-criteria decision analysis, MCDA, multicriteria decision analysis]
+    definition: >-
+      Methods that weigh many criteria to support a decision, including GIS
+      suitability modeling.
+
+  # Chapter 18: Risk Analysis
+  - term: risk analysis
+    definition: >-
+      Mapping and measuring the likely impact of hazards on people and places,
+      so that resources go where they prevent the most harm.
+
+  - term: risk
+    chapters: [risk-analysis]
+    definition: >-
+      The estimated impact a hazard would have on people, services,
+      facilities, and structures in a community: hazard × vulnerability ×
+      exposure.
+
+  - term: hazard
+    aliases: [hazards]
+    chapters: [risk-analysis]
+    definition: >-
+      An act or phenomenon that has the potential to produce harm, such as a
+      flood, wildfire, hurricane, or earthquake.
+
+  - term: exposure
+    chapters: [risk-analysis]
+    definition: >-
+      The people, property, systems, or functions that could be lost because
+      of a hazard; who and what is in harm's way.
+
+  - term: vulnerability
+    chapters: [risk-analysis]
+    definition: >-
+      The susceptibility to physical injury, harm, damage, or economic loss
+      when a hazard strikes.
+
+  - term: hazard footprint
+    definition: >-
+      The area a hazard can reach, such as a floodplain or wildfire
+      perimeter, often mapped with its likelihood and severity.
+
+  - term: physical vulnerability
+    definition: >-
+      Vulnerability that comes from the land and buildings, such as low
+      elevation, weak construction, or closeness to a river.
+
+  - term: social vulnerability
+    definition: >-
+      Vulnerability that comes from people's circumstances, such as poverty,
+      age, disability, language, or lack of a car, that make it harder to
+      prepare, evacuate, and recover.
+
+  - term: resilience
+    definition: >-
+      The ability of a community exposed to a hazard to resist, absorb, adapt
+      to, and recover from it in a timely and efficient way (UNDRR).
+
+  - term: coping capacity
+    definition: >-
+      The ability of people and organizations to manage a hazard event using
+      the skills and resources they already have (UNDRR).
+
+  - term: composite vulnerability index
+    definition: >-
+      One index that combines several vulnerability indices; in the Dhaka
+      study, physical plus social vulnerability minus coping capacity.
+
+  - term: katcha house
+    aliases: [katcha houses]
+    definition: >-
+      In Bangladesh, a makeshift dwelling of mud, bamboo, or recycled and
+      found materials, the type most likely to be destroyed by floods.
+
+  - term: National Risk Index
+    definition: >-
+      FEMA's map of risk for every U.S. county and census tract, combining
+      expected annual losses from 18 natural hazards with social
+      vulnerability and community resilience.
+
+  - term: Social Vulnerability Index (SVI)
+    aliases: [Social Vulnerability Index]
+    case_sensitive: true
+    definition: >-
+      An index that ranks places by social vulnerability from census
+      variables; the CDC/ATSDR SVI ranks every U.S. census tract.
+
+  # Chapter 19: Uncertainty in Geospatial Data
+  - term: uncertainty
+    definition: >-
+      The degree to which we aren't sure of something: the cloud of possible
+      values around a recorded value.
+
+  - term: error
+    chapters: [uncertainty]
+    definition: >-
+      The difference between a recorded value and the true value, which we
+      usually can't know exactly.
+
+  - term: test point
+    aliases: [test points]
+    definition: >-
+      A location whose true position is known from a more accurate source,
+      used to measure a map's positional accuracy.
+
+  - term: National Map Accuracy Standards (NMAS)
+    aliases: [National Map Accuracy Standards, NMAS]
+    definition: >-
+      The 1947 U.S. standard: at scales of 1:20,000 or smaller, 90% of tested
+      points must be within 1/50 inch on the map (40 feet at 1:24,000).
+
+  - term: National Standard for Spatial Data Accuracy (NSSDA)
+    aliases: [National Standard for Spatial Data Accuracy, NSSDA]
+    definition: >-
+      The 1998 U.S. standard that reports positional accuracy in ground units
+      at 95% confidence, whatever the map scale.
+
+  - term: confusion matrix
+    aliases: [confusion matrices, error matrix]
+    definition: >-
+      A table that cross-tabulates mapped classes against true classes at
+      test sites; the diagonal holds the correctly classed sites.
+
+  - term: copyright trap
+    aliases: [copyright traps, paper town, paper towns, trap street, trap streets]
+    definition: >-
+      A deliberate error, such as a made-up town or street, put on a map to
+      reveal copying.
+
+  - term: undershoot
+    aliases: [undershoots]
+    definition: >-
+      A line that stops just short of the line it should meet: a topology
+      error.
+
+  - term: overshoot
+    aliases: [overshoots]
+    definition: >-
+      A line that runs past the line it should meet: a topology error.
+
+  - term: temporal stability
+    definition: >-
+      How long a feature stays the same, from millions of years for mountains
+      to months for storefronts.
+
+  - term: data lifecycle
+    definition: >-
+      The stages a dataset passes through: collection, processing, storage,
+      display, and use. Uncertainty can enter at each one.
+
+  - term: Type 1 error
+    aliases: [Type 1 errors]
+    definition: >-
+      "Seeing wrong": concluding that a pattern exists where none exists, like
+      a false positive in statistics.
+
+  - term: Type 2 error
+    aliases: [Type 2 errors]
+    definition: >-
+      "Not seeing": missing a pattern that does exist, like a false negative
+      in statistics.
+
+  - term: visual variable
+    aliases: [visual variables]
+    definition: >-
+      A property of a map symbol that can change to show data, such as size,
+      shape, hue, value, crispness, transparency, or saturation.
+
+  - term: crispness
+    definition: >-
+      A visual variable for uncertainty: sharp edges for known boundaries and
+      blurred edges for uncertain ones.
+
+  - term: transparency
+    chapters: [uncertainty]
+    definition: >-
+      A visual variable for uncertainty: a faded, see-through symbol tells
+      readers to trust it less.
+
+  - term: saturation
+    chapters: [uncertainty]
+    definition: >-
+      The purity of a color. As a visual variable for uncertainty, rich color
+      marks reliable values and washed-out color doubtful ones.
+
+  - term: reliability diagram
+    aliases: [reliability diagrams]
+    definition: >-
+      A small diagram in the margin of an older topographic map showing how
+      and when each part of the sheet was mapped.
+
+  - term: fitness for use
+    definition: >-
+      Whether a dataset or map is good enough for a particular purpose, which
+      depends on the use as much as on the data.
