@@ -29,6 +29,9 @@ book:
       chapters:
         - chapters/what-is-gis.qmd
         - chapters/what-is-geographic-data.qmd
+        - chapters/location-and-coordinates.qmd
+        - chapters/map-projections.qmd
+        - chapters/attribute-queries.qmd
     # Units and chapters go here, in the same order as _quarto-site.yml but
     # without the quiz pages. For example:
     #

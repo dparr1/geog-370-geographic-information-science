@@ -19,3 +19,27 @@ How do you store a tree, a road, or a mountain in a computer? This chapter follo
 ::: {.content-hidden when-profile="textbook"}
 [Chapter 2 quiz](../chapters/what-is-geographic-data-quiz.qmd)
 :::
+
+## Chapter 3: [Location and Coordinate Systems](../chapters/location-and-coordinates.qmd)
+
+How do you say exactly where something is on the Earth? This chapter starts with relative and absolute location, then models the Earth's shape: Eratosthenes's measurement, the ellipsoid, and the geoid, with the three heights a GPS and a map report. It explains geodetic datums (NAD27, NAD83, and WGS84) and why the same coordinates can land 100 meters apart in two of them. It ends with latitude and longitude: how they are built, how to write and convert them, how precise they need to be, and why great circles and the graticule matter.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 3 quiz](../chapters/location-and-coordinates-quiz.qmd)
+:::
+
+## Chapter 4: [Map Projections](../chapters/map-projections.qmd)
+
+Every flat map distorts the Earth. This chapter shows how a projection flattens latitude and longitude onto a plane, a cylinder, or a cone, and what each kind keeps and gives up: shape, area, distance, or direction. It explains why Greenland looks as big as Africa on a Mercator map, why web maps are for display and not measurement, and how scale error grows away from standard lines. It then covers the systems used most in North Carolina, UTM and State Plane, reads EPSG codes, and gives a practical method for choosing a projection.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 4 quiz](../chapters/map-projections-quiz.qmd)
+:::
+
+## Chapter 5: [Attribute Data and Queries](../chapters/attribute-queries.qmd)
+
+Geometry says where; attributes say what. This chapter looks at the attribute table, its records and fields, the data types that store them and the binary limits behind them, and the levels of measurement that decide which questions make sense. It then teaches attribute queries in SQL, from simple comparisons to AND, OR, NOT, brackets, LIKE, BETWEEN, and IN, with a way to check any query using sets and Venn diagrams, and the trap of NULL values.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 5 quiz](../chapters/attribute-queries-quiz.qmd)
+:::
