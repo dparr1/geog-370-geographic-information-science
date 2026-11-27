@@ -1,0 +1,4 @@
+# Every chapter cites from references.bib, but its reference list is shown
+# only once, on the References page at the end of the book (references.qmd),
+# not at the end of each chapter.
+suppress-bibliography: true

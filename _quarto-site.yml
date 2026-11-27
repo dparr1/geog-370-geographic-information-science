@@ -46,3 +46,4 @@ book:
     #     - units/unit-1-quiz.qmd
   appendices:
     - glossary.qmd
+    - references.qmd

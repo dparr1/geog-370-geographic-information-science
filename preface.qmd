@@ -10,6 +10,59 @@ This book is an open educational resource textbook designed for my course, GEOG 
 
 This is an interactive textbook written for GEOG 370. It's designed for students who are new to GIS and to spatial data. Chapters explain the concepts behind geographic information and show how to put them into practice in QGIS and ArcGIS Pro.
 
+## How to use this book {#sec-how-to-use}
+
+Read the book in order if you can. Each chapter builds on the ones before it, and later chapters assume you have met the ideas and terms introduced earlier. Each unit opens with a short page that says what its chapters cover, so you can see where you are going before you start.
+
+### What's in each chapter
+
+Most chapters follow the same pattern, so you know where to look:
+
+- **Learning objectives** at the top list what you should be able to do by the end of the chapter. They are a good checklist when you review for an exam.
+- **Numbered sections** teach the material, with maps, figures, and tables. Cross-references such as "Section 1.2" or "Figure 2.1" are links you can follow.
+- **Think about it** boxes pose a question to stop and consider before reading on. There is no grade attached: they are there to help the idea stick.
+- **Did you know..?** boxes and **Trivia time** questions add a fact or a quick puzzle that connects the idea to the world around you.
+- **Check your understanding** questions near the end let you test yourself. You can answer them as many times as you like, and they are not graded.
+- A **Summary** recaps the chapter's main points, **Exercises** give you practice, and **Further reading and online resources** points you to books, websites, data, and tutorials that go deeper.
+
+### QGIS and ArcGIS Pro
+
+This book teaches with two GIS programs: **QGIS**, which is free and open source, and **ArcGIS Pro**, made by Esri. Chapter 1 introduces both. The ideas in each chapter are the same whichever program you use, and the skills you learn in one carry over to the other.
+
+Names you would type or see in the software, such as file names like `roads.shp`, field names, and expressions, are printed in a monospaced font.
+
+### Key terms and the glossary
+
+Important terms are printed in **bold** where they are first explained.
+
+::: {.content-visible when-format="html"}
+In the chapters, a key term has a dotted underline the first time it appears in a section. Hover over it, tap it, or reach it with the Tab key to see a short definition. All of the terms and their definitions are collected in the [Glossary](glossary.qmd) at the end of the book.
+:::
+
+::: {.content-visible when-format="pdf"}
+All of the key terms and their definitions are collected in the Glossary at the end of the book.
+:::
+
+The books, articles, and documentation the chapters cite are listed together on the [References](references.qmd) page at the end of the book.
+
+::: {.content-visible when-format="html"}
+### Finding your way around
+
+The sidebar on the left lists every unit and chapter, and the outline on the right lists the sections of the page you are reading. Use the search box at the top to find any word in the book. The **Aa** button beside the search box changes the font and text size (see [Fonts and reading settings](#sec-fonts)).
+:::
+
+::: {.content-hidden when-profile="textbook"}
+### Quizzes
+
+The chapter quizzes and unit quizzes are practice. Take one after you finish a chapter or a unit, and take it again later to see what has stuck.
+:::
+
+::: {.content-visible when-profile="geog370"}
+### Asking questions
+
+If something in a chapter doesn't make sense, highlight the text and choose **Ask a question**. Your question goes to the course staff, and you can see your questions and their answers under **My questions**. You can also add this site to your phone's home screen (see the [Welcome](index.qmd) page), so pages you've already read work without internet.
+:::
+
 ## How this book is organized
 
 <!--
@@ -28,6 +81,26 @@ Each chapter is followed by a chapter quiz you can take as many times as you lik
 :::
 
 *More chapters are being written now and will appear here as they are added.*
+
+## Fonts and reading settings {#sec-fonts}
+
+The online version of this book sets its text in **Atkinson Hyperlegible Next**, and names you would type into the software in **Atkinson Hyperlegible Mono**. Both were designed by the [Braille Institute of America](https://www.brailleinstitute.org/freefont/) for readers with low vision, and both are free to use. Many common letters and numbers look alike in ordinary fonts: a capital I, a lowercase l, and the number 1, or a capital O and a zero. Atkinson Hyperlegible gives each of these characters its own distinct shape, so they are hard to mistake for one another. That matters in a book full of coordinates, file names, and field names, where one misread character puts a point in the wrong place or points the software at a file that doesn't exist. The zero in the monospaced font has a slash through it, so you can always tell `0` from `O`.
+
+::: {.content-visible when-format="html"}
+A font that is easy for one reader can be hard for another, so you can change it. Press the **Aa** button beside the search box at the top of any page to choose a font and a text size. The fonts are:
+
+- **Atkinson Hyperlegible** (the default), described above.
+- **Lexend**, a font designed to reduce visual stress and make reading easier and faster.
+- **Cardo**, a traditional book serif.
+- **Standard sans-serif** and **Serif**, which use the fonts already on your device.
+- **OpenDyslexic**, which gives each letter a heavier bottom so letters are harder to flip or rotate. Some readers with dyslexia find it easier to read.
+
+Text size goes from one step smaller than normal to three steps larger. Your choices are saved in your web browser, so the book keeps your settings from page to page and the next time you visit. Monospaced text keeps Atkinson Hyperlegible Mono whichever font you choose, so it always lines up.
+:::
+
+::: {.content-visible when-format="pdf"}
+This PDF is set in **Ubuntu**, a clear sans-serif font designed by Dalton Maag and free to use. A font that is easy for one reader can be hard for another. The online version of this book, at <https://daveparr.com/geographic-information-science/>, lets you change the font and text size with the **Aa** button beside the search box. The choices include Lexend, designed to reduce visual stress, and OpenDyslexic, which some readers with dyslexia find easier to read.
+:::
 
 ## Acknowledgments
 
