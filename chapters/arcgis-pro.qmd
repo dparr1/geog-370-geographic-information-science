@@ -15,7 +15,7 @@ By the end of this chapter you should be able to:
 6.  Make a basic map with symbology, labels, and a layout, and run tools in the Geoprocessing pane.
 :::
 
-ArcGIS Pro is the desktop GIS made by **Esri**, the largest GIS software company in the world. It is used by governments, utilities, businesses, and universities, so it appears in a large share of job postings for GIS analysts. Like QGIS ([Chapter 17](qgis.qmd)), it can do nearly everything described in this book, and most tasks follow the same steps in both. This chapter introduces ArcGIS Pro: its history, how it is licensed, how its window is organized, and how to do the common tasks of entering data and making a map.
+ArcGIS Pro is the desktop GIS made by **Esri**, the largest GIS software company in the world. It is used by governments, utilities, businesses, and universities, so it appears in a large share of job postings for GIS analysts. Like QGIS ([Chapter 20](qgis.qmd)), it can do nearly everything described in this book, and most tasks follow the same steps in both. This chapter introduces ArcGIS Pro: its history, how it is licensed, how its window is organized, and how to do the common tasks of entering data and making a map.
 
 The figures in this chapter are diagrams of the ArcGIS Pro window, not screenshots, so they show where things are rather than every button. Esri's own documentation, listed at the end of the chapter, has screenshots of the current version. Commands are written as **Tab ▸ Group ▸ Button**, following the ribbon.
 

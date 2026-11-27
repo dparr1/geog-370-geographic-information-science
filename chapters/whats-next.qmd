@@ -20,7 +20,8 @@ This chapter looks forward instead of teaching a new method. Look at what you ca
 - **Query and combine it:** attribute queries, table joins, and spatial joins (Chapters 5–7).
 - **Judge its quality:** census data and its margins of error, geocoding and georeferencing, and volunteered data from OpenStreetMap (Chapters 8–10).
 - **Analyze and map it:** data classing, density, buffers and overlay, map algebra, interpolation, and kriging (Chapters 11–16).
-- **Do all of it in real software:** QGIS and ArcGIS Pro (Chapters 17 and 18).
+- **Answer real questions with it, honestly:** suitability modeling, risk analysis, and uncertainty (Chapters 17–19).
+- **Do all of it in real software:** QGIS and ArcGIS Pro (Chapters 20 and 21).
 
 That is the core of geographic information science. This chapter shows where it is used, previews advanced topics that build on it, points you to the research behind them, and maps out what to take and join next at UNC. As you read, notice which topic excites you most. That is a good clue to which course to take next.
 
@@ -34,7 +35,7 @@ Almost any question that involves "where" is a GIS question. The questions chang
 
 ### Environment and hazards
 
-GIS is central to every stage of a disaster: flood maps, evacuation routes, and shelter locations before a storm, and damage mapping from aerial and satellite imagery after it. When Hurricane Helene flooded western North Carolina in 2024, imagery and GIS were used to map flooding, landslides, and closed roads. The key question, *who is exposed?*, is an overlay of hazard zones with census data (Chapters 7, 8, and 13). Elevation rasters and map algebra (Chapter 14) model where water flows, and interpolation and kriging (Chapters 15 and 16) turn rain gauges and air quality monitors into continuous surfaces.
+GIS is central to every stage of a disaster: flood maps, evacuation routes, and shelter locations before a storm, and damage mapping from aerial and satellite imagery after it. When Hurricane Helene flooded western North Carolina in 2024, imagery and GIS were used to map flooding, landslides, and closed roads. The key question, *who is exposed?*, is an overlay of hazard zones with census data (Chapters 7, 8, and 13), and risk indices combine hazard with social vulnerability (Chapter 18). Elevation rasters and map algebra (Chapter 14) model where water flows, and interpolation and kriging (Chapters 15 and 16) turn rain gauges and air quality monitors into continuous surfaces.
 
 ### Local government {#sec-local-government}
 
@@ -127,7 +128,7 @@ GIS is also going 3D. Lidar point clouds, 3D building models, and scene layers i
 
 ### GIS programming and automation
 
-Every tool you ran by clicking in Chapters 17 and 18 can also be run from code. Automating a workflow makes it faster, repeatable, and shareable:
+Every tool you ran by clicking in Chapters 20 and 21 can also be run from code. Automating a workflow makes it faster, repeatable, and shareable:
 
 - **Python** is the main scripting language of desktop GIS: ArcPy in ArcGIS Pro, PyQGIS in QGIS, and the open-source GeoPandas, Rasterio, and Shapely libraries.
 - **R**, with the sf and terra packages, is popular for spatial statistics and is taught in GEOG 215 and GEOG 515.

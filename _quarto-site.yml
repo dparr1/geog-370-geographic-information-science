@@ -68,6 +68,12 @@ book:
         - chapters/interpolation-quiz.qmd
         - chapters/kriging.qmd
         - chapters/kriging-quiz.qmd
+        - chapters/suitability-modeling.qmd
+        - chapters/suitability-modeling-quiz.qmd
+        - chapters/risk-analysis.qmd
+        - chapters/risk-analysis-quiz.qmd
+        - chapters/uncertainty.qmd
+        - chapters/uncertainty-quiz.qmd
         - units/unit-3-quiz.qmd
     - part: "GIS Software"
       chapters:

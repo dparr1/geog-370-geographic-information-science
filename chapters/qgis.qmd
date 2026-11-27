@@ -15,7 +15,7 @@ By the end of this chapter you should be able to:
 6.  Find and run analysis tools in the Processing Toolbox, and extend QGIS with plugins.
 :::
 
-The chapters so far have explained the ideas of GIS: data models, coordinate systems, queries, joins, and analysis. This chapter is about one of the tools you will use to put those ideas to work. QGIS is a free, open-source desktop GIS that runs on Windows, macOS, and Linux. It can do nearly everything this book describes, and because it costs nothing, you can install it on any computer and keep using it after the course ends. [Chapter 18](arcgis-pro.qmd) introduces ArcGIS Pro, the other GIS program used in this course.
+The chapters so far have explained the ideas of GIS: data models, coordinate systems, queries, joins, and analysis. This chapter is about one of the tools you will use to put those ideas to work. QGIS is a free, open-source desktop GIS that runs on Windows, macOS, and Linux. It can do nearly everything this book describes, and because it costs nothing, you can install it on any computer and keep using it after the course ends. [Chapter 21](arcgis-pro.qmd) introduces ArcGIS Pro, the other GIS program used in this course.
 
 The screenshots in this chapter come from QGIS 3.34 on Linux, using North Carolina's 100 counties and their 2025 population estimates from Chapter 11. Newer versions, and QGIS on Windows and macOS, look much the same; menus and buttons may move a little between versions, but the workflow does not change.
 
