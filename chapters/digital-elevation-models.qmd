@@ -15,7 +15,7 @@ By the end of this chapter you should be able to:
 6.  Work through a line-of-sight test by hand, and explain how a viewshed repeats it for every cell.
 :::
 
-Chapter 15 treated rasters in general: grids of cells, each with a value. The most widely used raster of all holds elevation. Engineers use it to route roads and pipelines, hydrologists to predict where floodwater will go, ecologists to explain why a cove forest grows on one side of a ridge and not the other, and phone companies to decide where a tower will be seen. This chapter covers where elevation data come from, how to get them, and four tools that turn elevation into answers: slope, hillshade, aspect, and viewshed. The maps use a real elevation model of Linville Gorge, in the Blue Ridge Mountains of North Carolina.
+A raster stores the world as a grid of cells, each with a value (Chapter 2). The most widely used raster of all holds elevation. Engineers use it to route roads and pipelines, hydrologists to predict where floodwater will go, ecologists to explain why a cove forest grows on one side of a ridge and not the other, and phone companies to decide where a tower will be seen. This chapter covers where elevation data come from, how to get them, and four tools that turn elevation into answers: slope, hillshade, aspect, and viewshed. The maps use a real elevation model of Linville Gorge, in the Blue Ridge Mountains of North Carolina.
 
 ## From hill drawings to numbers {#sec-dem-history}
 
@@ -60,7 +60,7 @@ Contours are a vector way to show a surface. A digital elevation model is the ra
 
 ### A grid of elevations
 
-A **digital elevation model** (DEM) is a raster in which every cell holds one elevation (@fig-contours-vs-grid). The values are usually meters above a **vertical datum**, such as the North American Vertical Datum of 1988 (NAVD 88) in the United States, which is close to mean sea level. As with any raster (Chapter 15), the **cell size**, or resolution, is a DEM's most important property: a cell shows one height, so nothing smaller than a cell can appear.
+A **digital elevation model** (DEM) is a raster in which every cell holds one elevation (@fig-contours-vs-grid). The values are usually meters above a **vertical datum**, such as the North American Vertical Datum of 1988 (NAVD 88) in the United States, which is close to mean sea level. As with any raster (Chapter 2), the **cell size**, or resolution, is a DEM's most important property: a cell shows one height, so nothing smaller than a cell can appear.
 
 ![The same 1.6 km square of Linville Gorge as contours (left), as a DEM with 100 m cells (middle), and as the numbers in four of those cells (right). Data: USGS 3DEP.](../images/dem/contours-vs-grid.png){#fig-contours-vs-grid fig-alt="Three panels. Left: brown contour lines every 20 meters on a cream background, with labels every 100 meters from 600 to 1000. Middle: a 16 by 16 grid of colored squares, brown and white where high on the left, green where low on the right, with a 4 by 4 block outlined in red. Right: that block enlarged, with an elevation in meters in each cell: 923, 888, 822, 767 across the top row, down to 866, 806, 763, 725 across the bottom."}
 
@@ -213,7 +213,7 @@ $$
 \text{slope} = \arctan \sqrt{\left(\frac{dz}{dx}\right)^2 + \left(\frac{dz}{dy}\right)^2}
 $$
 
-where *dz/dx* is the rate of change in elevation from west to east, and *dz/dy* from south to north. A DEM has no smooth surface, only a grid of numbers, so the slope tool estimates *dz/dx* and *dz/dy* for each cell from a 3 × 3 window around it. Slope is a neighborhood function (Chapter 15): it moves the window across the raster and writes one value for every cell. @fig-slope-window works one window two ways, with 50 m cells.
+where *dz/dx* is the rate of change in elevation from west to east, and *dz/dy* from south to north. A DEM has no smooth surface, only a grid of numbers, so the slope tool estimates *dz/dx* and *dz/dy* for each cell from a 3 × 3 window around it. Slope is a neighborhood function (Chapter 17): it moves the window across the raster and writes one value for every cell. @fig-slope-window works one window two ways, with 50 m cells.
 
 ![One 3 × 3 window of elevations (m), and its slope by two methods. The center cell is outlined.](../images/dem/slope-window.png){#fig-slope-window fig-alt="A 3 by 3 grid of elevations with letters a to i: top row 70, 65, 50; middle row 95, 80, 50; bottom row 85, 90, 80, with the center 80 outlined and north at the top. The cell distance D is 50 meters. To the right, the Fleming and Hoffer method uses four neighbors: east-west is 50 minus 95 over 100, or negative 0.45; north-south is 65 minus 90 over 100, or negative 0.25; slope is 27.2 degrees. Horn's method uses eight neighbors: east-west is 230 minus 345 over 400, or negative 0.2875; north-south is 250 minus 345 over 400, or negative 0.2375; slope is 20.5 degrees."}
 
@@ -330,7 +330,7 @@ Viewsheds were siting fire lookouts long before GIS. The U.S. Forest Service bui
 The two tools answer different questions:
 
 - **Line of sight** answers a yes-or-no question between two points. Can a radar station see an aircraft? Will a microwave link between two towers be blocked? Is a proposed building visible from a historic site?
-- **Viewshed** answers a *where* question. Which areas can a cell tower, a fire lookout, or a wind farm be seen from? Which candidate tower site covers the most area? For siting problems, analysts run viewsheds from several candidate locations and compare how much area each one covers, often as a layer in a suitability model (Chapter 19).
+- **Viewshed** answers a *where* question. Which areas can a cell tower, a fire lookout, or a wind farm be seen from? Which candidate tower site covers the most area? For siting problems, analysts run viewsheds from several candidate locations and compare how much area each one covers, often as a layer in a suitability model (Chapter 20).
 
 ## Surface tools in ArcGIS Pro and QGIS {#sec-surface-tools}
 
@@ -399,7 +399,7 @@ The interactive self-check questions for this chapter are in the online version 
 5.  **Surface tools.** With your Orange County DEM, run Slope, Aspect, and Hillshade. Then make a shaded-relief map: put the DEM over the hillshade with a color ramp and 50 percent transparency. Where are the steepest slopes, and why there?
 6.  **Relief inversion.** Make two hillshades of the same area, one lit from 315° and one from 135°. Show them to a friend without saying which is which. Which one looks right to them?
 7.  **Viewshed.** Put an observer on the top of a hill or building on or near campus, with a height of 1.7 m, and run a viewshed. Then run it again with the observer 30 m higher, as if on a tower. How much more area is visible?
-8.  **Global DEMs.** For a mountain range outside the United States, download SRTM and Copernicus GLO-30 from OpenTopography, and subtract one from the other with map algebra (Chapter 15). Where do they differ most, and why?
+8.  **Global DEMs.** For a mountain range outside the United States, download SRTM and Copernicus GLO-30 from OpenTopography, and subtract one from the other with map algebra (Chapter 17). Where do they differ most, and why?
 
 ## Further reading and online resources
 

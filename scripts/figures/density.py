@@ -1,4 +1,4 @@
-"""Figures for Chapter 13, Density and Neighborhoods.
+"""Figures for Chapter 16, Density and Neighborhoods.
 
 Usage: python density.py <dir with ne_10m_admin_2_counties.geojson>
 

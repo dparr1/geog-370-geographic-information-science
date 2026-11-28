@@ -1,4 +1,4 @@
-"""Figures for Chapter 9, Federal Spatial Data Sets.
+"""Figures for Chapter 10, Federal Spatial Data Sets.
 
 The maps of NLCD, Landsat, MODIS NDVI, 3DEP, and NHD around Chapel Hill, and
 the pixel-size, flood-zone, and resolution-versus-revisit diagrams, are

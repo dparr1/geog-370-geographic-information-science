@@ -15,7 +15,7 @@ By the end of this chapter you should be able to:
 6.  Use the 2015 Nepal earthquake to explain how crisis mapping works, and how a flood of new volunteers affects data quality.
 :::
 
-Chapter 8 divided data about people and places into two kinds: **authoritative data**, made by official agencies to documented standards, and **asserted data**, contributed by the public. This chapter is about the second kind, and its best-known example, OpenStreetMap.
+Chapter 9 divided data about people and places into two kinds: **authoritative data**, made by official agencies to documented standards, and **asserted data**, contributed by the public. This chapter is about the second kind, and its best-known example, OpenStreetMap.
 
 OpenStreetMap is a free map of the world that anyone can edit. Every street, building, and footpath on the UNC campus in OpenStreetMap was added by a volunteer, some walking with a GPS, most tracing satellite imagery from a desk. The result is used by governments, the largest technology companies, and aid agencies. So how good is it? To answer that, we first need a way to describe the quality of any geographic dataset.
 
@@ -127,7 +127,7 @@ OpenStreetMap began because map data in Britain were expensive. The Ordnance Sur
 
 OSM is no longer a hobby project:
 
-- **Governments.** The U.S. Census Bureau has compared OSM with its TIGER/Line road files (Chapter 8). Many national and local governments use or contribute to OSM.
+- **Governments.** The U.S. Census Bureau has compared OSM with its TIGER/Line road files (Chapter 9). Many national and local governments use or contribute to OSM.
 - **Technology companies.** Apple, Meta, Microsoft, and Amazon all use OSM data. In 2022, Amazon, Meta, Microsoft, and TomTom founded the **Overture Maps Foundation**, which builds open map data partly on OSM.
 - **Navigation and logistics.** Routing engines, delivery, and ride-hailing apps.
 - **Humanitarian organizations.** The Red Cross and Médecins Sans Frontières use OSM to plan disaster response and health campaigns.

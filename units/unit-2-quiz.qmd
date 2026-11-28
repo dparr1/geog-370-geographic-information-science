@@ -1,6 +1,6 @@
-# Unit 2 quiz: Spatial Data Quality {.unnumbered}
+# Unit 2 quiz: Attributes, Joins, and Classification {.unnumbered}
 
-Review all of [Unit 2: Spatial Data Quality](unit-2.qmd) at once. This quiz draws from the unit's chapter quizzes, so every question here is one you can also find on a chapter quiz page. Each quiz is 20 questions picked at random and spread across the chapters, and any you miss come back at the end until you've got them all right. Take it as many times as you like.
+Review all of [Unit 2: Attributes, Joins, and Classification](unit-2.qmd) at once. This quiz draws from the unit's chapter quizzes, so every question here is one you can also find on a chapter quiz page. Each quiz is 20 questions picked at random and spread across the chapters, and any you miss come back at the end until you've got them all right. Take it as many times as you like.
 
 ```{=html}
 <link rel="stylesheet" href="../assets/quiz/quiz.css">

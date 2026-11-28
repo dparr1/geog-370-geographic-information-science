@@ -78,11 +78,15 @@ If something in a chapter doesn't make sense, highlight the text and choose **As
 
 The chapters are grouped into units. Each unit opens with a page that summarizes its chapters.
 
-**[Unit 1: Data Models and Projections](units/unit-1.qmd)** (Chapters 1–7) lays the foundation. It explains what a geographic information system is, the science behind it, the questions it can answer, and who uses it, then turns to how a GIS stores the world as data, puts it in the right place with datums, coordinate systems, and map projections, asks questions of its attribute tables, and combines layers with attribute and spatial joins.
+**[Unit 1: Data Models and Projections](units/unit-1.qmd)** (Chapters 1–4) lays the foundation. It explains what a geographic information system is, the science behind it, the questions it can answer, and who uses it, then turns to how a GIS stores the world as data and puts it in the right place with datums, coordinate systems, and map projections.
 
-**[Unit 2: Spatial Data Quality](units/unit-2.qmd)** (Chapters 8–11) is about where data come from and how good they are. It covers census data and their margins of error, the federal imagery, land cover, elevation, water, and hazard data sets used in most U.S. projects, turning addresses and scanned maps into GIS layers with geocoding and georeferencing, and the quality of volunteered data in OpenStreetMap.
+**[Unit 2: Attributes, Joins, and Classification](units/unit-2.qmd)** (Chapters 5–8) is about the tables behind every layer. It covers asking questions of attribute tables with SQL, combining tables with keys and table joins, combining layers by location with spatial joins, and classing data for choropleth maps.
 
-**[Unit 3: Spatial Analysis](units/unit-3.qmd)** (Chapters 12–21) turns data into answers. It covers classing data for choropleth maps and measuring density with neighborhoods and kernels, the core vector operations of selection, buffers, and overlay, map algebra and the other raster functions, terrain analysis with digital elevation models, and estimating values between observations with deterministic interpolation and kriging. It ends by putting these tools together in suitability models and risk analysis, and by measuring and mapping the uncertainty in any result.
+**[Unit 3: Spatial Data Sources and Quality](units/unit-3.qmd)** (Chapters 9–13) is about where data come from and how good they are. It covers census data and their margins of error, the federal imagery, land cover, elevation, water, and hazard data sets used in most U.S. projects, the quality of volunteered data in OpenStreetMap, how to measure and map the uncertainty in any data set, and digital elevation models and the terrain tools built on them.
+
+**[Unit 4: Spatial Analysis](units/unit-4.qmd)** (Chapters 14–17) turns data into answers. It covers the core vector operations of selection, buffers, and overlay, turning addresses and scanned maps into GIS layers with geocoding and georeferencing, measuring density with neighborhoods and kernels, and map algebra and the other raster functions.
+
+**[Unit 5: Surfaces and Spatial Modeling](units/unit-5.qmd)** (Chapters 18–21) estimates values between observations with deterministic interpolation and kriging, then puts the book's tools together in suitability models and risk analysis.
 
 **GIS Software** (Chapters 22 and 23) introduces the two programs used in this course, QGIS and ArcGIS Pro: their history, how each is organized, and how to do common tasks in each, from entering data to making a finished map. Read them early, alongside Unit 1, and come back to them as a reference.
 

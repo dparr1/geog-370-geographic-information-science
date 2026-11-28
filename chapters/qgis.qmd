@@ -17,7 +17,7 @@ By the end of this chapter you should be able to:
 
 The chapters so far have explained the ideas of GIS: data models, coordinate systems, queries, joins, and analysis. This chapter is about one of the tools you will use to put those ideas to work. QGIS is a free, open-source desktop GIS that runs on Windows, macOS, and Linux. It can do nearly everything this book describes, and because it costs nothing, you can install it on any computer and keep using it after the course ends. [Chapter 23](arcgis-pro.qmd) introduces ArcGIS Pro, the other GIS program used in this course.
 
-The screenshots in this chapter come from QGIS 3.34 on Linux, using North Carolina's 100 counties and their 2025 population estimates from Chapter 12. Newer versions, and QGIS on Windows and macOS, look much the same; menus and buttons may move a little between versions, but the workflow does not change.
+The screenshots in this chapter come from QGIS 3.34 on Linux, using North Carolina's 100 counties and their 2025 population estimates from Chapter 8. Newer versions, and QGIS on Windows and macOS, look much the same; menus and buttons may move a little between versions, but the workflow does not change.
 
 ## What is QGIS? {#sec-what-is-qgis}
 
@@ -202,7 +202,7 @@ A few more tools make digitizing accurate:
 
 - **Snapping** (Project ▸ Snapping Options, or the magnet on the Snapping toolbar) makes a new vertex jump to a nearby vertex or segment within a tolerance, so that shared boundaries line up exactly and no slivers or gaps form (Chapter 14).
 - The **Vertex Tool** moves, adds, and deletes the vertices of existing features.
-- Digitizing over a **basemap** or a georeferenced image (Chapter 10) lets you trace features, such as buildings or trails, from imagery.
+- Digitizing over a **basemap** or a georeferenced image (Chapter 15) lets you trace features, such as buildings or trails, from imagery.
 
 ### The attribute table
 
@@ -260,13 +260,13 @@ A layer's **symbology** controls how it is drawn. Double-click a layer (or right
 - **Categorized** gives each unique value of a field its own symbol, for nominal data such as land use or road type.
 - **Graduated** groups a numeric field into classes and gives each class a color or size, for choropleth maps and proportional symbols.
 - **Rule-based** draws features by a set of expressions you write.
-- **Heatmap** (for points) draws a kernel density surface (Chapter 13).
+- **Heatmap** (for points) draws a kernel density surface (Chapter 16).
 
 To make the choropleth map of population density:
 
 1.  Choose **Graduated**, and set **Value** to `density`.
 2.  Choose a **Color ramp**, such as Greens.
-3.  Set the **Mode** (the classification method) to Natural Breaks (Jenks) and **Classes** to 5 (Chapter 12).
+3.  Set the **Mode** (the classification method) to Natural Breaks (Jenks) and **Classes** to 5 (Chapter 8).
 4.  Click **Classify**, then **OK** or **Apply**.
 
 ![The Symbology tab of the counties layer's properties, with a graduated renderer classifying density into five natural-breaks classes on a Greens color ramp. Screenshot of QGIS 3.34.](../images/qgis/qgis-symbology.png){#fig-qgis-symbology fig-alt="The Layer Properties dialog with the Symbology tab selected in the list on the left. The renderer is Graduated, the value is density, the color ramp runs from white to dark green, and the classes table shows five classes: 7 to 206, 206 to 519, 519 to 985, 985 to 1,506, and 1,506 to 2,356. The mode is Natural Breaks (Jenks) with 5 classes."}
@@ -385,7 +385,7 @@ The interactive self-check questions for this chapter are in the online version 
 2.  **A basemap and your campus.** Add the OpenStreetMap basemap, and zoom to your campus. What is the project's CRS? What is the scale when the whole campus fills the screen?
 3.  **Points from a spreadsheet.** Make a CSV with the names, latitudes, and longitudes of five places you have visited (look up the coordinates in a web map). Add it as a delimited text layer, check that the points land in the right places, and save it as a GeoPackage.
 4.  **Digitize.** Create a new GeoPackage polygon layer in NAD83 / North Carolina (`EPSG:32119`) with a text field `name`. Digitize three buildings on campus over the basemap, and add an `area_m2` field calculated with `$area`. Which building is largest?
-5.  **A choropleth map.** Download North Carolina county boundaries and a table of county populations (Chapter 8). Join them, calculate population density, and make a graduated map with five classes. Compare natural breaks and quantile classes (Chapter 12). Then make a print layout with a title, legend, scale bar, and source, and export it as a PDF.
+5.  **A choropleth map.** Download North Carolina county boundaries and a table of county populations (Chapter 9). Join them, calculate population density, and make a graduated map with five classes. Compare natural breaks and quantile classes (Chapter 8). Then make a print layout with a title, legend, scale bar, and source, and export it as a PDF.
 6.  **A plugin.** Install a plugin from the list in @sec-qgis-plugins or one you find yourself. What does it do? Who wrote it, and when was it last updated?
 
 ## Further reading and online resources
@@ -421,5 +421,5 @@ The interactive self-check questions for this chapter are in the online version 
 
 ### Data used in this chapter
 
-- North Carolina county populations, U.S. Census Bureau Population Estimates Program (see Chapter 12).
+- North Carolina county populations, U.S. Census Bureau Population Estimates Program (see Chapter 8).
 - County boundaries, cities, and rivers: Natural Earth, public domain: <https://www.naturalearthdata.com>.

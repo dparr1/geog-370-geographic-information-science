@@ -38,36 +38,44 @@ book:
         - chapters/location-and-coordinates-quiz.qmd
         - chapters/map-projections.qmd
         - chapters/map-projections-quiz.qmd
+        - units/unit-1-quiz.qmd
+    - part: units/unit-2.qmd
+      chapters:
         - chapters/attribute-queries.qmd
         - chapters/attribute-queries-quiz.qmd
         - chapters/database-joins.qmd
         - chapters/database-joins-quiz.qmd
         - chapters/spatial-joins.qmd
         - chapters/spatial-joins-quiz.qmd
-        - units/unit-1-quiz.qmd
-    - part: units/unit-2.qmd
+        - chapters/data-classing.qmd
+        - chapters/data-classing-quiz.qmd
+        - units/unit-2-quiz.qmd
+    - part: units/unit-3.qmd
       chapters:
         - chapters/census-data.qmd
         - chapters/census-data-quiz.qmd
         - chapters/federal-data.qmd
         - chapters/federal-data-quiz.qmd
-        - chapters/geocoding-georeferencing.qmd
-        - chapters/geocoding-georeferencing-quiz.qmd
         - chapters/osm-data-quality.qmd
         - chapters/osm-data-quality-quiz.qmd
-        - units/unit-2-quiz.qmd
-    - part: units/unit-3.qmd
-      chapters:
-        - chapters/data-classing.qmd
-        - chapters/data-classing-quiz.qmd
-        - chapters/density.qmd
-        - chapters/density-quiz.qmd
-        - chapters/spatial-analysis.qmd
-        - chapters/spatial-analysis-quiz.qmd
-        - chapters/raster.qmd
-        - chapters/raster-quiz.qmd
+        - chapters/uncertainty.qmd
+        - chapters/uncertainty-quiz.qmd
         - chapters/digital-elevation-models.qmd
         - chapters/digital-elevation-models-quiz.qmd
+        - units/unit-3-quiz.qmd
+    - part: units/unit-4.qmd
+      chapters:
+        - chapters/spatial-analysis.qmd
+        - chapters/spatial-analysis-quiz.qmd
+        - chapters/geocoding-georeferencing.qmd
+        - chapters/geocoding-georeferencing-quiz.qmd
+        - chapters/density.qmd
+        - chapters/density-quiz.qmd
+        - chapters/raster.qmd
+        - chapters/raster-quiz.qmd
+        - units/unit-4-quiz.qmd
+    - part: units/unit-5.qmd
+      chapters:
         - chapters/interpolation.qmd
         - chapters/interpolation-quiz.qmd
         - chapters/kriging.qmd
@@ -76,9 +84,7 @@ book:
         - chapters/suitability-modeling-quiz.qmd
         - chapters/risk-analysis.qmd
         - chapters/risk-analysis-quiz.qmd
-        - chapters/uncertainty.qmd
-        - chapters/uncertainty-quiz.qmd
-        - units/unit-3-quiz.qmd
+        - units/unit-5-quiz.qmd
     - part: "GIS Software"
       chapters:
         - chapters/qgis.qmd

@@ -15,7 +15,7 @@ By the end of this chapter you should be able to:
 6.  Class and symbolize a choropleth map in ArcGIS Pro and QGIS.
 :::
 
-Unit 2 was about getting good data. Unit 3 is about what you do with it, and the simplest analysis of all is a map. Most thematic maps of places, from election results to disease rates, are **choropleth maps**: maps that shade each area by its value. They look easy to make, and every GIS will make one in a few clicks. But behind every choropleth map are two decisions that can change its story completely: how many classes to use, and where to put the breaks between them.
+The chapters so far have put attribute data into a GIS, queried it, and joined it to boundaries. The next step is to show it, and the simplest analysis of all is a map. Most thematic maps of places, from election results to disease rates, are **choropleth maps**: maps that shade each area by its value. They look easy to make, and every GIS will make one in a few clicks. But behind every choropleth map are two decisions that can change its story completely: how many classes to use, and where to put the breaks between them.
 
 This chapter maps one dataset, the population density of North Carolina's 100 counties, many different ways. Every difference you see between the maps comes from those two decisions, not from the data.
 
@@ -284,7 +284,7 @@ The interactive self-check questions for this chapter are in the online version 
 
 1.  **Normalize.** For each variable, say whether it can go on a choropleth map as it is, and if not, how you would normalize it: (a) number of hospitals per county; (b) median age; (c) acres of farmland; (d) number of people without health insurance; (e) the percentage of adults with a bachelor's degree.
 2.  **Equal intervals by hand.** A variable ranges from 12 to 87. Compute the breaks for four equal-interval classes. Then compute the breaks for four classes in a geometric progression (hint: the ratio is $(87 / 12)^{1/4}$).
-3.  **Six methods.** Download the population of North Carolina's counties and their land areas (Chapter 8), compute population density, and map it in ArcGIS Pro or QGIS with equal interval, quantile, natural breaks, and standard deviation classes. Which map would you publish, and why?
+3.  **Six methods.** Download the population of North Carolina's counties and their land areas (Chapter 9), compute population density, and map it in ArcGIS Pro or QGIS with equal interval, quantile, natural breaks, and standard deviation classes. Which map would you publish, and why?
 4.  **Histograms.** Open the histogram of the same data in your GIS. Then map the natural log of density with equal intervals. How does the histogram change? How does the map compare with the geometric progression map in @fig-methods-maps?
 5.  **Number of classes.** Make the same quantile map with 3, 5, 7, and 9 classes. At what point can you no longer match every shade on the map to the legend?
 6.  **Map a series.** Map the same variable (for example, the percentage of people in poverty) for two years. Class each with natural breaks, then both with the same manual breaks. Which pair of maps lets you see change correctly?

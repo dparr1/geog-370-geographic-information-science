@@ -322,17 +322,19 @@ By the end of the book, you will be able to:
 2.  **Understand the concepts behind GIS**, including data models, map projections, coordinate systems, measurement, and data types.
 3.  **Think critically about spatial data**: how it is collected and used, who it affects, and the ethics of working with it.
 
-The book follows the course's three units, each ending with a project (@tbl-roadmap).
+The book is organized in five units (@tbl-roadmap).
 
-| Unit | Modules | Project |
+| Unit | Chapters | Topics |
 |:----|:--------|:--------|
-| 1. Data Models and Projections | Getting started with GIS; working with geographic information | Editing and querying spatial data |
-| 2. Spatial Data Quality | Census data; georeferencing | Mapping Census data |
-| 3. Spatial Analysis | Density analysis; measurements; weather data | Your own GIS project |
+| 1. Data Models and Projections | 1–4 | What GIS is; vector and raster data; coordinates and datums; map projections |
+| 2. Attributes, Joins, and Classification | 5–8 | Attribute queries; table joins; spatial joins; data classing for choropleth maps |
+| 3. Spatial Data Sources and Quality | 9–13 | Census data; federal data sets; OpenStreetMap; uncertainty; digital elevation models |
+| 4. Spatial Analysis | 14–17 | Selection, buffers, and overlay; geocoding and georeferencing; density; raster analysis |
+| 5. Surfaces and Spatial Modeling | 18–21 | Interpolation; kriging; suitability modeling; risk analysis |
 
-: The three units of the course. {#tbl-roadmap}
+: The five units of the book. {#tbl-roadmap}
 
-Unit 1 builds the foundation: how a GIS stores the world as data, and how coordinate systems and **data models** put that data in the right place. Unit 2 is about data quality: where data come from, how to judge whether they are good enough, and how to bring old maps and new data into a GIS. Unit 3 puts it all to work with spatial analysis, and ends with a project of your own.
+Unit 1 builds the foundation: how a GIS stores the world as data, and how coordinate systems and **data models** put that data in the right place. Unit 2 turns to the attribute tables behind every layer: querying them, joining them, and mapping them. Unit 3 is about where data come from and how far to trust them. Unit 4 puts the data to work with the core tools of spatial analysis, and Unit 5 estimates surfaces from sample points and combines layers into suitability and risk models. After the units, two chapters introduce QGIS and ArcGIS Pro, and a last chapter looks at what comes next.
 
 ## What are GIS questions? {#sec-gis-questions}
 

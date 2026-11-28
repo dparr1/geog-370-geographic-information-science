@@ -31,27 +31,31 @@ book:
         - chapters/what-is-geographic-data.qmd
         - chapters/location-and-coordinates.qmd
         - chapters/map-projections.qmd
+    - part: units/unit-2.qmd
+      chapters:
         - chapters/attribute-queries.qmd
         - chapters/database-joins.qmd
         - chapters/spatial-joins.qmd
-    - part: units/unit-2.qmd
+        - chapters/data-classing.qmd
+    - part: units/unit-3.qmd
       chapters:
         - chapters/census-data.qmd
         - chapters/federal-data.qmd
-        - chapters/geocoding-georeferencing.qmd
         - chapters/osm-data-quality.qmd
-    - part: units/unit-3.qmd
-      chapters:
-        - chapters/data-classing.qmd
-        - chapters/density.qmd
-        - chapters/spatial-analysis.qmd
-        - chapters/raster.qmd
+        - chapters/uncertainty.qmd
         - chapters/digital-elevation-models.qmd
+    - part: units/unit-4.qmd
+      chapters:
+        - chapters/spatial-analysis.qmd
+        - chapters/geocoding-georeferencing.qmd
+        - chapters/density.qmd
+        - chapters/raster.qmd
+    - part: units/unit-5.qmd
+      chapters:
         - chapters/interpolation.qmd
         - chapters/kriging.qmd
         - chapters/suitability-modeling.qmd
         - chapters/risk-analysis.qmd
-        - chapters/uncertainty.qmd
     - part: "GIS Software"
       chapters:
         - chapters/qgis.qmd

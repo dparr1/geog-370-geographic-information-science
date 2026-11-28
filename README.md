@@ -199,3 +199,12 @@ Georeferencing through Uncertainty become Chapters 10–21, the software chapter
 *What's Next in GIS* Chapter 24. The Chapel Hill maps (NLCD, Landsat, MODIS NDVI, 3DEP, NHD/WBD)
 and three diagrams are D. Parr's own figures from the lecture slides, made from public-domain federal
 data; new diagrams (HUC digits, flood odds, NDVI grid) are made by `scripts/figures/federal_data.py`.
+
+**November 28, 2026: the book is regrouped into five units.** Unit 1, Data Models and Projections
+(Chapters 1–4); Unit 2, Attributes, Joins, and Classification (5–8: attribute queries, table joins,
+spatial joins, data classing); Unit 3, Spatial Data Sources and Quality (9–13: census data, federal
+data, OpenStreetMap, uncertainty, digital elevation models); Unit 4, Spatial Analysis (14–17:
+selection, buffers, and overlay, geocoding and georeferencing, density, raster analysis); and Unit 5,
+Surfaces and Spatial Modeling (18–21: interpolation, kriging, suitability modeling, risk analysis).
+Chapters are renumbered to match, cross-references and forward/backward wording are updated, and
+Units 4 and 5 get unit quizzes. The software chapters stay 22 and 23, and *What's Next in GIS* 24.

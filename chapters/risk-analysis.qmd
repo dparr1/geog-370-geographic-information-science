@@ -15,7 +15,7 @@ By the end of this chapter you should be able to:
 6.  Calculate risk as hazard times vulnerability, and name the limitations of a risk index.
 :::
 
-Hurricanes, floods, wildfires, and earthquakes are natural events. Disasters are what happen when those events meet people, homes, and roads that can't withstand them. Two towns can face the same storm and suffer very different losses, because of where people live, how their homes are built, and what resources they have. **Risk analysis** maps those differences, so that money for levees, shelters, and warnings goes where it will prevent the most harm. This chapter defines the vocabulary of risk, then follows a published study of flood risk in Dhaka, Bangladesh, that puts the suitability methods of Chapter 19 to work.
+Hurricanes, floods, wildfires, and earthquakes are natural events. Disasters are what happen when those events meet people, homes, and roads that can't withstand them. Two towns can face the same storm and suffer very different losses, because of where people live, how their homes are built, and what resources they have. **Risk analysis** maps those differences, so that money for levees, shelters, and warnings goes where it will prevent the most harm. This chapter defines the vocabulary of risk, then follows a published study of flood risk in Dhaka, Bangladesh, that puts the suitability methods of Chapter 20 to work.
 
 ## What is risk? {#sec-what-is-risk}
 
@@ -95,7 +95,7 @@ Coping capacity acts during and right after an event: reaching a shelter, readin
 ::: {.callout-note .did-you-know appearance="simple" icon=false}
 ## Did you know..?
 
-In the United States, you can look up risk for every county and census tract. FEMA's **National Risk Index** estimates the expected annual loss from 18 natural hazards, from tornadoes to tsunamis, and adjusts it for each community's social vulnerability and resilience [@fema2023nri]. The CDC's **Social Vulnerability Index** ranks every census tract on 16 census variables, such as poverty, age, disability, and lack of a vehicle, to help emergency planners find the people who will need the most help [@flanagan2011]. Both are built from the same ACS data you met in Chapter 8.
+In the United States, you can look up risk for every county and census tract. FEMA's **National Risk Index** estimates the expected annual loss from 18 natural hazards, from tornadoes to tsunamis, and adjusts it for each community's social vulnerability and resilience [@fema2023nri]. The CDC's **Social Vulnerability Index** ranks every census tract on 16 census variables, such as poverty, age, disability, and lack of a vehicle, to help emergency planners find the people who will need the most help [@flanagan2011]. Both are built from the same ACS data you met in Chapter 9.
 :::
 
 ## Case study: flood risk in Dhaka {#sec-dhaka}
@@ -142,7 +142,7 @@ Dewan names ten causes of Dhaka's flood vulnerability. Some are physical: low el
 
 ### Step 2: vulnerability
 
-Vulnerability is mapped as three indices, each a weighted linear combination of indicator layers (Chapter 19), with weights set by the Analytic Hierarchy Process (@sec-ahp). @fig-dhaka-weights charts the top-level weights.
+Vulnerability is mapped as three indices, each a weighted linear combination of indicator layers (Chapter 20), with weights set by the Analytic Hierarchy Process (@sec-ahp). @fig-dhaka-weights charts the top-level weights.
 
 ![The AHP weights of the three indices in the Dhaka study. Data: Dewan [-@dewan2013], Tables 6.4–6.6.](../images/risk-analysis/weights.png){#fig-dhaka-weights fig-alt="Three bar charts of weights that sum to 1. Physical vulnerability: elevation 0.483, land use 0.316, distance to channel 0.145, geology 0.056. Social vulnerability: demographic 0.557, economic 0.320, infrastructure and lifelines 0.123. Coping capacity: flood awareness 0.464, literacy 0.267, housing price 0.160, shelters 0.069, hospitals 0.040."}
 
@@ -164,7 +164,7 @@ Two methods do the heavy lifting in the Dhaka study, and in many suitability and
 
 ### Weighted Linear Combination
 
-**Weighted linear combination (WLC)**, from Chapter 19, multiplies each standardized layer by its weight and adds them, cell by cell or tract by tract:
+**Weighted linear combination (WLC)**, from Chapter 20, multiplies each standardized layer by its weight and adds them, cell by cell or tract by tract:
 
 $$
 S = \sum_i w_i \, x_i
@@ -237,22 +237,22 @@ In Dhaka, the resulting flood risk map, by community, answers a planner's practi
 
 Every model simplifies, and a risk index has limits worth naming before anyone uses it for decisions:
 
-- **Expert judgment.** The AHP weights reflect the analysts' comparisons. A different panel could produce a different map. A sensitivity analysis that varies the weights (Chapter 19) shows how stable the result is.
-- **Aggregation.** Indicators are averaged over tracts and communities, which hides differences between neighboring households. Assuming every household shares its tract's average is the ecological fallacy (Chapter 12).
+- **Expert judgment.** The AHP weights reflect the analysts' comparisons. A different panel could produce a different map. A sensitivity analysis that varies the weights (Chapter 20) shows how stable the result is.
+- **Aggregation.** Indicators are averaged over tracts and communities, which hides differences between neighboring households. Assuming every household shares its tract's average is the ecological fallacy (Chapter 8).
 - **Past floods only.** The hazard layer is built from the 1988–2007 floods. It does not model climate change, or new embankments built since.
 - **Data age.** The census inputs date to 2011, in a city that grew twentyfold in 50 years.
 - **Relative, not absolute.** The index ranks places from low to high risk. It does not estimate losses in money or lives.
 
-Each of these is a kind of uncertainty, the subject of Chapter 21.
+Each of these is a kind of uncertainty, the subject of Chapter 12.
 
 ## Risk analysis in ArcGIS Pro and QGIS {#sec-risk-software}
 
-A risk model uses the same tools as a suitability model (@tbl-suitability-tools in Chapter 19):
+A risk model uses the same tools as a suitability model (@tbl-suitability-tools in Chapter 20):
 
-- **Exposure**: overlay the hazard footprint with population or buildings using Intersect, a spatial join (Chapter 7), or Zonal Statistics (Chapters 14 and 15).
+- **Exposure**: overlay the hazard footprint with population or buildings using Intersect, a spatial join (Chapter 7), or Zonal Statistics (Chapters 14 and 17).
 - **Standardize indicators**: Reclassify or Rescale by Function, or the Field Calculator for tables.
 - **Weight and combine**: Weighted Overlay, Weighted Sum, or the Raster Calculator in ArcGIS Pro; the Raster Calculator or Field Calculator in QGIS. Compute AHP weights in a spreadsheet or an online calculator.
-- **Risk**: multiply hazard and vulnerability with the Raster Calculator or Field Calculator, and map the result with careful classing (Chapter 12).
+- **Risk**: multiply hazard and vulnerability with the Raster Calculator or Field Calculator, and map the result with careful classing (Chapter 8).
 
 ## Check your understanding
 

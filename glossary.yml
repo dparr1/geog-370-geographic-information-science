@@ -1285,7 +1285,7 @@ terms:
       Distance measured along the curved surface of the ellipsoid, rather than
       on a flat projected map.
 
-  # Chapter 8: Census Data
+  # Chapter 9: Census Data
 
   - term: authoritative data
     definition: >-
@@ -1426,7 +1426,7 @@ terms:
       Simplified census boundaries clipped to the shoreline, for small-scale
       maps.
 
-  # Chapter 9: Federal Spatial Data Sets
+  # Chapter 10: Federal Spatial Data Sets
 
   - term: public domain
     definition: >-
@@ -1626,7 +1626,7 @@ terms:
       EPA's database of state water quality assessments, causes of
       impairment, and 303(d) lists.
 
-  # Chapter 10: Geocoding and Georeferencing
+  # Chapter 15: Geocoding and Georeferencing
 
   - term: address matching
     definition: >-
@@ -1965,7 +1965,7 @@ terms:
     definition: >-
       The Java OpenStreetMap editor, a desktop editor for advanced work.
 
-  # Chapter 12: Data classing and choropleth maps
+  # Chapter 8: Data classing and choropleth maps
 
   - term: choropleth map
     aliases: [choropleth maps, choropleth]
@@ -2128,7 +2128,7 @@ terms:
       Distinct hues of similar lightness, for categories rather than
       quantities.
 
-  # Chapter 13: Density and neighborhoods
+  # Chapter 16: Density and neighborhoods
 
   - term: density
     chapters: [density]
@@ -2860,7 +2860,7 @@ terms:
       The digital, GIS-based 911 system that uses address points, street
       centerlines, and boundaries to route emergency calls and locate callers.
 
-  # Chapter 19: Suitability Modeling
+  # Chapter 20: Suitability Modeling
   - term: suitability modeling
     aliases: [suitability analysis, suitability model, suitability models]
     definition: >-
@@ -2989,7 +2989,7 @@ terms:
       Methods that weigh many criteria to support a decision, including GIS
       suitability modeling.
 
-  # Chapter 20: Risk Analysis
+  # Chapter 21: Risk Analysis
   - term: risk analysis
     definition: >-
       Mapping and measuring the likely impact of hazards on people and places,
@@ -3071,7 +3071,7 @@ terms:
       An index that ranks places by social vulnerability from census
       variables; the CDC/ATSDR SVI ranks every U.S. census tract.
 
-  # Chapter 21: Uncertainty in Geospatial Data
+  # Chapter 12: Uncertainty in Geospatial Data
   - term: uncertainty
     definition: >-
       The degree to which we aren't sure of something: the cloud of possible
@@ -3180,7 +3180,7 @@ terms:
       Whether a dataset or map is good enough for a particular purpose, which
       depends on the use as much as on the data.
 
-  # Chapter 16: Digital Elevation Models
+  # Chapter 13: Digital Elevation Models
   - term: pictorial relief
     definition: >-
       Showing hills and mountains on a map as small drawings, which tell where

@@ -232,7 +232,7 @@ You have a layer of North Carolina's 100 counties and a table of every hospital 
 
 ### The task
 
-The most common join in American GIS work is attaching census statistics to census boundaries. The Census Bureau publishes the two separately. Boundary files, called TIGER/Line shapefiles, have geometry and identifiers but almost no statistics. Statistics come as tables, downloaded from data.census.gov, with identifiers but no geometry. A join is the bridge (@fig-census-join). Chapter 8 covers the census itself; here we focus on the join.
+The most common join in American GIS work is attaching census statistics to census boundaries. The Census Bureau publishes the two separately. Boundary files, called TIGER/Line shapefiles, have geometry and identifiers but almost no statistics. Statistics come as tables, downloaded from data.census.gov, with identifiers but no geometry. A join is the bridge (@fig-census-join). Chapter 9 covers the census itself; here we focus on the join.
 
 ![A census join: the tract layer (destination) and the population table (source) share the GEOID key, and the join adds the POP field to each tract. The population values are made up for the example.](../images/database-joins/census-join.png){#fig-census-join fig-alt="Three tables. A tract layer with GEOID, NAMELSAD, and geometry. A population CSV with GEOID and POP, in a different row order. A joined layer with all four fields, where POP has been filled in for each tract by matching GEOID."}
 
@@ -260,7 +260,7 @@ The steps below join 2020 tract populations to North Carolina's census tracts. T
 4.  **Join.** Open the tract layer's *Properties* and go to the *Joins* tab. Click the green plus. Set *Join layer* to the CSV, *Join field* to its GEOID column, and *Target field* to `GEOID`. You can choose which fields to bring across, and set a short prefix for their names. Click *OK*.
 5.  **Check the join.** Reopen the tract layer's attribute table. The joined fields appear at the right end, named with the CSV's name or your prefix, such as `pop_P1_001N`. Sort by the joined field and look for NULL values. Every NULL is a tract that found no match. Never assume a join worked: always look.
 6.  **Make it permanent.** Export the joined layer (*right-click > Export > Save Features As*) to a new GeoPackage. The joined fields are now part of the new file.
-7.  **Map it.** Style the tracts with *Graduated* symbology on the population field. Chapter 12 covers how to choose the classes.
+7.  **Map it.** Style the tracts with *Graduated* symbology on the population field. Chapter 8 covers how to choose the classes.
 
 In ArcGIS Pro the steps are the same, except that you add the table with *Add Data* and join it with *Add Join* (right-click the layer, then *Joins and Relates*).
 
