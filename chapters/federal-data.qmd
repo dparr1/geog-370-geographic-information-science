@@ -275,7 +275,7 @@ Under the Clean Water Act, every state assesses its rivers, lakes, and estuaries
 
 The data come from the states, which report every two years in their **integrated reports**, so EPA's data are only as current as the last report. Jordan Lake, for example, has been listed as impaired by chlorophyll *a*, a sign of algae fed by excess nutrients from upstream. And remember that **"not assessed" is not the same as "clean."** Most of the country's stream miles have never been assessed at all.
 
-## Choosing and using federal data {#sec-choosing}
+## Choosing and using federal data {#sec-federal-choosing}
 
 ### Comparing the data sets
 
