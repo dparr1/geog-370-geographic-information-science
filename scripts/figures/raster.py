@@ -1,4 +1,4 @@
-"""Figures for Chapter 15, Raster Analysis.
+"""Figures for Chapter 17, Raster Analysis.
 
 Usage: python raster.py
 

@@ -1,39 +1,39 @@
 ---
-title: "Unit 2: Spatial Data Quality"
+title: "Unit 2: Attributes, Joins, and Classification"
 ---
 
-Every dataset has a source, a method, and limits. This unit is about where spatial data come from and how good they are. It starts with the largest source of free data about people and places in the United States, the census, and how to read its estimates honestly, then tours the other federal agencies whose free imagery, land cover, elevation, water, and hazard data underlie most GIS work in the country. It then turns to two ways of making new GIS layers from things that aren't yet spatial data, addresses and scanned maps, and how to measure the error each one adds. It ends with data made by volunteers, in OpenStreetMap, and the ways the crowd checks its own work. By the end of the unit you can find, join, create, and judge spatial data in QGIS and ArcGIS Pro.
+Geometry says where; attributes say what. This unit is about the tables behind every GIS layer and what you can do with them. It starts with attribute tables and SQL queries, then links tables to each other with keys and table joins, and links layers that share no key by their location, with spatial joins. It ends by turning a column of numbers into a map, choosing the classes for a choropleth map. By the end of the unit you can query, join, and map attribute data in QGIS and ArcGIS Pro.
 
-## Chapter 8: [Census Data](../chapters/census-data.qmd)
+## Chapter 5: [Attribute Data and Queries](../chapters/attribute-queries.qmd)
 
-The U.S. Census Bureau decides how many members of Congress each state gets and where trillions of federal dollars go. This chapter separates authoritative from asserted data and describes the decennial census, the American Community Survey, and the Economic Census. It explains the hierarchy of census geography, from states to blocks, and the GEOIDs that identify each area. It shows how to choose between decennial, ACS 1-year, and ACS 5-year data, how to read a margin of error, and how to join a census table to its boundaries in ArcGIS Pro.
+Geometry says where; attributes say what. This chapter looks at the attribute table, its records and fields, the data types that store them and the binary limits behind them, and the levels of measurement that decide which questions make sense. It then teaches attribute queries in SQL, from simple comparisons to AND, OR, NOT, brackets, LIKE, BETWEEN, and IN, with a way to check any query using sets and Venn diagrams, and the trap of NULL values.
 
 ::: {.content-hidden when-profile="textbook"}
-[Chapter 8 quiz](../chapters/census-data-quiz.qmd)
+[Chapter 5 quiz](../chapters/attribute-queries-quiz.qmd)
 :::
 
-## Chapter 9: [Federal Spatial Data Sets](../chapters/federal-data.qmd)
+## Chapter 6: [Databases and Table Joins](../chapters/database-joins.qmd)
 
-Beyond the census, U.S. federal agencies publish free, nationally consistent data for almost every GIS project. This chapter tours the ones used most: NAIP aerial photography, the National Land Cover Database, Landsat, MODIS, and NASA Earthdata, the 3D Elevation Program, the National Hydrography Dataset and its nested watersheds, FEMA's flood maps and National Risk Index, and EPA's water quality tools. For each it covers who makes it, what it measures, its resolution and update cycle, and where to download it, and it ends with how to choose between them and how to read, record, and cite federal data.
+Most GIS data live in databases. This chapter explains what a database management system does, how relational databases link tables with primary and foreign keys, and how codes such as FIPS codes and GEOIDs serve as keys. It then teaches table joins: the destination and source tables, inner, left, right, and full joins, and how cardinality decides what a join can do, with ways to handle one-to-many relationships. It ends with a census join in QGIS, and the problems that most often break a join.
 
 ::: {.content-hidden when-profile="textbook"}
-[Chapter 9 quiz](../chapters/federal-data-quiz.qmd)
+[Chapter 6 quiz](../chapters/database-joins-quiz.qmd)
 :::
 
-## Chapter 10: [Geocoding and Georeferencing](../chapters/geocoding-georeferencing.qmd)
+## Chapter 7: [Spatial Joins](../chapters/spatial-joins.qmd)
 
-Many records describe a location without coordinates: a street address, or a place on an old paper map. This chapter covers both ways of giving them coordinates. Geocoding matches addresses against reference files, from ZIP Code centroids to parcels, and interpolates positions along streets; match scores and match rates tell you how well it worked. Georeferencing ties a scanned map to the ground with control points and a transformation, and residuals and RMSE measure its error. Both are shown step by step in ArcGIS Pro and QGIS.
+When two layers share no key, location can link them. This chapter explains spatial predicates such as intersects, within, and contains, and the four kinds of spatial join, from simple inside joins to summarized distance joins. Worked examples match North Carolina towns to their nearest airports and septic systems to the geology beneath them. It covers cardinality, why distances need a projected coordinate system, six questions to plan any spatial join, and the tools that do the work in QGIS and ArcGIS Pro.
 
 ::: {.content-hidden when-profile="textbook"}
-[Chapter 10 quiz](../chapters/geocoding-georeferencing-quiz.qmd)
+[Chapter 7 quiz](../chapters/spatial-joins-quiz.qmd)
 :::
 
-## Chapter 11: [OpenStreetMap and Data Quality](../chapters/osm-data-quality.qmd)
+## Chapter 8: [Data Classing and Choropleth Maps](../chapters/data-classing.qmd)
 
-What makes geographic data good enough to use? This chapter defines spatial data quality by its seven elements, from lineage to completeness, then looks at volunteered geographic information, Big Data, and the FAIR principles. It explains how OpenStreetMap works, from its license to its nodes, ways, and tags, and how its quality is measured against authoritative data and from its own history. It ends with crisis mapping, from Haiti in 2010 to the 2015 Nepal earthquake, where thousands of new volunteers mapped a country in weeks.
+The same data can tell different stories depending on how they are grouped into classes. This chapter explains why choropleth maps should show rates and densities rather than counts, how to choose the number of classes, and how the main classification methods work: equal interval, quantile, natural breaks (Jenks), arithmetic and geometric intervals, and standard deviation. Using the population density of North Carolina's 100 counties, it compares the methods with histograms and the goodness of variance fit.
 
 ::: {.content-hidden when-profile="textbook"}
-[Chapter 11 quiz](../chapters/osm-data-quality-quiz.qmd)
+[Chapter 8 quiz](../chapters/data-classing-quiz.qmd)
 :::
 
 ::: {.content-hidden when-profile="textbook"}

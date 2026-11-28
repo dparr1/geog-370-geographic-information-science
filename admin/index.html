@@ -1775,7 +1775,7 @@
   // Each unit quiz (unit-1 ... unit-5) comes right after its unit's last chapter.
   // Quiz bank ids (quizzes/*.json) in book order, so the admin page lists
   // chapter quizzes in the order of the book. Add each new bank's id here.
-  const BOOK_ORDER = ["what-is-gis", "what-is-geographic-data", "location-and-coordinates", "map-projections", "attribute-queries", "database-joins", "spatial-joins", "unit-1", "census-data", "federal-data", "geocoding-georeferencing", "osm-data-quality", "unit-2", "data-classing", "density", "spatial-analysis", "raster", "digital-elevation-models", "interpolation", "kriging", "suitability-modeling", "risk-analysis", "uncertainty", "unit-3"];
+  const BOOK_ORDER = ["what-is-gis", "what-is-geographic-data", "location-and-coordinates", "map-projections", "unit-1", "attribute-queries", "database-joins", "spatial-joins", "data-classing", "unit-2", "census-data", "federal-data", "osm-data-quality", "uncertainty", "digital-elevation-models", "unit-3", "spatial-analysis", "geocoding-georeferencing", "density", "raster", "unit-4", "interpolation", "kriging", "suitability-modeling", "risk-analysis", "unit-5"];
   const isUnitQuiz = (c) => /^unit-\d+$/.test(c);
   function chapters() {
     const titles = {};

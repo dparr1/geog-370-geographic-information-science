@@ -1,0 +1,43 @@
+---
+title: "Unit 5: Surfaces and Spatial Modeling"
+---
+
+The last unit estimates values where nothing was measured, and combines many layers to answer real questions. It starts with deterministic interpolation and then kriging, which also predicts its own error. It then ranks sites with suitability models and maps hazard, vulnerability, and risk, using a published study of flooding in Dhaka. By the end of the unit you can build a surface from sample points, combine weighted layers into a model in QGIS and ArcGIS Pro, and judge how much to trust the result.
+
+## Chapter 18: [Spatial Interpolation](../chapters/interpolation.qmd)
+
+Weather stations, soil samples, and wells measure the world only at points. This chapter covers the five steps of interpolation and the main deterministic methods: nearest neighbor (Thiessen polygons), average neighbor, inverse distance weighting, polynomial trend surfaces, and radial basis functions. It shows how search neighborhoods and sampling designs shape the result, and how cross validation and RMSE compare methods objectively.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 18 quiz](../chapters/interpolation-quiz.qmd)
+:::
+
+## Chapter 19: [Kriging](../chapters/kriging.qmd)
+
+Kriging measures how values in the data are related at different distances before deciding how to weight them. This chapter builds the semivariogram from semivariance, explains its nugget, sill, and range, and shows how kriging sets its weights, handles anisotropy and trends, and differs in its ordinary, simple, universal, and cokriging forms. It ends with the cross-validation statistics and prediction standard errors used to judge a kriged surface.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 19 quiz](../chapters/kriging-quiz.qmd)
+:::
+
+## Chapter 20: [Suitability Modeling](../chapters/suitability-modeling.qmd)
+
+Where should a house, a park, or a wind farm go? This chapter works through the five steps of a suitability model with a running example, choosing a home site: define criteria, find data, rank each criterion from 0 to 1, weight the layers, and combine them. It explains discrete and continuous rankings, flowcharts, and the pass/fail, ranking, and weighted linear combination methods, and how to justify weights and test a model's sensitivity.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 20 quiz](../chapters/suitability-modeling-quiz.qmd)
+:::
+
+## Chapter 21: [Risk Analysis](../chapters/risk-analysis.qmd)
+
+A disaster happens when a hazard meets exposed, vulnerable people. This chapter defines hazard, exposure, vulnerability, resilience, and coping capacity, starting with the Three Little Pigs, then follows a published study of flood risk in Dhaka, Bangladesh. It shows how flood hazard is mapped, how physical and social vulnerability indices are built, how the Analytic Hierarchy Process sets weights, and how risk is calculated as hazard times vulnerability.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 21 quiz](../chapters/risk-analysis-quiz.qmd)
+:::
+
+::: {.content-hidden when-profile="textbook"}
+## Unit 5 quiz
+
+Review the whole unit with the [Unit 5 quiz](unit-5-quiz.qmd): 20 questions drawn from all of its chapter quizzes.
+:::

@@ -1,0 +1,43 @@
+---
+title: "Unit 4: Spatial Analysis"
+---
+
+With data in hand and its quality understood, this unit turns to answering questions with it. It starts with the core toolkit of vector analysis: cartographic modeling, selection, buffers, and overlay. It then makes new layers from records that aren't yet spatial data, by geocoding addresses and georeferencing scanned maps, and measures density with neighborhoods and kernels. It ends with rasters on their own terms: map algebra, and local, neighborhood, zonal, and global functions. By the end of the unit you can plan a chain of spatial operations and carry it out in QGIS and ArcGIS Pro.
+
+## Chapter 14: [Spatial Analysis: Selection, Buffers, and Overlay](../chapters/spatial-analysis.qmd)
+
+Most GIS questions are answered by chaining a few operations together. Starting with a light problem, where Batman should build his cave in Austin, this chapter introduces cartographic modeling and spatial scope (local, neighborhood, and global), then covers selection, joins, reclassification, dissolve, buffers of every kind, and overlay: point-in-polygon, clip, intersect, and union. It explains why overlay produces slivers and how to prevent them, and closes with map algebra, raster overlay cell by cell.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 14 quiz](../chapters/spatial-analysis-quiz.qmd)
+:::
+
+## Chapter 15: [Geocoding and Georeferencing](../chapters/geocoding-georeferencing.qmd)
+
+Many records describe a location without coordinates: a street address, or a place on an old paper map. This chapter covers both ways of giving them coordinates. Geocoding matches addresses against reference files, from ZIP Code centroids to parcels, and interpolates positions along streets; match scores and match rates tell you how well it worked. Georeferencing ties a scanned map to the ground with control points and a transformation, and residuals and RMSE measure its error. Both are shown step by step in ArcGIS Pro and QGIS.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 15 quiz](../chapters/geocoding-georeferencing-quiz.qmd)
+:::
+
+## Chapter 16: [Density and Neighborhoods](../chapters/density.qmd)
+
+Density is a count divided by an area, but points have no area of their own. This chapter introduces Tobler's first law and spatial autocorrelation, and three ways of defining a neighborhood: by distance, by contiguity (rook's and queen's case), and by k nearest neighbors. It ends with kernel density estimation, the method behind hot-spot and heat maps, and the choices of kernel shape and bandwidth that change what the map shows.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 16 quiz](../chapters/density-quiz.qmd)
+:::
+
+## Chapter 17: [Raster Analysis](../chapters/raster.qmd)
+
+A raster stores the world as a grid, and almost every raster tool repeats one operation cell by cell. This chapter covers cells, cell size, extent, and NoData; map algebra; and how to line up rasters with resampling, extent, and snap settings. It sorts raster functions by scope (local, neighborhood, zonal, and global) and works through mathematical, logical, reclassification, and conditional functions, moving windows, aggregation, zonal statistics, and distance.
+
+::: {.content-hidden when-profile="textbook"}
+[Chapter 17 quiz](../chapters/raster-quiz.qmd)
+:::
+
+::: {.content-hidden when-profile="textbook"}
+## Unit 4 quiz
+
+Review the whole unit with the [Unit 4 quiz](unit-4-quiz.qmd): 20 questions drawn from all of its chapter quizzes.
+:::

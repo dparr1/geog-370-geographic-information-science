@@ -1,4 +1,4 @@
-"""Figures for Chapter 18, Kriging.
+"""Figures for Chapter 19, Kriging.
 
 Usage: python kriging.py
 

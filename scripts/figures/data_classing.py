@@ -1,4 +1,4 @@
-"""Figures for Chapter 12, Data Classing and Choropleth Maps.
+"""Figures for Chapter 8, Data Classing and Choropleth Maps.
 
 Usage: python data_classing.py <dir with ne_10m_admin_2_counties.geojson>
 

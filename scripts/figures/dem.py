@@ -1,4 +1,4 @@
-"""Figures for Chapter 16, Digital Elevation Models.
+"""Figures for Chapter 13, Digital Elevation Models.
 
 Usage: python dem.py
 

@@ -14,7 +14,7 @@ By the end of this chapter you should be able to:
 5.  Recognize the limits of each data set before you use it in an analysis.
 :::
 
-Chapter 8 introduced the largest federal source of data about people, the U.S. Census Bureau. This chapter tours the other federal agencies whose data you will reach for most often: aerial photographs from the Department of Agriculture, land cover maps and elevation from the U.S. Geological Survey (USGS), satellite images from NASA, flood maps from the Federal Emergency Management Agency (FEMA), and water quality reports from the Environmental Protection Agency (EPA).
+Chapter 9 introduced the largest federal source of data about people, the U.S. Census Bureau. This chapter tours the other federal agencies whose data you will reach for most often: aerial photographs from the Department of Agriculture, land cover maps and elevation from the U.S. Geological Survey (USGS), satellite images from NASA, flood maps from the Federal Emergency Management Agency (FEMA), and water quality reports from the Environmental Protection Agency (EPA).
 
 Like the census, these data are free, cover the whole country with one method, and are carefully documented. They are also easy to misuse. A land cover map can be read at a scale it was never meant for, a flood map can be years out of date, and two satellite images of the same place can measure very different things. For each data set, this chapter asks the same five questions: **who makes it, what it measures, how detailed it is, how often it is updated, and where to get it.** The answers decide whether it fits your question.
 
@@ -83,7 +83,7 @@ Finer pixels show more, but they cost more. The number of pixels rises with the 
 The **National Land Cover Database (NLCD)** is the standard land cover map of the United States. It is made by the **Multi-Resolution Land Characteristics (MRLC) consortium**, a group of federal agencies led by the USGS, by classifying Landsat images.
 
 - **Resolution:** 30 m cells, matching Landsat.
-- **Classes:** 16 in the lower 48 states, based on the Anderson Level II classification (@fig-nlcd). Each class has a two-digit code: the first digit is the broad group (1 water, 2 developed, 4 forest, 8 agriculture, 9 wetlands), and the second the class within it. Chapter 15 used these codes in its reclassification examples.
+- **Classes:** 16 in the lower 48 states, based on the Anderson Level II classification (@fig-nlcd). Each class has a two-digit code: the first digit is the broad group (1 water, 2 developed, 4 forest, 8 agriculture, 9 wetlands), and the second the class within it. Chapter 17 uses these codes in its reclassification examples.
 - **Update cycle:** the **Annual NLCD**, released starting in 2024, maps every year from 1985 on with one consistent method. The older, "classic" editions (2001, 2004, 2006, 2008, 2011, 2013, 2016, 2019, and 2021) came every 2 to 3 years.
 - **Companion layers:** **fractional impervious surface** (the percentage of each cell covered by roofs and pavement), **tree canopy cover** (a percentage, made by the U.S. Forest Service), and layers of land cover change.
 - **Download:** the MRLC website's viewer and data page, which can clip the data to your area, or EarthExplorer for the Annual NLCD.
@@ -100,7 +100,7 @@ NLCD is very good, but not perfect. Accuracy assessments, which compare the map 
 
 - **One label per cell.** Classes are mutually exclusive, even where a cell is a mix of house, lawn, and trees.
 - **Compare years within one product.** For a change study, use the Annual NLCD for every year. Mixing a classic edition with an annual one mixes methods, and the "change" you find may be a change in method.
-- **Summarize by zone.** To find the share of each class in a tract, watershed, or county, use Zonal Statistics or Tabulate Area (Chapter 15), as in the tutorial in @sec-federal-tutorial.
+- **Summarize by zone.** To find the share of each class in a tract, watershed, or county, use Zonal Statistics or Tabulate Area (Chapter 17), as in the tutorial in @sec-federal-tutorial.
 - **Keep it in an equal-area projection.** NLCD comes in an Albers Equal Area Conic projection, so every cell has the same area. Keep it there when you measure area (Chapter 4).
 - **Report the right year.** Cite the year the land cover describes, and the edition or collection, not the year it was released.
 
@@ -131,7 +131,7 @@ $$
 \text{NDVI} = \frac{\text{NIR} - \text{Red}}{\text{NIR} + \text{Red}}
 $$
 
-NDVI is map algebra (Chapter 15) on two bands. It ranges from −1 to 1. Dense, healthy vegetation is above about 0.6, bare ground and pavement are near 0.1, and water is negative (@fig-ndvi-grid).
+NDVI is map algebra (Chapter 17) on two bands. It ranges from −1 to 1. Dense, healthy vegetation is above about 0.6, bare ground and pavement are near 0.1, and water is negative (@fig-ndvi-grid).
 
 ![NDVI worked out cell by cell for a made-up 3 × 3 patch. Healthy vegetation (left column and top middle) has low red and high near-infrared reflectance, and high NDVI. Bare soil and pavement (center and right) are near 0.1. Water (bottom right) reflects less near-infrared than red, so its NDVI is negative.](../images/federal-data/ndvi-grid.png){#fig-ndvi-grid fig-alt="Three 3 by 3 grids of numbers. Red reflectance: 0.04, 0.05, 0.12; 0.05, 0.20, 0.25; 0.06, 0.18, 0.05. Near-infrared reflectance: 0.45, 0.50, 0.28; 0.48, 0.26, 0.30; 0.40, 0.24, 0.02. NDVI: 0.84, 0.82, 0.40; 0.81, 0.13, 0.09; 0.74, 0.14, minus 0.43. NDVI cells are shaded dark green for high values, pale yellow near 0.1, and orange for the negative value."}
 
@@ -170,7 +170,7 @@ Hansen and colleagues mapped forest loss and gain for the whole planet, at 30 m,
 
 ### 3DEP: the 3D Elevation Program
 
-The USGS **3D Elevation Program (3DEP)** is collecting lidar for the whole country (with radar, called IfSAR, in Alaska), and it publishes the DEMs you used in Chapter 16.
+The USGS **3D Elevation Program (3DEP)** is collecting lidar for the whole country (with radar, called IfSAR, in Alaska), and it publishes the DEMs you will use in Chapter 13.
 
 - **Accuracy:** new collections must meet **Quality Level 2** or better: about 2 lidar points per square meter and a vertical accuracy of 10 cm [@stoker2022].
 - **Products:** seamless DEMs at 1/3 arc-second (about 10 m) and 1 arc-second (about 30 m) for the whole country; 1 m DEMs and the lidar point clouds themselves where projects are finished.
@@ -194,7 +194,7 @@ The **National Hydrography Dataset (NHD)** is the USGS map of the nation's surfa
 
 ### Watersheds and hydrologic unit codes
 
-The **Watershed Boundary Dataset (WBD)**, made by the USGS and the Natural Resources Conservation Service, divides the country into **hydrologic units**: areas that drain to a common outlet, nested in six levels [@usgs2013wbd]. Each unit has a **hydrologic unit code (HUC)**, and each level adds two digits to the code of the unit it sits in (@fig-huc). A HUC-8 is therefore an 8-digit code, and its first four digits are the code of the HUC-4 it lies in, much like a census GEOID (Chapter 8).
+The **Watershed Boundary Dataset (WBD)**, made by the USGS and the Natural Resources Conservation Service, divides the country into **hydrologic units**: areas that drain to a common outlet, nested in six levels [@usgs2013wbd]. Each unit has a **hydrologic unit code (HUC)**, and each level adds two digits to the code of the unit it sits in (@fig-huc). A HUC-8 is therefore an 8-digit code, and its first four digits are the code of the HUC-4 it lies in, much like a census GEOID (Chapter 9).
 
 ![The digits of a 12-digit hydrologic unit code. Each level adds two digits, so every unit's code begins with the code of the unit it nests in. Chapel Hill drains to the Haw subbasin, 03030002, of the Cape Fear River. The last four digits are examples.](../images/federal-data/huc-digits.png){#fig-huc fig-alt="The digits 0 3 0 3 0 0 0 2 0 5 0 3 in colored boxes, two of each color. Below them, six brackets of increasing length start at the left. The 2-digit bracket is HUC-2 Region, South Atlantic-Gulf. The 4-digit bracket is HUC-4 Subregion, Cape Fear. The 6-digit bracket is HUC-6 Basin, Cape Fear. The 8-digit bracket is HUC-8 Subbasin, Haw. The 10-digit bracket is HUC-10 Watershed, and the 12-digit bracket is HUC-12 Subwatershed, both labeled example digits."}
 
@@ -248,7 +248,7 @@ After Hurricane Floyd flooded eastern North Carolina in 1999, the state found th
 
 ### FEMA's National Risk Index
 
-FEMA's **National Risk Index (NRI)** rates the risk of 18 natural hazards, including riverine and coastal flooding, hurricanes, tornadoes, wildfire, heat waves, and earthquakes, for every county and census tract in the United States [@fema2023nri]. Chapter 20 used it to introduce risk analysis.
+FEMA's **National Risk Index (NRI)** rates the risk of 18 natural hazards, including riverine and coastal flooding, hurricanes, tornadoes, wildfire, heat waves, and earthquakes, for every county and census tract in the United States [@fema2023nri]. Chapter 21 uses it to introduce risk analysis.
 
 The NRI combines three parts:
 
@@ -259,7 +259,7 @@ The NRI combines three parts:
 Risk rises with expected loss and with social vulnerability, and falls with resilience. Earlier versions of the NRI multiplied expected annual loss by social vulnerability and divided by resilience; since 2023, the two are combined into a single **community risk factor** that scales the expected loss. Each tract and county gets a score and a rating from Very Low to Very High.
 
 - **Download:** hazards.fema.gov/nri, as a CSV, shapefile, or geodatabase, with a map viewer.
-- **Joins:** the tables carry the census tract or county GEOID, so they join directly to census data and boundaries (Chapters 6 and 8).
+- **Joins:** the tables carry the census tract or county GEOID, so they join directly to census data and boundaries (Chapters 6 and 9).
 - **Versions:** the NRI is updated as its inputs change, so record the version you used.
 
 The NRI is a **screening tool** for comparing places, not a risk assessment for a building or a site. Its formula also embeds choices: two places with the same expected loss get different scores because of their social vulnerability. Look at the components, not just the final rating.
@@ -343,7 +343,7 @@ This tutorial combines two federal data sets: it finds the share of each land co
 
 ### Map and check
 
-- **Map the result** with graduated colors on the percentage of developed land (Chapter 12).
+- **Map the result** with graduated colors on the percentage of developed land (Chapter 8).
 - **Check it.** Do the most developed subwatersheds contain downtown Chapel Hill and Durham? Compare with @fig-nlcd. Remember that 30 m cells along the watershed edges are split between zones, so small zones can be off by a few percent.
 
 ## Check your understanding

@@ -69,7 +69,7 @@ Using ArcGIS Pro requires a license, which comes at one of three **license level
 
 : ArcGIS Pro license levels. {#tbl-license-levels}
 
-**Extensions**, such as Spatial Analyst (raster analysis, Chapter 15), Geostatistical Analyst (kriging, Chapter 18), 3D Analyst, and Network Analyst, add more tools, and are licensed separately.
+**Extensions**, such as Spatial Analyst (raster analysis, Chapter 17), Geostatistical Analyst (kriging, Chapter 19), 3D Analyst, and Network Analyst, add more tools, and are licensed separately.
 
 In an ArcGIS organization, the level comes with the account's *user type*: Basic with the Creator user type, Standard with Professional, and Advanced with Professional Plus. Most users today have a **named user license**: the license is assigned to your ArcGIS account by your organization (such as a university or employer), and ArcGIS Pro checks it when you sign in. Universities usually have a campus license that covers students, with the extensions included. Esri also sells personal-use licenses at low cost for non-commercial use, and offers free trials.
 
@@ -224,7 +224,7 @@ Right-click a layer and choose **Symbology** to open the **Symbology pane**. The
 - **Graduated Symbols** and **Proportional Symbols**: symbol sizes that vary with a numeric field.
 - **Dot Density**, **Charts**, **Heat Map**, and others.
 
-For the map of population density, choose **Graduated Colors**, set **Field** to `density`, set **Method** to Natural Breaks (Jenks) and **Classes** to 5, and pick a **Color scheme**. The **Histogram** tab shows the class breaks on the data's distribution (Chapter 12). Changes appear on the map as you make them.
+For the map of population density, choose **Graduated Colors**, set **Field** to `density`, set **Method** to Natural Breaks (Jenks) and **Classes** to 5, and pick a **Color scheme**. The **Histogram** tab shows the class breaks on the data's distribution (Chapter 8). Changes appear on the map as you make them.
 
 ### Labels
 
@@ -245,7 +245,7 @@ A project can hold many maps and many layouts, all listed in the Catalog pane.
 
 ## Geoprocessing {#sec-arcgis-geoprocessing}
 
-**Geoprocessing** is Esri's term for running tools that create or change data: buffers, overlays, conversions, and analysis of every kind (Chapters 14–18). The tools are organized in **toolboxes**, such as the Analysis, Data Management, Conversion, and Spatial Analyst toolboxes.
+**Geoprocessing** is Esri's term for running tools that create or change data: buffers, overlays, conversions, and analysis of every kind (Chapters 13–21). The tools are organized in **toolboxes**, such as the Analysis, Data Management, Conversion, and Spatial Analyst toolboxes.
 
 Open the **Geoprocessing pane** with **Analysis ▸ Geoprocessing ▸ Tools**. Type a tool's name in the search box, and click it to open it (@fig-arcgis-gp):
 

@@ -15,7 +15,7 @@ By the end of this chapter you should be able to:
 6.  Use cross validation and root mean square error (RMSE) to compare interpolation methods.
 :::
 
-Weather stations measure temperature only where the stations are. Soil samples are taken at a few dozen spots in a field. Wells reveal the depth to groundwater at scattered points. Yet we want maps of temperature, soil chemistry, and groundwater *everywhere*. Spatial interpolation fills the gaps. This chapter covers the deterministic methods; Chapter 18 adds kriging, which brings in statistics.
+Weather stations measure temperature only where the stations are. Soil samples are taken at a few dozen spots in a field. Wells reveal the depth to groundwater at scattered points. Yet we want maps of temperature, soil chemistry, and groundwater *everywhere*. Spatial interpolation fills the gaps. This chapter covers the deterministic methods; Chapter 19 adds kriging, which brings in statistics.
 
 ## What is spatial interpolation? {#sec-what-is-interpolation}
 
@@ -23,9 +23,9 @@ Weather stations measure temperature only where the stations are. Soil samples a
 
 ![Four observations surround an unsampled location. Interpolation estimates its value.](../images/interpolation/problem.png){#fig-problem width=60% fig-alt="Four blue observation points with values 35, 19, 22, and 24 at the corners, connected by dashed lines to a red X in the middle, labeled with a question mark."}
 
-The assumption behind all of it is Tobler's first law (Chapter 13): near things are more related than distant things. If values at nearby locations were unrelated, no method could estimate anything between them.
+The assumption behind all of it is Tobler's first law (Chapter 16): near things are more related than distant things. If values at nearby locations were unrelated, no method could estimate anything between them.
 
-**Interpolation** estimates values *within* the area covered by the observations. **Extrapolation** estimates values *beyond* it, such as past the last station or above the highest observed value. Some methods can extrapolate; others can't. Most interpolation outputs a raster (Chapter 15), with an estimate in every cell.
+**Interpolation** estimates values *within* the area covered by the observations. **Extrapolation** estimates values *beyond* it, such as past the last station or above the highest observed value. Some methods can extrapolate; others can't. Most interpolation outputs a raster (Chapter 17), with an estimate in every cell.
 
 ### Five steps
 
@@ -43,7 +43,7 @@ An **exact interpolator** returns the observed value at every observation: the s
 
 ![An exact interpolator passes through every observation; an inexact one, here a straight trend line, does not.](../images/interpolation/exact-inexact.png){#fig-exact-inexact fig-alt="A profile with eight observations. A smooth green curve passes through every one, labeled exact. A straight red dashed line rises from left to right but misses most of the points, labeled inexact."}
 
-The methods in this chapter are **deterministic**: the surface is fully determined by a formula and the parameters you choose. Kriging (Chapter 18) is **geostatistical**: it models the spatial autocorrelation in the data, and also estimates the uncertainty of each prediction.
+The methods in this chapter are **deterministic**: the surface is fully determined by a formula and the parameters you choose. Kriging (Chapter 19) is **geostatistical**: it models the spatial autocorrelation in the data, and also estimates the uncertainty of each prediction.
 
 ## Step 1: Interpolation methods {#sec-methods}
 

@@ -1,4 +1,4 @@
-"""Figures for Chapter 20, Risk Analysis.
+"""Figures for Chapter 21, Risk Analysis.
 
 Usage: python risk_analysis.py <dir with Natural Earth GeoJSON:
     ne_10m_admin_0_countries, ne_10m_rivers_lake_centerlines,
