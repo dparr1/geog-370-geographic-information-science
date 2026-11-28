@@ -37,6 +37,7 @@ book:
     - part: units/unit-2.qmd
       chapters:
         - chapters/census-data.qmd
+        - chapters/federal-data.qmd
         - chapters/geocoding-georeferencing.qmd
         - chapters/osm-data-quality.qmd
     - part: units/unit-3.qmd

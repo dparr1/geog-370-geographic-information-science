@@ -1,4 +1,4 @@
-"""Figures for Chapter 13, Spatial Analysis: Overlay and Proximity.
+"""Figures for Chapter 14, Spatial Analysis: Overlay and Proximity.
 
 Usage: python spatial_analysis.py <dir with ne_50m_admin_1_states_provinces_lakes.geojson>
 

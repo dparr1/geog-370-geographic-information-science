@@ -15,7 +15,7 @@ By the end of this chapter you should be able to:
 6.  Compute neighborhood and zonal statistics, and aggregate a raster to a coarser cell size.
 :::
 
-Chapter 13 ended with a glimpse of raster overlay. This chapter takes rasters on their own terms. A raster stores the world as a grid, and almost every raster tool does the same thing: it repeats one operation cell by cell. What changes from tool to tool is *which* input cells feed each output cell, and *what* is done with them. Once you see that, the long list of raster tools in ArcGIS Pro and QGIS becomes much easier to understand.
+Chapter 14 ended with a glimpse of raster overlay. This chapter takes rasters on their own terms. A raster stores the world as a grid, and almost every raster tool does the same thing: it repeats one operation cell by cell. What changes from tool to tool is *which* input cells feed each output cell, and *what* is done with them. Once you see that, the long list of raster tools in ArcGIS Pro and QGIS becomes much easier to understand.
 
 ## Raster basics {#sec-raster-basics}
 
@@ -100,7 +100,7 @@ The output can only be as detailed as its coarsest input (@fig-cell-size). If yo
 
 ## The scope of raster functions {#sec-raster-scope}
 
-**Scope** is the set of input cells that feed each output cell. Chapter 13 introduced local, neighborhood, and global scope; rasters add a fourth, **zonal** (@fig-scopes):
+**Scope** is the set of input cells that feed each output cell. Chapter 14 introduced local, neighborhood, and global scope; rasters add a fourth, **zonal** (@fig-scopes):
 
 - **Local** functions use only the input cell at the same location. Adding 4 to every cell is local: 10 becomes 14.
 - **Neighborhood** (focal) functions use a window of cells around each location, usually 3 × 3. The window's result is written to its center cell, and then the window moves.
@@ -170,7 +170,7 @@ A **neighborhood function** computes a statistic from a window of cells and writ
 
 ![Statistics of one 3 × 3 window. Each result is written to the window's center cell.](../images/raster/neighborhood-stats.png){#fig-neighborhood-stats fig-alt="A 3 by 3 window with values 1, 2, 3 / 3, 6, 6 / 3, 9, 2, and a list: mean 35 divided by 9 equals 3.9; median 3; minimum 1; maximum 9; range 8; sum 35; majority 3, appearing 3 times; variety, 5 different values."}
 
-Choose the statistic to fit the data. Mean and median smooth continuous surfaces; maximum and minimum find peaks and pits; **majority** suits categories, since a mean of land-cover codes is meaningless. Slope and aspect are neighborhood functions too: they fit a surface through the window and report how steep it is and which way it faces (Chapter 15).
+Choose the statistic to fit the data. Mean and median smooth continuous surfaces; maximum and minimum find peaks and pits; **majority** suits categories, since a mean of land-cover codes is meaningless. Slope and aspect are neighborhood functions too: they fit a surface through the window and report how steep it is and which way it faces (Chapter 16).
 
 ### The moving window
 
@@ -200,7 +200,7 @@ The most useful global functions measure **distance** (@fig-distance). Euclidean
 
 ![Euclidean distance from a made-up river, with contours every 100 m.](../images/raster/distance.png){#fig-distance fig-alt="Left: a winding blue river on a blank background. Right: the same river over a distance surface, dark red near the river and fading to pale yellow far away, with contour lines every 100 meters parallel to the river."}
 
-Distance rasters are often reclassified (into bands such as 0–100 m and 100–500 m) and combined with other layers in a suitability model, the raster version of the buffer and overlay workflow in Chapter 13.
+Distance rasters are often reclassified (into bands such as 0–100 m and 100–500 m) and combined with other layers in a suitability model, the raster version of the buffer and overlay workflow in Chapter 14.
 
 ## Check your understanding
 

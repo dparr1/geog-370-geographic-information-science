@@ -190,3 +190,12 @@ terms. Interpolation through Uncertainty become Chapters 16–20, the software c
 (`scripts/figures/data/linville_dem_10m_utm17n.tif`, public domain), with slope, aspect, hillshade,
 and viewshed computed in `scripts/figures/dem.py`; the historical maps (Collet 1770, Hutton 1778, a
 USGS topographic map) are public domain.
+
+**November 28, 2026: Chapter 9, *Federal Spatial Data Sets*, is added** to Unit 2 after *Census
+Data*, written from lecture 9b, with a chapter quiz (also added to the Unit 2 quiz) and glossary
+terms. It covers NAIP, NLCD, Landsat, MODIS/VIIRS and NASA Earthdata, 3DEP, the NHD and Watershed
+Boundary Dataset, FEMA's flood maps and National Risk Index, and EPA's water tools. Geocoding and
+Georeferencing through Uncertainty become Chapters 10–21, the software chapters 22 and 23, and
+*What's Next in GIS* Chapter 24. The Chapel Hill maps (NLCD, Landsat, MODIS NDVI, 3DEP, NHD/WBD)
+and three diagrams are D. Parr's own figures from the lecture slides, made from public-domain federal
+data; new diagrams (HUC digits, flood odds, NDVI grid) are made by `scripts/figures/federal_data.py`.

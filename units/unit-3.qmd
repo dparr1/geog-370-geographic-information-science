@@ -4,84 +4,84 @@ title: "Unit 3: Spatial Analysis"
 
 With data in hand and its quality understood, this unit turns to answering questions with it. It starts with two ways of summarizing data over space: classing values for choropleth maps, and measuring density with neighborhoods and kernels. It then covers the core toolkit of GIS analysis, from selection, buffers, and overlay on vectors to map algebra on rasters, and applies raster tools to elevation to measure slope, light terrain, and find what can be seen from where. It then estimates values where nothing was measured, first with deterministic interpolation and then with kriging. It ends by combining many layers to answer real questions: ranking sites with suitability models, mapping hazard, vulnerability, and risk, and judging and showing the uncertainty in every result. By the end of the unit you can plan a chain of spatial operations, carry it out in QGIS and ArcGIS Pro, and judge how much to trust the result.
 
-## Chapter 11: [Data Classing and Choropleth Maps](../chapters/data-classing.qmd)
+## Chapter 12: [Data Classing and Choropleth Maps](../chapters/data-classing.qmd)
 
 The same data can tell different stories depending on how they are grouped into classes. This chapter explains why choropleth maps should show rates and densities rather than counts, how to choose the number of classes, and how the main classification methods work: equal interval, quantile, natural breaks (Jenks), arithmetic and geometric intervals, and standard deviation. Using the population density of North Carolina's 100 counties, it compares the methods with histograms and the goodness of variance fit.
 
 ::: {.content-hidden when-profile="textbook"}
-[Chapter 11 quiz](../chapters/data-classing-quiz.qmd)
+[Chapter 12 quiz](../chapters/data-classing-quiz.qmd)
 :::
 
-## Chapter 12: [Density and Neighborhoods](../chapters/density.qmd)
+## Chapter 13: [Density and Neighborhoods](../chapters/density.qmd)
 
 Density is a count divided by an area, but points have no area of their own. This chapter introduces Tobler's first law and spatial autocorrelation, and three ways of defining a neighborhood: by distance, by contiguity (rook's and queen's case), and by k nearest neighbors. It ends with kernel density estimation, the method behind hot-spot and heat maps, and the choices of kernel shape and bandwidth that change what the map shows.
 
 ::: {.content-hidden when-profile="textbook"}
-[Chapter 12 quiz](../chapters/density-quiz.qmd)
+[Chapter 13 quiz](../chapters/density-quiz.qmd)
 :::
 
-## Chapter 13: [Spatial Analysis: Selection, Buffers, and Overlay](../chapters/spatial-analysis.qmd)
+## Chapter 14: [Spatial Analysis: Selection, Buffers, and Overlay](../chapters/spatial-analysis.qmd)
 
 Most GIS questions are answered by chaining a few operations together. Starting with a light problem, where Batman should build his cave in Austin, this chapter introduces cartographic modeling and spatial scope (local, neighborhood, and global), then covers selection, joins, reclassification, dissolve, buffers of every kind, and overlay: point-in-polygon, clip, intersect, and union. It explains why overlay produces slivers and how to prevent them, and closes with map algebra, raster overlay cell by cell.
 
 ::: {.content-hidden when-profile="textbook"}
-[Chapter 13 quiz](../chapters/spatial-analysis-quiz.qmd)
+[Chapter 14 quiz](../chapters/spatial-analysis-quiz.qmd)
 :::
 
-## Chapter 14: [Raster Analysis](../chapters/raster.qmd)
+## Chapter 15: [Raster Analysis](../chapters/raster.qmd)
 
 A raster stores the world as a grid, and almost every raster tool repeats one operation cell by cell. This chapter covers cells, cell size, extent, and NoData; map algebra; and how to line up rasters with resampling, extent, and snap settings. It sorts raster functions by scope (local, neighborhood, zonal, and global) and works through mathematical, logical, reclassification, and conditional functions, moving windows, aggregation, zonal statistics, and distance.
 
 ::: {.content-hidden when-profile="textbook"}
-[Chapter 14 quiz](../chapters/raster-quiz.qmd)
+[Chapter 15 quiz](../chapters/raster-quiz.qmd)
 :::
 
-## Chapter 15: [Digital Elevation Models](../chapters/digital-elevation-models.qmd)
+## Chapter 16: [Digital Elevation Models](../chapters/digital-elevation-models.qmd)
 
 Elevation is the most widely used raster of all. This chapter traces elevation mapping from hill drawings and contour lines to digital elevation models, explains how lidar and radar collect elevation and how DEMs, DTMs, and DSMs differ, and shows how to download a DEM from The National Map and check it for problems. Using Linville Gorge, it works through slope (Horn's and Fleming and Hoffer's methods), hillshade, aspect, line of sight, and viewshed.
 
 ::: {.content-hidden when-profile="textbook"}
-[Chapter 15 quiz](../chapters/digital-elevation-models-quiz.qmd)
+[Chapter 16 quiz](../chapters/digital-elevation-models-quiz.qmd)
 :::
 
-## Chapter 16: [Spatial Interpolation](../chapters/interpolation.qmd)
+## Chapter 17: [Spatial Interpolation](../chapters/interpolation.qmd)
 
 Weather stations, soil samples, and wells measure the world only at points. This chapter covers the five steps of interpolation and the main deterministic methods: nearest neighbor (Thiessen polygons), average neighbor, inverse distance weighting, polynomial trend surfaces, and radial basis functions. It shows how search neighborhoods and sampling designs shape the result, and how cross validation and RMSE compare methods objectively.
 
 ::: {.content-hidden when-profile="textbook"}
-[Chapter 16 quiz](../chapters/interpolation-quiz.qmd)
+[Chapter 17 quiz](../chapters/interpolation-quiz.qmd)
 :::
 
-## Chapter 17: [Kriging](../chapters/kriging.qmd)
+## Chapter 18: [Kriging](../chapters/kriging.qmd)
 
 Kriging measures how values in the data are related at different distances before deciding how to weight them. This chapter builds the semivariogram from semivariance, explains its nugget, sill, and range, and shows how kriging sets its weights, handles anisotropy and trends, and differs in its ordinary, simple, universal, and cokriging forms. It ends with the cross-validation statistics and prediction standard errors used to judge a kriged surface.
 
 ::: {.content-hidden when-profile="textbook"}
-[Chapter 17 quiz](../chapters/kriging-quiz.qmd)
+[Chapter 18 quiz](../chapters/kriging-quiz.qmd)
 :::
 
-## Chapter 18: [Suitability Modeling](../chapters/suitability-modeling.qmd)
+## Chapter 19: [Suitability Modeling](../chapters/suitability-modeling.qmd)
 
 Where should a house, a park, or a wind farm go? This chapter works through the five steps of a suitability model with a running example, choosing a home site: define criteria, find data, rank each criterion from 0 to 1, weight the layers, and combine them. It explains discrete and continuous rankings, flowcharts, and the pass/fail, ranking, and weighted linear combination methods, and how to justify weights and test a model's sensitivity.
 
 ::: {.content-hidden when-profile="textbook"}
-[Chapter 18 quiz](../chapters/suitability-modeling-quiz.qmd)
+[Chapter 19 quiz](../chapters/suitability-modeling-quiz.qmd)
 :::
 
-## Chapter 19: [Risk Analysis](../chapters/risk-analysis.qmd)
+## Chapter 20: [Risk Analysis](../chapters/risk-analysis.qmd)
 
 A disaster happens when a hazard meets exposed, vulnerable people. This chapter defines hazard, exposure, vulnerability, resilience, and coping capacity, starting with the Three Little Pigs, then follows a published study of flood risk in Dhaka, Bangladesh. It shows how flood hazard is mapped, how physical and social vulnerability indices are built, how the Analytic Hierarchy Process sets weights, and how risk is calculated as hazard times vulnerability.
 
 ::: {.content-hidden when-profile="textbook"}
-[Chapter 19 quiz](../chapters/risk-analysis-quiz.qmd)
+[Chapter 20 quiz](../chapters/risk-analysis-quiz.qmd)
 :::
 
-## Chapter 20: [Uncertainty in Geospatial Data](../chapters/uncertainty.qmd)
+## Chapter 21: [Uncertainty in Geospatial Data](../chapters/uncertainty.qmd)
 
 Every map is uncertain. This chapter separates uncertainty from error, revisits the seven elements of data quality with examples, and shows how to measure positional accuracy with RMSE and accuracy standards. It traces how uncertainty enters at every stage from collection to use, explains Type 1 and Type 2 errors in map reading, and shows how crispness, transparency, saturation, and added symbols put uncertainty on the map.
 
 ::: {.content-hidden when-profile="textbook"}
-[Chapter 20 quiz](../chapters/uncertainty-quiz.qmd)
+[Chapter 21 quiz](../chapters/uncertainty-quiz.qmd)
 :::
 
 ::: {.content-hidden when-profile="textbook"}

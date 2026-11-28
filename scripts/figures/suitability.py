@@ -1,4 +1,4 @@
-"""Figures for Chapter 18, Suitability Modeling.
+"""Figures for Chapter 19, Suitability Modeling.
 
 Usage: python suitability.py
 

@@ -15,7 +15,7 @@ By the end of this chapter you should be able to:
 6.  Run kernel density in ArcGIS Pro and QGIS, and interpret the result.
 :::
 
-Chapter 11 mapped the population density of North Carolina's counties. The counties were ready-made areas to divide by. But much of the data we care about arrives as points with no area around them: crimes, trees, cases of a disease, car crashes, or 911 calls. Where are they concentrated? To answer that, we need an area to divide by, and when no area exists, we have to define one. This chapter is about how to do that: with **neighborhoods**, and with **kernel density estimation**, which turns a set of points into a smooth surface of density.
+Chapter 12 mapped the population density of North Carolina's counties. The counties were ready-made areas to divide by. But much of the data we care about arrives as points with no area around them: crimes, trees, cases of a disease, car crashes, or 911 calls. Where are they concentrated? To answer that, we need an area to divide by, and when no area exists, we have to define one. This chapter is about how to do that: with **neighborhoods**, and with **kernel density estimation**, which turns a set of points into a smooth surface of density.
 
 ## Density: things per area {#sec-density-ratio}
 

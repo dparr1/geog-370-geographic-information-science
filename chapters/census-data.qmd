@@ -28,7 +28,7 @@ This chapter starts the unit on spatial data quality. Every dataset has a source
 Data about people and places come from two very different kinds of source:
 
 - **Authoritative data** come from official agencies, such as the Census Bureau or the U.S. Geological Survey. They are collected under documented standards, and they ship with **metadata** that describe their sources, methods, dates, and accuracy.
-- **Asserted data**, also called volunteered geographic information, are contributed by the public. OpenStreetMap is the best-known example (Chapter 10). Their accuracy is undocumented and uneven, and they often have little or no metadata. Busy, popular places tend to be mapped well; quiet ones may be sparse. Where contributors are active, asserted data can be more current, and even more accurate, than old official data.
+- **Asserted data**, also called volunteered geographic information, are contributed by the public. OpenStreetMap is the best-known example (Chapter 11). Their accuracy is undocumented and uneven, and they often have little or no metadata. Busy, popular places tend to be mapped well; quiet ones may be sparse. Where contributors are active, asserted data can be more current, and even more accurate, than old official data.
 
 Neither kind is always better. Before using any dataset, ask who made it, how, when, and whether there is metadata that tells you how accurate it is.
 

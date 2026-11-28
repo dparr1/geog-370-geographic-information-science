@@ -1,4 +1,4 @@
-"""Screenshots of QGIS for Chapter 21 (Getting to Know QGIS).
+"""Screenshots of QGIS for Chapter 22 (Getting to Know QGIS).
 
 Runs inside QGIS (tested with QGIS 3.34 on Linux) under a virtual display:
 

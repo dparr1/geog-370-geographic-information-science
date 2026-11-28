@@ -1,4 +1,4 @@
-"""Figures for Chapter 20, Uncertainty in Geospatial Data.
+"""Figures for Chapter 21, Uncertainty in Geospatial Data.
 
 Usage: python uncertainty.py
 
