@@ -37,7 +37,7 @@ Austin is a good choice. It sits on the Balcones Escarpment, where limestone is 
 
 ![The Batcave problem in a made-up city: soils (left), crimes by ZIP Code after the table join (middle), and the closest limestone area to the highest-crime ZIP Code (right).](../images/spatial-analysis/batcave-map.png){#fig-batcave-map fig-alt="Three maps of the same made-up city. Left: scattered limestone and clay soil polygons. Middle: six ZIP Code squares shaded by crime count, from 1,480 to 4,870; 78741 in the lower right is darkest. Right: ZIP Code 78741 is highlighted, and the limestone polygon closest to it, in the neighboring ZIP Code, is dark green and labeled Batcave site."}
 
-The answer depends on our choices. If we used crimes *per person* rather than total crimes (Chapter 11), a different ZIP Code might win, and so might a different site. The same workflow, with different criteria, is used to site real facilities, such as schools, clinics, and landfills.
+The answer depends on our choices. If we used crimes *per person* rather than total crimes (Chapter 12), a different ZIP Code might win, and so might a different site. The same workflow, with different criteria, is used to site real facilities, such as schools, clinics, and landfills.
 
 ::: {.callout-note .did-you-know appearance="simple" icon=false}
 ## Did you know..?
@@ -63,7 +63,7 @@ A **spatial operation**, also called a spatial function, takes one or more input
 
 ![Spatial scope, with Utah as the example location. Shaded states are the inputs used to compute Utah's output value.](../images/spatial-analysis/spatial-scope.png){#fig-spatial-scope fig-alt="Three maps of the western United States. Local: only Utah is shaded. Neighborhood: Utah and its six neighbors, Idaho, Wyoming, Colorado, New Mexico, Arizona, and Nevada, are shaded. Global: every western state is shaded."}
 
-Utah's six neighbors include New Mexico, which it touches only at the Four Corners. Counted in rook's case (Chapter 12), Utah would have five. The same three scopes appear in raster analysis as local, focal, and global functions (@sec-map-algebra).
+Utah's six neighbors include New Mexico, which it touches only at the Four Corners. Counted in rook's case (Chapter 13), Utah would have five. The same three scopes appear in raster analysis as local, focal, and global functions (@sec-map-algebra).
 
 ## Preparing layers {#sec-preparing-layers}
 
@@ -173,16 +173,16 @@ Rasters can be overlaid too, and more simply. Because every input uses the same 
 
 ![Map algebra on a made-up 4×4 raster: local, focal, and zonal functions.](../images/spatial-analysis/map-algebra.png){#fig-map-algebra fig-alt="Small grids of numbers. Local: raster A plus raster B equals raster A plus B, cell by cell. Focal: a 3 by 3 window outlined in red on raster A, with its mean, 5.6. Zonal: raster A colored into three zones, with the mean of each zone: 2.2, 4.4, and 5.8."}
 
-Raster overlay produces **no slivers**, since every layer shares one grid. The price is precision: no boundary can be more precise than the cell size. Chapter 14 covers raster analysis in detail.
+Raster overlay produces **no slivers**, since every layer shares one grid. The price is precision: no boundary can be more precise than the cell size. Chapter 15 covers raster analysis in detail.
 
 ## Other kinds of spatial analysis {#sec-other-analysis}
 
 Overlay and proximity are only part of the toolkit. Other families of methods include:
 
 - **Network analysis**: shortest routes, closest facilities, and service areas along roads or utility lines.
-- **Interpolation**: estimating values between sample points, such as temperatures from weather stations (Chapters 16 and 17).
+- **Interpolation**: estimating values between sample points, such as temperatures from weather stations (Chapters 17 and 18).
 - **Spatial statistics**: testing whether patterns, such as clusters of disease, are more concentrated than chance would produce, with measures such as Moran's I and Getis-Ord Gi\*.
-- **Terrain analysis**: deriving slope, aspect, and viewsheds from elevation data (Chapter 15).
+- **Terrain analysis**: deriving slope, aspect, and viewsheds from elevation data (Chapter 16).
 
 ## Check your understanding
 

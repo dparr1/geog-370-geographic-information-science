@@ -49,6 +49,8 @@ book:
       chapters:
         - chapters/census-data.qmd
         - chapters/census-data-quiz.qmd
+        - chapters/federal-data.qmd
+        - chapters/federal-data-quiz.qmd
         - chapters/geocoding-georeferencing.qmd
         - chapters/geocoding-georeferencing-quiz.qmd
         - chapters/osm-data-quality.qmd

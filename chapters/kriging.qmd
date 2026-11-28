@@ -15,13 +15,13 @@ By the end of this chapter you should be able to:
 6.  Judge a kriged surface with cross-validation statistics and a prediction standard error map.
 :::
 
-The interpolation methods in Chapter 16 are deterministic: you choose a formula and its settings, and the surface follows. IDW, for example, weights observations by distance raised to a power you pick, whatever the data look like. **Kriging** takes a different approach. It first *measures* how values in your data are related at different distances, then uses that measurement to set the weights. Because it is built on a statistical model, it can also estimate how uncertain each prediction is.
+The interpolation methods in Chapter 17 are deterministic: you choose a formula and its settings, and the surface follows. IDW, for example, weights observations by distance raised to a power you pick, whatever the data look like. **Kriging** takes a different approach. It first *measures* how values in your data are related at different distances, then uses that measurement to set the weights. Because it is built on a statistical model, it can also estimate how uncertain each prediction is.
 
 ## Semivariance {#sec-semivariance}
 
 ### Measuring dissimilarity with distance
 
-Tobler's first law says near things are more related than distant things [@tobler1970]. Chapter 12 called that tendency **spatial autocorrelation**. **Semivariance** turns it into a number. For two observations $i$ and $j$, it is half the squared difference between their values:
+Tobler's first law says near things are more related than distant things [@tobler1970]. Chapter 13 called that tendency **spatial autocorrelation**. **Semivariance** turns it into a number. For two observations $i$ and $j$, it is half the squared difference between their values:
 
 $$
 \gamma = \tfrac{1}{2} (z_i - z_j)^2
@@ -122,11 +122,11 @@ Name a variable that you would expect to be anisotropic. Which direction would h
 
 ### Trends {#sec-trend}
 
-Kriging assumes that the mean is stable across the study area. When the data have a strong trend, such as temperature falling steadily from south to north, the semivariogram keeps rising without a sill, like the linear model in @fig-models. The fix is to **remove the trend** first: fit a trend surface (Chapter 16), krige the **residuals** (observed minus trend), and add the trend back to the predictions.
+Kriging assumes that the mean is stable across the study area. When the data have a strong trend, such as temperature falling steadily from south to north, the semivariogram keeps rising without a sill, like the linear model in @fig-models. The fix is to **remove the trend** first: fit a trend surface (Chapter 17), krige the **residuals** (observed minus trend), and add the trend back to the predictions.
 
-@fig-prediction-error does this for the 40 made-up samples from Chapter 16. The raw semivariogram has no sill; after a first-order trend is removed, the residuals' semivariogram levels off and fits a spherical model. The kriged surface has a cross-validation RMSE of 5.2, better than IDW (8.2) but not as good as the radial basis function (4.2) on this surface. Kriging is not guaranteed to win. Its standard error map shows where the prediction is least certain: the corners and the empty lower right.
+@fig-prediction-error does this for the 40 made-up samples from Chapter 17. The raw semivariogram has no sill; after a first-order trend is removed, the residuals' semivariogram levels off and fits a spherical model. The kriged surface has a cross-validation RMSE of 5.2, better than IDW (8.2) but not as good as the radial basis function (4.2) on this surface. Kriging is not guaranteed to win. Its standard error map shows where the prediction is least certain: the corners and the empty lower right.
 
-![Kriging the 40 samples from Chapter 16: semivariograms of the raw values and of the residuals after removing a trend (left), the prediction (middle), and its standard error (right).](../images/kriging/prediction-error.png){#fig-prediction-error fig-alt="Left: hollow dots for the raw values rise steadily to over 800 without leveling off; solid dots for the residuals rise and level off near 110, matched by a blue spherical curve. Middle: a smooth predicted surface with two peaks at the top and a basin at the bottom. Right: a standard error map, near zero at each sample point and darkest in the corners and the empty lower right."}
+![Kriging the 40 samples from Chapter 17: semivariograms of the raw values and of the residuals after removing a trend (left), the prediction (middle), and its standard error (right).](../images/kriging/prediction-error.png){#fig-prediction-error fig-alt="Left: hollow dots for the raw values rise steadily to over 800 without leveling off; solid dots for the residuals rise and level off near 110, matched by a blue spherical curve. Middle: a smooth predicted surface with two peaks at the top and a basin at the bottom. Right: a standard error map, near zero at each sample point and darkest in the corners and the empty lower right."}
 
 ### Types of kriging
 
@@ -147,7 +147,7 @@ Universal kriging is the version of @fig-prediction-error: the trend is modeled 
 
 ### Cross-validation statistics
 
-As in Chapter 16, **cross validation** removes each observation in turn, predicts it from the rest, and compares. Because kriging also predicts its own standard errors, it adds two statistics that test whether its uncertainty is realistic (@tbl-kriging-cv). ArcGIS Pro's Geostatistical Wizard reports all four.
+As in Chapter 17, **cross validation** removes each observation in turn, predicts it from the rest, and compares. Because kriging also predicts its own standard errors, it adds two statistics that test whether its uncertainty is realistic (@tbl-kriging-cv). ArcGIS Pro's Geostatistical Wizard reports all four.
 
 | Statistic | Target | What it tells you |
 |---|---|---|

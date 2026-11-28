@@ -15,7 +15,7 @@ By the end of this chapter you should be able to:
 6.  Make a basic map with symbology, labels, and a layout, and run tools in the Geoprocessing pane.
 :::
 
-ArcGIS Pro is the desktop GIS made by **Esri**, the largest GIS software company in the world. It is used by governments, utilities, businesses, and universities, so it appears in a large share of job postings for GIS analysts. Like QGIS ([Chapter 21](qgis.qmd)), it can do nearly everything described in this book, and most tasks follow the same steps in both. This chapter introduces ArcGIS Pro: its history, how it is licensed, how its window is organized, and how to do the common tasks of entering data and making a map.
+ArcGIS Pro is the desktop GIS made by **Esri**, the largest GIS software company in the world. It is used by governments, utilities, businesses, and universities, so it appears in a large share of job postings for GIS analysts. Like QGIS ([Chapter 22](qgis.qmd)), it can do nearly everything described in this book, and most tasks follow the same steps in both. This chapter introduces ArcGIS Pro: its history, how it is licensed, how its window is organized, and how to do the common tasks of entering data and making a map.
 
 The figures in this chapter are diagrams of the ArcGIS Pro window, not screenshots, so they show where things are rather than every button. Esri's own documentation, listed at the end of the chapter, has screenshots of the current version. Commands are written as **Tab ▸ Group ▸ Button**, following the ribbon.
 
@@ -69,7 +69,7 @@ Using ArcGIS Pro requires a license, which comes at one of three **license level
 
 : ArcGIS Pro license levels. {#tbl-license-levels}
 
-**Extensions**, such as Spatial Analyst (raster analysis, Chapter 14), Geostatistical Analyst (kriging, Chapter 17), 3D Analyst, and Network Analyst, add more tools, and are licensed separately.
+**Extensions**, such as Spatial Analyst (raster analysis, Chapter 15), Geostatistical Analyst (kriging, Chapter 18), 3D Analyst, and Network Analyst, add more tools, and are licensed separately.
 
 In an ArcGIS organization, the level comes with the account's *user type*: Basic with the Creator user type, Standard with Professional, and Advanced with Professional Plus. Most users today have a **named user license**: the license is assigned to your ArcGIS account by your organization (such as a university or employer), and ArcGIS Pro checks it when you sign in. Universities usually have a campus license that covers students, with the extensions included. Esri also sells personal-use licenses at low cost for non-commercial use, and offers free trials.
 
@@ -224,7 +224,7 @@ Right-click a layer and choose **Symbology** to open the **Symbology pane**. The
 - **Graduated Symbols** and **Proportional Symbols**: symbol sizes that vary with a numeric field.
 - **Dot Density**, **Charts**, **Heat Map**, and others.
 
-For the map of population density, choose **Graduated Colors**, set **Field** to `density`, set **Method** to Natural Breaks (Jenks) and **Classes** to 5, and pick a **Color scheme**. The **Histogram** tab shows the class breaks on the data's distribution (Chapter 11). Changes appear on the map as you make them.
+For the map of population density, choose **Graduated Colors**, set **Field** to `density`, set **Method** to Natural Breaks (Jenks) and **Classes** to 5, and pick a **Color scheme**. The **Histogram** tab shows the class breaks on the data's distribution (Chapter 12). Changes appear on the map as you make them.
 
 ### Labels
 
@@ -245,7 +245,7 @@ A project can hold many maps and many layouts, all listed in the Catalog pane.
 
 ## Geoprocessing {#sec-arcgis-geoprocessing}
 
-**Geoprocessing** is Esri's term for running tools that create or change data: buffers, overlays, conversions, and analysis of every kind (Chapters 13–17). The tools are organized in **toolboxes**, such as the Analysis, Data Management, Conversion, and Spatial Analyst toolboxes.
+**Geoprocessing** is Esri's term for running tools that create or change data: buffers, overlays, conversions, and analysis of every kind (Chapters 14–18). The tools are organized in **toolboxes**, such as the Analysis, Data Management, Conversion, and Spatial Analyst toolboxes.
 
 Open the **Geoprocessing pane** with **Analysis ▸ Geoprocessing ▸ Tools**. Type a tool's name in the search box, and click it to open it (@fig-arcgis-gp):
 
@@ -256,7 +256,7 @@ Open the **Geoprocessing pane** with **Analysis ▸ Geoprocessing ▸ Tools**. T
 - **Environments** set rules for every tool, such as the output coordinate system, the processing extent, and the cell size for raster outputs.
 - **Run** starts the tool. A green check means it succeeded, and **View Details** shows its messages; a red X means it failed, and the messages explain why.
 
-Every tool you run is recorded in the project's **History** (**Analysis ▸ Geoprocessing ▸ History**), where you can open it again with the same settings. To chain tools into a repeatable workflow, use **ModelBuilder** (**Analysis ▸ Geoprocessing ▸ ModelBuilder**), which draws the workflow as a flowchart (Chapter 13). For scripting, the **Python window** (**Analysis ▸ Geoprocessing ▸ Python**) and **ArcGIS Notebooks** run tools with **ArcPy**. Every tool's help page shows the Python code to run it.
+Every tool you run is recorded in the project's **History** (**Analysis ▸ Geoprocessing ▸ History**), where you can open it again with the same settings. To chain tools into a repeatable workflow, use **ModelBuilder** (**Analysis ▸ Geoprocessing ▸ ModelBuilder**), which draws the workflow as a flowchart (Chapter 14). For scripting, the **Python window** (**Analysis ▸ Geoprocessing ▸ Python**) and **ArcGIS Notebooks** run tools with **ArcPy**. Every tool's help page shows the Python code to run it.
 
 ::: {.callout-tip appearance="simple"}
 ## Think about it

@@ -18,10 +18,10 @@ This chapter looks forward instead of teaching a new method. Look at what you ca
 
 - **Model the world as data:** vector and raster models, coordinate systems, datums, and map projections (Chapters 1–4).
 - **Query and combine it:** attribute queries, table joins, and spatial joins (Chapters 5–7).
-- **Judge its quality:** census data and its margins of error, geocoding and georeferencing, and volunteered data from OpenStreetMap (Chapters 8–10).
-- **Analyze and map it:** data classing, density, buffers and overlay, map algebra, terrain analysis with elevation models, interpolation, and kriging (Chapters 11–17).
-- **Answer real questions with it, honestly:** suitability modeling, risk analysis, and uncertainty (Chapters 18–20).
-- **Do all of it in real software:** QGIS and ArcGIS Pro (Chapters 21 and 22).
+- **Judge its quality:** census data and its margins of error, federal data sets, geocoding and georeferencing, and volunteered data from OpenStreetMap (Chapters 8–11).
+- **Analyze and map it:** data classing, density, buffers and overlay, map algebra, terrain analysis with elevation models, interpolation, and kriging (Chapters 12–18).
+- **Answer real questions with it, honestly:** suitability modeling, risk analysis, and uncertainty (Chapters 19–21).
+- **Do all of it in real software:** QGIS and ArcGIS Pro (Chapters 22 and 23).
 
 That is the core of geographic information science. This chapter shows where it is used, previews advanced topics that build on it, points you to the research behind them, and maps out what to take and join next at UNC. As you read, notice which topic excites you most. That is a good clue to which course to take next.
 
@@ -31,19 +31,19 @@ Almost any question that involves "where" is a GIS question. The questions chang
 
 ### Public health
 
-**Spatial epidemiology** studies how health varies across places. Its origin story is John Snow's 1854 map of cholera deaths in London [@snow1855], which you met in Chapter 1. Today analysts geocode cases (Chapter 9), join them to census tracts (Chapters 7 and 8), and map rates with careful classing (Chapter 11) and density surfaces (Chapter 12). **Accessibility** studies buffer clinics and pharmacies, or measure travel time along road networks, to find who lives too far from care.
+**Spatial epidemiology** studies how health varies across places. Its origin story is John Snow's 1854 map of cholera deaths in London [@snow1855], which you met in Chapter 1. Today analysts geocode cases (Chapter 10), join them to census tracts (Chapters 7 and 8), and map rates with careful classing (Chapter 12) and density surfaces (Chapter 13). **Accessibility** studies buffer clinics and pharmacies, or measure travel time along road networks, to find who lives too far from care.
 
 ### Environment and hazards
 
-GIS is central to every stage of a disaster: flood maps, evacuation routes, and shelter locations before a storm, and damage mapping from aerial and satellite imagery after it. When Hurricane Helene flooded western North Carolina in 2024, imagery and GIS were used to map flooding, landslides, and closed roads. The key question, *who is exposed?*, is an overlay of hazard zones with census data (Chapters 7, 8, and 13), and risk indices combine hazard with social vulnerability (Chapter 19). Elevation rasters and map algebra (Chapter 14) model where water flows, and interpolation and kriging (Chapters 16 and 17) turn rain gauges and air quality monitors into continuous surfaces.
+GIS is central to every stage of a disaster: flood maps, evacuation routes, and shelter locations before a storm, and damage mapping from aerial and satellite imagery after it. When Hurricane Helene flooded western North Carolina in 2024, imagery and GIS were used to map flooding, landslides, and closed roads. The key question, *who is exposed?*, is an overlay of hazard zones with census data (Chapters 7, 8, and 14), and risk indices combine hazard with social vulnerability (Chapter 20). Elevation rasters and map algebra (Chapter 15) model where water flows, and interpolation and kriging (Chapters 17 and 18) turn rain gauges and air quality monitors into continuous surfaces.
 
 ### Local government {#sec-local-government}
 
 Cities and counties are among the biggest users of GIS, and nearly every county in North Carolina has GIS staff. Local governments keep the authoritative data that the rest of us rely on, and use it every day to run services:
 
 - **Land records and property tax.** The county GIS or land records office maintains the official parcel map. In Orange County, for example, every parcel has a Property Identification Number (PIN) that links it to its deed, survey plats, and tax record, and anyone can search parcels on the county's public web map. Tax assessors use those parcels, with attribute joins (Chapter 6), to value property.
-- **Addressing and 911.** When someone calls 911, the call is routed and the caller located using address and street data kept in GIS. Orange County keeps a single GIS database of more than 85,000 addresses and 4,600 streets, coordinated with Chapel Hill, Carrboro, Hillsborough, Mebane, and Durham, and, where the county is the addressing authority, assigns a new address when a building permit is requested. These data are kept up to the standard for Next Generation 911 and shared with the state's AddressNC program and NC OneMap. This is the reference data behind the geocoding in Chapter 9.
-- **Planning, zoning, and permits.** Planners map zoning districts, review development proposals against them, and track building permits by parcel. Choosing where to put a new school, park, or fire station is a classic **site selection** problem: reclassify and weight several layers, then overlay them to find the best places (Chapters 13 and 14).
+- **Addressing and 911.** When someone calls 911, the call is routed and the caller located using address and street data kept in GIS. Orange County keeps a single GIS database of more than 85,000 addresses and 4,600 streets, coordinated with Chapel Hill, Carrboro, Hillsborough, Mebane, and Durham, and, where the county is the addressing authority, assigns a new address when a building permit is requested. These data are kept up to the standard for Next Generation 911 and shared with the state's AddressNC program and NC OneMap. This is the reference data behind the geocoding in Chapter 10.
+- **Planning, zoning, and permits.** Planners map zoning districts, review development proposals against them, and track building permits by parcel. Choosing where to put a new school, park, or fire station is a classic **site selection** problem: reclassify and weight several layers, then overlay them to find the best places (Chapters 14 and 15).
 - **Public works and utilities.** Water and sewer lines, stormwater pipes, streetlights, and signs are mapped as features with attributes such as size, material, and install date, so crews can find them, plan repairs, and track work orders.
 - **Emergency management and public health.** Counties map shelters, evacuation zones, and flood risk. During Hurricane Helene, damaged 911 centers in western North Carolina had their calls rerouted to working centers elsewhere. Health departments map cases and services; Forsyth County, for example, has mapped overdoses to target its response.
 - **Open data and public apps.** Many cities and counties publish their layers on open data portals and in web apps, such as maps of trash pickup days, polling places, road closures, and park amenities. Look up the GIS page of your home county or city to see what it shares.
@@ -52,9 +52,9 @@ Local government GIS work is a common first job for GIS graduates, and a good pl
 
 ### Humanitarian and social justice work
 
-After the 2010 Haiti earthquake and the 2015 Nepal earthquake, volunteers around the world traced roads and buildings in OpenStreetMap from satellite imagery, and responders used those maps on the ground [@zook2010; @parr2015]. Chapter 10 showed how to judge the quality of those data.
+After the 2010 Haiti earthquake and the 2015 Nepal earthquake, volunteers around the world traced roads and buildings in OpenStreetMap from satellite imagery, and responders used those maps on the ground [@zook2010; @parr2015]. Chapter 11 showed how to judge the quality of those data.
 
-Historians and social scientists also use GIS to study inequality. The Mapping Inequality project digitized the 1930s **redlining** maps of American cities, including Durham, Greensboro, and other North Carolina cities. Researchers georeference those maps (Chapter 9) and overlay them with today's data on health, heat, and wealth.
+Historians and social scientists also use GIS to study inequality. The Mapping Inequality project digitized the 1930s **redlining** maps of American cities, including Durham, Greensboro, and other North Carolina cities. Researchers georeference those maps (Chapter 10) and overlay them with today's data on health, heat, and wealth.
 
 ::: {.callout-tip appearance="simple"}
 ## Think about it
@@ -79,7 +79,7 @@ $$
 \text{NDVI} = \frac{\text{NIR} - \text{Red}}{\text{NIR} + \text{Red}}
 $$
 
-NDVI ranges from −1 to 1, and dense green vegetation is high (@fig-ndvi). It is map algebra, from Chapter 14, applied to two bands of an image.
+NDVI ranges from −1 to 1, and dense green vegetation is high (@fig-ndvi). It is map algebra, from Chapter 15, applied to two bands of an image.
 
 ![Typical shares of red and near-infrared light reflected by four surfaces, and the NDVI each gives. Values are illustrative.](../images/whats-next/ndvi-reflectance.png){#fig-ndvi fig-alt="A bar chart with a red bar and a near-infrared bar for each of four surfaces. Healthy vegetation reflects 0.05 red and 0.50 near-infrared, giving NDVI 0.82. Stressed vegetation reflects 0.10 and 0.30, NDVI 0.50. Bare soil reflects 0.25 and 0.30, NDVI 0.09. Water reflects 0.05 and 0.02, NDVI -0.43."}
 
@@ -93,13 +93,13 @@ North Carolina was one of the first states to map its entire land area with lida
 
 ### Spatial statistics beyond the basics
 
-Chapters 12 and 17 introduced spatial autocorrelation and the semivariogram. Spatial statistics goes much further:
+Chapters 13 and 18 introduced spatial autocorrelation and the semivariogram. Spatial statistics goes much further:
 
 - **Geographically weighted regression** (**GWR**) fits a separate regression at each location, weighting nearby observations more, so you can map how a relationship changes across space [@brunsdon1996]. For example, the link between income and asthma might be strong in one county and weak in the next.
 - **Hot spot analysis** (Getis-Ord Gi\*) and local Moran's I test whether a cluster of high or low values is bigger than chance would produce.
 - **Space-time analysis** extends Tobler's first law to time: nearby moments are related, just as nearby places are. A **space-time cube** stacks a map for every time step, and methods such as emerging hot spot analysis find places where clusters are new, growing, or fading.
 
-Advanced work also takes the choice of units seriously. Chapter 11 showed how the class breaks you choose change a map; the zones you aggregate data into change the results of an analysis too. Mei-Po Kwan's **uncertain geographic context problem** goes further: the neighborhood that actually affects a person depends on where they spend their day, not only where they live, so a census tract may be the wrong unit [@kwan2012].
+Advanced work also takes the choice of units seriously. Chapter 12 showed how the class breaks you choose change a map; the zones you aggregate data into change the results of an analysis too. Mei-Po Kwan's **uncertain geographic context problem** goes further: the neighborhood that actually affects a person depends on where they spend their day, not only where they live, so a census tract may be the wrong unit [@kwan2012].
 
 ### Big data, the cloud, and CyberGIS
 
@@ -115,10 +115,10 @@ Datasets are growing faster than laptops. Planet-wide imagery, billions of phone
 **GeoAI** is artificial intelligence applied to spatial data, and it is one of the fastest-growing parts of the field [@janowicz2020].
 
 - **Deep learning reads imagery at scale.** Models trained to recognize objects have extracted building footprints for whole countries, and now map roads, solar panels, crops, and flood extent automatically. Microsoft's global building footprints were made this way, and OpenStreetMap mappers can add them with the Rapid editor.
-- **Machine learning predicts.** Methods such as random forests estimate air quality, poverty, or crop yield in places with no measurements, a cousin of the interpolation in Chapter 16.
+- **Machine learning predicts.** Methods such as random forests estimate air quality, poverty, or crop yield in places with no measurements, a cousin of the interpolation in Chapter 17.
 - **Foundation models** are large models pretrained on huge image archives that can be adapted to new tasks with little labeled data. NASA and IBM's open Prithvi model, trained on Landsat and Sentinel-2 imagery, is an example.
 
-Spatial thinking keeps AI honest. Most machine learning assumes observations are independent, and spatial data are not. If you test a model on points chosen at random, its test points sit right next to its training points, and it looks far more accurate than it is. **Spatial cross-validation** holds out whole regions instead, like the cross-validation in Chapters 16 and 17 but with blocks of space. Ploton and colleagues found that large forest-mapping models that looked accurate under random testing had little predictive power when tested this way [@ploton2020].
+Spatial thinking keeps AI honest. Most machine learning assumes observations are independent, and spatial data are not. If you test a model on points chosen at random, its test points sit right next to its training points, and it looks far more accurate than it is. **Spatial cross-validation** holds out whole regions instead, like the cross-validation in Chapters 17 and 18 but with blocks of space. Ploton and colleagues found that large forest-mapping models that looked accurate under random testing had little predictive power when tested this way [@ploton2020].
 
 ### Web GIS, interactive maps, and 3D
 
@@ -128,7 +128,7 @@ GIS is also going 3D. Lidar point clouds, 3D building models, and scene layers i
 
 ### GIS programming and automation
 
-Every tool you ran by clicking in Chapters 21 and 22 can also be run from code. Automating a workflow makes it faster, repeatable, and shareable:
+Every tool you ran by clicking in Chapters 22 and 23 can also be run from code. Automating a workflow makes it faster, repeatable, and shareable:
 
 - **Python** is the main scripting language of desktop GIS: ArcPy in ArcGIS Pro, PyQGIS in QGIS, and the open-source GeoPandas, Rasterio, and Shapely libraries.
 - **R**, with the sf and terra packages, is popular for spatial statistics and is taught in GEOG 215 and GEOG 515.
@@ -140,8 +140,8 @@ Employers increasingly ask for GIS skills *and* some programming, so a course su
 
 GIS is powerful, so it raises hard questions. In the 1990s, geographers debated whether GIS favored governments and corporations over communities, and who gets represented on a map at all. That debate grew into **critical GIS**, which studies the social effects of mapping technology and how to use it more fairly [@schuurman2000]. Some questions it asks:
 
-- **Privacy.** A few location points can be enough to identify a person, which is why the Census Bureau uses differential privacy (Chapter 8) and why Chapter 9 warned against posting geocoded health records as points.
-- **Representation.** Who maps OpenStreetMap, and which places are left blank (Chapter 10)?
+- **Privacy.** A few location points can be enough to identify a person, which is why the Census Bureau uses differential privacy (Chapter 8) and why Chapter 10 warned against posting geocoded health records as points.
+- **Representation.** Who maps OpenStreetMap, and which places are left blank (Chapter 11)?
 - **Bias.** Training data for AI often come from wealthy, well-mapped places, so models do worst where better data are needed most.
 - **Participation.** Participatory GIS puts mapping tools in the hands of communities, so they can map their own knowledge and concerns.
 
@@ -189,11 +189,11 @@ GEOG 370, this course, is the gateway to most upper-level GIS courses at UNC (@f
 
 | If you liked… | Take |
 |:--------------|:-----|
-| Analysis in ArcGIS Pro and QGIS (Chapters 13–19) | GEOG 491 Principles of Geographic Information Systems; GEOG 591 Applied Issues in GIS |
-| Map design and data classing (Chapter 11) | GEOG 455 Cartography and Geovisualization; GEOG 456 Geovisualizing Change; GEOG 555 Cartography of the Global South |
-| Rasters and imagery (Chapters 2 and 14) | GEOG 477 Introduction to Remote Sensing of the Environment; GEOG 577 Advanced Remote Sensing; GEOG 567 Geospatial Data Analysis with Google Earth Engine |
-| Interpolation, kriging, and statistics (Chapters 16–17) | GEOG 391 Quantitative Methods in Geography; GEOG 570 Geographic Information Analysis; GEOG 515 Applied Spatial Data Science |
-| Coordinates and data collection (Chapters 3 and 9) | GEOG 594 Global Positioning Systems and Applications |
+| Analysis in ArcGIS Pro and QGIS (Chapters 14–20) | GEOG 491 Principles of Geographic Information Systems; GEOG 591 Applied Issues in GIS |
+| Map design and data classing (Chapter 12) | GEOG 455 Cartography and Geovisualization; GEOG 456 Geovisualizing Change; GEOG 555 Cartography of the Global South |
+| Rasters and imagery (Chapters 2 and 15) | GEOG 477 Introduction to Remote Sensing of the Environment; GEOG 577 Advanced Remote Sensing; GEOG 567 Geospatial Data Analysis with Google Earth Engine |
+| Interpolation, kriging, and statistics (Chapters 17–18) | GEOG 391 Quantitative Methods in Geography; GEOG 570 Geographic Information Analysis; GEOG 515 Applied Spatial Data Science |
+| Coordinates and data collection (Chapters 3 and 10) | GEOG 594 Global Positioning Systems and Applications |
 | Automating your work | GEOG 592 Geographic Information Science Programming; GEOG 586 Scaling Up Geospatial Analysis |
 | Health and census data (Chapter 8) | GEOG 541 GIS in Public Health; GEOG 544 GIS for Impact Evaluation and Health Studies |
 
@@ -220,7 +220,7 @@ Some of the best GIS learning happens outside class.
 
 - **Carolina Geography and Environment Club.** The Department of Geography and Environment's student club, open to anyone interested in geography. Ask the department or your instructor how to find the next meeting.
 - **UNC GIS Day.** GIS Day is celebrated around the world each November, and UNC's celebration, organized by the Department of Geography and Environment with UNC Libraries, has included a campus-wide **map competition** with prizes for students from any department, and humanitarian **mapathons**. Entering a map you made in this course is a great first portfolio piece.
-- **Mapathons.** At a mapathon, volunteers trace buildings and roads in OpenStreetMap for a humanitarian project, using the editing skills from Chapters 10 and 21. You can also join a project on your own any time through the Humanitarian OpenStreetMap Team's Tasking Manager.
+- **Mapathons.** At a mapathon, volunteers trace buildings and roads in OpenStreetMap for a humanitarian project, using the editing skills from Chapters 11 and 22. You can also join a project on your own any time through the Humanitarian OpenStreetMap Team's Tasking Manager.
 - **UNC Libraries.** The GIS librarian and Digital Research Services in Davis Library help with finding data, choosing software, and project questions, and you can book a consultation. UNC Libraries also offers free workshops, such as "Working with Spatial Data in R," and has course guides for GIS classes.
 - **Odum Institute.** The Odum Institute for Research in Social Science offers short courses on research methods, including GIS workshops.
 - **Office for Undergraduate Research.** See @sec-research for SURF and the Celebration of Undergraduate Research.

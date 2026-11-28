@@ -1426,7 +1426,207 @@ terms:
       Simplified census boundaries clipped to the shoreline, for small-scale
       maps.
 
-  # Chapter 9: Geocoding and Georeferencing
+  # Chapter 9: Federal Spatial Data Sets
+
+  - term: public domain
+    definition: >-
+      Not protected by copyright, so free for anyone to use, change, and
+      republish. Works made by U.S. federal employees are public domain
+      (17 U.S.C. § 105).
+
+  - term: National Agriculture Imagery Program (NAIP)
+    aliases: [NAIP, National Agriculture Imagery Program]
+    definition: >-
+      USDA aerial photography of the lower 48 states, flown leaf-on about
+      every 3 years per state, with 60 cm to 1 m pixels in red, green, blue,
+      and near-infrared bands.
+
+  - term: leaf-on
+    chapters: [federal-data]
+    definition: >-
+      Collected when trees are in full leaf, during the growing season. Good
+      for mapping vegetation, poor for seeing the ground under trees.
+
+  - term: near-infrared (NIR)
+    aliases: [near-infrared, NIR]
+    case_sensitive: false
+    chapters: [federal-data]
+    definition: >-
+      Light just beyond the red end of the visible spectrum, invisible to the
+      eye. Healthy plants reflect it strongly and water absorbs it.
+
+  - term: spatial resolution
+    chapters: [federal-data]
+    definition: >-
+      The ground size of one pixel of a raster, such as 30 m for Landsat.
+      For vector data, the map scale plays the same role.
+
+  - term: temporal resolution
+    aliases: [revisit time]
+    chapters: [federal-data]
+    definition: >-
+      How often a data set is updated, or how often a sensor images the same
+      place, from daily (MODIS) to every few years (NAIP).
+
+  - term: National Land Cover Database (NLCD)
+    aliases: [NLCD, National Land Cover Database, Annual NLCD]
+    definition: >-
+      The standard land cover map of the United States: 16 classes at 30 m,
+      classified from Landsat by the USGS-led MRLC consortium, yearly from
+      1985 in the Annual NLCD.
+
+  - term: impervious surface
+    aliases: [impervious surfaces, fractional impervious surface]
+    definition: >-
+      Ground covered by materials water can't soak into, such as roofs,
+      roads, and parking lots. NLCD maps its percentage in every 30 m cell.
+
+  - term: multispectral
+    chapters: [federal-data]
+    definition: >-
+      Recording separate images, called bands, for several ranges of
+      wavelength, including some the eye can't see.
+
+  - term: band
+    aliases: [bands]
+    chapters: [federal-data]
+    definition: >-
+      One layer of a multiband image, recording one range of wavelengths,
+      such as red or near-infrared light.
+
+  - term: false color infrared
+    chapters: [federal-data]
+    definition: >-
+      A color image with the near-infrared band shown as red, red as green,
+      and green as blue, so that healthy vegetation looks bright red.
+
+  - term: surface reflectance
+    chapters: [federal-data]
+    definition: >-
+      The share of light reflected by the ground itself, after correcting an
+      image for the haze and scattering of the atmosphere, so that images
+      from different dates can be compared.
+
+  - term: MODIS
+    aliases: [Moderate Resolution Imaging Spectroradiometer]
+    case_sensitive: true
+    definition: >-
+      A NASA sensor on the Terra and Aqua satellites that images the whole
+      Earth every 1 to 2 days at 250 m to 1 km, with ready-made products such
+      as NDVI and active fires.
+
+  - term: VIIRS
+    aliases: [Visible Infrared Imaging Radiometer Suite]
+    case_sensitive: true
+    definition: >-
+      The sensor on the Suomi NPP and NOAA-20 and -21 satellites that
+      continues most MODIS products.
+
+  - term: Earthdata
+    aliases: [NASA Earthdata, Earthdata Login, Earthdata Search]
+    definition: >-
+      NASA's system for distributing Earth science data. One free Earthdata
+      Login gives access to every NASA archive.
+
+  - term: Distributed Active Archive Center (DAAC)
+    aliases: [DAAC, DAACs, Distributed Active Archive Centers]
+    case_sensitive: true
+    definition: >-
+      One of NASA's discipline archives for Earth science data. Land data
+      come from the LP DAAC at the USGS EROS Center.
+
+  - term: Harmonized Landsat and Sentinel-2 (HLS)
+    aliases: [HLS, Harmonized Landsat and Sentinel-2]
+    case_sensitive: true
+    definition: >-
+      Landsat 8 and 9 and the European Sentinel-2 satellites combined and
+      adjusted to match, giving 30 m surface reflectance every 2 to 3 days.
+
+  - term: National Hydrography Dataset (NHD)
+    aliases: [NHD, National Hydrography Dataset, NHDPlus, NHDPlus High Resolution]
+    case_sensitive: true
+    definition: >-
+      The USGS map of the nation's streams, rivers, lakes, and coastlines,
+      with flowlines that form a network. Final updates were in 2023.
+
+  - term: flowline
+    aliases: [flowlines]
+    definition: >-
+      A line in the NHD that carries a flow direction and reach code, so a
+      GIS can trace water up or downstream.
+
+  - term: Watershed Boundary Dataset (WBD)
+    aliases: [WBD, Watershed Boundary Dataset]
+    case_sensitive: true
+    definition: >-
+      The national map of hydrologic units: areas that drain to a common
+      outlet, nested in six levels from regions to subwatersheds.
+
+  - term: hydrologic unit code (HUC)
+    aliases: [HUC, HUCs, hydrologic unit code, hydrologic unit codes, hydrologic unit, hydrologic units, HUC-2, HUC-4, HUC-6, HUC-8, HUC-10, HUC-12]
+    definition: >-
+      The code of a watershed in the Watershed Boundary Dataset. Each level
+      adds two digits, from a 2-digit region to a 12-digit subwatershed.
+
+  - term: National Flood Hazard Layer (NFHL)
+    aliases: [NFHL, National Flood Hazard Layer]
+    case_sensitive: true
+    definition: >-
+      FEMA's digital version of the effective Flood Insurance Rate Maps,
+      with flood zones, base flood elevations, and floodways.
+
+  - term: Flood Insurance Rate Map (FIRM)
+    aliases: [FIRM, FIRMs, Flood Insurance Rate Map, Flood Insurance Rate Maps]
+    case_sensitive: true
+    definition: >-
+      FEMA's official map of a community's flood zones, used to decide who
+      must buy flood insurance.
+
+  - term: Special Flood Hazard Area
+    aliases: [Special Flood Hazard Areas]
+    definition: >-
+      Land flooded by the 1 percent annual chance flood, shown as zones
+      beginning with A or V. Federally backed mortgages there require flood
+      insurance.
+
+  - term: base flood elevation
+    aliases: [base flood elevations]
+    definition: >-
+      The height the 1 percent annual chance flood is expected to reach,
+      shown in Zone AE and VE.
+
+  - term: regulatory floodway
+    aliases: [floodway, floodways]
+    definition: >-
+      The channel and nearest part of the floodplain, which must stay open to
+      carry flood flows. Building there must not raise flood heights.
+
+  - term: 1 percent annual chance flood
+    aliases: [100-year flood, 1% annual chance flood]
+    definition: >-
+      A flood with a 1 percent chance of happening in any year, often called
+      the "100-year flood." It has about a 26 percent chance of happening in
+      30 years.
+
+  - term: impaired water
+    aliases: [impaired waters, impaired]
+    chapters: [federal-data]
+    definition: >-
+      A river, lake, or estuary too polluted for one of its designated uses,
+      such as swimming, fishing, or drinking water.
+
+  - term: 303(d) list
+    definition: >-
+      A state's list of impaired waters under section 303(d) of the Clean
+      Water Act, for which pollution must be cut.
+
+  - term: ATTAINS
+    case_sensitive: true
+    definition: >-
+      EPA's database of state water quality assessments, causes of
+      impairment, and 303(d) lists.
+
+  # Chapter 10: Geocoding and Georeferencing
 
   - term: address matching
     definition: >-
@@ -1577,7 +1777,7 @@ terms:
       A point with known coordinates that is not used to fit a transformation,
       kept back to test its accuracy.
 
-  # Chapter 10: OpenStreetMap and data quality
+  # Chapter 11: OpenStreetMap and data quality
 
   - term: volunteered geographic information
     aliases: [VGI]
@@ -1765,7 +1965,7 @@ terms:
     definition: >-
       The Java OpenStreetMap editor, a desktop editor for advanced work.
 
-  # Chapter 11: Data classing and choropleth maps
+  # Chapter 12: Data classing and choropleth maps
 
   - term: choropleth map
     aliases: [choropleth maps, choropleth]
@@ -1928,7 +2128,7 @@ terms:
       Distinct hues of similar lightness, for categories rather than
       quantities.
 
-  # Chapter 12: Density and neighborhoods
+  # Chapter 13: Density and neighborhoods
 
   - term: density
     chapters: [density]
@@ -2364,7 +2564,7 @@ terms:
       Kriging's estimate of how far off each prediction might be. It is
       largest where observations are sparse.
 
-  # Chapter 21: Getting to Know QGIS, and Chapter 22: Getting to Know ArcGIS Pro
+  # Chapter 22: Getting to Know QGIS, and Chapter 23: Getting to Know ArcGIS Pro
   - term: OSGeo
     aliases: [Open Source Geospatial Foundation]
     definition: >-
@@ -2563,7 +2763,7 @@ terms:
       The currency an ArcGIS organization uses to pay for some services, such
       as batch geocoding and storing data in ArcGIS Online.
 
-  # Chapter 23: What's Next in GIS
+  # Chapter 24: What's Next in GIS
   - term: lidar
     aliases: [LiDAR]
     definition: >-
@@ -2660,7 +2860,7 @@ terms:
       The digital, GIS-based 911 system that uses address points, street
       centerlines, and boundaries to route emergency calls and locate callers.
 
-  # Chapter 18: Suitability Modeling
+  # Chapter 19: Suitability Modeling
   - term: suitability modeling
     aliases: [suitability analysis, suitability model, suitability models]
     definition: >-
@@ -2789,7 +2989,7 @@ terms:
       Methods that weigh many criteria to support a decision, including GIS
       suitability modeling.
 
-  # Chapter 19: Risk Analysis
+  # Chapter 20: Risk Analysis
   - term: risk analysis
     definition: >-
       Mapping and measuring the likely impact of hazards on people and places,
@@ -2871,7 +3071,7 @@ terms:
       An index that ranks places by social vulnerability from census
       variables; the CDC/ATSDR SVI ranks every U.S. census tract.
 
-  # Chapter 20: Uncertainty in Geospatial Data
+  # Chapter 21: Uncertainty in Geospatial Data
   - term: uncertainty
     definition: >-
       The degree to which we aren't sure of something: the cloud of possible
@@ -2980,7 +3180,7 @@ terms:
       Whether a dataset or map is good enough for a particular purpose, which
       depends on the use as much as on the data.
 
-  # Chapter 15: Digital Elevation Models
+  # Chapter 16: Digital Elevation Models
   - term: pictorial relief
     definition: >-
       Showing hills and mountains on a map as small drawings, which tell where

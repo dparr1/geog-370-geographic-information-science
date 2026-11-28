@@ -1,4 +1,4 @@
-"""Figures for Chapter 16, Spatial Interpolation.
+"""Figures for Chapter 17, Spatial Interpolation.
 
 Usage: python interpolation.py <Natural Earth dir>
 
