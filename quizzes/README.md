@@ -26,6 +26,21 @@ out by Supabase as answers are saved (`record_chapter_quiz_answer` in `supabase/
 student's total is on the admin page's **Quiz scores** tab. `QUIZ_POINTS` in `quiz.js` only drives
 what students see, so change it and the SQL together.
 
+## Weekly leaderboard
+
+On geog370.org, the end-of-quiz screen (every chapter and unit quiz) shows **this week's top ten** quiz
+scores in the student's class (course and term), from `quiz_week_leaderboard` in `supabase/setup.sql`
+in the GEOG 215 repo. A week runs Saturday to Friday, Chapel Hill time, and a quiz counts in the week it
+was started; a student's weekly score adds up the points from every quiz they started that week. If the
+student isn't in the top ten, their own row is added below it, with their place ("You're 14th of 31").
+
+Classmates are listed by a made-up **leaderboard name** such as "Swift Meridian", never by real name,
+because quiz scores are education records under FERPA. The name comes from a hash of the student's
+account, course and term, so it stays the same all term and nobody else can work out whose it is. The
+student's own row says "You". The admin page's **Weekly quizzes** tab shows every student's scores for
+any week with both their real and leaderboard names, and exports to CSV. On daveparr.com, with no
+sign-in, the leaderboard isn't shown.
+
 On geog370.org every answer is saved for the admin page's **Chapter quizzes** tab (see
 `supabase/README.md`). On daveparr.com the quiz works the same way but nothing is saved.
 
