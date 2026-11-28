@@ -22,9 +22,9 @@ the course code and names changed:
 | `assets/auth-gate.html` | The sign-in screen on every gated geog370.org page (`SDS_COURSE = "geog370"`). |
 | `assets/questions.html` | "Ask a question" on highlighted text, and **My questions**. |
 | `assets/polls.html` | Poll and survey banner, and the students' **Polls** list. |
-| `assets/quiz/` | The chapter quiz engine (results go to `record_chapter_quiz_answer`). |
+| `assets/quiz/` | The chapter quiz engine (results go to `record_chapter_quiz_answer`; the weekly top-ten leaderboard after each quiz comes from `quiz_week_leaderboard`). |
 | `assets/notifications.html` | The students' **Notifications** button (announcements as push notifications). |
-| `admin/index.html` | The admin page at https://geog370.org/admin/. It's the same page as geog215.org/admin/ (both show every course you teach); this copy shows GEOG 370's page titles and lists its quizzes in book order (`BOOK_ORDER`). |
+| `admin/index.html` | The admin page at https://geog370.org/admin/. It's the same page as geog215.org/admin/ (both show every course you teach); this copy shows GEOG 370's page titles and lists its quizzes in book order (`BOOK_ORDER`). It also has a **Weekly quizzes** tab (`admin_quiz_week`) that geog215.org/admin/ doesn't have yet. |
 
 Announcements (push notifications) are sent from the admin page's
 **Announcements** tab by the `push` Edge Function, which lives in the GEOG 215

@@ -133,27 +133,45 @@
   // Calls a record_* function in Supabase. A plain fetch with keepalive, so
   // an answer given just before the student leaves the page is still saved.
   // Every call says which course it's for; the database works out the term.
-  function record(fn, args) {
-    if (!tracking || !accessToken) return;
-    fetch(SUPABASE_URL + "/rest/v1/rpc/" + fn, {
+  // Returns a promise that settles once the call is done (true if saved), or
+  // null when nothing is sent.
+  function callRpc(fn, args, keepalive) {
+    return fetch(SUPABASE_URL + "/rest/v1/rpc/" + fn, {
       method: "POST",
-      keepalive: true,
+      keepalive,
       headers: {
         apikey: SUPABASE_KEY,
         Authorization: "Bearer " + accessToken,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(Object.assign({}, args, { p_course: SDS_COURSE })),
-    }).then(
-      (res) => { if (!res.ok) console.warn("Progress not saved (" + fn + "):", res.status); },
-      () => {}
+    });
+  }
+
+  function record(fn, args) {
+    if (!tracking || !accessToken) return null;
+    return callRpc(fn, args, true).then(
+      (res) => { if (!res.ok) console.warn("Progress not saved (" + fn + "):", res.status); return res.ok; },
+      () => false
     );
   }
 
-  // The chapter quiz pages (assets/quiz/quiz.js) save results through this.
-  // It does nothing until an active student is let in, and it doesn't exist
-  // at all on the public daveparr.com copy, which has no gate.
-  window.sdsProgress = { record };
+  // Reads from a function such as quiz_week_leaderboard. Resolves to its
+  // rows, or null when it can't (not a signed-in student, offline, or the
+  // function isn't in the database yet).
+  function read(fn, args) {
+    if (!tracking || !accessToken) return Promise.resolve(null);
+    return callRpc(fn, args, false).then(
+      (res) => (res.ok ? res.json() : null),
+      () => null
+    );
+  }
+
+  // The chapter quiz pages (assets/quiz/quiz.js) save results and read the
+  // weekly leaderboard through this. It does nothing until an active student
+  // is let in, and it doesn't exist at all on the public daveparr.com copy,
+  // which has no gate.
+  window.sdsProgress = { record, read };
 
   const clean = (s, n) => String(s || "").replace(/\s+/g, " ").trim().slice(0, n);
 
